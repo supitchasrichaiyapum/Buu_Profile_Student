@@ -23,6 +23,31 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
+	public function login()
+	{
+		$this->load->view('login');
+	}
+	
+	public function activity()
+	{
+		$this->load->view('activity');
+	}
+
+	public function coop()
+	{
+		$this->load->view('coop');
+	}
+
+	public function coop_list()
+	{
+		$this->load->view('coop_list');
+	}
+
+	public function award()
+	{
+		$this->load->view('award');
+	}
+
 	public function statistics()
 	{
 		$this->load->view('statistics');
