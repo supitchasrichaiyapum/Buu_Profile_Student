@@ -12,7 +12,7 @@
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="<?php echo base_url('theme/vendor/font-awesome/css/font-awesome.min.css');?>">
     <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="css/fontastic.css">
+    <link rel="stylesheet" href="<?php echo base_url('theme/css/fontastic.css');?>">
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <!-- Favicon-->
     <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
+    
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -78,58 +79,77 @@
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>Burapha University</center></h1>
+              <h1 class="no-margin-bottom"><center>สถิติจำนวนนิสิต</center></h1>
             </div>
           </header>
-          <!-- Image Main-->
-          <div class="w3-content w3-section" >
-            <img class="mySlides" src="<?php echo base_url('theme/img/1.png');?>" style="width: 100%; display: none;">
-            <img class="mySlides" src="<?php echo base_url('theme/img/2.jpg');?>" style="width: 100%; display: none;">
-            <img class="mySlides" src="<?php echo base_url('theme/img/3.jpg');?>" style="width: 100%; display: block;">
+          <br>
+          <div class="container-fluid">
+              <h2 class="no-margin-bottom">สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2>
           </div>
-          <BR>
-          <!-- Image Activity-->
-          <div class="row">
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/ds.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/cs.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/it.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/se.png');?>" style="width:100%">
-            </div>
-          </div>
-          
-              
-    <!-- Javascript files-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="js/charts-home.js"></script>
-    <!-- Main File-->
-    <script src="js/front.js"></script>
-    <script>
-      var myIndex = 0;
-      carousel();
+          <br>
+          <br>
+          <div class="container-fluid">
+              <h2 class="no-margin-bottom">เลือกสาขาและรหัสนิสิต</h2>
+              <br>
+            <form class="form-horizontal">
+              <fieldset>
+              <!-- Select Basic -->
+              <div class="row">
+                <div class="form-group">
+                  <!-- <label class="col-md-12 control-label" for="selectbasic">สาขา</label> -->
+                  <div class="col-md-12">
+                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="สาขา"> 
+                      <option value="1">วิศวกรรมซอฟแวร์</option>
+                      <option value="2">วิทยาการคอมพิวเตอร์</option>
+                      <option value="3">เทคโนโลยีสารสนเทศ</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <!-- <label class="col-md-12 control-label" for="selectbasic">รหัสนิสิต</label> -->
+                  <div class="col-md-12">
+                    <select id="selectbasic" name="selectbasic" class="form-control">
+                      <option value="1">56</option>
+                      <option value="2">57</option>
+                      <option value="3">58</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Button -->
 
-      function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 2000); // Change image every 2 seconds
-        }
+                <div class="form-group">
+                <form id='statistics' method='post'>
+                    <div class="col-md-12">
+                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></li></button> 
+                    </div>
+                  </div>
+                </form>     
+                </div>                   
+          <!-- Javascript files-->
+          <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+          <script src="vendor/popper.js/umd/popper.min.js"> </script>
+          <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+          <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+          <script src="vendor/chart.js/Chart.min.js"></script>
+          <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+          <script src="js/charts-home.js"></script>
+          <!-- Main File-->
+          <script src="js/front.js"></script>
+          <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2000); // Change image every 2 seconds
+              }
 </script>
   </body>
 </html>
