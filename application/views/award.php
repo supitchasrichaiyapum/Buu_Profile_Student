@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project_Student</title>
+    <title>Project Student</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -20,10 +20,7 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    
   </head>
   <body>
     <div class="page">
@@ -41,9 +38,9 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
-                  <div class="brand-text brand-small"><strong>BD</strong></div></a>
+                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
@@ -51,7 +48,7 @@
                 <!-- Search-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>" class="nav-link logout">Login<i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -62,49 +59,26 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="title" style="margin: 0 auto;">
+            <div class="title"style="margin: 0 auto;">
               <h1 class="h4">HOME</h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
                     <li><a href="<?php echo site_url('/welcome/activity');?>"> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('/welcome/statistics');?>"> <i class="icon-padnote"></i>สถิติจำนวนนิสิต </a></li>
+                    <li><a href="tables.html"> สถิติจำนวนนิสิต </a></li>
                     <li><a href="<?php echo site_url('/welcome/coop');?>"> ข้อมูลสหกิจ </a></li>
-                    <li><a href="<?php echo site_url('/welcome/award');?>"> รางวัลการแข่งขัน </a></li>
-                    <li><a href="tables.html"> <i class="icon-grid"></i>ผู้สำเร็จการศึกษา </a></li>
+                    <li class="active"><a href="<?php echo site_url('/welcome/award');?>"> รางวัลการแข่งขัน </a></li>
+                    <li><a href="tables.html"> ผู้สำเร็จการศึกษา </a></li>
+          </ul>
         </nav>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>Burapha University</center></h1>
+              <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
             </div>
           </header>
-          <!-- Image Main-->
-          <div class="w3-content w3-section" >
-            <img class="mySlides" src="<?php echo base_url('theme/img/1.png');?>" style="width: 100%; display: none;">
-            <img class="mySlides" src="<?php echo base_url('theme/img/2.jpg');?>" style="width: 100%; display: none;">
-            <img class="mySlides" src="<?php echo base_url('theme/img/3.jpg');?>" style="width: 100%; display: block;">
-          </div>
-          <BR>
-          <!-- Image Activity-->
-          <div class="row">
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/ds.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/cs.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/it.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/se.png');?>" style="width:100%">
-            </div>
-          </div>
-          
-              
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
