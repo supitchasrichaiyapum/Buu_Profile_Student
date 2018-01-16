@@ -22,4 +22,14 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function statistics()
+	{
+		$this->load->view('statistics');
+	}
+
+	public function statistics_list()
+	{
+		$this->load->view('statistics_list');
+	}
 }
