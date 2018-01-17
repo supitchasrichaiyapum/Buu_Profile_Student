@@ -22,10 +22,9 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
     
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="page">
@@ -70,98 +69,66 @@
           </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li class="active"><a href="index.html"> <i class="icon-home"></i>ข้อมูลกิจกรรม </a></li>
+                    <li><a href="index.html"> <i class="icon-home"></i>ข้อมูลกิจกรรม </a></li>
                     <li><a href="<?php echo site_url('/welcome/statistics');?>"> <i class="icon-padnote"></i>สถิติจำนวนนิสิต </a></li>
                     <li><a href="charts.html"> <i class="icon-padnote"></i>ข้อมูลสหกิจ </a></li>
                     <li><a href="forms.html"> <i class="icon-padnote"></i>รางวัลการแข่งขัน </a></li>
-                    <li><a href="tables.html"> <i class="icon-grid"></i>ผู้สำเร็จการศึกษา </a></li>
+                    <li class="active"><a href="<?php echo site_url('/welcome/graduate');?>"> <i class="icon-padnote"></i>ผู้สำเร็จการศึกษา </a></li>
         </nav>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>สถิติจำนวนนิสิต</center></h1>
+              <h1 class="no-margin-bottom"><center>ผู้สำเร็จการศึกษา</center></h1>
             </div>
           </header>
           <br>
-          <body>
           <div class="container-fluid">
-              <h2 class="no-margin-bottom">สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2>
+              <h5 class="no-margin-bottom">ระดับการศึกษา : ปริญญาตรี พิเศษ</h5>
+              <br>
+              <h5 class="no-margin-bottom">คณะ : วิทยาการสารสนเทศ</h5>
+              <br>
+              <h5 class="no-margin-bottom">หลักสูตร : 2515013 เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54)</h5>
+              <br>
+              <h5 class="no-margin-bottom">ปีการศึกษา : 2560</h5>
+              <br>
+              <h5 class="no-margin-bottom">ภาคการศึกษาที่ 1</h5>
           </div>
           <br>
-          <br>
-          <div class="container-fluid">
-              <h2 class="no-margin-bottom">เลือกสาขาและรหัสนิสิต</h2>
-              <br>
-            <form class="form-horizontal">
-              <fieldset>
-              <!-- Select Basic -->
-              <div class="row">
-                <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">สาขา</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="สาขา"> 
-                      <option value="1">วิศวกรรมซอฟแวร์</option>
-                      <option value="2">วิทยาการคอมพิวเตอร์</option>
-                      <option value="3">เทคโนโลยีสารสนเทศ</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">รหัสนิสิต</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control">
-                      <option value="1">56</option>
-                      <option value="2">57</option>
-                      <option value="3">58</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- Button -->
-                <div class="form-group">
-                <form id='statistics' method='post'>
-                    <div class="col-md-12">
-                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></li></button> 
-                    </div>
-                  </div>
-                </form>     
-                </div> 
-                <!-- -->
-                <div class="container-fluid">
-                  <h3 class="no-margin-bottom">สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h3>
-                </div> 
-                <BR>
-                <div class="container">         
+          <div class="container">         
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th>ชั้นปี</th>
-                        <th>ปีการศึกษา</th>
-                        <th>จำนวนนิสิตรวมทั้งหมด(คน)</th>
-                        <th>จำนวนนิสิตที่พ้นสภาพ(คน)</th>
-                        <th>จำนวนนิสิตที่สำเร็จการศึกษา(คน)</th>
+                        <th>เลขที่</th>
+                        <th>รหัสประจำตัว</th>
+                        <th>ชื่อ</th>
+                        <th>เกียรตินิยม</th>
+                        <th>วันจบการศึกษา</th>
+                        <th>สถานะ</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td>2557</td>
-                        <td>239</td>
-                        <td>65</td>
-                        <td>0</td>
+                        <td>57660136</td>
+                        <td>นายสวิตต์ สวัสดี</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>รออนุมัติ</td>
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td>2558</td>
-                        <td>174</td>
-                        <td>15</td>
-                        <td>0</td>
+                        <td>57660137</td>
+                        <td>นางสาวสุพิชชา ศรีชัยภูมิ</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>รออนุมัติ</td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </body>          
+                </div>   
+
+
           <!-- Javascript files-->
           <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
           <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
@@ -175,6 +142,7 @@
           <script>
             var myIndex = 0;
             carousel();
+
             function carousel() {
               var i;
               var x = document.getElementsByClassName("mySlides");
@@ -186,5 +154,6 @@
               x[myIndex-1].style.display = "block";  
               setTimeout(carousel, 2000); // Change image every 2 seconds
               }
-  </script> 
+</script>
+  </body>
 </html>

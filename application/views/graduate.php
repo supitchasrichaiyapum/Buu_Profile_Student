@@ -12,7 +12,7 @@
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="<?php echo base_url('theme/vendor/font-awesome/css/font-awesome.min.css');?>">
     <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="css/fontastic.css">
+    <link rel="stylesheet" href="<?php echo base_url('theme/css/fontastic.css');?>">
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <!-- Favicon-->
     <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
+    
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -68,68 +69,79 @@
           </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li class="active"><a href="index.html"> <i class="icon-home"></i>ข้อมูลกิจกรรม </a></li>
+                    <li><a href="index.html"> <i class="icon-home"></i>ข้อมูลกิจกรรม </a></li>
                     <li><a href="<?php echo site_url('/welcome/statistics');?>"> <i class="icon-padnote"></i>สถิติจำนวนนิสิต </a></li>
                     <li><a href="charts.html"> <i class="icon-padnote"></i>ข้อมูลสหกิจ </a></li>
                     <li><a href="forms.html"> <i class="icon-padnote"></i>รางวัลการแข่งขัน </a></li>
-                    <li><a href="tables.html"> <i class="icon-grid"></i>ผู้สำเร็จการศึกษา </a></li>
+                    <li class="active"><a href="<?php echo site_url('/welcome/graduate');?>"> <i class="icon-padnote"></i>ผู้สำเร็จการศึกษา </a></li>
         </nav>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>Burapha University</center></h1>
+              <h1 class="no-margin-bottom"><center>ผู้สำเร็จการศึกษา</center></h1>
             </div>
           </header>
-          <!-- Image Main-->
-          <div class="w3-content w3-section" >
-            <img class="mySlides" src="<?php echo base_url('theme/img/1.png');?>" style="width: 100%; display: none;">
-            <img class="mySlides" src="<?php echo base_url('theme/img/2.jpg');?>" style="width: 100%; display: none;">
-            <img class="mySlides" src="<?php echo base_url('theme/img/3.jpg');?>" style="width: 100%; display: block;">
+          <br>
+          <div class="container-fluid">
+              <h2 class="no-margin-bottom">คณะวิทยาการสารสนเทศ</h2>
           </div>
-          <BR>
-          <!-- Image Activity-->
-          <div class="row">
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/ds.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/cs.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/it.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:270px">
-              <img class="#" src="<?php echo base_url('theme/img/se.png');?>" style="width:100%">
-            </div>
-          </div>
-          
-              
-    <!-- Javascript files-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="js/charts-home.js"></script>
-    <!-- Main File-->
-    <script src="js/front.js"></script>
-    <script>
-      var myIndex = 0;
-      carousel();
+          <br>
+          <br>
+          <div class="container-fluid">
+            <form class="form-horizontal">
+              <fieldset>
+              <!-- Select Basic -->
+              <div class="row">
+                <div class="form-group">
+                   <label class="col-md-12 control-label" for="selectbasic">ปีการศึกษา</label> 
+                </div>
+                <div class="form-group">
+                </div>
+                <!-- select -->
+                <div class="form-group">
+                <form id='statistics' method='post'>
+                    <div class="col-md-12">
+                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="ปีการศึกษา"> 
+                      <option value="1">2557</option>
+                      <option value="2">2558</option>
+                      <option value="3">2559</option>
+                    </select>
+                    </div>
+                  </div>
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-md-4">
+                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate_check');?>">ตกลง</a></li></button> 
+                    </div>   
+                </div>   
+                </form>     
+                </div>                  
+          <!-- Javascript files-->
+          <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+          <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
+          <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
+          <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
+          <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
+          <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
+          <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
+          <!-- Main File-->
+          <script src="<?php echo base_url('theme/js/front.js');?>"></script>
+          <script>
+            var myIndex = 0;
+            carousel();
 
-      function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 2000); // Change image every 2 seconds
-        }
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2000); // Change image every 2 seconds
+              }
 </script>
   </body>
 </html>

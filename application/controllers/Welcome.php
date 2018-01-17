@@ -32,4 +32,18 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('statistics_list');
 	}
+
+	public function graduate()
+	{
+		$this->load->view('graduate');
+	}
+
+	public function graduate_check()
+	{
+		$this->load->view('graduate_check');
+	}
+	public function graduate_list()
+	{
+		$this->load->view('graduate_list');
+	}
 }
