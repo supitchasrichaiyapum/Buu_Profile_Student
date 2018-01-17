@@ -62,10 +62,10 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=57660132" alt="..." class="img-fluid rounded-circle"></div>
+           
             <div class="title" style="margin: 0 auto;">
-              <h1 class="h5"> นาย สวิตต์ สวัสดี</h1>
-              <p> 57660136</p>
+              <h1 class="h5"> </h1>
+              <p> </p>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
