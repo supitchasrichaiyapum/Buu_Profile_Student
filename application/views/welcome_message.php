@@ -62,8 +62,10 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=57660132" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title" style="margin: 0 auto;">
-              <h1 class="h4"></h1>
+              <h1 class="h5"> นาย สวิตต์ สวัสดี</h1>
+              <p> 57660136</p>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
@@ -90,27 +92,17 @@
             <img class="mySlides" src="<?php echo base_url('theme/img/2.jpg');?>" style="width:100%; display: none;">
             <img class="mySlides" src="<?php echo base_url('theme/img/3.jpg');?>" style="width:100%; display: block;">
           </div>
-           <BR>
+           <BR> </center>
           <!-- Image Activity-->
-          <div class="row">
-            <div class="col-sm-4" style="max-width:200px">
-              <img class="#" src="<?php echo base_url('theme/img/ds.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:200px">
-              <img class="#" src="<?php echo base_url('theme/img/cs.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:200px">
-              <img class="#" src="<?php echo base_url('theme/img/it.png');?>" style="width:100%">
-            </div>
-            <div class="col-sm-4" style="max-width:200px">
-              <img class="#" src="<?php echo base_url('theme/img/se.png');?>" style="width:100%">
-            </div> 
-          </div>
-            </center>
-          
-         
-          
-              
+        <center>
+          <table border="0">
+            <tr>
+              <td><img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/ds.png');?>"></td>
+              <td><img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/cs.png');?>"></td>
+              <td><img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/it.png');?>"></td>
+              <td><img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/se.png');?>"></td>
+            <tr>
+        </center>
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>
