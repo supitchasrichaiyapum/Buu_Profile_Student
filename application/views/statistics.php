@@ -20,7 +20,7 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
+    
     
   </head>
   <body>
