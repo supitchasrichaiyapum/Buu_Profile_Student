@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project Student</title>
+    <title>Project_Student</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -20,8 +20,11 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <!-- Favicon-->
+    <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
     
-    
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="page">
@@ -39,17 +42,17 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
-                  <div class="brand-text brand-big"><span>BUU </span><strong> Project Student </strong></div>
-                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
+                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                  <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
+                  <div class="brand-text brand-small"><strong>BD</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Search-->
-                <li class="nav-item d-flex align-items-center"><a id="search" href="#"></a></li>
+                <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>" class="nav-link logout"> Login <i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link logout">Login<i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -61,66 +64,71 @@
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
             <div class="title" style="margin: 0 auto;">
-              <h1 class="h4"></h1>
+              <h1 class="h4">HOME</h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลกิจกรรม </a></li>
-                    <li class="active"><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> สถิติจำนวนนิสิต </a></li>
-                    <li><a href="<?php echo site_url('/welcome/coop');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
-                    <li><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+                    <li><a href="index.html"> <i class="icon-home"></i>ข้อมูลกิจกรรม </a></li>
+                    <li><a href="<?php echo site_url('/welcome/statistics');?>"> <i class="icon-padnote"></i>สถิติจำนวนนิสิต </a></li>
+                    <li><a href="charts.html"> <i class="icon-padnote"></i>ข้อมูลสหกิจ </a></li>
+                    <li><a href="forms.html"> <i class="icon-padnote"></i>รางวัลการแข่งขัน </a></li>
+                    <li class="active"><a href="<?php echo site_url('/welcome/graduate');?>"> <i class="icon-padnote"></i>ผู้สำเร็จการศึกษา </a></li>
         </nav>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>สถิติจำนวนนิสิต</center></h1>
+              <h1 class="no-margin-bottom"><center>ผู้สำเร็จการศึกษา</center></h1>
             </div>
           </header>
           <br>
           <div class="container-fluid">
-              <h2 class="no-margin-bottom">สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2>
+              <h5 class="no-margin-bottom">ระดับการศึกษา : ปริญญาตรี พิเศษ</h5>
+              <br>
+              <h5 class="no-margin-bottom">คณะ : วิทยาการสารสนเทศ</h5>
+              <br>
+              <h5 class="no-margin-bottom">หลักสูตร : 2515013 เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54)</h5>
+              <br>
+              <h5 class="no-margin-bottom">ปีการศึกษา : 2560</h5>
+              <br>
+              <h5 class="no-margin-bottom">ภาคการศึกษาที่ 1</h5>
           </div>
           <br>
-          <br>
-          <div class="container-fluid">
-              <h2 class="no-margin-bottom">เลือกสาขาและรหัสนิสิต</h2>
-              <br>
-            <form class="form-horizontal">
-              <fieldset>
-              <!-- Select Basic -->
-              <div class="row">
-                <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">สาขา</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="สาขา"> 
-                      <option value="1">วิศวกรรมซอฟแวร์</option>
-                      <option value="2">วิทยาการคอมพิวเตอร์</option>
-                      <option value="3">เทคโนโลยีสารสนเทศ</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">รหัสนิสิต</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control">
-                      <option value="1">56</option>
-                      <option value="2">57</option>
-                      <option value="3">58</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- Button -->
-                <div class="form-group">
-                <form id='statistics' method='post'>
-                    <div class="col-md-12">
-                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></li></button> 
-                    </div>
-                  </div>
-                </form>     
-                </div>                   
+          <div class="container">         
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>เลขที่</th>
+                        <th>รหัสประจำตัว</th>
+                        <th>ชื่อ</th>
+                        <th>เกียรตินิยม</th>
+                        <th>วันจบการศึกษา</th>
+                        <th>สถานะ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>57660136</td>
+                        <td>นายสวิตต์ สวัสดี</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>รออนุมัติ</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>57660137</td>
+                        <td>นางสาวสุพิชชา ศรีชัยภูมิ</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>รออนุมัติ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>   
+
+
           <!-- Javascript files-->
           <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
           <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
