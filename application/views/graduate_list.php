@@ -20,11 +20,6 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
-    
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="page">
@@ -139,21 +134,5 @@
           <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
           <!-- Main File-->
           <script src="<?php echo base_url('theme/js/front.js');?>"></script>
-          <script>
-            var myIndex = 0;
-            carousel();
-
-            function carousel() {
-              var i;
-              var x = document.getElementsByClassName("mySlides");
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              myIndex++;
-              if (myIndex > x.length) {myIndex = 1}    
-              x[myIndex-1].style.display = "block";  
-              setTimeout(carousel, 2000); // Change image every 2 seconds
-              }
-</script>
   </body>
 </html>
