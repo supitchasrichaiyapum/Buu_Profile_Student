@@ -116,7 +116,7 @@
                 <div class="form-group">
                 <form id='statistics' method='post'>
                     <div class="col-md-12">
-                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></li></button> 
+                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></button> 
                     </div>
                   </div>
                 </form>     
@@ -131,21 +131,6 @@
           <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
           <!-- Main File-->
           <script src="<?php echo base_url('theme/js/front.js');?>"></script>
-          <script>
-            var myIndex = 0;
-            carousel();
-
-            function carousel() {
-              var i;
-              var x = document.getElementsByClassName("mySlides");
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              myIndex++;
-              if (myIndex > x.length) {myIndex = 1}    
-              x[myIndex-1].style.display = "block";  
-              setTimeout(carousel, 2000); // Change image every 2 seconds
-              }
 </script>
   </body>
 </html>

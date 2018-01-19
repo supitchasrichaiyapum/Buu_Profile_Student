@@ -80,25 +80,21 @@
             </div>
           </header>
           <Body>
-
-              <div class="container">
-	<div class="row">
-        <div class="col-md-6"><BR>
-    		<h2>การตรวจสอบชั่วโมงสหกิจ</h2><BR>
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต" />
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6"><BR>
+                <h2>การตรวจสอบชั่วโมงสหกิจ</h2><BR>
+                  <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                      <input type="text" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต ">&nbsp;&nbsp;
                     <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                           <a href="<?php echo site_url('/welcome/coop_list');?>">ตกลง</a>
-                        </button>
+                      <a href="<?php echo site_url('/welcome/coop_list');?>"><button class="btn btn-info btn-lg" type="button">ตกลง</button></a>
                     </span>
+                    </div>
+                  </div>
                 </div>
             </div>
-        </div>
-	</div>
-</div>
-
+          </div>
           </Body>
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

@@ -80,44 +80,46 @@
             </div>
           </header>
           <Body>
-
-              <div class="container">
-	<div class="row">
-        <div class="col-md-6"><BR>
-    		<h2>การตรวจสอบชั่วโมงสหกิจ</h2><BR>
-        </div>
-    </div>
-    นาย สวิตต์ สวัสดี 57660136 
-    <div class="container">
-    <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>ชื่อ</th>
-        <th>อบรมวิชาการ / ชั่วโมง</th>
-        <th>เตรียมความพร้อมสหกิจ / ชั่วโมง</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>กิจกรรม Clicknext with Us Camp 2017</td>
-        <td>7</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-</div>
-          </Body>
+         
+          <section class="dashboard-counts no-padding-bottom">
+            <div class="container-fluid">
+              <div class="row bg-white has-shadow">
+              <div class="col-md-6"><h2>การตรวจสอบชั่วโมงสหกิจ</h2> <p> นาย สวิตต์ สวัสดี รหัสนิสิต 57660136 <BR></div>
+                <!-- Item -->
+                <div class="container">
+                  <div class="container">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>ชื่อ</th>
+                          <th>อบรมวิชาการ / ชั่วโมง</th>
+                          <th>เตรียมความพร้อมสหกิจ / ชั่วโมง</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>กิจกรรม Clicknext with Us Camp 2017</td>
+                          <td align="right">7</td>
+                          <td align="right">0</td>
+                        </tr>
+                        <tr>
+                          <td align="right"> </td>
+                          <td align="right"> </td>
+                          <td align="right"> </td>
+                        </tr>
+                        <tr>
+                          <td>รวม</td>
+                          <td align="right">7</td>
+                          <td align="right">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </Body>
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>
