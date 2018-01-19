@@ -116,46 +116,50 @@
                 <div class="form-group">
                 <form id='statistics' method='post'>
                     <div class="col-md-12">
-                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></li></button> 
+                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></button> 
                     </div>
                   </div>
                 </form>     
                 </div> 
-                <!-- -->
-                <div class="container-fluid">
-                  <h3 class="no-margin-bottom">สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h3>
-                </div> 
-                <BR>
-                <div class="container">         
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>ชั้นปี</th>
-                        <th>ปีการศึกษา</th>
-                        <th>จำนวนนิสิตรวมทั้งหมด(คน)</th>
-                        <th>จำนวนนิสิตที่พ้นสภาพ(คน)</th>
-                        <th>จำนวนนิสิตที่สำเร็จการศึกษา(คน)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>2557</td>
-                        <td>239</td>
-                        <td>65</td>
-                        <td>0</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>2558</td>
-                        <td>174</td>
-                        <td>15</td>
-                        <td>0</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <!-- --> 
+                <section class="dashboard-counts no-padding-bottom">
+            <div class="container-fluid">
+              <div class="row bg-white has-shadow">
+              <div class="col-md-6"><h2>สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h2><BR></div>
+                <!-- Item -->
+                <div class="container">
+                  <div class="container">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>ชื่อ</th>
+                          <th>อบรมวิชาการ / ชั่วโมง</th>
+                          <th>เตรียมความพร้อมสหกิจ / ชั่วโมง</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>กิจกรรม Clicknext with Us Camp 2017</td>
+                          <td align="right">7</td>
+                          <td align="right">0</td>
+                        </tr>
+                        <tr>
+                          <td align="right"> </td>
+                          <td align="right"> </td>
+                          <td align="right"> </td>
+                        </tr>
+                        <tr>
+                          <td>รวม</td>
+                          <td align="right">7</td>
+                          <td align="right">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
+            </div>
+          </section>
             </body>          
           <!-- Javascript files-->
           <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -167,20 +171,5 @@
           <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
           <!-- Main File-->
           <script src="<?php echo base_url('theme/js/front.js');?>"></script>
-          <script>
-            var myIndex = 0;
-            carousel();
-            function carousel() {
-              var i;
-              var x = document.getElementsByClassName("mySlides");
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              myIndex++;
-              if (myIndex > x.length) {myIndex = 1}    
-              x[myIndex-1].style.display = "block";  
-              setTimeout(carousel, 2000); // Change image every 2 seconds
-              }
-  </script> 
 
 </html>
