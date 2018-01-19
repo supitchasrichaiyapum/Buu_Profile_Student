@@ -41,34 +41,20 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
-                  <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
-                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
-                <!-- Toggle Button--><a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"><span></span><span></span><span></span></a>
-
                 <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU </span><strong> Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
-                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                <!-- Toggle Button-->
+                <a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"><span></span><span></span><span></span></a>
 
               </div>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Search-->
-
-                <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
-                <!-- Login    -->
                 <?php if($user_id) { ?>
-                <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout <i class="fa fa-sign-out"></i></a></li>
                 <?php } else { ?>
-                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login<i class="fa fa-sign-out"></i></a></li>
+                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
                 <?php } ?>
-
-                <li class="nav-item d-flex align-items-center"><a id="search" href="#"></a></li>
-                <!-- Logout    -->
-                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>"> Login <i class="fa fa-sign-out"></i></a></li>
-
               </ul>
             </div>
           </div>

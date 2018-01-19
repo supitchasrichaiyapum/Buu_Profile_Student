@@ -37,7 +37,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
@@ -47,7 +47,7 @@
                 <!-- Search-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="login.html" class="nav-link logout">Login<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -59,7 +59,7 @@
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
             <div class="title" style="margin: 0 auto;">
-              <h1 class="h4">HOME</h1>
+              <h1 class="h4"></h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
@@ -104,7 +104,7 @@
                 <!-- Button -->
                 <div class="form-group">
                 <div class="col-md-4">
-                  <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate_list');?>">ตกลง</a></li></button> 
+                  <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate');?>">ตกลง</a></li></button> 
                 </div>   
             </div>   
                 </form>     
@@ -113,7 +113,6 @@
                 <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
-              <div class="col-md-6"><h2>สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h2><BR></div>
                 <!-- Item -->
                 <div class="container">
                 <table class="table table-bordered">

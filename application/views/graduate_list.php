@@ -37,7 +37,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BD</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
@@ -47,7 +47,7 @@
                 <!-- Search-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="login.html" class="nav-link logout">Login<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -59,7 +59,7 @@
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
             <div class="title" style="margin: 0 auto;">
-              <h1 class="h4">HOME</h1>
+              <h1 class="h4"></h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
@@ -78,18 +78,11 @@
             </div>
           </header>
           <body>
-          <div class="container-fluid">
-              <h2 class="no-margin-bottom">สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2>
+          <div class="container-fluid"><br>
+              <h4 class="no-margin-bottom">สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h4>
           </div>
           <br>
-          <br>
           <div class="container-fluid">
-              <h2 class="no-margin-bottom">ระดับการศึกษา : ปริญญาตรี พิเศษ</h2>
-              <h2 class="no-margin-bottom">คณะ : วิทยาการสารสนเทศ</h2>
-              <h2 class="no-margin-bottom">หลักสูตร : 2515013 เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54)</h2>
-              <h2 class="no-margin-bottom">ปีการศึกษา : 2560</h2>
-              <h2 class="no-margin-bottom">ภาคการศึกษาที่ 1</h2>
-              <br>
             <form class="form-horizontal">
               <fieldset>
               <!-- Select Basic -->
@@ -120,13 +113,38 @@
                     <div class="col-md-12">
                       <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></button> 
                     </div>
-                </form>     
-                </div> 
+                </form> <br>
+              </div>
                 <!-- --> 
                 <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
-              <div class="col-md-6"><h2>สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h2><BR></div>
+              <div class="col-md-6">
+              <table>
+              <tr>
+              <td>ระดับการศึกษา  </td>
+              <td> : </td>
+              <td> ปริญญาตรี พิเศษ </td>
+              </tr>
+              <tr>
+              <td>คณะ  </td>
+              <td> : </td>
+              <td> วิทยาการสารสนเทศ</td>
+              </tr>
+              <tr>
+              <td>หลักสูตร  </td>
+              <td> : </td>
+              <td> 2515013 เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54)</td>
+              </tr>
+              <tr>
+              <td>ปีการศึกษา  </td>
+              <td> : </td>
+              <td> 2560</td>
+              </tr>
+              <tr>
+              <td>ภาคการศึกษาที่ 1</td>
+              </tr>
+              </table><BR></div>
                 <!-- Item -->
                 <div class="container">
                   <table class="table table-bordered">
