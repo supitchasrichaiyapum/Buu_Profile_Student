@@ -40,15 +40,19 @@
               <div class="navbar-header">
                 <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
-                  <div class="brand-text brand-small"><strong>BD</strong></div></a>
-                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
+                <!-- Toggle Button--><a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Search-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
-                <!-- Logout    -->
-                <li class="nav-item"><a href="login.html" class="nav-link logout">Login<i class="fa fa-sign-out"></i></a></li>
+                <!-- Login    -->
+                <?php if($user_id) { ?>
+                <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout<i class="fa fa-sign-out"></i></a></li>
+                <?php } else { ?>
+                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login<i class="fa fa-sign-out"></i></a></li>
+                <?php } ?>
               </ul>
             </div>
           </div>
@@ -104,12 +108,12 @@
               
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="js/charts-home.js"></script>
+    <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
+    <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
+    <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
+    <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
+    <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
+    <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
     <script>

@@ -42,15 +42,15 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <form id="login-form" method="post">
+                  <form id="login-form" method="post" action="<?php echo site_url('c_login/post_login');?>">
                     <div class="form-group">
-                      <input id="login-username" type="text" name="loginUsername" required="" class="input-material">
+                      <input id="login-username" type="text" name="username" required="" class="input-material">
                       <label for="login-username" class="label-material">Username</label>
                     </div>
                     <div class="form-group">
-                      <input id="login-password" type="password" name="loginPassword" required="" class="input-material">
-                      <label for="login-password" class="label-material">Password</label>
-                    </div><a id="login" href="index.html" class="btn btn-primary">Login</a>
+                      <input id="login-password" type="password" name="password" required="" class="input-material">
+                      <label for="login-password" class="label-material" >Password</label>
+                    </div><button id="login" type="submit" class="btn btn-primary" >Login</button>
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form>
                     </div>
@@ -62,12 +62,12 @@
       </div>
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
+    <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
+    <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
+    <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
+    <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
     <!-- Main File-->
-    <script src="js/front.js"></script>
+    <script src="<?php echo base_url('theme/js/front.js');?>"></script>
   </body>
 </html>
