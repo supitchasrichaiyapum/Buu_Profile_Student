@@ -33,6 +33,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('activity');
 	}
 
+	public function activity_list()
+	{
+		$this->load->view('activity_list');
+	}
+
 	public function coop()
 	{
 		$this->load->view('coop');
@@ -67,8 +72,11 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('graduate_check');
 	}
+
 	public function graduate_list()
 	{
 		$this->load->view('graduate_list');
 	}
+
+
 }

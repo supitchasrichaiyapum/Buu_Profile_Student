@@ -71,7 +71,7 @@
                     <li><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> สถิติจำนวนนิสิต </a></li>
                     <li><a href="<?php echo site_url('/welcome/coop');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
                     <li><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
-                    <li><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+                    <li class="active"><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
           </ul>
 
         </nav>
@@ -97,8 +97,7 @@
                 <div class="form-group">
                    <label class="col-md-12 control-label" for="selectbasic">ปีการศึกษา</label> 
                 </div>
-                <div class="form-group">
-                </div>
+             
                 <!-- select -->
                 <div class="form-group">
                 <form id='statistics' method='post'>

@@ -20,6 +20,7 @@
       <!-- Custom stylesheet - for your changes-->
       <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
       <!-- Favicon-->
+      
   </head>
   <body>
     <div class="page">
@@ -39,7 +40,7 @@
               <div class="navbar-header">
                 <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU </span><strong> Project Student </strong></div>
-                  <div class="brand-text brand-small"><strong> BUU </strong></div></a>
+                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
@@ -64,20 +65,53 @@
           </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> สถิติจำนวนนิสิต </a></li>
-                    <li><a href="<?php echo site_url('/welcome/coop');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li class="active"><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
-                    <li><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+              <li class="active"><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลกิจกรรม </a></li>
+              <li><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> สถิติจำนวนนิสิต </a></li>
+              <li><a href="<?php echo site_url('/welcome/coop');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+              <li><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
+              <li><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
           </ul>
         </nav>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
+              <h1 class="no-margin-bottom"><center>ข้อมูลกิจกรรม</center></h1>
             </div>
           </header>
+          <Body>
+          <section class="dashboard-counts no-padding-bottom">
+            <div class="container-fluid">
+              <div class="row bg-white has-shadow">
+              <div class="col-md-6"><h2>การตรวจสอบชั่วโมงกิจกรรม</h2> <p> นาย สวิตต์ สวัสดี รหัสนิสิต 57660136 <BR></div>
+                <!-- Item -->
+                <div class="container">
+                  <div class="container">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>ชื่อกิจกรรม</th>
+                          <th>ชั่วโมง</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>ปลูกต้นไม้</td>
+                          <td align="right">2</td>
+                        </tr>
+                        <tr>
+                          <td>รับเสร็จ</td>
+                          <td align="right">6</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </Body>
+
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>

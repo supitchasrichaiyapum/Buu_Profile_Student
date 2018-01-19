@@ -118,7 +118,6 @@
                     <div class="col-md-12">
                       <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></button> 
                     </div>
-                  </div>
                 </form>     
                 </div> 
                 <!-- --> 
@@ -128,33 +127,33 @@
               <div class="col-md-6"><h2>สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h2><BR></div>
                 <!-- Item -->
                 <div class="container">
-                  <div class="container">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>ชื่อ</th>
-                          <th>อบรมวิชาการ / ชั่วโมง</th>
-                          <th>เตรียมความพร้อมสหกิจ / ชั่วโมง</th>
-                        </tr>
-                      </thead>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ชั้นปี</th>
+                        <th>ปีการศึกษา</th>
+                        <th>จำนวนนิสิตรวมทั้งหมด (คน) </th>
+                        <th>จำนวนนิสิตที่พ้นสภาพ (คน) </th>
+                        <th>จำนวนนิสิตที่สำเร็จการศึกษา (คน) </th>
+                      </tr>
+                    </thead>
                       <tbody>
                         <tr>
-                          <td>กิจกรรม Clicknext with Us Camp 2017</td>
-                          <td align="right">7</td>
+                          <td align="right">1</td>
+                          <td align="right">2557</td>
+                          <td align="right">239</td>
+                          <td align="right">65</td>
                           <td align="right">0</td>
                         </tr>
                         <tr>
-                          <td align="right"> </td>
-                          <td align="right"> </td>
-                          <td align="right"> </td>
-                        </tr>
-                        <tr>
-                          <td>รวม</td>
-                          <td align="right">7</td>
+                          <td align="right">2</td>
+                          <td align="right">2558</td>
+                          <td align="right">174</td>
+                          <td align="right">15</td>
                           <td align="right">0</td>
                         </tr>
                       </tbody>
-                    </table>
+                </table>
                   </div>
                 </div>
               </div>
