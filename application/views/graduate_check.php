@@ -39,7 +39,7 @@
               <div class="navbar-header">
                 <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
-                  <div class="brand-text brand-small"><strong>BD</strong></div></a>
+                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
@@ -64,11 +64,11 @@
           </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="index.html"> <i class="icon-home"></i>ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('/welcome/statistics');?>"> <i class="icon-padnote"></i>สถิติจำนวนนิสิต </a></li>
-                    <li><a href="charts.html"> <i class="icon-padnote"></i>ข้อมูลสหกิจ </a></li>
-                    <li><a href="forms.html"> <i class="icon-padnote"></i>รางวัลการแข่งขัน </a></li>
-                    <li class="active"><a href="<?php echo site_url('/welcome/graduate');?>"> <i class="icon-padnote"></i>ผู้สำเร็จการศึกษา </a></li>
+              <li><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลกิจกรรม </a></li>
+              <li><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> สถิติจำนวนนิสิต </a></li>
+              <li><a href="<?php echo site_url('/welcome/coop');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+              <li><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
+              <li class="active"><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
         </nav>
         <div class="content-inner">
           <!-- Page Header-->
@@ -76,95 +76,113 @@
             <div class="container-fluid">
               <h1 class="no-margin-bottom"><center>ผู้สำเร็จการศึกษา</center></h1>
             </div>
-          </header>
-          <br>
+          </header><BR>
+          <body>
           <div class="container-fluid">
               <h2 class="no-margin-bottom">คณะวิทยาการสารสนเทศ</h2>
           </div>
           <br>
           <br>
           <div class="container-fluid">
+              <h2 class="no-margin-bottom">ปีการศึกษา</h2>
+              <br>
             <form class="form-horizontal">
               <fieldset>
               <!-- Select Basic -->
               <div class="row">
                 <div class="form-group">
-                   <label class="col-md-12 control-label" for="selectbasic">ปีการศึกษา</label> 
-                </div>
-                <div class="form-group">
-                </div>
-                <!-- select -->
-                <div class="form-group">
-                <form id='statistics' method='post'>
-                    <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="ปีการศึกษา"> 
-                      <option value="1">2557</option>
-                      <option value="2">2558</option>
-                      <option value="3">2559</option>
-                    </select>
-                    </div>
+                  <!-- <label class="col-md-12 control-label" for="selectbasic">สาขา</label> -->
+                  <div class="col-md-12">
+                      <select id="selectbasic" name="selectbasic" class="form-control" placeholder="ปีการศึกษา"> 
+                        <option value="1">2557</option>
+                        <option value="2">2558</option>
+                        <option value="3">2559</option>
+                      </select>
                   </div>
+                </div>
+                
                 <!-- Button -->
                 <div class="form-group">
-                    <div class="col-md-4">
-                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate_check');?>">ตกลง</a></li></button> 
-                    </div>   
+                <div class="col-md-4">
+                  <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate_list');?>">ตกลง</a></li></button> 
                 </div>   
-                </form>  
-
-                <div class="container">         
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>           </th>
-                        <th>ภาคการศึกษาที่</th>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>Summer</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>วิทยาเขต : บางแสน</td>
-                      </tr>
-                      <tr>
-                        <td>ระดับการศึกษา ปริญญาตรี ปกติ</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2115010 : วิทยาการคอมพิวเตอร์ - ป.ตรี 4 ปี (54)</td>
-                        <td>     </td>
-                        <td>
-                          <a href="<?php echo site_url('/welcome/graduate_list');?>">2</a>
-                        </td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2115012 : เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54)</td>
-                        <td>     </td>
-                        <td>
-                          <a href="<?php echo site_url('/welcome/graduate_list');?>">1</a>
-                        </td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <td>ระดับการศึกษา ปริญญาตรี พิเศษ</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2115013 : วิทยาการคอมพิวเตอร์ - ป.ตรี 4 ปี (พิเศษ)(54)</td>
-                        <td>     </td>
-                        <td>
-                          <a href="<?php echo site_url('/welcome/graduate_list');?>">1</a>
-                        </td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>   
-                </div>  
-
+            </div>   
+                </form>     
+                </div> 
+                <!-- --> 
+                <section class="dashboard-counts no-padding-bottom">
+            <div class="container-fluid">
+              <div class="row bg-white has-shadow">
+              <div class="col-md-6"><h2>สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h2><BR></div>
+                <!-- Item -->
+                <div class="container">
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>           </th>
+                    <th>ภาคการศึกษาที่</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>Summer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>วิทยาเขต : บางแสน</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>ระดับการศึกษา ปริญญาตรี ปกติ</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2115010 : วิทยาการคอมพิวเตอร์ - ป.ตรี 4 ปี (54)</td>
+                    <td>     </td>
+                    <td>
+                      <a href="<?php echo site_url('/welcome/graduate_list');?>">2</a>
+                    </td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2115012 : เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54)</td>
+                    <td>     </td>
+                    <td>
+                      <a href="<?php echo site_url('/welcome/graduate_list');?>">1</a>
+                    </td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>ระดับการศึกษา ปริญญาตรี พิเศษ</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2115013 : วิทยาการคอมพิวเตอร์ - ป.ตรี 4 ปี (พิเศษ)(54)</td>
+                    <td>     </td>
+                    <td>
+                      <a href="<?php echo site_url('/welcome/graduate_list');?>">1</a>
+                    </td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+            </body>          
           <!-- Javascript files-->
           <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
           <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>

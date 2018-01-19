@@ -88,7 +88,7 @@
                     <div class="input-group col-md-12">
                       <input type="text" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต">&nbsp;&nbsp;
                     <span class="input-group-btn">
-                      <a href="<?php echo site_url('/welcome/coop_list');?>"><button class="btn btn-info btn-lg" type="button">ตกลง</button></a>
+                      <a href="<?php echo site_url('/welcome/activity_list');?>"><button class="btn btn-info btn-lg" type="button">ตกลง</button></a>
                     </span>
                     </div>
                   </div>

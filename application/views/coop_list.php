@@ -20,7 +20,6 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <!-- Favicon-->
-    
   </head>
   <body>
     <div class="page">
@@ -80,7 +79,6 @@
             </div>
           </header>
           <Body>
-         
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
