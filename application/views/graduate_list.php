@@ -37,9 +37,9 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
-                  <div class="brand-text brand-small"><strong>BD</strong></div></a>
+                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
@@ -47,7 +47,7 @@
                 <!-- Search-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="login.html" class="nav-link logout">Login<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>"> Login <i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -58,8 +58,8 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="title" style="margin: 0 auto;">
-              <h1 class="h4">HOME</h1>
+            <div class="title"style="margin: 0 auto;">
+              <h1 class="h4"></h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
@@ -70,6 +70,7 @@
             <li><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
             <li class="active"><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
         </nav>
+        <Body>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
@@ -77,92 +78,88 @@
               <h1 class="no-margin-bottom"><center>ผู้สำเร็จการศึกษา</center></h1>
             </div>
           </header>
-          <body>
-          <div class="container-fluid">
-              <h2 class="no-margin-bottom">สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2>
-          </div>
           <br>
-          <br>
+
           <div class="container-fluid">
-              <h2 class="no-margin-bottom">ระดับการศึกษา : ปริญญาตรี พิเศษ</h2>
-              <h2 class="no-margin-bottom">คณะ : วิทยาการสารสนเทศ</h2>
-              <h2 class="no-margin-bottom">หลักสูตร : 2515013 เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54)</h2>
-              <h2 class="no-margin-bottom">ปีการศึกษา : 2560</h2>
-              <h2 class="no-margin-bottom">ภาคการศึกษาที่ 1</h2>
-              <br>
+              <h2 class="no-margin-bottom">คณะวิทยาการสารสนเทศ</h2>
+          </div> <br><br>
+          <div class="container-fluid">
             <form class="form-horizontal">
               <fieldset>
               <!-- Select Basic -->
               <div class="row">
                 <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">สาขา</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="สาขา"> 
-                      <option value="1">วิศวกรรมซอฟแวร์</option>
-                      <option value="2">วิทยาการคอมพิวเตอร์</option>
-                      <option value="3">เทคโนโลยีสารสนเทศ</option>
-                    </select>
-                  </div>
+                   <label class="col-md-12 control-label" for="selectbasic">ปีการศึกษา</label> 
                 </div>
-                <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">รหัสนิสิต</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control">
-                      <option value="1">56</option>
-                      <option value="2">57</option>
-                      <option value="3">58</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- Button -->
+             
+                <!-- select -->
                 <div class="form-group">
                 <form id='statistics' method='post'>
                     <div class="col-md-12">
-                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/statistics_list');?>">ตกลง</a></button> 
+                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="ปีการศึกษา"> 
+                      <option value="1">2557</option>
+                      <option value="2">2558</option>
+                      <option value="3">2559</option>
+                    </select>
                     </div>
+                  </div>
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-md-4">
+                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate_check');?>">ตกลง</a></li></button> 
+                    </div>   
+                </div>   
                 </form>     
-                </div> 
-                <!-- --> 
+                </div>
                 <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
-              <div class="col-md-6"><h2>สาขาวิชา: เทคโนโลยีสารสนเทศ รหัสนิสิต : 57</h2><BR></div>
+              <div class="col-md-6">
+                 <p> ระดับการศึกษา : ปริญญาตรี พิเศษ </p>
+                 <p> คณะ : วิทยาการสารสนเทศ </p>
+                 <p> หลักสูตร : 2515013 เทคโนโลยีสารสนเทศ - ป.ตรี 4 ปี (54) </p>
+                 <p> ปีการศึกษา : 2560 </p>
+                 <p> ภาคการศึกษาที่ 1 </p> <BR>
+              </div>
                 <!-- Item -->
                 <div class="container">
+                  <div class="container">
                   <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>ชั้นปี</th>
-                        <th>ปีการศึกษา</th>
-                        <th>จำนวนนิสิตรวมทั้งหมด (คน) </th>
-                        <th>จำนวนนิสิตที่พ้นสภาพ (คน) </th>
-                        <th>จำนวนนิสิตที่สำเร็จการศึกษา (คน) </th>
-                      </tr>
-                    </thead>
-                      <tbody>
-                        <tr>
-                          <td align="right">1</td>
-                          <td align="right">2557</td>
-                          <td align="right">239</td>
-                          <td align="right">65</td>
-                          <td align="right">0</td>
-                        </tr>
-                        <tr>
-                          <td align="right">2</td>
-                          <td align="right">2558</td>
-                          <td align="right">174</td>
-                          <td align="right">15</td>
-                          <td align="right">0</td>
-                        </tr>
-                      </tbody>
+                  <thead>
+                    <tr>
+                      <th>เลขที่</th>
+                      <th>รหัสประจำตัว</th>
+                      <th>ชื่อ</th>
+                      <th>เกียรตินิยม</th>
+                      <th>วันจบการศึกษา</th>
+                      <th>สถานะ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>57660136</td>
+                      <td>นายสวิตต์ สวัสดี</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>รออนุมัติ</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>57660137</td>
+                      <td>นางสาวสุพิชชา ศรีชัยภูมิ</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>รออนุมัติ</td>
+                    </tr>
+                  </tbody>
                 </table>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-            </body>          
-
+</Body>
 
           <!-- Javascript files-->
           <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

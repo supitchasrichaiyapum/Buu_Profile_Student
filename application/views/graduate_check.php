@@ -37,7 +37,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
@@ -47,7 +47,7 @@
                 <!-- Search-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="login.html" class="nav-link logout">Login<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login<i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -59,7 +59,7 @@
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
             <div class="title" style="margin: 0 auto;">
-              <h1 class="h4">HOME</h1>
+              <h1 class="h4"></h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus-->
@@ -80,35 +80,35 @@
           <body>
           <div class="container-fluid">
               <h2 class="no-margin-bottom">คณะวิทยาการสารสนเทศ</h2>
-          </div>
-          <br>
-          <br>
+          </div><br><br>
           <div class="container-fluid">
-              <h2 class="no-margin-bottom">ปีการศึกษา</h2>
-              <br>
             <form class="form-horizontal">
               <fieldset>
               <!-- Select Basic -->
               <div class="row">
                 <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">สาขา</label> -->
-                  <div class="col-md-12">
-                      <select id="selectbasic" name="selectbasic" class="form-control" placeholder="ปีการศึกษา"> 
-                        <option value="1">2557</option>
-                        <option value="2">2558</option>
-                        <option value="3">2559</option>
-                      </select>
-                  </div>
+                   <label class="col-md-12 control-label" for="selectbasic">ปีการศึกษา</label> 
                 </div>
-                
+             
+                <!-- select -->
+                <div class="form-group">
+                <form id='statistics' method='post'>
+                    <div class="col-md-12">
+                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="ปีการศึกษา"> 
+                      <option value="1">2557</option>
+                      <option value="2">2558</option>
+                      <option value="3">2559</option>
+                    </select>
+                    </div>
+                  </div>
                 <!-- Button -->
                 <div class="form-group">
-                <div class="col-md-4">
-                  <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate_list');?>">ตกลง</a></li></button> 
+                    <div class="col-md-4">
+                      <button id="Yes" name="Yes" class="btn btn-default"><a href="<?php echo site_url('/welcome/graduate_check');?>">ตกลง</a></li></button> 
+                    </div>   
                 </div>   
-            </div>   
                 </form>     
-                </div> 
+                </div>          
                 <!-- --> 
                 <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
