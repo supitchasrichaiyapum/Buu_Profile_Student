@@ -34,26 +34,26 @@
           <div class="search-box">
             <button class="dismiss"><i class="icon-close"></i></button>
             <form id="searchForm" action="#" role="search">
-              <input type="search" placeholder="What are you looking for..." class="form-control">sdfsdf
+              <input type="search" placeholder="What are you looking for..." class="form-control">
             </form>
           </div>
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU </span><strong> Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button-->
-                <a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"><span></span><span></span><span></span></a>
+                <a id="toggle-btn" href="<?php echo site_url('/');?>" class="menu-btn active"><span></span><span></span><span></span></a>
 
               </div>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <?php if($user_id) { ?>
-                <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>"> Logout <i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout <i class="fa fa-sign-out"></i></a></li>
                 <?php } else { ?>
-                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>"> Login <i class="fa fa-sign-out"></i></a></li>
+                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
                 <?php } ?>
               </ul>
             </div>
@@ -65,19 +65,26 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-           
-            <div class="title" style="margin: 0 auto;">
-              <h1 class="h5"> </h1>
-              <p> </p>
-            </div>
-          </div>
+            <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=57660136" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title" style="margin: 0 auto;">
+                    <h1 class="h5"> นาย สวิตต์ สวัสดี</h1>
+                        <p> 57660136 </p>
+                </div>
+         </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> สถิติจำนวนนิสิต </a></li>
-                    <li><a href="<?php echo site_url('/welcome/coop');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
-                    <li><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+                  <!--  <li><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลส่วนตัว </a></li> -->
+                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> 
+	                    <i class="icon-interface-windows"></i> ข้อมูลนิสิต </a>
+		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                <li><a href="data_student"> ข้อมูลส่วนตัว </a></li>
+                                <li><a href="edit_student"> แก้ไขข้อมูลส่วนตัว </a></li>
+                                <li><a href="transcript"> ผลการศึกษา </a></li>
+		                    </ul>
+                    </li>
+                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-bar-chart"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-trophy"></i> ข้อมูลสถิติ </a></li>
           </ul>
         </nav>
         <div class="content-inner">
