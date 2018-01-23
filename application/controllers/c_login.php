@@ -18,7 +18,8 @@ class c_login extends CI_Controller {
             $userdata = $this->ldap->get_data($username,$password);
  
             $this->session->set_userdata('user_id', $userdata['code']);
-            
+            //set userdata, actor = teahcer
+            //redirect($this->serssion->user_Data('actor').'/welcome');
             redirect('welcome');
         } else {
             echo 'error';
