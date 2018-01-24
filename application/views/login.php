@@ -53,10 +53,6 @@
                       <label for="login-password" class="label-material" >Password</label>
                     </div><button id="login" type="submit" class="btn btn-primary" >Login</button>
 
-                      <input id="login-password" type="password" name="loginPassword" required="" class="input-material">
-                      <label for="login-password" class="label-material">Password</label>
-                    </div><a id="login" href="<?php echo site_url('/welcome');?>" class="btn btn-primary">Login</a>
-
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form>
                     </div>
