@@ -47,7 +47,7 @@
                 <!-- Search-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"></a></li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>" class="nav-link logout"> Login <i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>"> Login <i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>

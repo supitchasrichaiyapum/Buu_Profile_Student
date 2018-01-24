@@ -17,6 +17,7 @@ class c_login extends CI_Controller {
         $this->ldap->connect();
         if($this->ldap->authenticate('' , $username, $password)) {
             $userdata = $this->ldap->get_data($username,$password);
+
             //print_r($userdata);
             if($userdata['ou'] == 'students') {
                 //student
@@ -48,6 +49,13 @@ class c_login extends CI_Controller {
                 $this->session->set_userdata('user_id', $data['login_value']);
                 //print_r($this->session->userdata());
                 redirect('welcome');
+
+ 
+            $this->session->set_userdata('user_id', $userdata['code']);
+            //set userdata, actor = teahcer
+            //redirect($this->serssion->user_Data('actor').'/welcome');
+            redirect('welcome');
+
         } else {
             echo 'error';
         }

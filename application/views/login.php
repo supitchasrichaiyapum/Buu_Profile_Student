@@ -38,7 +38,7 @@
                 </div>
               </div>
             </div>
-            <!-- Form Panel    -->
+            <!-- Form Panel-->
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
@@ -48,13 +48,13 @@
                       <label for="login-username" class="label-material">Username</label>
                     </div>
                     <div class="form-group">
-
                       <input id="login-password" type="password" name="password" required="" class="input-material">
                       <label for="login-password" class="label-material" >Password</label>
                     </div><button id="login" type="submit" class="btn btn-primary" >Login</button>
 
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form>
+                  <i class="fa fa-hand-o-right" aria-hidden="true"></i> <a href="<?php echo site_url('/welcome');?>"> กลับสู่หน้าหลัก </a>
                     </div>
                 </div>
               </div>
@@ -62,6 +62,7 @@
           </div>
         </div>
       </div>
+</Body>
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
