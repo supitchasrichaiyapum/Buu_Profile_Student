@@ -60,7 +60,8 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array(
         'database', 'session', 
-        'service_ldap' => 'ldap');
+        'service_ldap' => 'ldap',
+        'form_validation');
 
 /*
 | -------------------------------------------------------------------
@@ -134,4 +135,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('m_login');
