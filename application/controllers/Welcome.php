@@ -52,7 +52,9 @@ class Welcome extends CI_Controller {
 
 	public function award()
 	{
-		$this->load->view('award');
+		$this->load->model('m_award');
+		$data['query'] = $this->m_award->get_all();
+		$this->load->view('award', $data);
 	}
 
 	public function statistics()
@@ -80,5 +82,24 @@ class Welcome extends CI_Controller {
 		$this->load->view('graduate_list');
 	}
 
+
+
+
+// เดี๋ยวมาลบ ทำไว้หลอกตัวเอง
+	public function menu_student()
+	{
+		$this->load->view('menu_student');
+	}
+
+	public function menu_admin()
+	{
+		$this->load->view('menu_admin');
+	}
+
+	public function data_student()
+	{
+		$this->load->view('data_student');
+	}
+//
 
 }
