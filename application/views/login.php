@@ -51,6 +51,7 @@
                       <input id="login-password" type="password" name="password" required="" class="input-material">
                       <label for="login-password" class="label-material" >Password</label>
                     </div><button id="login" type="submit" class="btn btn-primary" >Login</button>
+
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form>
                   <i class="fa fa-hand-o-right" aria-hidden="true"></i> <a href="<?php echo site_url('/welcome');?>"> กลับสู่หน้าหลัก </a>

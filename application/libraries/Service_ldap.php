@@ -28,10 +28,10 @@ class Service_ldap {
                         if( !$this->connection ) {
                                 return false;
                         }
-                }catch (Exception $e) {									
-					return false;
-                }
-                return true;
+                        }catch (Exception $e) {									
+			        return false;
+                        }
+                                return true;
         }
 
         /**
@@ -75,6 +75,8 @@ class Service_ldap {
                 'lname' => $info[0]['sn'][0],
                 'email' => $info[0]['mail'][0],
                 'code' => $info[0]['cn'][0],
+                'ou' => str_replace('OU=', '', explode(",", $info[0]['dn'])[1]),
+
                 );
             return $person_data;
             //echo $info[0]['givenname'][0]." ".$info[0]['sn'][0]." ".$info[0]['mail'][0];
