@@ -48,7 +48,11 @@ class c_login extends CI_Controller {
                 $this->session->set_userdata('actor', $data['login_type']);
                 $this->session->set_userdata('user_id', $data['login_value']);
                 //print_r($this->session->userdata());
+
                 redirect('welcome/menu_student');
+
+              
+
 
  
             $this->session->set_userdata('user_id', $userdata['code']);
