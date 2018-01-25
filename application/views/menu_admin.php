@@ -83,17 +83,17 @@
                     </li>
                     <li><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> ข้อมูลกิจกรรม </a></li>
                     <li><a href="<?php echo site_url('/welcome/coop_student');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> 
+                    <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="icon-interface-windows"></i> ข้อมูลสถิติ </a>
-		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
                                 <li><a href="data_teacher"> สถิติจำนวนนิสิต </a></li>
                                 <li><a href="edit_teacher"> รายชื่อรอพินิจ </a></li>
                                 <li><a href="#"> ผู้สำเร็จการศึกษา </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> 
+                    <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="icon-interface-windows"></i> ข้อมูลนิสิต </a>
-		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
                                 <li><a href="#"> ข้อมูลส่วนตัวนิสิต </a></li>
                                 <li><a href="#"> รางวัลการแข่งขัน </a></li>
 		                    </ul>

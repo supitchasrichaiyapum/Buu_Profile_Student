@@ -19,7 +19,16 @@
       <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
       <!-- Custom stylesheet - for your changes-->
       <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
-      <!-- Favicon-->
+      <style>
+table {
+    width:60%;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+      </style>
+
   </head>
   <body>
     <div class="page">
@@ -86,52 +95,28 @@
                 <!-- Item -->
                 <div class="container">
                   <div class="container">
+                    <table>
                     
-<?php
-    $host = "103.86.50.206";
-    $username = "buu_profile";
-    $password = "buu999";
-    $db = "profile_db";
+<?php foreach ($query as $row) { ?>
 
-    $conn = new mysqli($host, $username, $password, $db);
-    $conn->query("set names utf8");
-    $sql = "SELECT * FROM Award ORDER BY Award_ID DESC";
-    $result = $conn->query($sql);
+<tr>
+<td><?php echo $row['Award_Name'] ?> </td>
+<td><?php echo $row['Award_Date'] ?> </td>
+<td><?php echo $row['Received_Award'] ?> </td>
+<td><?php echo $row['Student_Code'] ?> </td>
+<td><?php echo $row['Student_Name'] ?> </td>
+</tr>      
 
-    if($result->num_rows ==0)
-		  echo "ไม่มีข้อมูล";
-    else {
+<?php } ?>
 
-      echo "<table>";
-      echo "<tr>";
-      echo "<td> </td>";
-      echo "<td> </td>";
-      echo "<td> </td>";
-      echo "<td> </td>";
-      echo "<td> </td>";
-      echo "</tr>";
-	
-    while($row = $result->fetch_object()) {
+</table>             
 
-      
-      echo "<tr>";
-      echo "<td>$row->Award_Name</td>";
-      echo "<td>$row->Award_Date</td>";
-      echo "<td>$row->Received_Award</td>";
-      echo "<td>$row->Student_Code</td>";
-      echo "<td>$row->Student_Name</td>";
-      echo "</tr>";
-    
-          }  
-      echo "</table>";
-      }
-?>                      
+  
                   </div>
                 </div>
               </div>
             </div>
           </section>           
-
           </body>
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
