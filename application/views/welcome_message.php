@@ -45,7 +45,7 @@
                 <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
-                <!-- Toggle Button--><a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"><span></span><span></span><span></span></a>
+                <!-- Toggle Button--><a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"></a>
 
 
               </div>
