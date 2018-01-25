@@ -107,6 +107,7 @@
               <div class="col-md-12">
                 <div class="banner text-left">
                   <table id="t01" width="200" class="table table-bordered">
+
 <?php
   $host = "103.86.50.206";
   $username = "buu_profile";
@@ -129,7 +130,6 @@
     echo "ไม่มีข้อมูล";
 
   } else {
-
     echo "<TR>";
     echo "<TD><center>ชื่อกิจกรรม</TD>";
     echo "<TD><center>ชั่วโมง</TD>";

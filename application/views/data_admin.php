@@ -54,7 +54,7 @@
                 <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout <i class="fa fa-sign-out"></i></a></li>
                 <?php } else { ?>
                   <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
-                <?php } ?>
+                
               </ul>
             </div>
           </div>
