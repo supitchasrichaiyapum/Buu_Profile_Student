@@ -82,23 +82,33 @@ class Welcome extends CI_Controller {
 		$this->load->view('graduate_list');
 	}
 
-
+	public function v_main()
+	{
+		$this->load->view('v_main');
+	}
 
 
 // เดี๋ยวมาลบ ทำไว้หลอกตัวเอง
 	public function menu_student()
 	{
-		$this->load->view('menu_student');
+		$id = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($id);
+		$this->load->view('menu_student', $data);
+
 	}
 
-	public function menu_admin()
+	public function edit_student()
 	{
-		$this->load->view('menu_admin');
+		$id = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($id);
+		$this->load->view('edit_student', $data);
 	}
 
 	public function data_student()
 	{
-		$this->load->view('data_student');
+		$id = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($id);
+		$this->load->view('edit_student', $data);
 	}
 //
 

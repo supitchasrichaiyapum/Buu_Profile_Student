@@ -41,7 +41,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="<?php echo site_url('/');?>" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome/menu_student');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU </span><strong> Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button-->
@@ -65,15 +65,14 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=57660136" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=<?php echo $this->session->userdata('user_id');?>" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title" style="margin: 0 auto;">
-                    <h1 class="h5"> นาย สวิตต์ สวัสดี</h1>
-                        <p> 57660136 </p>
+                    <h1 class="h5"> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?></h1>
+                        <p> <?php echo $student['Student_ID'] ?> </p>
                 </div>
          </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                  <!--  <li><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลส่วนตัว </a></li> -->
                     <li class="active"><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="icon-interface-windows"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
@@ -82,9 +81,9 @@
                                 <li class="active"><a href="transcript"> ผลการศึกษา </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-bar-chart"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-trophy"></i> ข้อมูลสถิติ </a></li>
+                    <li><a href="<?php echo site_url('');?>"><i class="fa fa-bar-chart"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="<?php echo site_url('');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+                    <li><a href="<?php echo site_url('');?>"><i class="fa fa-trophy"></i> ข้อมูลสถิติ </a></li>
           </ul>
         </nav>
         <div class="content-inner">

@@ -19,11 +19,6 @@
     <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="page">
@@ -50,60 +45,23 @@
               </div>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <?php if($user_id) { ?>
+                <?php if($student) { ?>
                 <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout <i class="fa fa-sign-out"></i></a></li>
                 <?php } else { ?>
                   <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
-                  <?php } ?>
+                <?php } ?>
               </ul>
             </div>
           </div>
         </nav>
       </header>
-      <div class="page-content d-flex align-items-stretch"> 
-        <!-- Side Navbar -->
-        <nav class="side-navbar">
-          <!-- Sidebar Header-->
-          <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=<?php echo $this->session->userdata('user_id');?>" alt="..." class="img-fluid rounded-circle"></div>
-                <div class="title" style="margin: 0 auto;">
-                    <h1 class="h5"> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?> </h1>
-                        <p> <?php echo $student['Student_ID'] ?> </p>
-                </div>
-         </div>
-          <!-- Sidebar Navidation Menus-->
-          <ul class="list-unstyled">
-                    <li class="active"><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> 
-	                    <i class="icon-interface-windows"></i> ข้อมูลนิสิต </a>
-		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                                <li><a href="data_student"> ข้อมูลส่วนตัว </a></li>
-                                <li class="active"><a href="edit_student"> แก้ไขข้อมูลส่วนตัว </a></li>
-                                <li><a href="transcript"> ผลการศึกษา </a></li>
-		                    </ul>
-                    </li>
-                    <li><a href="<?php echo site_url('');?>"><i class="fa fa-bar-chart"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="<?php echo site_url('');?>"><i class="fa fa-trophy"></i> ข้อมูลสถิติ </a></li>
-          </ul>
-        </nav>
-        <div class="content-inner">
-          <!-- Page Header-->
-          <header class="page-header">
-            <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>Burapha University</center></h1>
-            </div>
-          </header>
-          <br>
-          <header class="page-header">
-            <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>แก้ไขข้อมูลส่วนตัว</center></h1>
-            </div>
-          </header>
-          
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
+
     <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>
+
     <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
     <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
     <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>

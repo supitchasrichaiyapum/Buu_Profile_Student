@@ -19,11 +19,6 @@
     <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="<?php echo base_url('theme/img/favicon.ico');?>">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="page">
@@ -43,20 +38,12 @@
               <div class="navbar-header">
 
 
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
-                  <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
-                  <div class="brand-text brand-small"><strong>BUU</strong></div></a>
-                <!-- Toggle Button--><a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"><span></span><span></span><span></span></a>
-
-
                 <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
-                  <div class="brand-text brand-big"><span>BUU </span><strong> Project Student</strong></div>
+                  <div class="brand-text brand-big"><span>BUU</span><strong>Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button-->
                 <a id="toggle-btn" href="<?php echo site_url('/welcome');?>" class="menu-btn active"><span></span><span></span><span></span></a>
-
-
-              </div>
+                  </div>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
