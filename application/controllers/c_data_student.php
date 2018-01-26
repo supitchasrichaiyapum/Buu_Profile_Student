@@ -7,7 +7,7 @@ class c_data_student extends CI_Controller {
 	{
         $this->load->model('m_data_student');
 		$data['query'] = $this->m_data_student->get_all();
-		$this->load->view('data_student', $data);
+		$this->load->view('student/data_student', $data);
 
     }
 
@@ -30,7 +30,7 @@ class c_data_student extends CI_Controller {
 			$id = $this->uri->segment(3);
 			$this->load->model("m_data_student");
 			$data['query'] = $this->m_data_student->get_by_id($id);
-			$this->load->view('edit_student',$data);
+			$this->load->view('student/edit_student',$data);
 		}
     }
 /* 
