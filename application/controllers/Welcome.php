@@ -46,49 +46,29 @@ class Welcome extends CI_Controller {
 	
 	public function activity()
 	{
-		$this->template->view('activity',$data);
-	}
-
-	public function activity_list()
-	{
-		$this->load->view('activity_list');
+		$this->template->view('activity',@$data);
 	}
 
 	public function coop()
 	{
-		$this->load->view('coop');
-	}
-
-	public function coop_list()
-	{
-		$this->load->view('coop_list');
+		$this->template->view('coop',@$data);
 	}
 
 	public function award()
 	{
 		$this->load->model('m_award');
 		$data['query'] = $this->m_award->get_all();
-		$this->template->view('award',$data);
-	}
-
-	public function statistics_list()
-	{
-		$this->load->view('statistics_list');
+		$this->template->view('award',@$data);
 	}
 
 	public function graduate()
 	{
-		$this->load->view('graduate');
+		$this->template->view('graduate',@$data);
 	}
 
-	public function graduate_check()
+	public function statistics()
 	{
-		$this->load->view('graduate_check');
-	}
-
-	public function graduate_list()
-	{
-		$this->load->view('graduate_list');
+		$this->template->view('statistics',@$data);
 	}
 
 // ส่วนของแถบเมนูของส่วนหัวโดยที่เมนูแยกส่วนตามสิทธ์
@@ -129,11 +109,11 @@ class Welcome extends CI_Controller {
 		$this->template->view('student/activity',$data);
 	}
 
-	public function statistics()
+	public function statistics_student()
 	{
-		$id = $this->session->userdata('user_id');
-		$data['Student'] = $this->m_student->get_student($id);
-		$this->template->view('statistics',$data);
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('student/statistics',$data);
 	}
 
 	public function menu_teacher()
