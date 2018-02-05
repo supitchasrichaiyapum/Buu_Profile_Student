@@ -7,6 +7,8 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="all,follow">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
       <!-- Bootstrap CSS-->
       <link rel="stylesheet" href="<?php echo base_url('theme/vendor/bootstrap/css/bootstrap.min.css');?>">
       <!-- Font Awesome CSS-->
@@ -27,6 +29,7 @@ th, td {
     padding: 5px;
     text-align: left;
 }
+
       </style>
 
   </head>
@@ -95,23 +98,17 @@ th, td {
                 <!-- Item -->
                 <div class="container">
                   <div class="container">
-                    <table>
-                    
-<?php foreach ($query as $row) { ?>
-
-<tr>
-<td><?php echo $row['Award_Name'] ?> </td>
-<td><?php echo $row['Award_Date'] ?> </td>
-<td><?php echo $row['Received_Award'] ?> </td>
-<td><?php echo $row['Student_Code'] ?> </td>
-<td><?php echo $row['Student_Name'] ?> </td>
-</tr>      
-
-<?php } ?>
-
-</table>             
-
-  
+                    <table width="100%" hight="100%" border="0" cellpadding="0" cellspacing="0">                 
+                        <?php foreach ($query as $row) { ?>
+                          <tr>
+                            <td><?php echo $row['Award_Name'] ?> </td>
+                            <td><?php echo $row['Award_Date'] ?> </td>
+                            <td><?php echo $row['Received_Award'] ?> </td>
+                            <td><?php echo $row['Student_Code'] ?> </td>
+                            <td><?php echo $row['Student_Name'] ?> </td>
+                          </tr>      
+                        <?php } ?>
+                    </table>             
                   </div>
                 </div>
               </div>

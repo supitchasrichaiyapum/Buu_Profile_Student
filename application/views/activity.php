@@ -127,12 +127,12 @@
   $result = $conn->query($sql);
   if($result->num_rows ==0) {
 
-    echo "ไม่มีข้อมูล";
+    echo "<font color=\"red\">ไม่มีข้อมูล!!</font>";
 
   } else {
     echo "<TR>";
-    echo "<TD><center>ชื่อกิจกรรม</TD>";
-    echo "<TD><center>ชั่วโมง</TD>";
+    echo "<TD><B><center>ชื่อกิจกรรม</TD>";
+    echo "<TD><B><center>ชั่วโมง</TD>";
     echo "</TR>";
 
     while($row = $result->fetch_object()) {
