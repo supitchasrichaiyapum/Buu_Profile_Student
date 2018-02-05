@@ -10,6 +10,7 @@ class c_login extends CI_Controller {
         $data['status'] = $this->input->get('status');
         $this->load->view('login', $data);
     }
+
     public function post_login() 
     {
         $username = $this->input->post('username');
@@ -28,7 +29,7 @@ class c_login extends CI_Controller {
                     $data['login_value'] = $userdata['code'];
                 }
             } else if($userdata['ou'] == 'staff') {
-                //teacher and officer
+                //teacher and admin
                 //check in teacher
                 $teacher = $this->m_login->check_teacher($userdata['code']);                
                 if($teacher) {
@@ -51,10 +52,7 @@ class c_login extends CI_Controller {
 
                 redirect('welcome/menu_student');
 
-              
 
-
- 
             $this->session->set_userdata('user_id', $userdata['code']);
             //set userdata, actor = teahcer
             //redirect($this->serssion->user_Data('actor').'/welcome');
