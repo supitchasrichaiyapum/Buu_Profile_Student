@@ -27,6 +27,7 @@ class c_login extends CI_Controller {
                     //student
                     $data['login_type'] = 'Student';
                     $data['login_value'] = $userdata['code'];
+               
                 }
             } else if($userdata['ou'] == 'staff') {
                 //teacher and admin
@@ -34,34 +35,40 @@ class c_login extends CI_Controller {
                 $teacher = $this->m_login->check_teacher($userdata['code']);                
                 if($teacher) {
                     $data['login_type'] = 'Teacher';
-                    $data['login_value'] = $userdata['code'];                        
+                    $data['login_value'] = $userdata['code']; 
+                                        
                 } else {
                     $admin = $this->m_login->check_admin($userdata['code']);
                     if($admin) {
                         $data['login_type'] = 'Admin';
-                        $data['login_value'] = $userdata['code'];                        
+                        $data['login_value'] = $userdata['code'];
+                                              
                     }
                 }
-            } //else {
-                //test login
-                //return $this->xlogin($username, $password);
-            //}                          
+            }                           
                 $this->session->set_userdata('actor', $data['login_type']);
                 $this->session->set_userdata('user_id', $data['login_value']);
                 //print_r($this->session->userdata());
-
-                redirect('welcome/menu_student');
-
-
-            $this->session->set_userdata('user_id', $userdata['code']);
-            //set userdata, actor = teahcer
-            //redirect($this->serssion->user_Data('actor').'/welcome');
+                
+            // $this->session->set_userdata('user_id', $userdata['code']);
+            // set userdata, actor = teahcer
+            // redirect($this->serssion->user_Data('actor').'/welcome');
             redirect('welcome');
 
         } else {
-            echo 'error';
+            $data =  $this->m_login->xlogin($username, $password);
+            if($data) {
+                $this->session->set_userdata('actor', $data['login_type']);
+                $this->session->set_userdata('user_id', $data['login_value']);
+                // print_r($this->session->userdata());
+                    
+                redirect('welcome');
+            } else {
+                echo 'erro';
+            }
+            
         }
-                //print_r($userdata);
+                // print_r($userdata);
                 // die();
     } 
             

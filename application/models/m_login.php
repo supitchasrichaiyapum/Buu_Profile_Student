@@ -10,6 +10,23 @@ class m_login extends CI_Model {
     //     return $query->result()[0];
     // }
 
+    public function xlogin($username, $password)
+    {
+        if($username == 'nutthanon') {
+            $data = array();
+            $data['fullname'] = 'nutthanon';
+            $data['login_type'] = 'Teacher';
+            $data['login_value'] = 'nutthanon';
+        }
+         else if($username == 'kamonwan') {
+            $data = array();
+            $data['fullname'] = 'Kamonwan';
+            $data['login_type'] = 'Admin';
+            $data['login_value'] = 'kamonwan';
+        }
+        return $data;
+    }
+
     public function check_student($code)
     {
         $this->db->where('Student_ID', $code);

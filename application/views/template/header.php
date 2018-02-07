@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
     <div class="page">
@@ -48,9 +51,9 @@
                 <?php if(@$user_id) 
                    { 
                 ?>
-                <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout <i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout <i class="fas fa-sign-out-alt"></i></a></li>
                 <?php } else { ?>
-                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
+                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fas fa-sign-out-alt"></i></a></li>
                 <?php } ?>
               </ul>
             </div>
