@@ -26,7 +26,7 @@ class Welcome extends CI_Controller {
 			die();
 
 		} else if($this->session->userdata('actor') == 'Teacher') {
-			redirect('welcome/menu_tercher');
+			redirect('welcome/menu_teacher');
 			die();
 
 		} else if($this->session->userdata('actor') == 'Admin') {
@@ -46,29 +46,29 @@ class Welcome extends CI_Controller {
 	
 	public function activity()
 	{
-		$this->template->view('activity',@$data);
+		$this->template->view('user/activity',@$data);
 	}
 
 	public function coop()
 	{
-		$this->template->view('coop',@$data);
+		$this->template->view('user/coop',@$data);
 	}
 
 	public function award()
 	{
 		$this->load->model('m_award');
 		$data['query'] = $this->m_award->get_all();
-		$this->template->view('award',@$data);
+		$this->template->view('user/award',@$data);
 	}
 
 	public function graduate()
 	{
-		$this->template->view('graduate',@$data);
+		$this->template->view('user/graduate',@$data);
 	}
 
 	public function statistics()
 	{
-		$this->template->view('statistics',@$data);
+		$this->template->view('user/statistics',@$data);
 	}
 
 // ส่วนของแถบเมนูของส่วนหัวโดยที่เมนูแยกส่วนตามสิทธ์
@@ -91,21 +91,21 @@ class Welcome extends CI_Controller {
 	public function edit_student()
 	{
 		$id = $this->session->userdata('user_id');
-		$data['Student'] = $this->m_student->get_student($id);
+		$data['student'] = $this->m_student->get_student($id);
 		$this->template->view('student/edit_student',$data);
 	}
 
 	public function transcript()
 	{
 		$id = $this->session->userdata('user_id');
-		$data['Student'] = $this->m_student->get_student($id);
+		$data['student'] = $this->m_student->get_student($id);
 		$this->template->view('student/transcript',$data);
 	}
 
 	public function activity_student()
 	{
 		$id = $this->session->userdata('user_id');
-		$data['Student'] = $this->m_student->get_student($id);
+		$data['student'] = $this->m_student->get_student($id);
 		$this->template->view('student/activity',$data);
 	}
 
@@ -118,16 +118,18 @@ class Welcome extends CI_Controller {
 
 	public function menu_teacher()
 	{
-		$id = $this->session->userdata('user_id');
-		$data['Teacher'] = $this->m_teacher->get_teacher($id);
+		// print_r($this->session->userdata());
+		$data['user_id'] = $this->session->userdata('user_id');
+		// print_r($data);
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 		$this->template->view('template/main_view',$data);
 		
 	}
 
 	public function menu_admin()
 	{
-		$id = $this->session->userdata('user_id');
-		$data['Admin'] = $this->m_admin->get_admin($id);
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('template/main_view',$data);
 		
 	}

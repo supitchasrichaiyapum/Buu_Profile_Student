@@ -19,8 +19,8 @@
                                 <li><a href="transcript"> ผลการศึกษา </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-bar-chart"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
                     <li><a href="<?php echo site_url('#');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="statistics_student"><i class="fa fa-trophy"></i> ข้อมูลสถิติ </a></li>
+                    <li><a href="statistics_student"><i class="fas fa-database"></i> ข้อมูลสถิติ </a></li>
           </ul>
         </nav>
