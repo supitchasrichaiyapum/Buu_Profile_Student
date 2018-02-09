@@ -1,10 +1,8 @@
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
 
-<script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
 
 <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>
-
 <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
 <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
 <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
@@ -12,6 +10,7 @@
 <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
 <!-- Main File-->
 <script src="<?php echo base_url('theme/js/front.js');?>"></script>
+
 <script>
   var myIndex = 0;
   carousel();

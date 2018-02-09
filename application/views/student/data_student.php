@@ -72,6 +72,9 @@ th, td {
               <td>อาจารย์ที่ปรึกษา</td>
             </tr>
             <tr>
+              <td>E-mail</td>
+            </tr>
+            <tr>
               <td>Facebook</td>
               <td>Line</td>
             </tr>

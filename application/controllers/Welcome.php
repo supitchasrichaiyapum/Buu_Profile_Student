@@ -90,30 +90,37 @@ class Welcome extends CI_Controller {
 
 	public function edit_student()
 	{
-		$id = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($id);
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/edit_student',$data);
 	}
 
-	public function transcript()
+	public function transcript_student()
 	{
-		$id = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($id);
-		$this->template->view('student/transcript',$data);
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('student/transcript_student',$data);
 	}
 
 	public function activity_student()
 	{
-		$id = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($id);
-		$this->template->view('student/activity',$data);
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('student/activity_student',$data);
 	}
 
 	public function statistics_student()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
-		$this->template->view('student/statistics',$data);
+		$this->template->view('student/statistics_student',$data);
+	}
+
+	public function coop_student()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('student/coop_student',$data);
 	}
 
 	public function menu_teacher()
@@ -126,6 +133,69 @@ class Welcome extends CI_Controller {
 		
 	}
 
+	public function data_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/data_teacher',$data);
+	}
+
+	public function edit_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/edit_teacher',$data);
+	}
+
+	public function coop_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/coop_teacher',$data);
+	}
+
+	public function activity_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/activity_teacher',$data);
+	}
+
+	public function statistics_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/statistics_teacher',$data);
+	}
+
+	public function consider_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/consider_teacher',$data);
+	}
+
+	public function graduate_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/graduate_teacher',$data);
+	}
+
+	public function dataStudent_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/dataStudent_teacher',$data);
+	}
+
+	public function editStudent_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/editStudent_teacher',$data);
+	}
+
 	public function menu_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -134,6 +204,68 @@ class Welcome extends CI_Controller {
 		
 	}
 
-//
+	public function data_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/data_admin',$data);
+	}
 
+	public function edit_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/edit_admin',$data);
+	}
+
+	public function coop_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/coop_admin',$data);
+	}
+
+	public function activity_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/activity_admin',$data);
+	}
+
+	public function statistics_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/statistics_admin',$data);
+	}
+
+	public function consider_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/consider_admin',$data);
+	}
+
+	public function graduate_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/graduate_admin',$data);
+	}
+
+	public function dataStudent_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/dataStudent_admin',$data);
+	}
+
+	public function editStudent_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/editStudent_admin',$data);
+	}
+
+	
 }

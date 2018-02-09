@@ -18,20 +18,22 @@
                                 <li><a href="edit_teacher"> แก้ไขข้อมูล </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="<?php echo site_url('coop_student');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+                    <li><a href="coop_teacher"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+                    <li><a href="activity_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="award_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled">
-                                <li><a href="data_teacher"> สถิติจำนวนนิสิต </a></li>
-                                <li><a href="edit_teacher"> รายชื่อรอพินิจ </a></li>
-                                <li><a href="#"> ผู้สำเร็จการศึกษา </a></li>
+                                <li><a href="statistics_teacher"> สถิติจำนวนนิสิต </a></li>
+                                <li><a href="consider_teacher"> รายชื่อรอพินิจ </a></li>
+                                <li><a href="graduate_teacher"> ผู้สำเร็จการศึกษา </a></li>
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
-                                <li><a href="#"> ข้อมูลส่วนตัวนิสิต </a></li>
-                                <li><a href="#"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="dataStudent_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="editStudent_teacher"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
 		                    </ul>
                     </li>
           </ul>
