@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="<?php echo base_url('theme/vendor/bootstrap/css/bootstrap.min.css');?>">
     <!-- Font Awesome CSS-->
@@ -18,10 +19,12 @@
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
     <!-- Custom stylesheet - for your changes-->
+    
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/jquery.dataTables.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    
   </head>
   <body>
     <div class="page">
@@ -40,7 +43,7 @@
               <!-- Navbar Header-->
               <div class="navbar-header">
                 <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
-                  <div class="brand-text brand-big"><span>BUU </span><strong> Project Student</strong></div>
+                  <div class="brand-text brand-big"><span>BUU </span><strong> Profile Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button-->
                 <a id="toggle-btn" href="<?php echo site_url('/');?>" class="menu-btn active"><span></span><span></span><span></span></a>

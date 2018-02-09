@@ -16,11 +16,12 @@
 		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                                 <li><a href="data_student"> ข้อมูลส่วนตัว </a></li>
                                 <li><a href="edit_student"> แก้ไขข้อมูลส่วนตัว </a></li>
-                                <li><a href="transcript"> ผลการศึกษา </a></li>
+                                <li><a href="transcript_student"> ผลการศึกษา </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+                    <li><a href="activity_student"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="award_student"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
+                    <li><a href="coop_student"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
                     <li><a href="statistics_student"><i class="fas fa-database"></i> ข้อมูลสถิติ </a></li>
           </ul>
         </nav>

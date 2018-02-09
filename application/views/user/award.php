@@ -22,9 +22,20 @@ th, td {
                 <!-- Item -->
                 <div class="container">
                   <div class="container">
-<table>
-                    
+
+<table id="datatable" class="table table-striped table-bordered">
+<thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+            </tr>
+</thead>   
+<tbody>
 <?php foreach ($query as $row) { ?>
+
 
 <tr>
 <td><?php echo $row['Award_Name'] ?> </td>
@@ -34,8 +45,9 @@ th, td {
 <td><?php echo $row['Student_Name'] ?> </td>
 </tr>      
 
-<?php } ?>
 
+<?php } ?>
+</tbody>
 </table>             
 
   
@@ -44,3 +56,10 @@ th, td {
               </div>
             </div>
           </section>           
+
+
+    <script>
+      $(document).ready(function() {
+          $('#datatable').DataTable();
+      } );
+    </script>
