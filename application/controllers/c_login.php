@@ -1,14 +1,17 @@
 <?php
 class c_login extends CI_Controller {
      
+    
     public function login()
     {
-        if($this->session->userdata('actor')) {
+        
+        if($this->session->userdata('user_id')) {
             redirect('welcome');
             die();
         }
         $data['status'] = $this->input->get('status');
-        $this->load->view('login', $data);
+        $this->load->view('login/login', $data);
+        
     }
 
     public function post_login() 
@@ -16,9 +19,9 @@ class c_login extends CI_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $this->ldap->connect();
+
         if($this->ldap->authenticate('' , $username, $password)) {
             $userdata = $this->ldap->get_data($username,$password);
-
             //print_r($userdata);
             if($userdata['ou'] == 'students') {
                 //student
@@ -64,7 +67,9 @@ class c_login extends CI_Controller {
                     
                 redirect('welcome');
             } else {
-                echo 'erro';
+                redirect('c_login/login?status=error');
+                
+            //    redirect('Refresh: 3;','url=login/login');
             }
             
         }
