@@ -14,7 +14,7 @@
     <!-- Fontastic Custom icon font-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/fontastic.css');?>">
     <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700')">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
     <!-- Custom stylesheet - for your changes-->
@@ -42,6 +42,9 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
+                <?php if($status) { ?>
+                  <div class="alert alert-danger" role="alert"> โปรดตรวจสอบการกรอกข้อมูลใหม่ !!! </div>
+                  <?php } ?>
                   <form id="login-form" method="post" action="<?php echo site_url('c_login/post_login');?>">
                     <div class="form-group">
                       <input id="login-username" type="text" name="username" required="" class="input-material">
@@ -72,5 +75,10 @@
     <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
     <!-- Main File-->
     <script src="<?php echo base_url('theme/js/front.js');?>"></script>
+    <script>
+    setTimeout(() => {
+      jQuery('.alert').hide()
+    }, 200000);
+    </script>
   </body>
 </html>

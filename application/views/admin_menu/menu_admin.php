@@ -18,22 +18,22 @@
                                 <li><a href="edit_admin"> แก้ไขข้อมูล </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="activity_admin"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="coop_admin"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="award_admin"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
+                    <li><a href="activity_student_admin"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="coop_student_admin"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+                    <li><a href="award_student_admin"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
-                                <li><a href="statistics_admin"> สถิติจำนวนนิสิต </a></li>
-                                <li><a href="consider_admin"> รายชื่อรอพินิจ </a></li>
-                                <li><a href="graduate_admin"> ผู้สำเร็จการศึกษา </a></li>
+                                <li><a href="statistics_student_admin"> สถิติจำนวนนิสิต </a></li>
+                                <li><a href="consider_student_admin"> รายชื่อรอพินิจ </a></li>
+                                <li><a href="graduate_student_admin"> ผู้สำเร็จการศึกษา </a></li>
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
-                                <li><a href="dataStudent_admin"> ข้อมูลส่วนตัวนิสิต </a></li>
-                                <li><a href="dataStudent_admin"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="data_student_admin"> ข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="edit_student_admin"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
 		                    </ul>
                     </li>
           </ul>

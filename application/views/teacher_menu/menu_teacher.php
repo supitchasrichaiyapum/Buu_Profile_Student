@@ -18,9 +18,9 @@
                                 <li><a href="edit_teacher"> แก้ไขข้อมูล </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="coop_teacher"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="activity_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="award_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
+                    <li><a href="coop_student_teacher"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
+                    <li><a href="activity_student_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="award_student_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled">
@@ -32,8 +32,8 @@
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
-                                <li><a href="dataStudent_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
-                                <li><a href="editStudent_teacher"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="data_student_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="edit_student_teacher"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
 		                    </ul>
                     </li>
           </ul>
