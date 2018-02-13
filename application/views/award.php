@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,6 +22,7 @@
       <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
       <!-- Custom stylesheet - for your changes-->
       <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
+
       <style>
 table {
     width:60%;
@@ -31,58 +33,7 @@ th, td {
 }
 
       </style>
-
-  </head>
-  <body>
-    <div class="page">
-      <!-- Main Navbar-->
-      <header class="header">
-        <nav class="navbar">
-          <!-- Search Box-->
-          <div class="search-box">
-            <button class="dismiss"><i class="icon-close"></i></button>
-            <form id="searchForm" action="#" role="search">
-              <input type="search" placeholder="What are you looking for..." class="form-control">
-            </form>
-          </div>
-          <div class="container-fluid">
-            <div class="navbar-holder d-flex align-items-center justify-content-between">
-              <!-- Navbar Header-->
-              <div class="navbar-header">
-                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
-                  <div class="brand-text brand-big"><span>BUU </span><strong> Project Student </strong></div>
-                  <div class="brand-text brand-small"><strong> BUU </strong></div></a>
-                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
-              </div>
-              <!-- Navbar Menu -->
-              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Search-->
-                <li class="nav-item d-flex align-items-center"><a id="search" href="#"></a></li>
-                <!-- Logout    -->
-                <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>" class="nav-link logout"> Login <i class="fa fa-sign-out"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <div class="page-content d-flex align-items-stretch"> 
-        <!-- Side Navbar -->
-        <nav class="side-navbar">
-          <!-- Sidebar Header-->
-          <div class="sidebar-header d-flex align-items-center">
-            <div class="title"style="margin: 0 auto;">
-              <h1 class="h4"></h1>
-            </div>
-          </div>
-          <!-- Sidebar Navidation Menus-->
-          <ul class="list-unstyled">
-                    <li><a href="<?php echo site_url('/welcome/activity');?>"><i class="fa fa-calendar-check-o"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="<?php echo site_url('/welcome/statistics');?>"><i class="fa fa-bar-chart"></i> สถิติจำนวนนิสิต </a></li>
-                    <li><a href="<?php echo site_url('/welcome/coop');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li class="active"><a href="<?php echo site_url('/welcome/award');?>"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
-                    <li><a href="<?php echo site_url('/welcome/graduate');?>"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
-          </ul>
-        </nav>
+  
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
@@ -90,7 +41,6 @@ th, td {
               <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
             </div>
           </header>
-          <body>
 
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
@@ -98,6 +48,7 @@ th, td {
                 <!-- Item -->
                 <div class="container">
                   <div class="container">
+
                     <table width="100%" hight="100%" border="0" cellpadding="0" cellspacing="0">                 
                         <?php foreach ($query as $row) { ?>
                           <tr>
@@ -109,21 +60,26 @@ th, td {
                           </tr>      
                         <?php } ?>
                     </table>             
+
+<table>
+                    
+<?php foreach ($query as $row) { ?>
+
+<tr>
+<td><?php echo $row['Award_Name'] ?> </td>
+<td><?php echo $row['Award_Date'] ?> </td>
+<td><?php echo $row['Received_Award'] ?> </td>
+<td><?php echo $row['Student_Code'] ?> </td>
+<td><?php echo $row['Student_Name'] ?> </td>
+</tr>      
+
+<?php } ?>
+
+</table>             
+
+
                   </div>
                 </div>
               </div>
             </div>
           </section>           
-          </body>
-    <!-- Javascript files-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
-    <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
-    <!-- Main File-->
-    <script src="<?php echo base_url('theme/js/front.js');?>"></script>
-  </body>
-</html>

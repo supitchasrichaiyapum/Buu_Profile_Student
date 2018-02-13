@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project Student</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/vendor/bootstrap/css/bootstrap.min.css');?>">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/vendor/font-awesome/css/font-awesome.min.css');?>">
-    <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/css/fontastic.css');?>">
-    <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
 
-      <div class="page-content d-flex align-items-stretch"> 
         <!-- Side Navbar -->
         <nav class="side-navbar">
           <!-- Sidebar Header-->
@@ -43,24 +21,6 @@
                     </li>
                     <li><a href="<?php echo site_url('#');?>"><i class="fa fa-bar-chart"></i> ข้อมูลกิจกรรม </a></li>
                     <li><a href="<?php echo site_url('#');?>"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="<?php echo site_url('#');?>"><i class="fa fa-trophy"></i> ข้อมูลสถิติ </a></li>
+                    <li><a href="statistics_student"><i class="fa fa-trophy"></i> ข้อมูลสถิติ </a></li>
           </ul>
         </nav>
-
-    <!-- Javascript files-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-    <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
-
-    <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>
-
-    <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
-    <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
-    <!-- Main File-->
-    <script src="<?php echo base_url('theme/js/front.js');?>"></script>
-
-  </body>
-</html>

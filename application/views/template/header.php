@@ -36,7 +36,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome/menu_student');?>" class="navbar-brand">
+                <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
                   <div class="brand-text brand-big"><span>BUU </span><strong> Project Student</strong></div>
                   <div class="brand-text brand-small"><strong>BUU</strong></div></a>
                 <!-- Toggle Button-->
@@ -45,7 +45,9 @@
               </div>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <?php if($student) { ?>
+                <?php if(@$user_id) 
+                   { 
+                ?>
                 <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>">Logout <i class="fa fa-sign-out"></i></a></li>
                 <?php } else { ?>
                   <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>">Login <i class="fa fa-sign-out"></i></a></li>
@@ -55,19 +57,5 @@
           </div>
         </nav>
       </header>
-    <!-- Javascript files-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-    <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"> </script>
-
-    <script src="<?php echo base_url('theme/vendor/popper.js/umd/popper.min.js');?>"></script>
-
-    <script src="<?php echo base_url('theme/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
-    <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
-    <script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
-    <!-- Main File-->
-    <script src="<?php echo base_url('theme/js/front.js');?>"></script>
-  </body>
-</html>
+      <div class="page-content d-flex align-items-stretch">
+ 

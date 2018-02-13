@@ -18,98 +18,120 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function index()
 	{
+		if($this->session->userdata('actor') == 'Student') {
+			redirect('welcome/menu_student');
+			die();
+
+		} else if($this->session->userdata('actor') == 'Teacher') {
+			redirect('welcome/menu_tercher');
+			die();
+
+		} else if($this->session->userdata('actor') == 'Admin') {
+			redirect('welcome/menu_admin');
+			die();
+		}
+
 		$data['user_id'] = $this->session->userdata('user_id');
-		$this->load->view('welcome_message', $data);
+		$this->template->view('template/main_view',$data);
 
 	}
 
 	public function login()
 	{
-		$this->load->view('login');
+		$this->load->view('login/login');
 	}
 	
 	public function activity()
 	{
-		$this->load->view('activity');
-	}
-
-	public function activity_list()
-	{
-		$this->load->view('activity_list');
+		$this->template->view('activity',@$data);
 	}
 
 	public function coop()
 	{
-		$this->load->view('coop');
-	}
-
-	public function coop_list()
-	{
-		$this->load->view('coop_list');
+		$this->template->view('coop',@$data);
 	}
 
 	public function award()
 	{
 		$this->load->model('m_award');
 		$data['query'] = $this->m_award->get_all();
-		$this->load->view('award', $data);
-	}
-
-	public function statistics()
-	{
-		$this->load->view('statistics');
-	}
-
-	public function statistics_list()
-	{
-		$this->load->view('statistics_list');
+		$this->template->view('award',@$data);
 	}
 
 	public function graduate()
 	{
-		$this->load->view('graduate');
+		$this->template->view('graduate',@$data);
 	}
 
-	public function graduate_check()
+	public function statistics()
 	{
-		$this->load->view('graduate_check');
+		$this->template->view('statistics',@$data);
 	}
 
-	public function graduate_list()
-	{
-		$this->load->view('graduate_list');
-	}
+// ส่วนของแถบเมนูของส่วนหัวโดยที่เมนูแยกส่วนตามสิทธ์
 
-	public function v_main()
-	{
-		$this->load->view('v_main');
-	}
-
-
-// เดี๋ยวมาลบ ทำไว้หลอกตัวเอง
 	public function menu_student()
 	{
-		$id = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($id);
-		$this->load->view('menu_student', $data);
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('template/main_view',$data);
 
+	}
+
+	public function data_student()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('student/data_student',$data);
 	}
 
 	public function edit_student()
 	{
 		$id = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($id);
-		$this->load->view('edit_student', $data);
+		$data['Student'] = $this->m_student->get_student($id);
+		$this->template->view('student/edit_student',$data);
 	}
 
-	public function data_student()
+	public function transcript()
 	{
 		$id = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($id);
-		$this->load->view('edit_student', $data);
+		$data['Student'] = $this->m_student->get_student($id);
+		$this->template->view('student/transcript',$data);
 	}
+
+	public function activity_student()
+	{
+		$id = $this->session->userdata('user_id');
+		$data['Student'] = $this->m_student->get_student($id);
+		$this->template->view('student/activity',$data);
+	}
+
+	public function statistics_student()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('student/statistics',$data);
+	}
+
+	public function menu_teacher()
+	{
+		$id = $this->session->userdata('user_id');
+		$data['Teacher'] = $this->m_teacher->get_teacher($id);
+		$this->template->view('template/main_view',$data);
+		
+	}
+
+	public function menu_admin()
+	{
+		$id = $this->session->userdata('user_id');
+		$data['Admin'] = $this->m_admin->get_admin($id);
+		$this->template->view('template/main_view',$data);
+		
+	}
+
 //
 
 }

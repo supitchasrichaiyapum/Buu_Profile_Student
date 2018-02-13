@@ -1,41 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project Student</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/vendor/bootstrap/css/bootstrap.min.css');?>">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/vendor/font-awesome/css/font-awesome.min.css');?>">
-    <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/css/fontastic.css');?>">
-    <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
-  </head>
-  <body>
-    <div class="page">
-      <!-- Main Navbar-->
-      <header class="header">
-        <nav class="navbar">
-          <!-- Search Box-->
-          <div class="search-box">
-            <button class="dismiss"><i class="icon-close"></i></button>
-            <form id="searchForm" action="#" role="search">
-              <input type="search" placeholder="What are you looking for..." class="form-control">sdfsdf
-            </form>
-          </div>
-          <div class="container-fluid">
-            <div class="navbar-holder d-flex align-items-center justify-content-between">
-              <!-- Navbar Header-->
-              <div class="navbar-header">
+
 
 
                 <!-- Navbar Brand --><a href="<?php echo site_url('/welcome');?>" class="navbar-brand">
@@ -57,7 +22,7 @@
                 <?php if($user_id) { ?>
                 <li class="nav-item"><a href="<?php echo site_url('/c_login/logout');?>"> Logout <i class="fa fa-sign-out"></i></a></li>
                 <?php } else { ?>
-                  <li class="nav-item"><a href="<?php echo site_]url('/welcome/login');?>"> Login <i class="fa fa-sign-out"></i></a></li>
+                  <li class="nav-item"><a href="<?php echo site_url('/welcome/login');?>"> Login <i class="fa fa-sign-out"></i></a></li>
                 <?php } ?>
 
               </ul>
@@ -141,4 +106,5 @@
         }
 </script>
   </body>
+
 </html>
