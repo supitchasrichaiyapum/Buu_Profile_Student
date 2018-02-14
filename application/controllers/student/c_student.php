@@ -2,23 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class c_student extends CI_Controller {
 
-    // if($this->session->userdata('user_id') == '') {
-    //     redirect('login');
-    //     die();
-    // }
-
-    // if($this->session->userdata('actor') != 'Student'){
-    //     redirect('');
-    //     die();
-    // }
-    
-    public function index()
+	public function __construct()
     {
-		if($this->session->userdata('actor') == 'Student') {
-			redirect('student/c_student/menu_student');
-			die();
+		parent::__construct();
 
-		} else if($this->session->userdata('actor') == 'Teacher') {
+		if($this->session->userdata('user_id') == ''){
+			redirect('c_login/login');
+			die();
+		}
+	
+		if($this->session->userdata('actor') == 'Teacher') {
 			redirect('teacher/c_teacher/menu_teacher');
 			die();
 
@@ -26,7 +19,11 @@ class c_student extends CI_Controller {
 			redirect('admin/c_admin/menu_admin');
 			die();
 		}
+		
+	}
 
+    public function index()
+    {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$this->template->view('template/main_view',$data);
 

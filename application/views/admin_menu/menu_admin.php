@@ -33,9 +33,16 @@
 	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
                                 <li><a href="data_student_admin"> ข้อมูลส่วนตัวนิสิต </a></li>
-                                <li><a href="edit_student_admin"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
 		                    </ul>
                     </li>
+                    <li><a href="#exampledropdownDropdown3" aria-expanded="false" data-toggle="collapse"> 
+                      <i class="far fa-plus-square"></i> เพิ่มข้อมูลเข้าสู่ระบบ </a>
+		                    <ul id="exampledropdownDropdown3" class="collapse list-unstyled ">
+                                <li><a href="#"> นิสิต </a></li>
+                                <li><a href="#"> อาจารย์ </a></li>
+		                    </ul>
+                    </li>
+                    
           </ul>
         </nav>
    

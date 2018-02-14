@@ -21,9 +21,9 @@ th, td {
               <div class="row bg-white has-shadow">
                 <!-- Item -->
                 <div class="container">
-                  <div class="container">
+                  
 
-<table id="datatable" class="table table-striped table-bordered">
+<table id="datatable" class="table table-hover table-bordered table-striped">
 <thead>
             <tr>
                 <th>Name</th>

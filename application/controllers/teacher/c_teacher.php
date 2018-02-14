@@ -2,31 +2,27 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class c_teacher extends CI_Controller {
 
-    // if($this->session->userdata('user_id') == '') {
-    //     redirect('login');
-    //     die();
-    // }
-
-    // if($this->session->userdata('actor') != 'Teacher'){
-    //     redirect('');
-    //     die();
-    // }
-
-    public function index()
+	public function __construct()
     {
+		parent::__construct();
+
+		if($this->session->userdata('user_id') == ''){
+			redirect('c_login/login');
+			die();
+		}
+		
 		if($this->session->userdata('actor') == 'Student') {
 			redirect('student/c_student/menu_student');
-			die();
-
-		} else if($this->session->userdata('actor') == 'Teacher') {
-			redirect('teacher/c_teacher/menu_teacher');
 			die();
 
 		} else if($this->session->userdata('actor') == 'Admin') {
 			redirect('admin/c_admin/menu_admin');
 			die();
 		}
-
+	}
+  
+    public function index()
+    {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$this->template->view('template/main_view',$data);
 

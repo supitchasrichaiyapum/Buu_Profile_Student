@@ -1,17 +1,18 @@
-<!-- <?php
+<?php
 class m_award_student extends CI_Model
 {
         public function get_all(){
-            $this->db->order_by('Award_ID','DESC');
+            $this->db->where('Student_Code','$id');
+        //  $this->db->order_by('Award_ID');
             $query = $this->db->get('Award');
             return $query->result_array();
         }
 
-        public function get_by_id(){
-            $this->db->where('Student_Code','$id');
-            $query = $this->db->get('Award');
-            return $query->result_array();
-        }
+        // public function get_by_id(){
+        //     $this->db->where('Student_Code','$id');
+        //     $query = $this->db->get('Award');
+        //     return $query->result_array();
+        // }
 
        public function insert(){
            $data = array(
@@ -38,4 +39,4 @@ class m_award_student extends CI_Model
 
 }
 
-?> -->
+?>
