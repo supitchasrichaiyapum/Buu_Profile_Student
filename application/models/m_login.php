@@ -1,5 +1,6 @@
 <?php
 class m_login extends CI_Model {
+
     // public function get($code)
     // {
     //     $this->db->where('Student_ID', $code);
@@ -24,7 +25,7 @@ class m_login extends CI_Model {
             $data['login_type'] = 'Admin';
             $data['login_value'] = 'kamonwan';
         }
-        //return $data;
+        return $data;
     }
 
     public function check_student($code)

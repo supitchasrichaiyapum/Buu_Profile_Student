@@ -33,7 +33,6 @@
 	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
                                 <li><a href="data_student_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
-                                <li><a href="edit_student_teacher"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
 		                    </ul>
                     </li>
           </ul>

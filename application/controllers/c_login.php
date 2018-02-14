@@ -32,6 +32,7 @@ class c_login extends CI_Controller {
                     $data['login_value'] = $userdata['code'];
                
                 }
+                
             } else if($userdata['ou'] == 'staff') {
                 //teacher and admin
                 //check in teacher
@@ -48,7 +49,8 @@ class c_login extends CI_Controller {
                                               
                     }
                 }
-            }                           
+            } 
+            
                 $this->session->set_userdata('actor', $data['login_type']);
                 $this->session->set_userdata('user_id', $data['login_value']);
                 //print_r($this->session->userdata());
@@ -60,6 +62,8 @@ class c_login extends CI_Controller {
 
         } else {
             $data =  $this->m_login->xlogin($username, $password);
+            // print_r($data);
+            // die();
             if($data) {
                 $this->session->set_userdata('actor', $data['login_type']);
                 $this->session->set_userdata('user_id', $data['login_value']);

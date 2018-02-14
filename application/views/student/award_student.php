@@ -52,16 +52,14 @@ th, td {
 <tbody>
 <?php foreach ($query as $row) { ?>
 
-
 <tr>
 <td><?php echo $row['Award_Name'] ?></td>
 <td><?php echo $row['Award_Date'] ?></td>
 <td><?php echo $row['Received_Award'] ?></td>
 <td><?php echo $row['Student_Code'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
-<td><center> แก้ไข / ลบ <center></td>
+<td><center> แก้ไข | ลบ <center></td>
 </tr>      
-
 
 <?php } ?>
 </tbody>

@@ -5,45 +5,32 @@
               <h1 class="no-margin-bottom"><center>สถิติจำนวนนิสิต</center></h1>
             </div>
           </header>
-          <br>
-          <div class="container-fluid">
-              <h2 class="no-margin-bottom">สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2>
-          </div>
-          <br>
-          <br>
-          <div class="container-fluid">
-              <h2 class="no-margin-bottom">เลือกสาขาและรหัสนิสิต</h2>
-              <br>
-            <form class="form-horizontal">
-              <fieldset>
-              <!-- Select Basic -->
-              <div class="row">
-                <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">สาขา</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control" placeholder="สาขา"> 
-                      <option value="1">วิศวกรรมซอฟแวร์</option>
-                      <option value="2">วิทยาการคอมพิวเตอร์</option>
-                      <option value="3">เทคโนโลยีสารสนเทศ</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <!-- <label class="col-md-12 control-label" for="selectbasic">รหัสนิสิต</label> -->
-                  <div class="col-md-12">
-                    <select id="selectbasic" name="selectbasic" class="form-control">
-                      <option value="1">56</option>
-                      <option value="2">57</option>
-                      <option value="3">58</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- Button -->
-                <div class="form-group">
-                <form id='statistics' method='post'>
-                    <div class="col-md-12">
-                      <button id="Yes" name="Yes" class="btn btn-default"><a href="#">ตกลง</a></button> 
+
+          <form  method="get"  action="statistics">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6"><BR>
+                <h2>เลือกสาขา และรหัสนิสิต</h2><BR>
+                  <div id="custom-search-input">
+                    <div class="input-group col-md-11">
+                      <select id="selectbasic" name="selectbasic" class="form-control">
+                        <option value="SE"> วิศวกรรมซอฟแวร์ </option>
+                        <option value="CS"> วิทยาการคอมพิวเตอร์ </option>
+                        <option value="IT"> เทคโนโลยีสารสนเทศ </option>
+                      </select> &nbsp;&nbsp;
+                      
+                      <select id="selectbasic" name="selectbasic" class="form-control">
+                        <option value="56"> 56 </option>
+                        <option value="57"> 57 </option>
+                        <option value="58"> 58 </option>
+                      </select> &nbsp;&nbsp;
+                    
+                    
+                      <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
+                    
                     </div>
                   </div>
-                </form>     
                 </div>
+            </div>
+
+        </form> <BR>
