@@ -11,30 +11,17 @@
          </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> 
-	                    <i class="far fa-user"></i> ข้อมูลอาจารย์ </a>
-		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                                <li><a href="data_teacher"> ข้อมูลส่วนตัว </a></li>
-                                <li><a href="edit_teacher"> แก้ไขข้อมูล </a></li>
-		                    </ul>
-                    </li>
-                    <li><a href="coop_student_teacher"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
-                    <li><a href="activity_student_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href=""><i class="far fa-user"></i> ข้อมูลอาจารย์ </a></li>
+                    <li><a href="activity_student_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรมนิสิต </a></li>
                     <li><a href="award_student_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
-	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
+	                    <i class="fas fa-database"></i> ข้อมูลสถิตินิสิต </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled">
-                                <li><a href="statistics_teacher"> สถิติจำนวนนิสิต </a></li>
-                                <li><a href="consider_teacher"> รายชื่อรอพินิจ </a></li>
-                                <li><a href="graduate_teacher"> ผู้สำเร็จการศึกษา </a></li>
+                                        <li><a href="http://reg.buu.ac.th/document/CurrStu/CurrStu31012561_2_2560.pdf"> สถิติจำนวนนิสิต </a></li>
+                                        <li><a href="consider_teacher"> รายชื่อรอพินิจ </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
-	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
-		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
-                                <li><a href="data_student_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
-                                <li><a href="edit_student_teacher"> แก้ไขข้อมูลส่วนตัวนิสิต </a></li>
-		                    </ul>
-                    </li>
+                    <li><a href="data_student_teacher"><i class="far fa-address-book"></i> ข้อมูลส่วนตัวนิสิต </a></li>
+                    <li><a href="http://reg.buu.ac.th/registrar/GRADUATE_DATE.asp?acadyear=2552&facultyid=34"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
           </ul>
         </nav>

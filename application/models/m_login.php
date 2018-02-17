@@ -24,7 +24,7 @@ class m_login extends CI_Model {
             $data['login_type'] = 'Admin';
             $data['login_value'] = 'kamonwan';
         }
-        //return $data;
+        return $data;
     }
 
     public function check_student($code)
