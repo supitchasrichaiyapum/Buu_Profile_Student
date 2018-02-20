@@ -75,12 +75,32 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/award_student_admin',$data);
 	}
 
+	public function addaward_student_admin() //ยังเพิ่มไม่ได้
+	{
+		$this->load->model('m_award');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['query'] = $this->m_award->get_all();
+		$this->template->view('admin/addaward_student_admin',$data);
+	}
+
+	public function editaward_student_admin() //ยังแก้ไขไม่ได้
+	{
+		$this->load->model('m_award');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['query'] = $this->m_award->get_all();
+		$this->template->view('admin/editaward_student_admin',$data);
+	}
+
+
 	public function statistics_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/statistics_student_admin',$data);
 	}
+	
 
 	public function consider_student_admin()
 	{
