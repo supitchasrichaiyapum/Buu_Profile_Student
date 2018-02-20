@@ -116,6 +116,29 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/add_student_admin',$data);
     }
-}
 
+
+	public function scholarship_student_admin()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/scholarship_student_admin',$data);
+		}
+
+	public function activity_edit_student()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/activity_edit_student',$data);
+		}
+	
+	public function scholarship_edit_admin()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/scholarship_edit_admin',$data);
+		}
+	
+		
+	}
 ?>
