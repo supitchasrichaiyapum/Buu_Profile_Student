@@ -14,16 +14,16 @@ th, td {
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>ข้อมูลส่วนตัว</center></h1>
             </div>
           </header>
           <br>
         <Body>
-          <section class="dashboard-counts no-padding-bottom">
-            <div class="container-fluid">
-              <div class="row bg-white has-shadow">
-                <div class="container">
-                  <div class="container">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <strong><center>ข้อมูลส่วนตัว</strong>
+            </div>
+            <div class="card-body">
 
           <table style="width:100%">
             <tr>
@@ -218,7 +218,7 @@ th, td {
                 </div>
               </div>
             </div>
-          </section>
+          
         </Body>
         
   </body>

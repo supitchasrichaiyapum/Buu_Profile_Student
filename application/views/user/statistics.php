@@ -1,18 +1,26 @@
+<Body>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>สถิติจำนวนนิสิต</center></h1>
             </div>
           </header>
+          <br>
+        <Body>
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <strong><center>สถิติจำนวนนิสิต</strong>
+            </div>
+            <div class="card-body">
 
-          <form  method="get"  action="statistics">
+        <form  method="get"  action="statistics">
           <div class="container">
             <div class="row">
               <div class="col-md-6"><BR>
-                <h2>เลือกสาขา และรหัสนิสิต</h2><BR>
+                <h2>สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2><BR>
                   <div id="custom-search-input">
-                    <div class="input-group col-md-11">
+                  <div class="input-group col-md-11">
                       <select id="selectbasic" name="selectbasic" class="form-control">
                         <option value="SE"> วิศวกรรมซอฟแวร์ </option>
                         <option value="CS"> วิทยาการคอมพิวเตอร์ </option>
@@ -32,5 +40,6 @@
                   </div>
                 </div>
             </div>
-
+          </div>
         </form> <BR>
+</Body>
