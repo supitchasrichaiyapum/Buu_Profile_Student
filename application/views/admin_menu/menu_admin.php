@@ -11,22 +11,13 @@
          </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> 
-	                    <i class="far fa-user"></i> ข้อมูลเจ้าหน้าที่ </a>
-		                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                                <li><a href="data_admin"> ข้อมูลส่วนตัว </a></li>
-                                <li><a href="edit_admin"> แก้ไขข้อมูล </a></li>
-		                    </ul>
-                    </li>
                     <li><a href="activity_student_admin"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="coop_student_admin"><i class="fa fa-id-card"></i> ข้อมูลสหกิจ </a></li>
                     <li><a href="award_student_admin"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
-                                <li><a href="statistics_student_admin"> สถิติจำนวนนิสิต </a></li>
+                                <li><a href="http://reg.buu.ac.th/document/CurrStu/CurrStu31012561_2_2560.pdf"> สถิติจำนวนนิสิต </a></li>
                                 <li><a href="consider_student_admin"> รายชื่อรอพินิจ </a></li>
-                                <li><a href="graduate_student_admin"> ผู้สำเร็จการศึกษา </a></li>
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
@@ -42,6 +33,7 @@
                                 <li><a href="#"> อาจารย์ </a></li>
 		                    </ul>
                     </li>
+                    <li><a href="http://reg.buu.ac.th/registrar/GRADUATE_DATE.asp?acadyear=2552&facultyid=34"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
                     
           </ul>
         </nav>
