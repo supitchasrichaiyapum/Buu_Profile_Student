@@ -1,14 +1,4 @@
-
-    <style>
-table {
-    width:100%;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-      </style>
-  <body>
+ <body>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
@@ -20,7 +10,7 @@ th, td {
         <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-              <strong><center>ข้อมูลส่วนตัว</strong>
+              <strong><center>แก้ไขข้อมูลส่วนตัว</strong>
               </div>
               <div class="card-body">
                 <B>1. ข้อมูลทั่วไป</B><br>

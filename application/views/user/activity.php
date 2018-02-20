@@ -1,11 +1,19 @@
+<Body>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>ข้อมูลกิจกรรม</center></h1>
             </div>
           </header>
-<Body>
+          <br>
+        <Body>
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <strong><center>ข้อมูลกิจกรรม</strong>
+            </div>
+            <div class="card-body">
+
         <form  method="get"  action="activity">
           <div class="container">
             <div class="row">
@@ -13,25 +21,15 @@
                 <h2>การตรวจสอบชั่วโมงกิจกรรม</h2><BR>
                   <div id="custom-search-input">
                     <div class="input-group col-md-7">
-                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต" required="required" maxlength ="8">&nbsp;&nbsp;
+                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต" maxlength ="8">&nbsp;&nbsp;
                       <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
-                    
                     </div>
                   </div>
                 </div>
             </div>
           </div>
         </form> <BR>
-
-<section class="dashboard-counts no-padding-bottom">
-  <div class="container-fluid">
-    <div class="row bg-white has-shadow">
-        <div class="container">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="banner text-left">
-                  <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
+        <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
                       <?php
                         $host = "103.86.50.206";
                         $username = "buu_profile";
@@ -70,12 +68,4 @@
                       }
                       ?>
                   </table>  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </Body>

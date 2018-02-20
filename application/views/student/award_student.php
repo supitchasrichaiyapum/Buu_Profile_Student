@@ -23,17 +23,20 @@ th, td {
 .button {border-radius: 8px;}
 </style>
   
-        <div class="content-inner">
+  <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
             </div>
           </header>
-          <section class="dashboard-counts no-padding-bottom">
-            <div class="container-fluid">
-              <div class="row bg-white has-shadow">
-                <!-- Item -->
+          <br>
+        <Body>
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <strong><center>รางวัลการแข่งขัน</strong>
+            </div>
+            <div class="card-body">
                 <div class="container">
                     <div align="right">
                     <a href="#"><button class="button" type="submit">เพิ่ม</button></a>
@@ -70,7 +73,7 @@ th, td {
                 </div>
               </div>
             </div>
-          </section>           
+         
 
 
     <script>
