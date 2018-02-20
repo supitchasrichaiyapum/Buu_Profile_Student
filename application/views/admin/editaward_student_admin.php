@@ -10,7 +10,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
-              <strong><center>เพิ่มรางวัลการแข่งขัน</strong>
+              <strong><center>แก้ไขรางวัลการแข่งขัน</strong>
             </div>
 
            <div class="card-body">
@@ -59,6 +59,4 @@
                     <button type="reset" class="btn btn-sm btn-danger"> ยกเลิก </button>
                 </form>
             </div>
-        </div>
-    </div>
 </Body>

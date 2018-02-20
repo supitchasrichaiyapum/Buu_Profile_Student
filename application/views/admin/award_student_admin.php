@@ -39,8 +39,8 @@ th, td {
             <div class="card-body">
                 <div class="container">
                     <div align="right">
-                    <a href="#"><button class="button" type="submit">เพิ่ม</button></a>
-                    </dir> <br><br>
+                    <a href="addaward_student_admin"><button class="button" type="submit">เพิ่ม</button></a>
+                    </div> <br><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
@@ -63,7 +63,7 @@ th, td {
 <td><?php echo $row['Student_Code'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
 <td><center> <center></td>
-<td><center> แก้ไข | ลบ <center></td>
+<td><center><a href="editaward_student_admin"> แก้ไข </a> | <a href="deleteaward_student_admin"> ลบ </a><center></td>
 </tr>      
 
 <?php } ?>
