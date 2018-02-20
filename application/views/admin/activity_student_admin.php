@@ -34,7 +34,7 @@ th, td {
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
-              <strong><center>รางวัลการแข่งขัน</strong>
+              <strong><center>ข้อมูลกิจกรรม</strong>
             </div>
             <div class="card-body">
                 <div class="container">
@@ -45,18 +45,17 @@ th, td {
 <thead>
             <tr>
                 <th>ปีการศึกษา</th>
+                <th>เทอม</th>
                 <th>วัน เดือน ปี</th>
-                <th>รางวัล</th>
-                <th>ชื่อนิสิต</th>
-                <th>หลักสูตร</th>
-                <th>อาจารย์ผู้ช่วย</th>
-                <th>จำนวน(บาท)</th>
+                <th>ชื่อกิจกรรม</th>
+                <th>รหัสนิสิต</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>ชั่วโมง</th>
                 <th></th>
             </tr>
-</thead>  
+</thead>   
 <tbody>
-
-<tr>
+<tr> 
 <td></td>
 <td></td>
 <td></td>
@@ -64,15 +63,14 @@ th, td {
 <td></td>
 <td></td>
 <td><center> <center></td>
-<td><center> แก้ไข | ลบ <center></td>
+<td><center> <a href="activity_edit_student">แก้ไข </a> | ลบ <center></td>
 </tr>      
 
-
-</tbody> 
+</tbody>
 <!-- <tbody>
 <?php foreach ($query as $row) { ?>
 
-<tr>
+<tr> 
 <td><?php echo $row['Award_Name'] ?></td>
 <td><?php echo $row['Award_Date'] ?></td>
 <td><?php echo $row['Received_Award'] ?></td>
