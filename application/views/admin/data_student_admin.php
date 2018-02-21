@@ -40,7 +40,7 @@ th, td {
         </form> <BR>
         <div align="right">
         <a href="editdata_student_admin"><button type="submit" class="btn btn-sm btn-primary"> แก้ไข </button></a>
-        <a href="transcipt_student_admin"><button type="submit" class="btn btn-sm btn-primary"> ผลการศึกษา </button></a>
+        <a href="graduate_student_admin"><button type="submit" class="btn btn-sm btn-primary"> ผลการศึกษา </button></a>
         </div>
         <BR> <BR>
         <table style="width:100%">
