@@ -30,7 +30,7 @@
                     <li><a href="#exampledropdownDropdown3" aria-expanded="false" data-toggle="collapse"> 
                       <i class="far fa-plus-square"></i> เพิ่มข้อมูลเข้าสู่ระบบ </a>
 		                    <ul id="exampledropdownDropdown3" class="collapse list-unstyled ">
-                                <li><a href="#"> นิสิต </a></li>
+                                <li><a href="add_student"> นิสิต </a></li>
                                 <li><a href="#"> อาจารย์ </a></li>
 		                    </ul>
                     </li>
