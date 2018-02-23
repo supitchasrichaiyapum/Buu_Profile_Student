@@ -39,22 +39,23 @@ th, td {
             <div class="card-body">
                 <div class="container">
                     <div align="right">
-                    <a href="addaward_student_admin"><button class="button" type="submit">เพิ่ม</button></a>
+                    <a href="<?php echo site_url('admin/c_admin/Form');?>"><button class="button" type="submit">เพิ่ม</button></a>
                     </div> <br><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
                 <th>ปีการศึกษา</th>
                 <th>วัน เดือน ปี</th>
-                <th>รางวัล</th>
+                <th>ชื่อรางวัล</th>
+                <th>รางวัลที่ได้รับ</th>
                 <th>ชื่อนิสิต</th>
                 <th>หลักสูตร</th>
                 <th>อาจารย์ผู้ช่วย</th>
                 <th>จำนวน(บาท)</th>
-                <th></th>
+                <th>การดำเนินการ</th>
             </tr>
 </thead>  
-<tbody>
+<!-- <tbody>
 
 <tr>
 <td></td>
@@ -63,27 +64,31 @@ th, td {
 <td></td>
 <td></td>
 <td></td>
-<td><center> <center></td>
-<td><center> แก้ไข | ลบ <center></td>
+
+<td><center> <a href="editaward_student_admin">แก้ไข </a> | ลบ <center></td>
 </tr>      
 
 
-</tbody> 
-<!-- <tbody>
-<?php foreach ($query as $row) { ?>
+</tbody>  -->
+<tbody>
+<?php foreach ($query as $row) { print_r($row);?>
 
 <tr>
-<td><?php echo $row['Award_Name'] ?></td>
+<td><?php echo $row['Award_Term'] ?></td>
 <td><?php echo $row['Award_Date'] ?></td>
+<td><?php echo $row['Award_Name'] ?></td>
 <td><?php echo $row['Received_Award'] ?></td>
-<td><?php echo $row['Student_Code'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
-<td><center> <center></td>
-<td><center><a href="editaward_student_admin"> แก้ไข </a> | <a href="deleteaward_student_admin"> ลบ </a><center></td>
+<td><?php echo $row['Award_Course'] ?></td>
+<td><?php echo $row['Award_Owner'] ?></td>
+<td><?php echo $row['Award_Amount'] ?></td>
+<!-- //<?php echo $row['Award_ID']?> ทำแก้ไขไม่ได้ -->
+<td><center><a href="<?php echo site_url('admin/c_admin/update/');?>"> แก้ไข </a> | 
+<a href="<?php echo base_url() ?>c_admin/delete/<?php echo $row['Award_ID']?>">ลบ</a></td><center></td>
 </tr>      
 
 <?php } ?>
-</tbody> -->
+</tbody>
 </table>             
 
   
