@@ -68,10 +68,12 @@ class c_student extends CI_Controller {
 	public function award_student()
 	{
 		$this->load->model('m_award_student');
-		$data['query'] = $this->m_award_student->get_all();
+		$data['query'] = $this->m_award_student->get_by_id();
+
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/award_student',$data);
+		print_r($this->session->userdata());
 	}
 
 	public function statistics_student()

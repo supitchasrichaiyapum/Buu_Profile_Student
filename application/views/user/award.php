@@ -26,23 +26,23 @@ th, td {
 <table id="datatable" class="table table-hover table-bordered table-striped">
 <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
+                <th>ปีการศึกษา</th>
+                <th>หลักสูตรระดับ</th>
+                <th>อาจารย์ผู้ทำผลงานร่วม</th>
+                <th>ชื่อผลงาน</th>
+                <th>วัน / เดือน / ปี </th>
             </tr>
-</thead>   
+</thead>
 <tbody>
 <?php foreach ($query as $row) { ?>
 
 
 <tr>
-<td><?php echo $row['Award_Name'] ?> </td>
+<td><?php echo $row['Award_Term'] ?> </td>
 <td><?php echo $row['Award_Date'] ?> </td>
-<td><?php echo $row['Received_Award'] ?> </td>
-<td><?php echo $row['Student_Code'] ?> </td>
-<td><?php echo $row['Student_Name'] ?> </td>
+<td><?php echo $row['Award_Giver'] ?> </td>
+<td><?php echo $row['Award_Name'] ?> </td>
+<td><?php echo $row['Award_Year'] ?> </td>
 </tr>      
 
 
@@ -56,8 +56,6 @@ th, td {
               </div>
             </div>
           </section>           
-
-
     <script>
       $(document).ready(function() {
           $('#datatable').DataTable();

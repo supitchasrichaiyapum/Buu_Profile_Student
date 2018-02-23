@@ -39,15 +39,15 @@ class m_login extends CI_Model {
     public function check_teacher($code)
     {
         $this->db->where('Teacher_ID', $code);
-        $this->db->from('Teacher');
+        $this->db->from('Academic_Adviser');
         $query = $this->db->get();
         return $query->result();
     }
 
     public function check_admin($code)
     {
-        $this->db->where('Admin_ID', $code);
-        $this->db->from('Admin');
+        $this->db->where('Staff_ID', $code);
+        $this->db->from('Staff');
         $query = $this->db->get();
         return $query->result();
     }
