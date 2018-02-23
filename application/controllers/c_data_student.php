@@ -11,7 +11,7 @@ class c_data_student extends CI_Controller {
 
     }
 
-/* ส่วนแก้ไขข้อมูล
+/* ส่วนแก้ไขข้อมูล.
    public function insert()
 	{
 		$this->load->model('Customer_Model');

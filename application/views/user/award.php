@@ -56,6 +56,7 @@ th, td {
               </div>
             </div>
           </section>           
+          
     <script>
       $(document).ready(function() {
           $('#datatable').DataTable();

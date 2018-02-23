@@ -84,7 +84,7 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/addaward_student_admin',$data);
 	}
 
-	public function editaward_student_admin() //ยังแก้ไขไม่ได้
+	public function editaward_student_admin() //ยังแก้ไขไม่ได้ครับ
 	{
 		$this->load->model('m_award');
 		$data['user_id'] = $this->session->userdata('user_id');

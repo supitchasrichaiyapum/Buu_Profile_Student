@@ -1,5 +1,6 @@
 <?php
 class m_admin extends CI_Model
+//เช็คเจ้าหน้าที่
 {
         public function get_admin($id){
             $this->db->from('Staff');
