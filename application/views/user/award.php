@@ -30,7 +30,7 @@ th, td {
                 <th>หลักสูตรระดับ</th>
                 <th>อาจารย์ผู้ทำผลงานร่วม</th>
                 <th>ชื่อผลงาน</th>
-                <th>วัน / เดือน / ปี </th>
+                <th>วัน / เดือน / ปี</th>
             </tr>
 </thead>
 <tbody>
@@ -56,7 +56,7 @@ th, td {
               </div>
             </div>
           </section>           
-          
+
     <script>
       $(document).ready(function() {
           $('#datatable').DataTable();

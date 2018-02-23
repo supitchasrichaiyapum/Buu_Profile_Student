@@ -44,7 +44,7 @@ class m_login extends CI_Model {
         return $query->result();
     }
 
-    public function check_admin($code) //เช็คเจ้าหน้าที่
+    public function check_admin($code) //เช็คเจ้าหน้าที่s
     {
         $this->db->where('Staff_ID', $code);
         $this->db->from('Staff');

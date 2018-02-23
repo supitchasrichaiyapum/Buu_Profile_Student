@@ -37,7 +37,7 @@ class m_data_student extends CI_Model
            return true;
        }
 
-
+//กด
 
 }
 
