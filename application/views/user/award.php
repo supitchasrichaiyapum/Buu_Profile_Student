@@ -12,7 +12,7 @@ th, td {
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
+              <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน5</center></h1>
             </div>
           </header>
 
