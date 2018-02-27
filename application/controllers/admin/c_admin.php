@@ -130,12 +130,13 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/editdata_student_admin',$data);
     }
 
-    public function add_student()
+    public function add_student_admin()
     {
-        $data['user_id'] = $this->session->userdata('user_id');
+		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/add_student',$data);
-    }
+		$this->template->view('admin/add_student_admin',$data);
+	}
+	
 }
 
 ?>

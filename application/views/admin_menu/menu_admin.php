@@ -25,7 +25,7 @@
                     <li><a href="#exampledropdownDropdown3" aria-expanded="false" data-toggle="collapse"> 
                       <i class="far fa-plus-square"></i> เพิ่มข้อมูลเข้าสู่ระบบ </a>
 		                    <ul id="exampledropdownDropdown3" class="collapse list-unstyled ">
-                                <li><a href="add_student_admin.php"> นิสิต </a></li>
+                                <li><a href="add_student_admin"> นิสิต </a></li>
 		                    </ul>
                     </li>
                     <li><a href="http://reg.buu.ac.th/registrar/GRADUATE_DATE.asp?acadyear=2552&facultyid=34"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
