@@ -39,38 +39,33 @@ th, td {
             <div class="card-body">
                 <div class="container">
                     <div align="right">
-                    <a href="addaward_student_admin"><button class="button" type="submit">เพิ่ม</button></a>
+                    <a href="<?php echo site_url('admin/c_admin/Form');?>"><button class="button" type="submit">เพิ่ม</button></a>
                     </div> <br><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
                 <th>ปีการศึกษา</th>
                 <th>วัน เดือน ปี</th>
-                <th>รางวัล</th>
+                <th>ชื่อรางวัล</th>
+                <th>รางวัลที่ได้รับ</th>
                 <th>ชื่อนิสิต</th>
                 <th>หลักสูตร</th>
                 <th>อาจารย์ผู้ช่วย</th>
                 <th>จำนวน(บาท)</th>
-                <th></th>
+                <th>การดำเนินการ</th>
             </tr>
 </thead>  
-<tbody>
+<!-- <tbody>
 
-<?php foreach ($query as $row) { ?>
+
 
 <tr>
-<td><?php echo $row['Award_Name'] ?></td>
+<td><?php echo $row['Award_Term'] ?></td>
 <td><?php echo $row['Award_Date'] ?></td>
+<td><?php echo $row['Award_Name'] ?></td>
 <td><?php echo $row['Received_Award'] ?></td>
-<td><?php echo $row['Student_Code'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
-  
-<td><center><a href="editaward_student_admin"> แก้ไข </a> | <a href="deleteaward_student_admin"> ลบ </a><center></td>
-</tr>      
-
-
-</tbody> 
-</table>             
+         
 
   
                   </div>

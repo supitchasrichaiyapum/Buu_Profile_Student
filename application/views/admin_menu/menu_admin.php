@@ -5,8 +5,7 @@
  <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=<?php echo $this->session->userdata('user_id');?>" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title" style="margin: 0 auto;">
-                <h1 class="h5"> <?php echo $admin['Admin_NameTH'] ?> <?php echo $admin['Admin_LNameTH'] ?> </h1>
-                <p> <?php echo $admin['Admin_Email'] ?> </p>
+                <h1 class="h5"> <?php echo $admin['Staff_Name'] ?> </h1>
                 </div>
          </div>
           <!-- Sidebar Navidation Menus-->
@@ -28,15 +27,12 @@
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown3" aria-expanded="false" data-toggle="collapse"> 
-                      <i class="far fa-plus-square"></i> เพิ่มข้อมูลเข้าสู่ระบบ </a>
+                      <i class="far fa-plus-square"></i> เพิ่มข้อมูล</a>
 		                    <ul id="exampledropdownDropdown3" class="collapse list-unstyled ">
-                                <li><a href="add_student"> นิสิต </a></li>
-                                <li><a href="#"> อาจารย์ </a></li>
+                                <li><a href="add_aboutstudent"> ข้อมูลนิสิต </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="http://reg.buu.ac.th/registrar/GRADUATE_DATE.asp?acadyear=2552&facultyid=34"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
-                    
-                    
+                    <li><a href="http://reg.buu.ac.th/registrar/GRADUATE_DATE.asp?acadyear=2552&facultyid=34"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>    
           </ul>
         </nav>
    
