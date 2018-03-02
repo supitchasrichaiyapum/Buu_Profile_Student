@@ -62,7 +62,7 @@ th, td {
 <td><?php echo $row['Received_Award'] ?></td>
 <td><?php echo $row['Student_Code'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
-<td><center> <center></td>
+
 <td><center> แก้ไข | ลบ <center></td>
 </tr>      
 
