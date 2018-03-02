@@ -75,12 +75,32 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/award_student_admin',$data);
 	}
 
+	public function addaward_student_admin() //ยังเพิ่มไม่ได้
+	{
+		$this->load->model('m_award');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['query'] = $this->m_award->get_all();
+		$this->template->view('admin/addaward_student_admin',$data);
+	}
+
+	public function editaward_student_admin() //ยังแก้ไขไม่ได้
+	{
+		$this->load->model('m_award');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['query'] = $this->m_award->get_all();
+		$this->template->view('admin/editaward_student_admin',$data);
+	}
+
+
 	public function statistics_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/statistics_student_admin',$data);
 	}
+	
 
 	public function consider_student_admin()
 	{
@@ -103,19 +123,42 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/data_student_admin',$data);
 	}
 
-	public function edit_student_admin()
+	public function editdata_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/edit_student_admin',$data);
+		$this->template->view('admin/editdata_student_admin',$data);
     }
 
-    public function add_student_admin()
+    public function add_student()
     {
         $data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/add_student_admin',$data);
+		$this->template->view('admin/add_student',$data);
     }
-}
 
+
+	public function scholarship_student_admin()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/scholarship_student_admin',$data);
+		}
+
+	public function activity_edit_student()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/activity_edit_student',$data);
+		}
+	
+	public function scholarship_edit_admin()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/scholarship_edit_admin',$data);
+		}
+	
+		
+	}
 ?>
