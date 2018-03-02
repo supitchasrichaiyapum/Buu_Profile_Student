@@ -56,20 +56,6 @@ th, td {
 </thead>  
 <tbody>
 
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><center> <center></td>
-<td><center> แก้ไข | ลบ <center></td>
-</tr>      
-
-
-</tbody> 
-<!-- <tbody>
 <?php foreach ($query as $row) { ?>
 
 <tr>
@@ -78,12 +64,12 @@ th, td {
 <td><?php echo $row['Received_Award'] ?></td>
 <td><?php echo $row['Student_Code'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
-<td><center> <center></td>
+  
 <td><center><a href="editaward_student_admin"> แก้ไข </a> | <a href="deleteaward_student_admin"> ลบ </a><center></td>
 </tr>      
 
-<?php } ?>
-</tbody> -->
+
+</tbody> 
 </table>             
 
   
