@@ -57,21 +57,7 @@ th, td {
 </thead>  
 <!-- <tbody>
 
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 
-<td><center> <a href="editaward_student_admin">แก้ไข </a> | ลบ <center></td>
-</tr>      
-
-
-</tbody>  -->
-<tbody>
-<?php foreach ($query as $row) { print_r($row);?>
 
 <tr>
 <td><?php echo $row['Award_Term'] ?></td>
@@ -79,17 +65,7 @@ th, td {
 <td><?php echo $row['Award_Name'] ?></td>
 <td><?php echo $row['Received_Award'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
-<td><?php echo $row['Award_Course'] ?></td>
-<td><?php echo $row['Award_Owner'] ?></td>
-<td><?php echo $row['Award_Amount'] ?></td>
-<!-- //<?php echo $row['Award_ID']?> ทำแก้ไขไม่ได้ -->
-<td><center><a href="<?php echo site_url('admin/c_admin/update/');?>"> แก้ไข </a> | 
-<a href="<?php echo base_url() ?>c_admin/delete/<?php echo $row['Award_ID']?>">ลบ</a></td><center></td>
-</tr>      
-
-<?php } ?>
-</tbody>
-</table>             
+         
 
   
                   </div>
