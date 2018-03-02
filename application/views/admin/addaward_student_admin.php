@@ -18,19 +18,19 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
                             <div class="col-md-3">
-                                <input type="text" id="Award_Term" name="Award_Term" class="form-control">
+                                <input type="text" id="Award_Term" name="Award_Term" class="form-control" required="">
                             </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ชื่อ - นามสกุล (นิสิต)</label>
                             <div class="col-md-3">
-                                <input type="text" id="Student_Name" name="Student_Name" class="form-control">
+                                <input type="text" id="Student_Name" name="Student_Name" class="form-control" required="">
                             </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">หลักสูตร</label>
                             <div class="col-md-3">
-                                <select id="Award_Course" name="Award_Course" class="form-control">
+                                <select id="Award_Course" name="Award_Course" class="form-control" required="">
                                     <option value="SE">วิศวกรรมซอฟต์แวร์</option>
                                     <option value="CS">วิทยาการคอมพิวเตอร์</option>
                                     <option value="IT">เทคโนโลยีสารสนเทศ</option>
@@ -40,19 +40,19 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">อาจารย์ผู้ช่วย</label>
                             <div class="col-md-3">
-                                <input type="text" id="Award_Owner" name="Award_Owner" class="form-control">
+                                <input type="text" id="Award_Owner" name="Award_Owner" class="form-control" required="">
                             </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ชื่อผลงาน</label>
                             <div class="col-md-3">
-                                <input type="text" id="Award_Name" name="Award_Name" class="form-control">
+                                <input type="text" id="Award_Name" name="Award_Name" class="form-control" required="">
                             </div>
                         </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
                             <div class="col-md-3">
-                                <input type="date" id="Award_Date" name="Award_Date" class="form-control">
+                                <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
                             </div>
                     </div>
                     <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>

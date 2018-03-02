@@ -45,19 +45,7 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/data_admin',$data);
 	}
 
-	public function edit_admin()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/edit_admin',$data);
-	}
 
-	public function coop_student_admin()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/coop_student_admin',$data);
-	}
 
 	public function activity_student_admin()
 	{
@@ -65,6 +53,13 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/activity_student_admin',$data);
 	}
+	public function add_activity_student()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/add_activity_student',$data);
+	}
+
 
 	public function award_student_admin()
 	{
@@ -157,6 +152,273 @@ class c_admin extends CI_Controller {
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$this->template->view('admin/scholarship_edit_admin',$data);
+		}
+
+	public function add_scholarship_student()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/add_scholarship_student',$data);
+		}
+
+	public function add_aboutstudent($status= '')
+		{
+			$data['status'] = array();
+			if($status == 'error'){
+				$data['status']['color'] = "danger";
+				$data['status']['text'] = "กรุณาเลือกไฟล์ใหม่";
+			} else if($status == 'success'){
+				$data['status']['color'] = "success";
+				$data['status']['text'] = "สำเร็จ !";
+			}
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+
+			$this->template->view('admin/add_aboutstudent',$data);
+		}
+
+	public function post_aboutstudent()
+		{
+
+			$config['upload_path']          = './uploads/';
+            $config['allowed_types']        = 'xlsx';
+            $config['max_size']             = (1024*8);
+            $config['encrypt_name'] = true;
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('file-input')) {	
+				$this->add_aboutstudent('error');
+            } else {
+				//get upload file
+				$file = $this->upload->data();
+
+				//read excel file
+				require(FCPATH.'/application/libraries/XLSXReader.php');
+                $xlsx = new XLSXReader($file['full_path']);
+                $sheet = $xlsx->getSheetNames()[1];
+                foreach($xlsx->getSheetData($sheet) as $row) {
+					//date converted
+					$row[13] = XLSXReader::toUnixTimeStamp($row[13]);
+
+					// var_dump($row);
+
+
+
+					//gen faculty
+					if($faculty = $this->m_admin->search_faculty($row[8])) {
+						//found
+						$faculty_id = $faculty[0]['Faculty_ID'];
+					} else {
+						//add new
+						$array['Faculty_Name'] = $row[8];
+						$faculty_id = $this->m_admin->insert_faculty($array);
+					}
+
+
+					$insert = array();
+					$insert['Faculty_ID'] = $faculty_id;
+					$insert['Teacher_ID'] = 'none';					
+					$insert['Student_IdNum'] = $row[1];
+					$insert['MrMs'] = $row[2];
+					$insert['Student_NameTH'] = $row[3];
+					$insert['Student_LNameTH'] = $row[4];
+					$insert['Student_NameEng'] = $row[5];
+					$insert['Student_LNameENG'] = $row[6];
+					$insert['Campus'] = $row[7];
+					$insert['Course'] = $row[8];
+					$insert['Level'] = $row[9];
+					$insert['Entry_Years'] = $row[10];
+					$insert['Entry_Method'] = $row[11];
+					$insert['Status_ID'] = $row[12];
+					$insert['Birthday'] = date('Y-m-d', $row[13]);
+					$insert['GradFromSchool'] = $row[14];
+					$insert['HighesEd'] = $row[15];
+					$insert['ProvinceofBirth'] = $row[16];
+					$insert['Notionnalitu'] = $row[17];
+					$insert['Relidion'] = $row[18];
+					$insert['Father_Name'] = $row[19];
+					$insert['Father_Status'] = $row[20];
+					$insert['Mother_Name'] = $row[22];
+					$insert['Parent_Name'] = $row[23];
+					$insert['Contact_Name'] = $row[24];
+					$insert['Homeaddress_Number'] = $row[25];
+					$insert['Homeaddress_Moo'] = $row[26];
+					$insert['Homeaddress_Soi'] = $row[27];
+					$insert['Homeaddress_Tumbon'] = $row[28];
+					$insert['Homeaddress_Aumper'] = $row[29];
+					$insert['Homeaddress_Province'] = $row[30];
+					$insert['Homeaddress_Postcode'] = $row[31];
+					$insert['Parentaddress_Number'] = $row[32];
+					$insert['Parentaddress_Moo'] = $row[33];
+					$insert['Parentaddress_Soi'] = $row[34];
+					$insert['Parentaddress_Tumbon'] = $row[35];
+					$insert['Parentaddress_Aumper'] = $row[36];
+					$insert['Parentaddress_Province'] = $row[37];
+					$insert['Parentaddress_Postcode'] = $row[38];
+					$insert['Contactaddress_Number'] = $row[39];
+					$insert['Contactaddress_Tumbon'] = $row[40];
+					$insert['Contactaddress_Aumper'] = $row[41];
+					$insert['Contactaddress_Province'] = $row[42];
+					$insert['Contactaddress_Postcode'] = $row[43];
+					$insert['Blood'] = $row[44];
+					$insert['Degree'] = $row[45];
+
+					//print_r($insert);
+					// echo "<br><br>";		
+
+					if($this->m_student->search_student($row[0])) {
+						//found
+						$this->m_student->update_student($row[0], $insert);
+					} else {
+						//add new
+						$insert['Student_ID'] = $row[0];						
+						$this->m_student->add_student($insert);
+					}
+					
+				}
+				$this->add_registstudent('success');
+				// redirect ('admin/c_admin/add_registstudent');
+				//insert
+
+			}
+
+		}
+
+	public function add_registstudent($status= '')
+		{
+			$data['status'] = array();
+			if($status == 'error'){
+				$data['status']['color'] = "danger";
+				$data['status']['text'] = "กรุณาเลือกไฟล์ใหม่";
+			} else if($status == 'success'){
+				$data['status']['color'] = "success";
+				$data['status']['text'] = "สำเร็จ !";
+			}
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/add_registstudent',$data);
+
+		}
+
+	public function post_registstudent()
+		{
+			$config['upload_path']          = './uploads/';
+            $config['allowed_types']        = 'xlsx';
+            $config['max_size']             = (1024*8);
+            $config['encrypt_name'] = true;
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('file-input')) {
+                $this->add_registstudent('error');
+                // die('111');
+            } else {
+				//get upload file
+				$file = $this->upload->data();
+				
+
+				//read excel file
+				require(FCPATH.'/application/libraries/XLSXReader.php');
+                $xlsx = new XLSXReader($file['full_path']);
+                $sheet = $xlsx->getSheetNames()[1];
+                foreach($xlsx->getSheetData($sheet) as $row) {
+
+					if(!$this->m_student->search_subject($row[1])) {
+						$array['Subject_Code'] = $row[1];
+						$array['Subject_Name'] = $row[2];
+						$this->m_student->insert_subject($array);
+					}
+
+					$insert = array();
+					$insert['Subject_Code'] = $row[1];
+					$insert['Student_ID'] = $row[0];
+					$insert['Term_Number'] = $row[6];
+					$insert['Subject_Credit'] = $row[3];
+					$insert['Grade'] = $row[4];
+					$insert['Subject_Year'] = $row[5];
+					
+
+					//var_dump($insert);
+
+					//print_r($insert);
+					// echo "<br><br>";				
+
+					if($this->m_student->search_registstudent($insert)) {
+						//found
+						$this->m_student->update_registstudent($insert);
+					} else {
+						//add new
+						$this->m_student->add_registstudent($insert);
+					}
+				}
+				$this->add_gradstudent('success');
+				// redirect ('admin/c_admin/add_gradstudent');
+				//insert
+
+			}
+
+		}
+
+	public function add_gradstudent($status= '')
+		{
+			$data['status'] = array();
+			if($status == 'error'){
+				$data['status']['color'] = "danger";
+				$data['status']['text'] = "กรุณาเลือกไฟล์ใหม่";
+			} else if($status == 'success'){
+				$data['status']['color'] = "success";
+				$data['status']['text'] = "สำเร็จ !";
+			}
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/add_gradstudent',$data);
+		}
+
+	public function post_gradstudent()
+		{
+			$config['upload_path']          = './uploads/';
+            $config['allowed_types']        = 'xlsx';
+            $config['max_size']             = (1024*8);
+            $config['encrypt_name'] = true;
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('file-input')) {
+                $this->add_gradstudent('error');
+                // die('111');
+            } else {
+				//get upload file
+				$file = $this->upload->data();
+				
+
+				//read excel file
+				require(FCPATH.'/application/libraries/XLSXReader.php');
+                $xlsx = new XLSXReader($file['full_path']);
+                $sheet = $xlsx->getSheetNames()[1];
+                foreach($xlsx->getSheetData($sheet) as $row) {
+
+
+					$insert = array();
+					$insert['Student_ID'] = $row[0];
+					$insert['GPA_Year'] = $row[1];
+					$insert['GPA_Term'] = $row[2];
+					$insert['CA'] = $row[3];
+					$insert['GPA'] = $row[4];
+					
+
+					//var_dump($insert);
+
+					//print_r($insert);
+					// echo "<br><br>";				
+					if($this->m_student->search_gradstudent($insert)) {
+						//found
+						$this->m_student->update_gradstudent($insert);
+					} else {
+						//add new
+						$this->m_student->add_gradstudent($insert);
+					}
+				}
+
+				$this->add_gradstudent('success');
+				//insert
+
+			}
+
 		}
 
 		public function insert(){

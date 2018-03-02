@@ -34,13 +34,30 @@ th, td {
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                <strong><center>แก้ไขทุนการศึกษา</strong>
+                <strong><center>เพิ่มทุนการศึกษา</strong>
                 </div>
                     <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row">
                                 <div class="container">
-                                <p class="text-muted">57660136 : นายสวิตต์ สวัสดี</p>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">รหัสนิสิต</label>
+                                            <div class="col-md-3">
+                                            <input type="text" id="text-input" name="text-input" class="form-control" required="">
+                                            </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">ชื่อ</label>
+                                            <div class="col-md-3">
+                                            <input type="text" id="text-input" name="text-input" class="form-control" required="">
+                                            </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">นามสกุล</label>
+                                            <div class="col-md-3">
+                                            <input type="text" id="text-input" name="text-input" class="form-control" required="">
+                                            </div>
+                                    </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">วัน เดือน ปี</label>
                                             <div class="col-md-3">
@@ -53,6 +70,7 @@ th, td {
                                             <input type="text" id="text-input" name="text-input" class="form-control" required="">
                                             </div>
                                     </div>
+                                    
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">ผู้มอบทุน</label>
                                             <div class="col-md-3">

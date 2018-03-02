@@ -21,7 +21,6 @@ class Template {
         } else {
             $CI->load->view('user_menu/menu_user.php', $data);
         }
-
         $CI->load->view($file, $data);
         $CI->load->view('template/footer.php', $data);
 

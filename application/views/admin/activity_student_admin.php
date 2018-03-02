@@ -39,14 +39,13 @@ th, td {
             <div class="card-body">
                 <div class="container">
                     <div align="right">
-                    <a href="#"><button class="button" type="submit">เพิ่ม</button></a>
+                    <a href="add_activity_student"><button class="button" type="submit">เพิ่ม</button></a>
                     </dir> <br><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
                 <th>ปีการศึกษา</th>
                 <th>เทอม</th>
-                <th>วัน เดือน ปี</th>
                 <th>ชื่อกิจกรรม</th>
                 <th>รหัสนิสิต</th>
                 <th>ชื่อ-นามสกุล</th>
@@ -56,7 +55,6 @@ th, td {
 </thead>   
 <tbody>
 <tr> 
-<td></td>
 <td></td>
 <td></td>
 <td></td>
