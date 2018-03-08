@@ -30,6 +30,8 @@
                       <i class="far fa-plus-square"></i> เพิ่มข้อมูล</a>
 		                    <ul id="exampledropdownDropdown3" class="collapse list-unstyled ">
                                 <li><a href="add_aboutstudent"> ข้อมูลนิสิต </a></li>
+                                <li><a href="add_registstudent"> ข้อมูลการลงทะเบียน </a></li>
+                                <li><a href="add_gradstudent"> ข้อมูลเกรดเฉลี่ยแต่ละภาคเรียน </a></li>
 		                    </ul>
                     </li>
                     <li><a href="http://reg.buu.ac.th/registrar/GRADUATE_DATE.asp?acadyear=2552&facultyid=34"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>    
