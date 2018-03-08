@@ -1,11 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class c_admin extends CI_Controller {
-
 	public function __construct()
     {
 		parent::__construct();
-
 		if($this->session->userdata('user_id') == ''){
 			redirect('c_login/login');
 			die();
@@ -14,22 +12,17 @@ class c_admin extends CI_Controller {
 		if($this->session->userdata('actor') == 'Student') {
 			redirect('student/c_student/menu_student');
 			die();
-
 		} else if($this->session->userdata('actor') == 'Teacher') {
 			redirect('teacher/c_teacher/menu_teacher');
 			die();
-
 		}
 		
     }
-
     public function index()
     {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$this->template->view('template/main_view',$data);
-
     }
-
     public function menu_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -37,16 +30,12 @@ class c_admin extends CI_Controller {
 		$this->template->view('template/main_view',$data);
 		
 	}
-
 	public function data_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/data_admin',$data);
 	}
-
-
-
 	public function activity_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -59,8 +48,6 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/add_activity_student',$data);
 	}
-
-
 	public function award_student_admin()
 	{
 		$this->load->model('m_award');
@@ -69,7 +56,6 @@ class c_admin extends CI_Controller {
 		$data['query'] = $this->m_award->get_all();
 		$this->template->view('admin/award_student_admin',$data);
 	}
-
 	public function addaward_student_admin() //ยังเพิ่มไม่ได้
 	{
 		$this->load->model('m_award');
@@ -78,7 +64,6 @@ class c_admin extends CI_Controller {
 		$data['query'] = $this->m_award->get_all();
 		$this->template->view('admin/addaward_student_admin',$data);
 	}
-
 	public function editaward_student_admin() //ยังแก้ไขไม่ได้
 	{
 		$this->load->model('m_award');
@@ -87,8 +72,6 @@ class c_admin extends CI_Controller {
 		$data['query'] = $this->m_award->get_all();
 		$this->template->view('admin/editaward_student_admin',$data);
 	}
-
-
 	public function statistics_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -96,50 +79,42 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/statistics_student_admin',$data);
 	}
 	
-
 	public function consider_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/consider_student_admin',$data);
 	}
-
 	public function graduate_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/graduate_student_admin',$data);
 	}
-
 	public function data_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/data_student_admin',$data);
 	}
-
 	public function editdata_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/editdata_student_admin',$data);
     }
-
     public function add_student()
     {
         $data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/add_student',$data);
     }
-
-
 	public function scholarship_student_admin()
 		{
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$this->template->view('admin/scholarship_student_admin',$data);
 		}
-
 	public function activity_edit_student()
 		{
 			$data['user_id'] = $this->session->userdata('user_id');
@@ -153,14 +128,12 @@ class c_admin extends CI_Controller {
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$this->template->view('admin/scholarship_edit_admin',$data);
 		}
-
 	public function add_scholarship_student()
 		{
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$this->template->view('admin/add_scholarship_student',$data);
 		}
-
 	public function add_aboutstudent($status= '')
 		{
 			$data['status'] = array();
@@ -173,25 +146,26 @@ class c_admin extends CI_Controller {
 			}
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-
 			$this->template->view('admin/add_aboutstudent',$data);
 		}
-
 	public function post_aboutstudent()
 		{
-
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
+
+            $config['encrypt_name'] 		= true;
+            $this->load->library('upload', $config);
+
             $config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
 			
+
             if ( ! $this->upload->do_upload('file-input')) {	
 				$this->add_aboutstudent('error');
             } else {
 				//get upload file
 				$file = $this->upload->data();
-
 				//read excel file
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
@@ -199,11 +173,7 @@ class c_admin extends CI_Controller {
                 foreach($xlsx->getSheetData($sheet) as $row) {
 					//date converted
 					$row[13] = XLSXReader::toUnixTimeStamp($row[13]);
-
 					// var_dump($row);
-
-
-
 					//gen faculty
 					if($faculty = $this->m_admin->search_faculty($row[8])) {
 						//found
@@ -213,8 +183,6 @@ class c_admin extends CI_Controller {
 						$array['Faculty_Name'] = $row[8];
 						$faculty_id = $this->m_admin->insert_faculty($array);
 					}
-
-
 					$insert = array();
 					$insert['Faculty_ID'] = $faculty_id;
 					$insert['Teacher_ID'] = 'none';					
@@ -262,10 +230,8 @@ class c_admin extends CI_Controller {
 					$insert['Contactaddress_Postcode'] = $row[43];
 					$insert['Blood'] = $row[44];
 					$insert['Degree'] = $row[45];
-
 					//print_r($insert);
 					// echo "<br><br>";		
-
 					if($this->m_student->search_student($row[0])) {
 						//found
 						$this->m_student->update_student($row[0], $insert);
@@ -279,11 +245,8 @@ class c_admin extends CI_Controller {
 				$this->add_registstudent('success');
 				// redirect ('admin/c_admin/add_registstudent');
 				//insert
-
 			}
-
 		}
-
 	public function add_registstudent($status= '')
 		{
 			$data['status'] = array();
@@ -297,9 +260,7 @@ class c_admin extends CI_Controller {
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$this->template->view('admin/add_registstudent',$data);
-
 		}
-
 	public function post_registstudent()
 		{
 			$config['upload_path']          = './uploads/';
@@ -314,19 +275,16 @@ class c_admin extends CI_Controller {
 				//get upload file
 				$file = $this->upload->data();
 				
-
 				//read excel file
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $row) {
-
 					if(!$this->m_student->search_subject($row[1])) {
 						$array['Subject_Code'] = $row[1];
 						$array['Subject_Name'] = $row[2];
 						$this->m_student->insert_subject($array);
 					}
-
 					$insert = array();
 					$insert['Subject_Code'] = $row[1];
 					$insert['Student_ID'] = $row[0];
@@ -335,12 +293,9 @@ class c_admin extends CI_Controller {
 					$insert['Grade'] = $row[4];
 					$insert['Subject_Year'] = $row[5];
 					
-
 					//var_dump($insert);
-
 					//print_r($insert);
 					// echo "<br><br>";				
-
 					if($this->m_student->search_registstudent($insert)) {
 						//found
 						$this->m_student->update_registstudent($insert);
@@ -352,11 +307,8 @@ class c_admin extends CI_Controller {
 				$this->add_gradstudent('success');
 				// redirect ('admin/c_admin/add_gradstudent');
 				//insert
-
 			}
-
 		}
-
 	public function add_gradstudent($status= '')
 		{
 			$data['status'] = array();
@@ -371,13 +323,12 @@ class c_admin extends CI_Controller {
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$this->template->view('admin/add_gradstudent',$data);
 		}
-
 	public function post_gradstudent()
 		{
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
-            $config['encrypt_name'] = true;
+            $config['encrypt_name'] 		= true;
             $this->load->library('upload', $config);
             if ( ! $this->upload->do_upload('file-input')) {
                 $this->add_gradstudent('error');
@@ -386,14 +337,11 @@ class c_admin extends CI_Controller {
 				//get upload file
 				$file = $this->upload->data();
 				
-
 				//read excel file
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $row) {
-
-
 					$insert = array();
 					$insert['Student_ID'] = $row[0];
 					$insert['GPA_Year'] = $row[1];
@@ -401,9 +349,7 @@ class c_admin extends CI_Controller {
 					$insert['CA'] = $row[3];
 					$insert['GPA'] = $row[4];
 					
-
 					//var_dump($insert);
-
 					//print_r($insert);
 					// echo "<br><br>";				
 					if($this->m_student->search_gradstudent($insert)) {
@@ -414,14 +360,10 @@ class c_admin extends CI_Controller {
 						$this->m_student->add_gradstudent($insert);
 					}
 				}
-
 				$this->add_gradstudent('success');
 				//insert
-
 			}
-
 		}
-
 		public function insert(){
 		   $this->load->model(m_award);
 		   $this->m_award->insert();
@@ -449,7 +391,6 @@ class c_admin extends CI_Controller {
 				$this->template->view('admin/editaward_student_admin',$data);
 			}
 		}
-
 	// 	public function editaward_student_admin() //ยังแก้ไขไม่ได้
 	// {
 	// 	$this->load->model('m_award');
@@ -458,13 +399,11 @@ class c_admin extends CI_Controller {
 	// 	$data['query'] = $this->m_award->get_all();
 	// 	$this->template->view('admin/editaward_student_admin',$data);
 	// }
-
 		public function delete(){
 			$id = $this->uri->segment(3);
 			$this->load->model('m_award');
 			$this->m_award->delete($id);
 			redirect('c_admin');
 		}
-
 	}
 ?>
