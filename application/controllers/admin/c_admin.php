@@ -153,8 +153,14 @@ class c_admin extends CI_Controller {
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
+
             $config['encrypt_name'] 		= true;
             $this->load->library('upload', $config);
+
+            $config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			
+
             if ( ! $this->upload->do_upload('file-input')) {	
 				$this->add_aboutstudent('error');
             } else {
