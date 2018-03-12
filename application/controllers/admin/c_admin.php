@@ -246,7 +246,7 @@ class c_admin extends CI_Controller {
 					}
 					
 				}
-				$this->add_registstudent('success');
+				$this->add_aboutstudent('success');
 				// redirect ('admin/c_admin/add_registstudent');
 				//insert
 			}
@@ -314,7 +314,9 @@ class c_admin extends CI_Controller {
 					}
 				}
 
-				$this->add_gradstudent('success');
+
+				$this->add_registstudent('success');
+
 				// redirect ('admin/c_admin/add_gradstudent');
 				// insert
 			}
