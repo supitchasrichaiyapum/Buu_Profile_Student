@@ -150,6 +150,8 @@ class c_admin extends CI_Controller {
 		}
 	public function post_aboutstudent()
 		{
+			// ini_set('max_execution_time', 300);
+
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
@@ -230,7 +232,9 @@ class c_admin extends CI_Controller {
 					$insert['Contactaddress_Postcode'] = $row[43];
 					$insert['Blood'] = $row[44];
 					$insert['Degree'] = $row[45];
-					//print_r($insert);
+
+					// print_r($row);
+					// print_r($insert);
 					// echo "<br><br>";		
 					if($this->m_student->search_student($row[0])) {
 						//found
@@ -263,6 +267,8 @@ class c_admin extends CI_Controller {
 		}
 	public function post_registstudent()
 		{
+			// ini_set('max_execution_time', 300);	
+
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
@@ -280,6 +286,8 @@ class c_admin extends CI_Controller {
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $row) {
+					// print_r($row);
+					// continue;
 					if(!$this->m_student->search_subject($row[1])) {
 						$array['Subject_Code'] = $row[1];
 						$array['Subject_Name'] = $row[2];
@@ -293,8 +301,9 @@ class c_admin extends CI_Controller {
 					$insert['Grade'] = $row[4];
 					$insert['Subject_Year'] = $row[5];
 					
-					//var_dump($insert);
-					//print_r($insert);
+					
+					// var_dump($insert);
+					// print_r($insert);
 					// echo "<br><br>";				
 					if($this->m_student->search_registstudent($insert)) {
 						//found
@@ -304,9 +313,12 @@ class c_admin extends CI_Controller {
 						$this->m_student->add_registstudent($insert);
 					}
 				}
+
+
 				$this->add_registstudent('success');
+
 				// redirect ('admin/c_admin/add_gradstudent');
-				//insert
+				// insert
 			}
 		}
 	public function add_gradstudent($status= '')
@@ -325,6 +337,8 @@ class c_admin extends CI_Controller {
 		}
 	public function post_gradstudent()
 		{
+			// ini_set('max_execution_time', 300);
+			
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
