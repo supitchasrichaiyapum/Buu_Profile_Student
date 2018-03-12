@@ -15,7 +15,8 @@
                 echo '<br>';
                 echo '<div class="alert alert-'.$status['color'].'" role="alert"> '.$status['text'].' </div>';
               } ?>
-                <div class="col-md-12 form-group" >
+
+                <div class="col-md-12 form-group">
                   <div class="form-group row">
                     <label class="col-md-12 col-form-label" for="text-input">เลือกไฟล์</label>
                       <div class="col-md-5">
@@ -24,6 +25,8 @@
                       </div>
                   </div>         
                 </div> 
+
+
             </div>
           </div>
         </div>

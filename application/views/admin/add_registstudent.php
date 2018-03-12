@@ -11,11 +11,13 @@
         <div id="step-2">
             <div class="col-xs-6 col-md-offset-3">
               <div class="col-md-12">
+              
               <?php 
               if($status) {
                 echo '<br>';
                 echo '<div class="alert alert-'.$status['color'].'" role="alert"> '.$status['text'].' </div>';
               } ?>
+              
                 <div class="col-md-12 form-group" >
                   <div class="form-group row">
                     <label class="col-md-12 col-form-label" for="text-input">เลือกไฟล์</label>
