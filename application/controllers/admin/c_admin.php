@@ -172,7 +172,9 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
+					if($key == 0) 
+						continue;
 					//date converted
 					$row[13] = XLSXReader::toUnixTimeStamp($row[13]);
 					// var_dump($row);
@@ -236,14 +238,19 @@ class c_admin extends CI_Controller {
 					// print_r($row);
 					// print_r($insert);
 					// echo "<br><br>";		
-					if($this->m_student->search_student($row[0])) {
-						//found
-						$this->m_student->update_student($row[0], $insert);
-					} else {
-						//add new
-						$insert['Student_ID'] = $row[0];						
-						$this->m_student->add_student($insert);
-					}
+
+							$insert['Student_ID'] = $row[0];						
+							$this->m_student->add_student($insert);
+						
+
+					// if($this->m_student->search_student($row[0])) {
+					// 	//found
+					// 	$this->m_student->update_student($row[0], $insert);
+					// } else {
+					// 	//add new
+					// 	$insert['Student_ID'] = $row[0];						
+					// 	$this->m_student->add_student($insert);
+					// }
 					
 				}
 				$this->add_aboutstudent('success');
@@ -253,6 +260,7 @@ class c_admin extends CI_Controller {
 		}
 	public function add_registstudent($status= '')
 		{
+
 			$data['status'] = array();
 			if($status == 'error'){
 				$data['status']['color'] = "danger";
@@ -268,6 +276,7 @@ class c_admin extends CI_Controller {
 	public function post_registstudent()
 		{
 			// ini_set('max_execution_time', 300);	
+			
 
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
@@ -275,6 +284,7 @@ class c_admin extends CI_Controller {
             $config['encrypt_name'] = true;
             $this->load->library('upload', $config);
             if ( ! $this->upload->do_upload('file-input')) {
+				// print_r($_FILES);
                 $this->add_registstudent('error');
                 // die('111');
             } else {
@@ -285,14 +295,16 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
+					if($key == 0)
+						continue;
 					// print_r($row);
 					// continue;
-					if(!$this->m_student->search_subject($row[1])) {
+					// if(!$this->m_student->search_subject($row[1])) {
 						$array['Subject_Code'] = $row[1];
 						$array['Subject_Name'] = $row[2];
-						$this->m_student->insert_subject($array);
-					}
+						// $this->m_student->insert_subject($array);
+					// }	
 					$insert = array();
 					$insert['Subject_Code'] = $row[1];
 					$insert['Student_ID'] = $row[0];
@@ -305,18 +317,16 @@ class c_admin extends CI_Controller {
 					// var_dump($insert);
 					// print_r($insert);
 					// echo "<br><br>";				
-					if($this->m_student->search_registstudent($insert)) {
-						//found
-						$this->m_student->update_registstudent($insert);
-					} else {
+					// if($this->m_student->search_registstudent($insert)) {
+					// 	//found
+					// 	$this->m_student->update_registstudent($insert);
+					// } else {
 						//add new
-						$this->m_student->add_registstudent($insert);
-					}
+						// $this->m_student->add_registstudent($insert);
+					// }
 				}
 
-
 				$this->add_registstudent('success');
-
 				// redirect ('admin/c_admin/add_gradstudent');
 				// insert
 			}
@@ -355,7 +365,11 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
+
+					if($key == 0)
+						continue;
+						
 					$insert = array();
 					$insert['Student_ID'] = $row[0];
 					$insert['GPA_Year'] = $row[1];
