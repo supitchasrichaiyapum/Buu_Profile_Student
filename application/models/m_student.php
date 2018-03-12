@@ -17,6 +17,7 @@ class m_student extends CI_Model
             $this->db->where('Student_ID', $array['Student_ID']);
             $this->db->where('Subject_Code', $array['Subject_Code']);
             $this->db->where('Term_Number', $array['Term_Number']);
+            $this->db->where('Subject_Year', $array['Subject_Year']);
             $this->db->from('Subject_has_Student');
             $query = $this->db->get();
             return $query->result_array();
@@ -46,6 +47,7 @@ class m_student extends CI_Model
             $this->db->where('Student_ID', $array['Student_ID']);
             $this->db->where('Subject_Code', $array['Subject_Code']);
             $this->db->where('Term_Number', $array['Term_Number']);
+            $this->db->where('Subject_Year', $array['Subject_Year']);
             return $this->db->update('Subject_has_Student', $array);
         }
         public function update_gradstudent($array) {
