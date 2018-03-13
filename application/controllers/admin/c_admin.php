@@ -56,13 +56,21 @@ class c_admin extends CI_Controller {
 		$data['query'] = $this->m_award->get_all();
 		$this->template->view('admin/award_student_admin',$data);
 	}
-	public function addaward_student_admin() //ยังเพิ่มไม่ได้
+	public function add_award_student() 
 	{
 		$this->load->model('m_award');
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['query'] = $this->m_award->get_all();
-		$this->template->view('admin/addaward_student_admin',$data);
+		$this->template->view('admin/add_award_student',$data);
+	}
+	public function add_award_student_admin() //ยังเพิ่มไม่ได้
+	{
+		$this->load->model('m_award');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['query'] = $this->m_award->get_all();
+		$this->template->view('admin/add_award_student_admin',$data);
 	}
 	public function editaward_student_admin() //ยังแก้ไขไม่ได้
 	{
@@ -392,6 +400,7 @@ class c_admin extends CI_Controller {
 				//insert
 			}
 		}
+
 		public function insert(){
 		   $this->load->model(m_award);
 		   $this->m_award->insert();
@@ -400,8 +409,9 @@ class c_admin extends CI_Controller {
 		public function Form(){
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-			$this->template->view('admin/addaward_student_admin',$data);
+			$this->template->view('admin/add_award_student_admin',$data);
 		}
+
 		
 		public function update(){
 			
