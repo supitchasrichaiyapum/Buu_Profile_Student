@@ -46,29 +46,42 @@ class Welcome extends CI_Controller {
 	
 	public function activity()
 	{
-		$this->template->view('user/activity',@$data);
+		$data['student_code'] = $this->input->get('textfield');
+
+		// $this->load->model('m_student');
+		// $data['result'] = $this->m_student->get_student($data['student_code']);
+
+		if($data['student_code']) {
+			$this->load->model('m_activity');
+			$data['result'] = $this->m_activity->search_activity($data['student_code']);
+			 
+		} else {
+			$data['result'] = array();
+		}
+		
+		$this->template->view('user/activity', $data);
 	}
 
 	public function coop()
 	{
-		$this->template->view('user/coop',@$data);
+		$this->template->view('user/coop');
 	}
 
 	public function award()
 	{
 		$this->load->model('m_award');
 		$data['query'] = $this->m_award->get_all();
-		$this->template->view('user/award',@$data);
+		$this->template->view('user/award');
 	}
 
 	public function graduate()
 	{
-		$this->template->view('user/graduate',@$data);
+		$this->template->view('user/graduate');
 	}
 
 	public function statistics()
 	{
-		$this->template->view('user/statistics',@$data);
+		$this->template->view('user/statistics');
 	}
 	
 }

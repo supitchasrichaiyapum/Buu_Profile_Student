@@ -29,43 +29,40 @@
             </div>
           </div>
         </form> <BR>
+
         <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
+
+              <!-- <?php echo $student['Student_NameTH'] ?> 
+              <?php echo $student['Student_LNameTH'] ?>
+              <?php echo $student['Student_ID'] ?> -->
+
                       <?php
-                        $host = "103.86.50.206";
-                        $username = "buu_profile";
-                        $password = "buu999";
-                        $db = "profile_db";
 
-                        $conn = new mysqli($host, $username, $password, $db);
-                        $conn->query("set names utf8");
-
-                        if(isset($_GET['button'])){
-                        $searchall = $_GET['textfield'];
-
-                        $sql = "SELECT * 
-                            FROM Activity 
-                            WHERE Student_Code like\"".$searchall."\"";
-
-                        $result = $conn->query($sql);
-                        if($result->num_rows ==0) {
+                        if(count($result) == 0 && $student_code != '') {
 
                           echo "ไม่มีข้อมูล";
 
-                        } else {
-                          echo "<TR>";
-                          echo "<TD><center>ชื่อกิจกรรม</TD>";
-                          echo "<TD><center>ชั่วโมง</TD>";
-                          echo "</TR>";
+                        } else if(count($result) > 0) {
 
-                          while($row = $result->fetch_object()) {
+                            echo "<TR>";
+                            echo "<TD><center>ชื่อกิจกรรม</TD>";
+                            echo "<TD><center>เทอม</TD>";
+                            echo "<TD><center>ปี</TD>";
+                            echo "<TD><center>ชั่วโมง</TD>";
+                            echo "</TR>";
+
+                          foreach($result as $row) {
+
                             echo "<TR>";
                             echo "<TD><center>$row->Activitie_Name</TD>";
+                            echo "<TD><center>$row->Activity_Term</TD>";
+                            echo "<TD><center>$row->Activity_Year</TD>";
                             echo "<TD><center>$row->Hour</TD>";
                             echo "</TR>";
 
                           }
                         }
-                      }
                       ?>
+
                   </table>  
 </Body>

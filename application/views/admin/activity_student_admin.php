@@ -44,13 +44,12 @@ th, td {
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
-                <th>ปีการศึกษา</th>
-                <th>เทอม</th>
                 <th>ชื่อกิจกรรม</th>
+                <th>เทอม</th>
+                <th>ปี</th>
                 <th>รหัสนิสิต</th>
-                <th>ชื่อ-นามสกุล</th>
                 <th>ชั่วโมง</th>
-                <th></th>
+                <th>การดำเนินการ</th>
             </tr>
 </thead>   
 <tbody>
@@ -60,7 +59,6 @@ th, td {
 <td></td>
 <td></td>
 <td></td>
-<td><center> <center></td>
 <td><center> <a href="activity_edit_student">แก้ไข </a> | ลบ <center></td>
 </tr>      
 
@@ -69,11 +67,11 @@ th, td {
 <?php foreach ($query as $row) { ?>
 
 <tr> 
-<td><?php echo $row['Award_Name'] ?></td>
-<td><?php echo $row['Award_Date'] ?></td>
-<td><?php echo $row['Received_Award'] ?></td>
+<td><?php echo $row['Activitie_Name'] ?></td>
+<td><?php echo $row['Activity_Term'] ?></td>
+<td><?php echo $row['Activity_Year'] ?></td>
 <td><?php echo $row['Student_Code'] ?></td>
-<td><?php echo $row['Student_Name'] ?></td>
+<td><?php echo $row['Hour'] ?></td>
 <td><center> <center></td>
 <td><center> แก้ไข | ลบ <center></td>
 </tr>      

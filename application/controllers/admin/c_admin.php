@@ -388,13 +388,7 @@ class c_admin extends CI_Controller {
 					//var_dump($insert);
 					//print_r($insert);
 					// echo "<br><br>";				
-					if($this->m_student->search_gradstudent($insert)) {
-						//found
-						$this->m_student->update_gradstudent($insert);
-					} else {
-						//add new
-						$this->m_student->add_gradstudent($insert);
-					}
+					
 				}
 				$this->add_gradstudent('success');
 				//insert
