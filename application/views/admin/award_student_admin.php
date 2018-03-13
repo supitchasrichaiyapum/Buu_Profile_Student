@@ -66,7 +66,7 @@ th, td {
 <td><?php echo $row['Received_Award'] ?></td>
 <td><?php echo $row['Student_Name'] ?></td>
          
-
+-->
   
                   </div>
                 </div>

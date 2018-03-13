@@ -18,9 +18,15 @@
                             </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">ชื่อ - นามสกุล (นิสิต)</label>
+                        <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
                             <div class="col-md-3">
-                                <input type="text" id="Student_Name" name="Student_Name" class="form-control" required="">
+                                <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
+                            </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัล</label>
+                            <div class="col-md-3">
+                                <input type="text" id="Award_Name" name="Award_Name" class="form-control" required="">
                             </div>
                     </div>
                     <div class="form-group row">
@@ -40,18 +46,14 @@
                             </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">ชื่อผลงาน</label>
+                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)</label>
                             <div class="col-md-3">
-                                <input type="text" id="Award_Name" name="Award_Name" class="form-control" required="">
-                            </div>
-                        </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
-                            <div class="col-md-3">
-                                <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
+                                <input type="text" id="Award_Owner" name="Award_Owner" class="form-control" required="">
                             </div>
                     </div>
-                    <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                   
+                    
+                    <button type="submit" class="btn btn-sm btn-success"><a href="<?php echo site_url('admin/c_admin/add_award_student');?>"> ตกลง </a></button>
                     <button type="reset" class="btn btn-sm btn-danger"> ยกเลิก </button>
                 </form>
             </div>
