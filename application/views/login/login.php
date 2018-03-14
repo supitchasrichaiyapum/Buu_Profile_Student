@@ -19,7 +19,12 @@
     <link rel="stylesheet" href="<?php echo base_url('theme/css/style.default.css" id="theme-stylesheet');?>">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('theme/css/custom.css');?>">
-    <!-- Favicon-->
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Athiti', sans-serif;
+      }
+    </style>  
    
   </head>
   <body>
