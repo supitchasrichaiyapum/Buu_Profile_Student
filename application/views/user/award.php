@@ -1,13 +1,16 @@
       <style>
 table {
-    width:60%;
+    width:100%;
 }
 th, td {
     padding: 5px;
     text-align: left;
 }
+section.dashboard-counts .row {
+  padding: 5px 5px;
+}
       </style>
-  
+
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
@@ -20,35 +23,36 @@ th, td {
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
                 <!-- Item -->
-                <div class="container">
-                  
-
-<table id="datatable" class="table table-hover table-bordered table-striped">
-<thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-            </tr>
-</thead>   
-<tbody>
-<?php foreach ($query as $row) { ?>
-
-
-<tr>
-<td><?php echo $row['Award_Name'] ?> </td>
-<td><?php echo $row['Award_Date'] ?> </td>
-<td><?php echo $row['Received_Award'] ?> </td>
-<td><?php echo $row['Student_Code'] ?> </td>
-<td><?php echo $row['Student_Name'] ?> </td>
-</tr>      
-
-
-<?php } ?>
-</tbody>
-</table>             
+                <div class="container"> <br>
+  <table id="datatable" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+          <th>ชื่อรางวัล</th>
+          <th>เทอม</th>
+          <th>ปีการศึกษา</th>
+          <th>วัน / เดือน / ปี </th>
+          <th>รหัสนิสิต</th>
+          <th>ชื่อ - นามสกุล</th>
+          <th>เงินรางวัล</th>
+          <th>อาจารย์ผู้ช่วย</th>
+        </tr>
+    </thead>   
+    <tbody>
+      <?php foreach ($result as $row) { ?>
+        <tr>
+        
+          <td><?php echo $row->Award_Name ?> </td>
+          <td><?php echo $row->Award_Term ?> </td>
+          <td><?php echo $row->Award_Year ?> </td>
+          <td><?php echo $row->Award_Date ?> </td>
+          <td><?php echo $row->Student_ID ?> </td>
+          <td><?php echo $row->MrMs." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>
+          <td><?php echo $row->Award_Amount ?> </td>
+          <td><?php echo $row->Award_Giver ?> </td>
+        </tr>      
+      <?php } ?>
+    </tbody>
+  </table>             
 
   
                   </div>

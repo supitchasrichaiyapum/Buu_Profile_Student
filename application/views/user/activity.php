@@ -32,9 +32,12 @@
 
         <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 
-              <!-- <?php echo $student['Student_NameTH'] ?> 
-              <?php echo $student['Student_LNameTH'] ?>
-              <?php echo $student['Student_ID'] ?> -->
+
+              <!--  ยังแสดงไม่ได้
+              <?php echo $student_code['Student_NameTH'] ?> 
+              <?php echo $student_code['Student_LNameTH'] ?>
+              <?php echo $student_code['Student_ID'] ?> 
+              -->
 
                       <?php
 
@@ -54,10 +57,10 @@
                           foreach($result as $row) {
 
                             echo "<TR>";
-                            echo "<TD><center>$row->Activitie_Name</TD>";
-                            echo "<TD><center>$row->Activity_Term</TD>";
-                            echo "<TD><center>$row->Activity_Year</TD>";
-                            echo "<TD><center>$row->Hour</TD>";
+                            echo "<TD>$row->Activitie_Name</TD>";
+                            echo "<TD align = 'right'>$row->Activity_Term</TD>";
+                            echo "<TD align = 'right'>$row->Activity_Year</TD>";
+                            echo "<TD align = 'right'>$row->Hour</TD>";
                             echo "</TR>";
 
                           }

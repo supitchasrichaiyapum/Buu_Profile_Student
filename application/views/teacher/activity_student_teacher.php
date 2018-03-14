@@ -14,7 +14,7 @@
             </div>
             <div class="card-body">
 
-        <form  method="get"  action="activity_student">
+        <form  method="get"  action="activity_student_teacher">
           <div class="container">
             <div class="row">
               <div class="col-md-6"><BR>
