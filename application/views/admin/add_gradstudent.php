@@ -22,8 +22,14 @@
                       <div class="col-md-5">
                         <input type="file" id="file-input" name="file-input" required="">
                         <button type="submit" class="btn btn-sm btn-success pull-right"> Submit</button>
-                      </div>
+
+                      </div><br>
+
+                      <img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/grade.png');?>">
                       <img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/gradetable.png');?>">
+                      </div>
+                      
+
                   </div>         
                 </div> 
             </div>

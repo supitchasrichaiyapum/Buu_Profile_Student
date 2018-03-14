@@ -6,6 +6,9 @@ th, td {
     padding: 5px;
     text-align: left;
 }
+section.dashboard-counts .row {
+  padding: 5px 5px;
+}
       </style>
   
         <div class="content-inner">
@@ -22,31 +25,34 @@ th, td {
                 <!-- Item -->
                 <div class="container">
                   <div class="container">
-
+                  <br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Received</th>
-                <th>Student_Code</th>
-                <th>Student_Name</th>
+              <th>ชื่อรางวัล</th>
+              <th>เทอม</th>
+              <th>ปีการศึกษา</th>
+              <th>วัน / เดือน / ปี </th>
+              <th>รหัสนิสิต</th>
+              <th>ชื่อ - นามสกุล</th>
+              <th>เงินรางวัล</th>
+              <th>อาจารย์ผู้ช่วย</th>
             </tr>
 </thead>   
 <tbody>
-<?php foreach ($query as $row) { ?>
-
-
-<tr>
-<td><?php echo $row['Award_Name'] ?> </td>
-<td><?php echo $row['Award_Date'] ?> </td>
-<td><?php echo $row['Received_Award'] ?> </td>
-<td><?php echo $row['Student_Code'] ?> </td>
-<td><?php echo $row['Student_Name'] ?> </td>
-</tr>      
-
-
+  <?php foreach ($result as $row) { ?>
+  <tr>
+      <td><?php echo $row->Award_Name ?> </td>
+      <td><?php echo $row->Award_Term ?> </td>
+      <td><?php echo $row->Award_Year ?> </td>
+      <td><?php echo $row->Award_Date ?> </td>
+      <td><?php echo $row->Student_ID ?> </td>
+      <td><?php echo $row->MrMs." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>
+      <td><?php echo $row->Award_Amount ?> </td>
+      <td><?php echo $row->Award_Giver ?> </td>
+  </tr>      
 <?php } ?>
+
 </tbody>
 </table>             
 

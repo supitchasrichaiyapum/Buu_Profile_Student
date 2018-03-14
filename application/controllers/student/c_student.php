@@ -62,13 +62,24 @@ class c_student extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$data['student_code'] = $this->input->get('textfield');
+		if($data['student_code']) {
+			$this->load->model('m_activity');
+			$data['result'] = $this->m_activity->search_activity($data['student_code']);
+			// น่าจะเป็นส่วนแสดงชื่อนิสิต
+			// $this->load->model('m_student');
+			// $data['student_code'] = $this->session->userdata('student_code');
+			// $data['result'] = $this->m_student->get_student($data['student_code']);
+		} else {
+			$data['result'] = array();
+		}
 		$this->template->view('student/activity_student',$data);
 	}
 
 	public function award_student()
 	{
-		$this->load->model('m_award_student');
-		$data['query'] = $this->m_award_student->get_all();
+		$this->load->model('m_award');
+		$data['result'] = $this->m_award->get_all();
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/award_student',$data);

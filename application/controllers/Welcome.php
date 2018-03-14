@@ -47,18 +47,16 @@ class Welcome extends CI_Controller {
 	public function activity()
 	{
 		$data['student_code'] = $this->input->get('textfield');
-
-		// $this->load->model('m_student');
-		// $data['result'] = $this->m_student->get_student($data['student_code']);
-
 		if($data['student_code']) {
 			$this->load->model('m_activity');
 			$data['result'] = $this->m_activity->search_activity($data['student_code']);
-			 
+			// น่าจะเป็นส่วนแสดงชื่อนิสิต
+			// $this->load->model('m_student');
+			// $data['student_code'] = $this->session->userdata('student_code');
+			// $data['result'] = $this->m_student->get_student($data['student_code']);
 		} else {
 			$data['result'] = array();
 		}
-		
 		$this->template->view('user/activity', $data);
 	}
 
@@ -70,8 +68,8 @@ class Welcome extends CI_Controller {
 	public function award()
 	{
 		$this->load->model('m_award');
-		$data['query'] = $this->m_award->get_all();
-		$this->template->view('user/award');
+		$data['result'] = $this->m_award->get_all();
+		$this->template->view('user/award', $data);
 	}
 
 	public function graduate()
