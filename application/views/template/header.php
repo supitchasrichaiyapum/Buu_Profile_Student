@@ -28,7 +28,12 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
     <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Athiti', sans-serif;
+      }
+    </style>  
   </head>
   <body>
     <div class="page">
