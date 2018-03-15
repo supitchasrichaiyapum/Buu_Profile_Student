@@ -51,6 +51,7 @@ class c_admin extends CI_Controller {
 	public function award_student_admin()
 	{
 		$this->load->model('m_award');
+		$data['result'] = $this->m_award->get_all();
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['query'] = $this->m_award->get_all();
