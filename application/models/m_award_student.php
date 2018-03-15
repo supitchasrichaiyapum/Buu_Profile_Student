@@ -5,7 +5,7 @@ class m_award_student extends CI_Model
             $this->db->where('Student_Code','$id');
             $this->db->order_by('Award_ID');
             $query = $this->db->get('Award_has_Student');
-            return $query->result_array();
+            return $query->result();
         }
 
         public function get_by_id(){
@@ -31,7 +31,7 @@ class m_award_student extends CI_Model
             return true;
     }
 
-       public function datele($id){
+       public function delete($id){
            $this->db->where('Student_Code','$id');
            $this->db->delete('Award');
            return true;
