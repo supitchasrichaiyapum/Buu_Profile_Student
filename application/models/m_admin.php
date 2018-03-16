@@ -12,8 +12,8 @@ class m_admin extends CI_Model
             $this->db->insert('Faculty', $array);
             return $this->db->insert_id();
         }
-        public function search_faculty($faculty_name) {
-            $this->db->where('Faculty_Name', $faculty_name);
+        public function search_faculty($Branch) {
+            $this->db->where('Branch', $Branch);
             $this->db->from('Faculty');
             $query = $this->db->get();
             return $query->result_array();

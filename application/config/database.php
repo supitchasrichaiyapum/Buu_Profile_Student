@@ -85,8 +85,8 @@ $db['default'] = array(
 	'port' => '3307',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	// 'db_debug' => (ENVIRONMENT !== 'production'),
-	'db_debug' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	// 'db_debug' => FALSE,
 	
 	'cache_on' => FALSE,
 	'cachedir' => '',

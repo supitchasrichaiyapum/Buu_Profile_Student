@@ -31,13 +31,13 @@ class m_student extends CI_Model
             return $query->result_array();
         }
         public function add_student($array) {
-            return $this->db->insert('Student', $array);
+            return $this->db->replace('Student', $array);
         }
         public function add_registstudent($array) {
-            return $this->db->insert('Subject_has_Student', $array);
+            return $this->db->replace('Subject_has_Student', $array);
         }
         public function add_gradstudent($array) {
-            return $this->db->insert('GPA', $array);
+            return $this->db->replace('GPA', $array);
         }
         public function update_student($student_id, $array) {
             $this->db->where('Student_ID', $student_id);
@@ -63,7 +63,7 @@ class m_student extends CI_Model
             return $query->result_array();
         }
         public function insert_subject($array) {
-            return $this->db->insert('Subject', $array);
+            return $this->db->replace('Subject', $array);
         }
         // public function add_regis($array) {
         //     return $this->db->insert('Subject_has_Student', $array);            

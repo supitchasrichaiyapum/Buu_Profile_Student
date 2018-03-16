@@ -189,14 +189,14 @@ class c_admin extends CI_Controller {
 					//gen faculty
 					if($faculty = $this->m_admin->search_faculty($row[8])) {
 						//found
-						$faculty_id = $faculty[0]['Faculty_ID'];
+						$branch_id = $faculty[0]['Branch_ID'];
 					} else {
 						//add new
-						$array['Faculty_Name'] = $row[8];
-						$faculty_id = $this->m_admin->insert_faculty($array);
+						$array['Branch'] = $row[8];
+						$branch_id = $this->m_admin->insert_faculty($array);
 					}
 					$insert = array();
-					$insert['Faculty_ID'] = $faculty_id;
+					$insert['Branch_ID'] = $branch_id;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['MrMs'] = $row[2];
@@ -247,18 +247,18 @@ class c_admin extends CI_Controller {
 					// print_r($insert);
 					// echo "<br><br>";		
 
-							$insert['Student_ID'] = $row[0];						
-							$this->m_student->add_student($insert);
+							// $insert['Student_ID'] = $row[0];						
+							// $this->m_student->add_student($insert);
 						
 
-					// if($this->m_student->search_student($row[0])) {
-					// 	//found
-					// 	$this->m_student->update_student($row[0], $insert);
-					// } else {
-					// 	//add new
-					// 	$insert['Student_ID'] = $row[0];						
-					// 	$this->m_student->add_student($insert);
-					// }
+					if($this->m_student->search_student($row[0])) {
+						//found
+						$this->m_student->update_student($row[0], $insert);
+					} else {
+						//add new
+						$insert['Student_ID'] = $row[0];						
+						$this->m_student->add_student($insert);
+					}
 					
 				}
 				$this->add_aboutstudent('success');
@@ -308,11 +308,11 @@ class c_admin extends CI_Controller {
 						continue;
 					// print_r($row);
 					// continue;
-					// if(!$this->m_student->search_subject($row[1])) {
+					if(!$this->m_student->search_subject($row[1])) {
 						$array['Subject_Code'] = $row[1];
 						$array['Subject_Name'] = $row[2];
-						// $this->m_student->insert_subject($array);
-					// }	
+						$this->m_student->insert_subject($array);
+					}	
 					$insert = array();
 					$insert['Subject_Code'] = $row[1];
 					$insert['Student_ID'] = $row[0];
@@ -329,8 +329,8 @@ class c_admin extends CI_Controller {
 					// 	//found
 					// 	$this->m_student->update_registstudent($insert);
 					// } else {
-						//add new
-						// $this->m_student->add_registstudent($insert);
+					// 	// add new
+					// 	$this->m_student->add_registstudent($insert);
 					// }
 				}
 
@@ -339,6 +339,7 @@ class c_admin extends CI_Controller {
 				// insert
 			}
 		}
+
 	public function add_gradstudent($status= '')
 		{
 			$data['status'] = array();
@@ -388,7 +389,13 @@ class c_admin extends CI_Controller {
 					//var_dump($insert);
 					//print_r($insert);
 					// echo "<br><br>";				
-					
+					if($this->m_student->search_gradstudent($insert)) {
+						//found
+						$this->m_student->update_gradstudent($insert);
+					} else {
+						//add new
+						$this->m_student->add_gradstudent($insert);
+					}
 				}
 				$this->add_gradstudent('success');
 				//insert

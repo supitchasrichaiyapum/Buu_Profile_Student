@@ -40,7 +40,7 @@ section.dashboard-counts .row {
     <tbody>
       <?php foreach ($result as $row) { ?>
         <tr>
-        
+          
           <td><?php echo $row->Award_Name ?> </td>
           <td><?php echo $row->Award_Term ?> </td>
           <td><?php echo $row->Award_Year ?> </td>
