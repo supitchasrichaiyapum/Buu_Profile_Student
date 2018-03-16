@@ -22,6 +22,6 @@
 		                    </ul>
                     </li>
                     <li><a href="data_student_teacher"><i class="far fa-address-book"></i> ข้อมูลส่วนตัวนิสิต </a></li>
-                    <li><a href="http://reg.buu.ac.th/registrar/GRADUATE_DATE.asp?acadyear=2552&facultyid=34"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+                    <li><a href="graduate_actorteacher"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
           </ul>
         </nav>
