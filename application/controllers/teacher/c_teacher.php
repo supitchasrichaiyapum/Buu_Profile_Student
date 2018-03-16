@@ -86,6 +86,13 @@ class c_teacher extends CI_Controller {
 		$this->template->view('teacher/award_student_teacher',$data);
 	}
 
+	public function graduate_actorteacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/graduate_actorteacher',$data);
+	}
+
 	public function statistics_student_teacher()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');

@@ -51,12 +51,6 @@ class c_student extends CI_Controller {
 		$this->template->view('student/edit_student',$data);
 	}
 
-	public function transcript_student()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-		$this->template->view('student/transcript_student',$data);
-	}
 
 	public function activity_student()
 	{
@@ -97,7 +91,14 @@ class c_student extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/coop_student',$data);
-    }
+	}
+	
+	public function graduate_actorstudent()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$this->template->view('student/graduate_actorstudent',$data);
+	}
 }
 
 ?>

@@ -18,5 +18,13 @@ class m_admin extends CI_Model
             $query = $this->db->get();
             return $query->result_array();
         }
+
+        public function graduate_actoradmin()
+	    {
+            $data['user_id'] = $this->session->userdata('user_id');
+            $data['admin'] = $this->m_admin->get_admin($data['user_id']);
+            $this->template->view('admin/graduate_actoradmin',$data);
+        }
+        
 }
 ?>
