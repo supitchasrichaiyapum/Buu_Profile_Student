@@ -74,42 +74,19 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 
-
-// $db['default'] = array(
-// 	'dsn'	=> '',
-// 	'hostname' => '10.80.34.5',
-// 	'username' => 'buu_profile',
-// 	'password' => 'buu999',
-// 	'database' => 'profile_db',
-// 	'dbdriver' => 'mysqli',
-// 	'port' => '3307',
-// 	'dbprefix' => '',
-// 	'pconnect' => FALSE,
-// 	// 'db_debug' => (ENVIRONMENT !== 'production'),
-// 	'db_debug' => FALSE,
-	
-// 	'cache_on' => FALSE,
-// 	'cachedir' => '',
-// 	'char_set' => 'utf8',
-// 	'dbcollat' => 'utf8_general_ci',
-// 	'swap_pre' => '',
-// 	'encrypt' => FALSE,
-// 	'compress' => FALSE,
-// 	'stricton' => FALSE,
-// 	'failover' => array(),
-// 	'save_queries' => TRUE
-
-// อันเก่า
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '103.86.50.206',
+	'hostname' => '10.80.34.5',
 	'username' => 'buu_profile',
 	'password' => 'buu999',
 	'database' => 'profile_db',
 	'dbdriver' => 'mysqli',
+	'port' => '3307',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
+	// 'db_debug' => FALSE,
+	
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
@@ -120,4 +97,28 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-);
+
+
+
+// อันเก่า
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => '103.86.50.206',
+// 	'username' => 'buu_profile',
+// 	'password' => 'buu999',
+// 	'database' => 'profile_db',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );

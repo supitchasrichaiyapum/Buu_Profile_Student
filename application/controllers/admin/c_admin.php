@@ -215,7 +215,7 @@ class c_admin extends CI_Controller {
 	// อัพข้อมูลส่วนตัว
 	public function post_aboutstudent()
 		{
-			// ini_set('max_execution_time', 300);
+			
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
@@ -234,20 +234,22 @@ class c_admin extends CI_Controller {
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $row) {
+					if($key == 0) 
+						continue;
 					//date converted
 					$row[13] = XLSXReader::toUnixTimeStamp($row[13]);
 					// var_dump($row);
 					//gen faculty
 					if($faculty = $this->m_admin->search_faculty($row[8])) {
 						//found
-						$faculty_id = $faculty[0]['Faculty_ID'];
+						$Branch_ID = $faculty[0]['Branch_ID'];
 					} else {
 						//add new
 						$array['Branch'] = $row[8];
-						$faculty_id = $this->m_admin->insert_faculty($array);
+						$Branch_ID = $this->m_admin->insert_faculty($array);
 					}
 					$insert = array();
-					$insert['Faculty_ID'] = $faculty_id;
+					$insert['Branch_ID'] = $Branch_ID;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['MrMs'] = $row[2];
@@ -329,7 +331,7 @@ class c_admin extends CI_Controller {
 	// อัพข้อมูลการลงทะเบียน
 	public function post_registstudent()
 		{
-			// ini_set('max_execution_time', 300);	
+			
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
@@ -347,6 +349,8 @@ class c_admin extends CI_Controller {
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $row) {
+					if($key == 0)
+						continue;
 					// print_r($row);
 					// continue;
 					if(!$this->m_student->search_subject($row[1])) {
@@ -397,7 +401,7 @@ class c_admin extends CI_Controller {
 	// เช็คสถานะการอัพข้อมูลเกรดเฉลี่ย
 	public function post_gradstudent()
 		{
-			// ini_set('max_execution_time', 300);
+			
 			
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
@@ -416,6 +420,10 @@ class c_admin extends CI_Controller {
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $row) {
+
+					if($key == 0)
+						continue;
+						
 					$insert = array();
 					$insert['Student_ID'] = $row[0];
 					$insert['GPA_Year'] = $row[1];
