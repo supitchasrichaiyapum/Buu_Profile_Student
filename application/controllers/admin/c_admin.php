@@ -270,7 +270,7 @@ class c_admin extends CI_Controller {
 					$insert['Notionnalitu'] = $row[17];
 					$insert['Relidion'] = $row[18];
 					$insert['Father_Name'] = $row[19];
-					$insert['Father_Status'] = $row[20];
+					$insert['Parent_Status'] = $row[20];
 					$insert['Mother_Name'] = $row[22];
 					$insert['Parent_Name'] = $row[23];
 					$insert['Contact_Name'] = $row[24];
