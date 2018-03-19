@@ -70,15 +70,29 @@ class c_student extends CI_Controller {
 		$this->template->view('student/activity_student',$data);
 	}
 
+	// รายชื่อรางวัลการแข่งขัน
 	public function award_student()
 	{
 		$this->load->model('m_award');
-		$data['result'] = $this->m_award->get_all();
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$data['result'] = $this->m_award->get_all_award();
+		$data['result1'] = $this->m_award->get_by_id_award_has_student($data['result']);
+		// print_r($data);
 		$this->template->view('student/award_student',$data);
 	}
-
+	// รายชื่อนิสิตในรางวัลนั้นๆ
+	public function award_detail_st($id)
+	{
+		$data['award_id'] = $id;
+		// print_r($id);
+		$this->load->model('m_award');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$data['result1'] = $this->m_award->get_Award_by_id($id);
+		// print_r($data);
+		$this->template->view('student/award_detail_st',$data);
+	}
 	public function statistics_student()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');

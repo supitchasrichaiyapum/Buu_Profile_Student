@@ -22,6 +22,7 @@
                             <div class="col-md-3">
                                 <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id;?>">
                                 <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">
+                                
                             </div>
                     </div>
                     <div class="text-center">

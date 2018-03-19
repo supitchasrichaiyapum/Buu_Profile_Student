@@ -127,13 +127,37 @@ class c_admin extends CI_Controller {
 		// print_r($data);
 		$this->template->view('admin/award_detail',$data);
 	}
-	public function editaward_student_admin() //ยังแก้ไขไม่ได้
+	// แก้ไขรายชื่อรางวัลการแข่งขัน
+	public function form_editaward_student_admin($award_id) 
 	{
+		// print_r($award_id);
 		$this->load->model('m_award');
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$data['query'] = $this->m_award->get_all();
+		$data['result'] = $this->m_award->get_by_id($award_id);
+		// print_r($data);
+		// $this->load->model('m_award');
+		// $this->m_award->update_award($data);
+		// redirect('admin/c_admin/award_student_admin');
+		
+		// return true;
 		$this->template->view('admin/editaward_student_admin',$data);
+	}
+	// แก้ไขรายชื่อรางวัลการแข่งขัน
+	public function editaward_student_admin($award_id) 
+	{
+		// print_r($_POST);
+		$data['Award_Name'] = $this->input->post('Award_Name');
+		$data['Award_Term'] = $this->input->post('Award_Term');
+		$data['Award_Year'] = $this->input->post('Award_Year');
+		$data['Award_Giver'] = $this->input->post('Award_Giver');
+		$data['Award_Amount'] = $this->input->post('Award_Amount');
+		// print_r($data);
+		$this->load->model('m_award');
+		$this->m_award->update_award($data, $award_id);
+		
+		
+		redirect('admin/c_admin/award_student_admin/'.$award_id);
 	}
 	public function statistics_student_admin()
 	{
