@@ -6,7 +6,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
-              <strong><center>แก้ไขรายชื่อรางวัลการแข่งขัน</strong>
+              <strong><center>แก้ไขรางวัลการแข่งขัน</strong>
             </div>
             
             <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" >
