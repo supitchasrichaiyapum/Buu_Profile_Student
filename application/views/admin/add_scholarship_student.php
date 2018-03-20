@@ -37,54 +37,31 @@ th, td {
                 <strong><center>เพิ่มทุนการศึกษา</strong>
                 </div>
                     <div class="card-body">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="<?php echo site_url("admin/c_admin/insert_scholarship/")?>" method="post" >
                             <div class="row">
                                 <div class="container">
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">รหัสนิสิต</label>
+                                        <label class="col-md-3 col-form-label" for="text-input">ชื่อทุนการศึกษา</label>
                                             <div class="col-md-3">
-                                            <input type="text" id="text-input" name="text-input" class="form-control" required="">
+                                            <input type="text" id="Scholarship_Name" name="Scholarship_Name" class="form-control" required="">
                                             </div>
-                                    </div>
+                                    </div>                                    
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">ชื่อ</label>
+                                        <label class="col-md-3 col-form-label" for="text-input">ผู้มอบทุนการศึกษา</label>
                                             <div class="col-md-3">
-                                            <input type="text" id="text-input" name="text-input" class="form-control" required="">
-                                            </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">นามสกุล</label>
-                                            <div class="col-md-3">
-                                            <input type="text" id="text-input" name="text-input" class="form-control" required="">
-                                            </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">วัน เดือน ปี</label>
-                                            <div class="col-md-3">
-                                            <input type="date" id="text-input" name="text-input" class="form-control" required="">
-                                            </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">ชื่อทุน</label>
-                                            <div class="col-md-3">
-                                            <input type="text" id="text-input" name="text-input" class="form-control" required="">
-                                            </div>
-                                    </div>
-                                    
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">ผู้มอบทุน</label>
-                                            <div class="col-md-3">
-                                                <input type="text" id="text-input" name="text-input" class="form-control" required="">
+                                                <input type="text" id="Scholarship_Giver" name="Scholarship_Giver" class="form-control" required="">
                                             </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="text-input" name="text-input" class="form-control" required="">
+                                                <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="">
                                             </div>
                                     </div>
-                                    <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                                    <center>
                                     <button type="reset" class="btn btn-sm btn-danger"> ยกเลิก </button>
+                                    <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                                    </center>
                                 </div>
                             </div>
                         </form>

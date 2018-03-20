@@ -30,18 +30,10 @@ class m_award extends CI_Model
             $query = $this->db->query($sql);           
             return $query->result();
         }
-        public function update_award($id){
-            $data = array(
-                'Award_Name' => $this->input->post('Award_Name') ,
-                'Award_Date' => $this->input->post('Award_Date') ,
-                'Student_Name' => $this->input->post('Student_Name'),
-                'Award_Term' => $this->input->post('Award_Term'),
-                'Award_Course' => $this->input->post('Award_Course'),
-                'Award_Owner' => $this->input->post('Award_Owner')
-            );
-            $this->db->where('Award_ID',$id);
-            $this->db->update('Award',$data);
-            return true;
+        // แก้ไขข้อมูลรางวัลการแข่งขัน
+        public function update_award($data, $award_id){
+            $this->db->where('Award_ID', $award_id);
+            return $this->db->update('Award',$data);
         }
         // ลบรางวัลการแข่งขัน
         public function delete_award_has_student($id){

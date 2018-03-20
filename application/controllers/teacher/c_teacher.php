@@ -45,13 +45,6 @@ class c_teacher extends CI_Controller {
 		$this->template->view('teacher/data_teacher',$data);
 	}
 
-	public function edit_teacher()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
-		$this->template->view('teacher/edit_teacher',$data);
-	}
-
 	public function coop_student_teacher()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -76,14 +69,28 @@ class c_teacher extends CI_Controller {
 		}
 		$this->template->view('teacher/activity_student_teacher',$data);
 	}
-
+	// ดูรางวัลการแข่งขัน
 	public function award_student_teacher()
 	{
 		$this->load->model('m_award');
-		$data['result'] = $this->m_award->get_all();
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$data['result'] = $this->m_award->get_all_award();
+		$data['result1'] = $this->m_award->get_by_id_award_has_student($data['result']);
+		// print_r($data);
 		$this->template->view('teacher/award_student_teacher',$data);
+	}
+	// รายชื่อนิสิตในรางวัลนั้นๆ
+	public function award_detail_student($id)
+	{
+		$data['award_id'] = $id;
+		// print_r($id);
+		$this->load->model('m_award');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$data['result1'] = $this->m_award->get_Award_by_id($id);
+		// print_r($data);
+		$this->template->view('teacher/award_detail_student',$data);
 	}
 
 	public function graduate_actorteacher()

@@ -127,13 +127,37 @@ class c_admin extends CI_Controller {
 		// print_r($data);
 		$this->template->view('admin/award_detail',$data);
 	}
-	public function editaward_student_admin() //ยังแก้ไขไม่ได้
+	// แก้ไขรายชื่อรางวัลการแข่งขัน
+	public function form_editaward_student_admin($award_id) 
 	{
+		// print_r($award_id);
 		$this->load->model('m_award');
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$data['query'] = $this->m_award->get_all();
+		$data['result'] = $this->m_award->get_by_id($award_id);
+		// print_r($data);
+		// $this->load->model('m_award');
+		// $this->m_award->update_award($data);
+		// redirect('admin/c_admin/award_student_admin');
+		
+		// return true;
 		$this->template->view('admin/editaward_student_admin',$data);
+	}
+	// แก้ไขรายชื่อรางวัลการแข่งขัน
+	public function editaward_student_admin($award_id) 
+	{
+		// print_r($_POST);
+		$data['Award_Name'] = $this->input->post('Award_Name');
+		$data['Award_Term'] = $this->input->post('Award_Term');
+		$data['Award_Year'] = $this->input->post('Award_Year');
+		$data['Award_Giver'] = $this->input->post('Award_Giver');
+		$data['Award_Amount'] = $this->input->post('Award_Amount');
+		// print_r($data);
+		$this->load->model('m_award');
+		$this->m_award->update_award($data, $award_id);
+		
+		
+		redirect('admin/c_admin/award_student_admin/'.$award_id);
 	}
 	public function statistics_student_admin()
 	{
@@ -172,12 +196,6 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/add_student',$data);
     }
-	public function scholarship_student_admin()
-		{
-			$data['user_id'] = $this->session->userdata('user_id');
-			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-			$this->template->view('admin/scholarship_student_admin',$data);
-		}
 	public function activity_edit_student()
 		{
 			$data['user_id'] = $this->session->userdata('user_id');
@@ -483,6 +501,110 @@ class c_admin extends CI_Controller {
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$this->template->view('admin/graduate_actoradmin',$data);
+		}
+		// <-- ทุนการศึกษา -->
+		// เพิ่มข้อมูลทุนการศึกษา
+		public function insert_form_scholarship()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			// print_r($data);
+			$this->template->view('admin/add_scholarship_student',$data);
+		}
+		// เพิ่มข้อมูลทุนการศึกษา
+		public function insert_scholarship()
+		{
+			$data['Scholarship_Name'] = $this->input->post('Scholarship_Name');
+			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
+			$data['Scholarship_Amount'] = $this->input->post('Scholarship_Amount');
+
+			$this->load->model('m_scholarship');
+			$this->m_scholarship->insert_scholarship($data);
+			redirect('admin/c_admin/scholarship_student_admin');
+		}
+		// เพิ่มนิสิตในทุนการศึกษา
+		public function insert_form_student_scholarship($scholarship_id)
+		{
+			$data['scholarship_id'] = $scholarship_id;
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			// $this->load->model(m_scholarship);
+			// $this->m_scholarship->insert_scholarship();	
+			// print_r($data);
+			$this->template->view('admin/add_scholarship_detail',$data);
+		}
+		// เพิ่มรายชื่อนิสิตในทุนการศึกษา
+		public function insert_student_scholarship()
+		{
+			$scholarship_id = $this->input->post('Scholarship_ID');
+			$data['Scholarship_ID'] = $this->input->post('Scholarship_ID');
+			$data['Scholarship_Date'] = $this->input->post('Scholarship_Date');
+			$data['Student_ID'] = $this->input->post('Student_ID');
+			
+			$this->load->model('m_scholarship');
+			$this->m_scholarship->insert_student_scholarship($data);
+			redirect('admin/c_admin/scholarship_detail/'.$scholarship_id);
+		}
+		// ลบนิสิตทุนการศึกษาar
+		public function delete_scholarship_has_scholarship($scholarship_id){
+			// print_r($_POST);
+			// print_r($scholarship_id);
+			$student_id = $this->input->post('Student_ID');
+			$this->load->model('m_scholarship');
+			$this->m_scholarship->delete_scholarship_has_student($student_id);
+			redirect('admin/c_admin/scholarship_detail/'.$scholarship_id);
+		}
+
+		// รายชื่อทุนการศึกษา
+		public function scholarship_student_admin()
+		{
+			$this->load->model('m_scholarship');
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$data['result'] = $this->m_scholarship->get_all_scholarship();
+			$data['result1'] = $this->m_scholarship->get_by_id_scholarship_has_student($data['result']);
+			// print_r($data);
+			$this->template->view('admin/scholarship_student_admin',$data);
+		}
+		// รายชื่อนิสิตในทุนการศึกษา
+		public function scholarship_detail($id)
+		{
+		$data['scholarship_id'] = $id;
+		// print_r($id);
+		$this->load->model('m_scholarship');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
+		// print_r($data);
+		$this->template->view('admin/scholarship_detail',$data);
+		}
+		// แก้ไขรายชื่อทุนการศึกษา
+		public function form_editscholarship_student_admin($scholarship_id) 
+		{
+			// print_r($scholarship_id);
+			$this->load->model('m_scholarship');
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$data['result'] = $this->m_scholarship->get_by_id($scholarship_id);
+			// print_r($data);
+			
+			
+			// return true;
+			$this->template->view('admin/edit_scholarship',$data);
+		}
+		// แก้ไขรายชื่อทุนการศึกษา
+		public function editscholarship_student_admin($scholarship_id) 
+		{
+			// print_r($_POST);
+			$data['Scholarship_Name'] = $this->input->post('Scholarship_ID');
+			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
+			$data['Scholarship_Amount'] = $this->input->post('Scholarship_Amount');
+			// print_r($data);
+			$this->load->model('m_scholarship');
+			$this->m_scholarship->update_scholarship($data, $scholarship_id);
+			
+			
+			redirect('admin/c_admin/scholarship_student_admin/'.$scholarship_id);
 		}
 
 
