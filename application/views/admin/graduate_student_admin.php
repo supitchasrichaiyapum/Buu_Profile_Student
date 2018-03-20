@@ -14,10 +14,9 @@
               <strong><center>ผลการศึกษา</strong>
             </div>
             <div class="card-body">
-            <p class="text-muted">57660136 : นายสวิตต์ สวัสดี : คณะวิทยาการสารสนเทศ </p>
+            <p class="text-muted">57660136 : นายสวิตต์ สวัสดี </p>
             <p class="text-muted">หลักสูตร: 2515013: เทคโนโลยีสารสนเทศ - 4 ปี (พิเศษ) (54) : วิชาโท: 0: - </p>
             <p class="text-muted">สถานภาพ: กำลังศึกษา </p>
-            <p class="text-muted">อ. ที่ปรึกษา: อาจารย์วิทวัส พันธุมจินดา </p>
             <br>
 
             <table class="table table-responsive-sm table-bordered">

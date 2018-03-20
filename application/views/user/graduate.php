@@ -58,4 +58,5 @@ function open_iframe_Box() {
     $('#reg').submit()
     $('.collapse').collapse()
 }
+
 </script>
