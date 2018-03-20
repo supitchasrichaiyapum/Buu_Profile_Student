@@ -74,7 +74,6 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 
-
 // $db['default'] = array(
 // 	'dsn'	=> '',
 // 	'hostname' => '10.80.34.5',
@@ -85,8 +84,8 @@ $query_builder = TRUE;
 // 	'port' => '3307',
 // 	'dbprefix' => '',
 // 	'pconnect' => FALSE,
-// 	// 'db_debug' => (ENVIRONMENT !== 'production'),
-// 	'db_debug' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	// 'db_debug' => FALSE,
 	
 // 	'cache_on' => FALSE,
 // 	'cachedir' => '',
@@ -98,6 +97,8 @@ $query_builder = TRUE;
 // 	'stricton' => FALSE,
 // 	'failover' => array(),
 // 	'save_queries' => TRUE
+
+
 
 // อันเก่า
 $db['default'] = array(
