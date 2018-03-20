@@ -29,14 +29,10 @@
             </div>
           </div>
         </form> <BR>
+        
         <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
                      
 
-              <!--  ยังแสดงไม่ได้
-              <?php echo $student_code['Student_NameTH'] ?> 
-              <?php echo $student_code['Student_LNameTH'] ?>
-              <?php echo $student_code['Student_ID'] ?> 
-              -->
 
                       <?php
 
@@ -46,21 +42,25 @@
 
                         } else if(count($result) > 0) {
 
-                            echo "<TR>";
-                            echo "<TD><center>ชื่อกิจกรรม</TD>";
-                            echo "<TD><center>เทอม</TD>";
-                            echo "<TD><center>ปี</TD>";
-                            echo "<TD><center>ชั่วโมง</TD>";
-                            echo "</TR>";
+                          echo "รหัสนิสิต : "." ".$result[0]->Student_Student_ID." <br>";
+                          echo "ชื่อ - นามสกุล : "." ".$result[0]->MrMs." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH." <br>";
+                          echo "หลักสูตร : "." ".$result[0]->Course;
+                          echo "<br><br>";
+                          echo "<TR>";
+                          echo "<TD><center>ชื่อกิจกรรม</TD>";
+                          echo "<TD><center>เทอม</TD>";
+                          echo "<TD><center>ปี</TD>";
+                          echo "<TD><center>ชั่วโมง</TD>";
+                          echo "</TR>";
 
                           foreach($result as $row) {
 
-                            echo "<TR>";
-                            echo "<TD>$row->Activitie_Name</TD>";
-                            echo "<TD align = 'right'>$row->Activity_Term</TD>";
-                            echo "<TD align = 'right'>$row->Activity_Year</TD>";
-                            echo "<TD align = 'right'>$row->Hour</TD>";
-                            echo "</TR>";
+                          echo "<TR>";
+                          echo "<TD>$row->Activitie_Name</TD>";
+                          echo "<TD align = 'right'>$row->Activity_Term</TD>";
+                          echo "<TD align = 'right'>$row->Activity_Year</TD>";
+                          echo "<TD align = 'right'>$row->Hour</TD>";
+                          echo "</TR>";
 
                           }
                         }

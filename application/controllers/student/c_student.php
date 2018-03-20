@@ -60,10 +60,7 @@ class c_student extends CI_Controller {
 		if($data['student_code']) {
 			$this->load->model('m_activity');
 			$data['result'] = $this->m_activity->search_activity($data['student_code']);
-			// น่าจะเป็นส่วนแสดงชื่อนิสิต
-			// $this->load->model('m_student');
-			// $data['student_code'] = $this->session->userdata('student_code');
-			// $data['result'] = $this->m_student->get_student($data['student_code']);
+			
 		} else {
 			$data['result'] = array();
 		}
@@ -113,6 +110,14 @@ class c_student extends CI_Controller {
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/graduate_actorstudent',$data);
 	}
-}
 
+	public function transcript_student()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		
+		$this->template->view('student/transcript_student',$data);
+	}
+}
+	
 ?>

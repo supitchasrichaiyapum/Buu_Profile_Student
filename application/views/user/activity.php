@@ -1,3 +1,4 @@
+
 <Body>
         <div class="content-inner">
           <!-- Page Header-->
@@ -21,7 +22,7 @@
                 <h2>การตรวจสอบชั่วโมงกิจกรรม</h2><BR>
                   <div id="custom-search-input">
                     <div class="input-group col-md-7">
-                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต" maxlength ="8">&nbsp;&nbsp;
+                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" required="" placeholder="ค้นหารหัสนิสิต" maxlength ="8">&nbsp;&nbsp;
                       <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
                     </div>
                   </div>
@@ -30,23 +31,22 @@
           </div>
         </form> <BR>
 
+        
+
         <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 
-
-              <!--  ยังแสดงไม่ได้
-              <?php echo $student_code['Student_NameTH'] ?> 
-              <?php echo $student_code['Student_LNameTH'] ?>
-              <?php echo $student_code['Student_ID'] ?> 
-              -->
-
                       <?php
-
                         if(count($result) == 0 && $student_code != '') {
 
                           echo "ไม่มีข้อมูล";
 
                         } else if(count($result) > 0) {
-
+                            
+                            
+                            echo "รหัสนิสิต : "." ".$result[0]->Student_Student_ID." <br>";
+                            echo "ชื่อ - นามสกุล : "." ".$result[0]->MrMs." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH." <br>";
+                            echo "หลักสูตร : "." ".$result[0]->Course;
+                            echo "<br><br>";
                             echo "<TR>";
                             echo "<TD><center>ชื่อกิจกรรม</TD>";
                             echo "<TD><center>เทอม</TD>";
@@ -55,7 +55,7 @@
                             echo "</TR>";
 
                           foreach($result as $row) {
-
+                            
                             echo "<TR>";
                             echo "<TD>$row->Activitie_Name</TD>";
                             echo "<TD align = 'right'>$row->Activity_Term</TD>";
