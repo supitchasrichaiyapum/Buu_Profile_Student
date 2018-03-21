@@ -25,6 +25,14 @@ class m_admin extends CI_Model
             $data['admin'] = $this->m_admin->get_admin($data['user_id']);
             $this->template->view('admin/graduate_actoradmin',$data);
         }
+
+        public function search_studemt($Student_Code){
+            $sql = "Select *
+            from Student
+            WHERE Student.Student_ID = '".$Student_Code."' ";
+            $query = $this->db->query($sql);            
+            return $query->result();
+        }
         
 }
 ?>

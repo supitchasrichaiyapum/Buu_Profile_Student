@@ -26,7 +26,7 @@ th {
             </div>
             <div class="card-body">
 
-          <table style="width:100%">
+          <table>
             <tr>
               <TH>1. ข้อมูลทั่วไป</TH>
             </tr>
@@ -81,7 +81,7 @@ th {
             </tr>
           </table>
 
-          <table style="width:100%">
+          <table>
             <tr>
               <TH>2. ที่อยู่ตามทะเบียนบ้าน</TH>
             </tr>
@@ -100,7 +100,7 @@ th {
             </tr>
           </table>
 
-          <table style="width:100%">
+          <table>
             <tr>
               <TH>3. ที่อยู่ที่สามารถติดต่อได้(ที่อยู่ปัจจุบัน)</TH>
             </tr>
@@ -142,7 +142,7 @@ th {
             </tr>
           </table>
 
-          <table style="width:100%">
+          <table>
             <tr>
               <TH>4. ข้อมูลครอบครัว</TH>
             </tr>
@@ -190,7 +190,7 @@ th {
             </tr>
           </table>
 
-          <table style="width:100%">
+          <table>
             <tr>
               <TH>5. ข้อมูลผู้ปกครอง</TH>
             </tr>
@@ -213,7 +213,7 @@ th {
             </tr>
           </table>
 
-          <table style="width:100%">
+          <table>
             <tr>
               <TH>6. สถานภาพการรับทุน</TH>
             </tr>
