@@ -133,7 +133,31 @@ class c_teacher extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 		$this->template->view('teacher/edit_student_teacher',$data);
-    }
+	}
+	// รายชื่อทุนการศึกษา
+	public function scholarship_student_teacher()
+	{
+		$this->load->model('m_scholarship');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$data['result'] = $this->m_scholarship->get_all_scholarship();
+		$data['result1'] = $this->m_scholarship->get_by_id_scholarship_has_student($data['result']);
+		// print_r($data);
+		$this->template->view('teacher/scholarship_student_teacher',$data);
+	}
+	// รายชื่อนิสิตในทุนการศึกษา
+	public function scholarship_detail_teacher($id)
+	{
+	$data['scholarship_id'] = $id;
+	// print_r($id);
+	$this->load->model('m_scholarship');
+	$data['user_id'] = $this->session->userdata('user_id');
+	$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+	$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
+	// print_r($data);
+	$this->template->view('teacher/scholarship_detail_teacher',$data);
+	}
+
 }
 
 ?>
