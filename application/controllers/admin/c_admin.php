@@ -182,6 +182,13 @@ class c_admin extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['student_code'] = $this->input->get('textfield');
+		if($data['student_code']) {
+			$this->load->model('m_admin');
+			$data['result'] = $this->m_admin->search_studemt($data['student_code']);
+		} else {
+			$data['result'] = array();
+		}
 		$this->template->view('admin/data_student_admin',$data);
 	}
 	public function editdata_student_admin()
