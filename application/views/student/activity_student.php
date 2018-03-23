@@ -33,27 +33,28 @@
         <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
                      
 
-
+          
                       <?php
 
                         if(count($result) == 0 && $student_code != '') {
 
                           echo "ไม่มีข้อมูล";
 
-                        } else if(count($result) > 0) {
+                        } else if(count($result)) { ?>
+                          
+                          <img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=<?php echo $student_code ?>" style="float:left;"> <br>
+                          <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; รหัสนิสิต : <?php echo $result[0]->Student_Student_ID ?> </p>
+                          <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ชื่อ - นามสกุล : <?php echo $result[0]->MrMs." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH ?> </p>
+                          <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; หลักสูตร : <?php echo $result[0]->Course ?> </p>
+                          <br><br><br><br>
+                          <TR>
+                          <TD><center>ชื่อกิจกรรม</TD>
+                          <TD><center>เทอม</TD>
+                          <TD><center>ปี</TD>
+                          <TD><center>ชั่วโมง</TD>
+                          </TR>
 
-                          echo "รหัสนิสิต : "." ".$result[0]->Student_Student_ID." <br>";
-                          echo "ชื่อ - นามสกุล : "." ".$result[0]->MrMs." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH." <br>";
-                          echo "หลักสูตร : "." ".$result[0]->Course;
-                          echo "<br><br>";
-                          echo "<TR>";
-                          echo "<TD><center>ชื่อกิจกรรม</TD>";
-                          echo "<TD><center>เทอม</TD>";
-                          echo "<TD><center>ปี</TD>";
-                          echo "<TD><center>ชั่วโมง</TD>";
-                          echo "</TR>";
-
-                          foreach($result as $row) {
+                          <?php foreach($result as $row) {
 
                           echo "<TR>";
                           echo "<TD>$row->Activitie_Name</TD>";

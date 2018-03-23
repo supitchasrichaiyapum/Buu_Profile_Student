@@ -21,6 +21,7 @@ class c_admin extends CI_Controller {
     public function index()
     {
 		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('template/main_view',$data);
     }
     public function menu_admin()
