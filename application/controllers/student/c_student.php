@@ -25,6 +25,7 @@ class c_student extends CI_Controller {
     public function index()
     {
 		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('template/main_view',$data);
 
     }
