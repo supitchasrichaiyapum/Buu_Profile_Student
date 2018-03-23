@@ -21,7 +21,7 @@
                     </li>
                     <li><a href="activity_student"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
                     <li><a href="award_student"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
-                    <li><a href="scholarship_student_admin"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
+                    <li><a href="scholarship_student"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled">
