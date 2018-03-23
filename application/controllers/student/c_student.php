@@ -119,6 +119,30 @@ class c_student extends CI_Controller {
 		$this->template->view('student/graduate_actorstudent',$data);
 	}
 
+	// รายชื่อทุนการศึกษา
+	public function scholarship_student()
+	{
+		$this->load->model('m_scholarship');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$data['result'] = $this->m_scholarship->get_all_scholarship();
+		$data['result1'] = $this->m_scholarship->get_by_id_scholarship_has_student($data['result']);
+		// print_r($data);
+		$this->template->view('student/scholarship_student',$data);
+	}
+	// รายชื่อนิสิตในทุนการศึกษา
+	public function scholarship_detail($id)
+	{
+	$data['scholarship_id'] = $id;
+	// print_r($id);
+	$this->load->model('m_scholarship');
+	$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+	$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
+	// print_r($data);
+	$this->template->view('student/scholarship_detail',$data);
+	}
+
 }
 	
 ?>

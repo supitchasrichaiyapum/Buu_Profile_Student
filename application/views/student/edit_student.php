@@ -18,13 +18,13 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <br><label for="name">ชื่อ(ภาษาไทย)</label>
-                      <input type="text" class="form-control" id="name" >
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <br><label for="name">นามสกุล(ภาษาไทย)</label>
-                      <input type="text" class="form-control" id="name" >
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -127,14 +127,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <br><label for="name">E-Mail</label>
-                      <input type="text" class="form-control" id="name" >
-                    </div>
-                  </div>
-                </div><br>
                 <B>3. ที่อยู่ปัจจุบัน</B><br>
                 <div class="row">
                   <div class="col-sm-3">
@@ -227,13 +219,13 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <br><label for="cvv">ชื่อบิดา</label>
-                        <input type="text" class="form-control" id="cvv" >
+                        <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                       <br><label for="cvv">นามสกุล</label>
-                        <input type="text" class="form-control" id="cvv" >
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
                       </div>
                     </div>
                     <div class="col-sm-3">
@@ -317,13 +309,13 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <br><label for="cvv">ชื่อมารดา</label>
-                        <input type="text" class="form-control" id="cvv" >
+                        <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                       <br><label for="cvv">นามสกุล</label>
-                        <input type="text" class="form-control" id="cvv" >
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
                       </div>
                     </div>
                     <div class="col-sm-3">
@@ -496,8 +488,9 @@
                       <label class="form-check-label" for="inline-radio2">สหกิจ</label>
                     </div>
                 </div>
-          <br><button type="submit" class="btn btn-primary">Save changes</button>&nbsp;&nbsp;&nbsp;&nbsp;
-          <button type="button" class="btn btn-secondary">Cancel</button>
+          <br><button type="delete" class="btn btn-secondary">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary">บันทึก</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          
               </div>
             </div>            
           </div>
