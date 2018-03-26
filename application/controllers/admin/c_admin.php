@@ -36,18 +36,7 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/data_admin',$data);
 	}
-	public function activity_student_admin()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/activity_student_admin',$data);
-	}
-	public function add_activity_student()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/add_activity_student',$data);
-	}
+	
 	// เพิ่มข้อมูลรางวัล
 	public function insert_form_award()
 	{
@@ -258,7 +247,7 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0) 
 						continue;
 					//date converted
@@ -373,7 +362,7 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0)
 						continue;
 					// print_r($row);
@@ -444,9 +433,9 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
 
-					if($key == 0)
+					if($key == 0 )
 						continue;
 						
 					$insert = array();
@@ -612,6 +601,108 @@ class c_admin extends CI_Controller {
 			
 			
 			redirect('admin/c_admin/scholarship_student_admin/'.$scholarship_id);
+		}
+
+		// เพิ่มกิจกรรม
+		public function insert_form_activity()
+		{
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			// print_r($data);
+			$this->template->view('admin/add_activity',$data);
+		}
+		// เพิ่มกิจกรรม
+		public function insert_activity()
+		{
+			$data['Activitie_Name'] = $this->input->post('Activitie_Name');
+			$data['Activity_Term'] = $this->input->post('Activity_Term');
+			$data['Activity_Year'] = $this->input->post('Activity_Year');
+			$data['Hour'] = $this->input->post('Hour');
+			
+			$this->load->model('m_activity');
+			$this->m_activity->insert_activity($data);
+			redirect('admin/c_admin/activity_student_admin');
+		}
+		// เพิ่มนิสิตในกิจกรรม
+		public function insert_form_student_activity($activity_id)
+		{
+			$data['activity_id'] = $activity_id;
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			// print_r($data);
+			$this->template->view('admin/add_activity_student',$data);
+		}
+		// เพิ่มรายชื่อนิสิตในกิจกรรม
+		public function insert_student_activity()
+		{
+			$activity_id = $this->input->post('Activity_Activitie_ID');
+			$data['Activity_Activitie_ID'] = $this->input->post('Activity_Activitie_ID');
+			$data['Student_Student_ID'] = $this->input->post('Student_Student_ID');
+			
+			$this->load->model('m_activity');
+			$this->m_activity->insert_student_activity($data);
+			redirect('admin/c_admin/activity_detail/'.$activity_id);
+		}
+		// ลบนิสิตกิจกรรม
+		public function delete_activity_has_student(){
+			// print_r($_POST);
+			$activity_id = $this->input->post('Activitie_ID');
+			$student_id = $this->input->post('Student_ID');
+			$this->load->model('m_activity');
+			$this->m_activity->delete_activity_has_student($student_id);
+			redirect('admin/c_admin/activity_detail/'.$activity_id);
+		}
+
+		// รายชื่อกิจกรรม
+		public function activity_student()
+		{
+			$this->load->model('m_activity');
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$data['result'] = $this->m_activity->get_all_activity();
+			$data['result1'] = $this->m_activity->get_by_id_activity_has_student($data['result']);
+			// print_r($data);
+			$this->template->view('admin/activity_student_admin',$data);
+		}
+		// รายชื่อนิสิตในกิจกรรม
+		public function activity_detail($id)
+		{
+			$data['activity_id'] = $id;
+			// print_r($id);
+			$this->load->model('m_activity');
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$data['result1'] = $this->m_activity->get_activity_by_id($id);
+			// print_r($data);
+			$this->template->view('admin/activity_detail',$data);
+		}
+		// แก้ไขรายชื่อกิจกรรม
+		public function form_editactivity_student_admin($activity_id) 
+		{
+			// print_r($activity_id);
+			$this->load->model('m_activity');
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$data['result'] = $this->m_activity->get_by_id($activity_id);
+			// print_r($data);			
+			// return true;
+			$this->template->view('admin/edit_activity_student',$data);
+		}
+		// แก้ไขรายชื่อกิจกรรม
+		public function editactivity_student_admin($activity_id) 
+		{
+			// print_r($_POST);
+			$data['Activitie_Name'] = $this->input->post('Activitie_Name');
+			$data['Activity_Term'] = $this->input->post('Activity_Term');
+			$data['Activity_Year'] = $this->input->post('Activity_Year');
+			$data['Hour'] = $this->input->post('Hour');
+			
+			// print_r($data);
+			$this->load->model('m_activity');
+			$this->m_activity->update_activity($data, $activity_id);
+			
+			
+			redirect('admin/c_admin/activity_student/'.$activity_id);
 		}
 
 

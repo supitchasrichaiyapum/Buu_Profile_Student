@@ -6,7 +6,7 @@ class m_data_student extends CI_Model
             $query = $this->db->get('Student');
             return $query->result_array();
         }
-//ไว้แก้ไขกับลบ
+//ไว้แก้ไข
         public function get_by_id(){
             $this->db->where('Student_ID','$id');
             $query = $this->db->get('Student');
@@ -30,13 +30,6 @@ class m_data_student extends CI_Model
             $this->db->update('Student','$data');
             return true;
         }
-//  ส่วนของลบข้อมูล ข้อมูลนิสิตน่าจะไม่มี
-//        public function datele($id){
-//            $this->db->where('Student_ID','$id');
-//           $this->db->delete('Student');
-//            return true;
-//        }
-//3
 
 
 }
