@@ -12,6 +12,7 @@
               <div class="card-header">
               <strong><center>แก้ไขข้อมูลส่วนตัว</strong>
               </div>
+              <!-- <form action="<?php echo site_url("student/c_student/edit_student/".$result[0]['Student_ID']);?>" method="post" > -->
               <div class="card-body">
                 <B>1. ข้อมูลทั่วไป</B><br>
                 <div class="row">
@@ -73,6 +74,124 @@
                       <input type="text" class="form-control" id="name" >
                     </div>
                   </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="name">รหัสนิสิต</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="name">เลขบัตรประชาชน</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="name">หลักสูตร</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">สาขาวิชา</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">จำนวนหน่วยกิตที่เรียน</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">GPAX </label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">ระดับการศึกษา</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">ชื่อปริญญา</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">วิทยาเขต</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">วิทยาเขต </label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">สถานภาพ</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">วิธีรับเข้า</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">วุฒิก่อนเข้ารับการศึกษา</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">จบการศึกษาจาก</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">อาจารย์ที่ปรึกษา</label>
+                      <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">E-mail</label>
+                      <input type="text" class="form-control" id="name" >
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">Facebook</label>
+                      <input type="text" class="form-control" id="name" >
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="name">Line(ID)</label>
+                      <input type="text" class="form-control" id="name" >
+                    </div>
+                  </div>
                 </div><br>
                 <B>2. ที่อยู่ตามทะเบียนบ้าน</B><br>
                 <div class="row">
@@ -128,36 +247,11 @@
                   </div>
                 </div>
                 <B>3. ที่อยู่ปัจจุบัน</B><br>
+                        
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="name"><input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">หอพัก(ชื่อหอพัก)</label>
-                      <input type="text" class="form-control" id="name" >
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <br><label for="name">ห้อง</label>
-                      <input type="text" class="form-control" id="name" >
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <br><label for="name">โทรศัพท์</label>
-                      <input type="text" class="form-control" id="name" >
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <br><label for="name">โทรศัพท์มือถือ</label>
-                      <input type="text" class="form-control" id="name" >
-                    </div>
-                  </div>
-                </div>               
-                <div class="row">
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="name"><input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">บ้านพัก(บ้านเลขที่)</label>
+                    <br><label for="name">บ้านเลขที่</label>
                       <input type="text" class="form-control" id="name" >
                     </div>
                   </div>
@@ -488,9 +582,9 @@
                       <label class="form-check-label" for="inline-radio2">สหกิจ</label>
                     </div>
                 </div>
-          <br><button type="delete" class="btn btn-secondary">ยกเลิก</button>
-          <button type="submit" class="btn btn-primary">บันทึก</button>&nbsp;&nbsp;&nbsp;&nbsp;
-          
+                  <br><button type="delete" class="btn btn-secondary">ยกเลิก</button>
+                  <button type="submit" class="btn btn-primary">บันทึก</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- </form> -->
               </div>
             </div>            
           </div>

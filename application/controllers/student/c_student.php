@@ -51,6 +51,35 @@ class c_student extends CI_Controller {
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/edit_student',$data);
 	}
+	// // แก้ไขข้อมูลนิสิต
+	// public function form_edit_student($award_id) 
+	// {
+	// 	// print_r($award_id);
+	// 	$this->load->model('m_award');
+	// 	$data['user_id'] = $this->session->userdata('user_id');
+	// 	$data['student'] = $this->m_student->get_student($data['user_id']);
+	// 	$data['result'] = $this->m_student->get_student($id);
+	// 	// print_r($data);
+		
+	// 	// return true;
+	// 	$this->template->view('student/edit_student',$data);
+	// }
+	// // แก้ไขข้อมูลนิสิต
+	// public function edit_student($id) 
+	// {
+	// 	// print_r($_POST);
+	// 	$data['Award_Name'] = $this->input->post('Award_Name');
+	// 	$data['Award_Term'] = $this->input->post('Award_Term');
+	// 	$data['Award_Year'] = $this->input->post('Award_Year');
+	// 	$data['Award_Giver'] = $this->input->post('Award_Giver');
+	// 	$data['Award_Amount'] = $this->input->post('Award_Amount');
+	// 	// print_r($data);
+	// 	$this->load->model('m_student');
+	// 	$this->m_student->update_student($data, $id);
+		
+		
+	// 	redirect('student/c_student/data_student/'.$id);
+	// }
 
 	public function transcript_student()
 	{

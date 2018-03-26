@@ -10,7 +10,7 @@
          </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="activity_student_admin"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
+                    <li><a href="/admin/c_admin/activity_student"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
                     <li><a href="award_student_admin"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="scholarship_student_admin"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
