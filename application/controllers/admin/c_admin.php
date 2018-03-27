@@ -50,15 +50,28 @@ class c_admin extends CI_Controller {
 	// เพิ่มข้อมูลรางวัล
 	public function insert_award()
 	{
-		$data['Award_Name'] = $this->input->post('Award_Name');
-		$data['Award_Term'] = $this->input->post('Award_Term');
-		$data['Award_Year'] = $this->input->post('Award_Year');
-		$data['Award_Giver'] = $this->input->post('Award_Giver');
-		$data['Award_Amount'] = $this->input->post('Award_Amount');
+		$this->form_validation->set_rules('Award_Name', 'ชื่อรางวัลการแข่งขัน', 'required');
+		$this->form_validation->set_rules('Award_Term', 'เทอม', 'required');
+		$this->form_validation->set_rules('Award_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Award_Giver', 'ผู้มอบทุนการศึกษา', 'required');
+		$this->form_validation->set_rules('Award_Amount', 'จำนวนเงิน(บาท)', 'required|is_natural_no_zero');
+		if ($this->form_validation->run() == FALSE)
+		{
+				$this->insert_form_award() ;
+		}
+		else
+		{
+				$data['Award_Name'] = $this->input->post('Award_Name');
+				$data['Award_Term'] = $this->input->post('Award_Term');
+				$data['Award_Year'] = $this->input->post('Award_Year');
+				$data['Award_Giver'] = $this->input->post('Award_Giver');
+				$data['Award_Amount'] = $this->input->post('Award_Amount');
+				
+				$this->load->model('m_award');
+				$this->m_award->insert_award($data);
+				redirect('admin/c_admin/award_student_admin');
+				}
 		
-		$this->load->model('m_award');
-		$this->m_award->insert_award($data);
-		redirect('admin/c_admin/award_student_admin');
 	}
 	// เพิ่มนิสิตในรางวัลการแข่งขัน
 	public function insert_form_student_award($award_id)
@@ -256,14 +269,14 @@ class c_admin extends CI_Controller {
 					//gen faculty
 					if($faculty = $this->m_admin->search_faculty($row[8])) {
 						//found
-						$Branch_ID = $faculty[0]['Branch_ID'];
+						$Faculty_ID = $faculty[0]['Faculty_ID'];
 					} else {
 						//add new
 						$array['Branch'] = $row[8];
-						$Branch_ID = $this->m_admin->insert_faculty($array);
+						$Faculty_ID = $this->m_admin->insert_faculty($array);
 					}
 					$insert = array();
-					$insert['Branch_ID'] = $Branch_ID;
+					$insert['Faculty_ID'] = $Faculty_ID;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['MrMs'] = $row[2];
