@@ -14,6 +14,7 @@
               <div class="card-header">
               <strong><center>แก้ไขข้อมูลส่วนตัว</strong>
               </div>
+              <!-- <form action="<?php echo site_url("student/c_student/edit_student/".$result[0]['Student_ID']);?>" method="post" > -->
               <div class="card-body">
                 <B>1. ข้อมูลทั่วไป</B><br>
                 <div class="row">
@@ -388,11 +389,29 @@
                     </div>
                   </div>
                 </div><br>
+<<<<<<< HEAD:application/views/student/edit_datastudent.php
                 
            <button type="button" class="btn btn-secondary">Cancel</button>    
           <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;&nbsp;&nbsp;&nbsp;
           
           </form>
+=======
+                <B>6. สถานภาพการรับทุน</B><br>
+                <br>
+                <br>
+                <B>7. นิสิตเลือกว่าจะทำโปรเจคหรือสหกิจ</B><br>
+                <div class="col-md-ุ6 col-form-label">
+                    <div class="form-check form-check-inline mr-1">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" id="inline-radio1" value="option1" name="inline-radios">
+                      <label class="form-check-label" for="inline-radio1">โปรเจค&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      <input class="form-check-input" type="radio" id="inline-radio2" value="option2" name="inline-radios">
+                      <label class="form-check-label" for="inline-radio2">สหกิจ</label>
+                    </div>
+                </div>
+                  <br><button type="delete" class="btn btn-secondary">ยกเลิก</button>
+                  <button type="submit" class="btn btn-primary">บันทึก</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- </form> -->
+>>>>>>> c73800d2f9e4e53c4b4227cca81bb4d1e91b1676:application/views/student/edit_student.php
               </div>
             </div>            
           </div>

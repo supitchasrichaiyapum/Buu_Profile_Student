@@ -118,6 +118,35 @@ class c_student extends CI_Controller {
 		redirect('student/c_student/data_student', 'refresh');
 		
 	}
+	// // แก้ไขข้อมูลนิสิต
+	// public function form_edit_student($award_id) 
+	// {
+	// 	// print_r($award_id);
+	// 	$this->load->model('m_award');
+	// 	$data['user_id'] = $this->session->userdata('user_id');
+	// 	$data['student'] = $this->m_student->get_student($data['user_id']);
+	// 	$data['result'] = $this->m_student->get_student($id);
+	// 	// print_r($data);
+		
+	// 	// return true;
+	// 	$this->template->view('student/edit_student',$data);
+	// }
+	// // แก้ไขข้อมูลนิสิต
+	// public function edit_student($id) 
+	// {
+	// 	// print_r($_POST);
+	// 	$data['Award_Name'] = $this->input->post('Award_Name');
+	// 	$data['Award_Term'] = $this->input->post('Award_Term');
+	// 	$data['Award_Year'] = $this->input->post('Award_Year');
+	// 	$data['Award_Giver'] = $this->input->post('Award_Giver');
+	// 	$data['Award_Amount'] = $this->input->post('Award_Amount');
+	// 	// print_r($data);
+	// 	$this->load->model('m_student');
+	// 	$this->m_student->update_student($data, $id);
+		
+		
+	// 	redirect('student/c_student/data_student/'.$id);
+	// }
 
 
 	public function transcript_student()
@@ -186,6 +215,30 @@ class c_student extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/graduate_actorstudent',$data);
+	}
+
+	// รายชื่อทุนการศึกษา
+	public function scholarship_student()
+	{
+		$this->load->model('m_scholarship');
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$data['result'] = $this->m_scholarship->get_all_scholarship();
+		$data['result1'] = $this->m_scholarship->get_by_id_scholarship_has_student($data['result']);
+		// print_r($data);
+		$this->template->view('student/scholarship_student',$data);
+	}
+	// รายชื่อนิสิตในทุนการศึกษา
+	public function scholarship_detail($id)
+	{
+	$data['scholarship_id'] = $id;
+	// print_r($id);
+	$this->load->model('m_scholarship');
+	$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+	$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
+	// print_r($data);
+	$this->template->view('student/scholarship_detail',$data);
 	}
 
 }

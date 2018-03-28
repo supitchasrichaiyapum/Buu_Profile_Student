@@ -95,7 +95,9 @@ class m_student extends CI_Model
             $data['user_id'] = $this->session->userdata('user_id');
             $data['student'] = $this->m_student->get_student($data['user_id']);
             $this->template->view('student/graduate_actorstudent',$data);
-	    }
+        }
+        
+        
 
 
 }

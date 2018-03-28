@@ -57,7 +57,7 @@ section.dashboard-counts .row {
                       <?php } ?>
 
                       </tbody>
-                      </table>              -->
+                      </table>              
 
                 </div>
               </div>
