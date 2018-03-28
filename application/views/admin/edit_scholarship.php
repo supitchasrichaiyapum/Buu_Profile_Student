@@ -9,7 +9,8 @@
               <strong><center>แก้ไขทุนการศึกษา</strong>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editscholarship_student_admin/".$result[0]['Scholarship_ID']);?>" method="post" >
+            <form action="<?php echo site_url("admin/c_admin/editscholarship_student_admin/".$result[0]['Scholarship_ID']);?>" method="post" ><br>
+            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
            <div class="card-body">
          
                     <div class="form-group row">
@@ -25,7 +26,7 @@
                         </div>
                     </div>  
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)</label>
+                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
                             <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amount']; ?>"><br>
                         </div>

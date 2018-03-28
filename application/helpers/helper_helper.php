@@ -8,6 +8,7 @@
     return $terms;
     }
 
+
     function get_bloods() {
         $bloods = array(
             ' ' => 'ไม่ระบุ',
