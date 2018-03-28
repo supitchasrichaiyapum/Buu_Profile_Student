@@ -8,11 +8,9 @@
             <div class="card-header">
               <strong><center>เพิ่มรายชื่อนิสิตในรางวัลการแข่งขัน</strong>
             </div>
-            <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" >          
-            <div class="alert alert-danger" role="alert">
-                <?php echo validation_errors(); ?>
-            </div>
-           <div class="card-body">
+            <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" ><BR>          
+            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
+           <div class="card-body"><br>
                 <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>

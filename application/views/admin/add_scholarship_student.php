@@ -37,7 +37,8 @@ th, td {
                 <strong><center>เพิ่มทุนการศึกษา</strong>
                 </div>
                     <div class="card-body">
-                        <form action="<?php echo site_url("admin/c_admin/insert_scholarship/")?>" method="post" >
+                        <form action="<?php echo site_url("admin/c_admin/insert_scholarship/")?>" method="post" ><br>
+                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
                             <div class="row">
                                 <div class="container">
                                     <div class="form-group row">
@@ -53,7 +54,7 @@ th, td {
                                             </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)</label>
+                                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)<code>* ตัวอย่าง 5000</code></label>
                                             <div class="col-md-3">
                                                 <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="">
                                             </div>

@@ -8,16 +8,8 @@
                 <strong><center>เพิ่มรางวัลการแข่งขัน</strong>
                 </div>
                     <div class="card-body">
-                        <!-- <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input"><h3>ชื่อรางวัลการแข่งขัน</h3></label>
-                                <div class="col-md-9">                        
-                                <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="การแข่งขันเขียนโปรแกรม ปี 12" disabled="">
-                                </div>
-                        </div> -->
-                        <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" >                    
-                            
-                            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
-                            
+                        <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" >  <BR>                  
+                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัลการแข่งขัน</label>
                             <div class="col-md-3">
