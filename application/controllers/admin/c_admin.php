@@ -213,6 +213,7 @@ class c_admin extends CI_Controller {
 			$data['result'] = array();
 		}
 		$this->template->view('admin/data_student_admin',$data);
+		
 	}
 
 	public function editdata_student_admin($student_code)
@@ -221,7 +222,6 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->load->model('m_student');
 		$data['result'] = $this->m_student->get_student($student_code);
-		
 		$this->template->view('admin/editdata_student_admin',$data);
 	}
 	

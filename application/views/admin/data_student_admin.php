@@ -40,6 +40,7 @@ th {
           </div>
         </form> <BR>    
           <?php
+
                 if(count($result) == 0 && $student_code != '') {
                       echo "ไม่พบข้อมูล";
               } else if(count($result)) { ?>
@@ -47,7 +48,7 @@ th {
                
                 <div align="right">
                 <a href="<?php echo site_url("admin/c_admin/editdata_student_admin/".$result[0]->Student_ID); ?>"><button type="submit" class="btn btn-sm btn-primary"> แก้ไข </button></a>
-                <!-- <a href="<?php echo site_url("admin/c_admin/editdata_student_admin/".$result['Student_ID']); ?>"><button type="submit" class="btn btn-sm btn-primary"> ผลการศึกษา </button></a> -->
+                <!-- <a href="<?php echo site_url("admin/c_admin/editdata_student_admin/".$result[0]->Student_ID); ?>"><button type="submit" class="btn btn-sm btn-primary"> ผลการศึกษา </button></a> -->
                 </div>
                 
 
