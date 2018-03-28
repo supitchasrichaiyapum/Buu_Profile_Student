@@ -8,12 +8,17 @@ class m_student extends CI_Model
             return $query->result_array()[0];
         }
 
+        public function update_datastudent($data, $student_id){
+            $this->db->where('Student_ID',$student_id);
+            return $this->db->update('Student',$data);
+        }
+
         public function get_transcript($id_student){
             $sql = "Select Student.Student_ID, Subject.Subject_Code, Subject.Subject_Name, Subject_has_Student.Subject_Credit, Subject_has_Student.Grade, Subject_has_Student.Term_Number, Subject_has_Student.Subject_Year
             from Student
             INNER JOIN Subject_has_Student ON Student.Student_ID = Subject_has_Student.Student_ID
             INNER JOIN Subject ON Subject_has_Student.Subject_Code = Subject.Subject_Code
-            WHERE Student.Student_ID = '".$id_student."' 
+            WHERE Student.Student_ID = '".$id_student."'
             ORDER BY Subject_has_Student.Subject_Year, Subject_has_Student.Term_Number ASC";
             $query = $this->db->query($sql);            
             return $query->result();

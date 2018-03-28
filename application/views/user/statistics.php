@@ -13,33 +13,12 @@
               <strong><center>สถิติจำนวนนิสิต</strong>
             </div>
             <div class="card-body">
-
-        <form  method="get"  action="statistics">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6"><BR>
-                <h2>สถิติจำนวนนิสิตในแต่ละปีการศึกษา</h2><BR>
-                  <div id="custom-search-input">
-                  <div class="input-group col-md-11">
-                      <select id="selectbasic" name="selectbasic" class="form-control">
-                        <option value="SE"> วิศวกรรมซอฟแวร์ </option>
-                        <option value="CS"> วิทยาการคอมพิวเตอร์ </option>
-                        <option value="IT"> เทคโนโลยีสารสนเทศ </option>
-                      </select> &nbsp;&nbsp;
-                      
-                      <select id="selectbasic" name="selectbasic" class="form-control">
-                        <option value="56"> 56 </option>
-                        <option value="57"> 57 </option>
-                        <option value="58"> 58 </option>
-                      </select> &nbsp;&nbsp;
-                    
-                    
-                      <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
-                    
-                    </div>
-                  </div>
+              <div class="container">
+                <div class="row"><BR>
+                   <h2>สถิติจำนวนนิสิตในแต่ละปีการศึกษาและแต่ละเทอม</h2><BR><BR>
+                    <iframe src="http://reg.buu.ac.th/registrar/stat.asp?avs21668122=2" style="width:100%; height:1200px; border:none;" scrolling="no" ></iframe>
                 </div>
-            </div>
+              </div>
           </div>
-        </form> <BR>
+         <BR>
 </Body>

@@ -16,7 +16,7 @@
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
-                                <li><a href="http://reg.buu.ac.th/document/CurrStu/CurrStu31012561_2_2560.pdf"> สถิติจำนวนนิสิต </a></li>
+                                <li><a href="statistics_admin"> สถิติจำนวนนิสิต </a></li>
                                 <li><a href="consider_student_admin"> รายชื่อรอพินิจ </a></li>
 		                    </ul>
                     </li>

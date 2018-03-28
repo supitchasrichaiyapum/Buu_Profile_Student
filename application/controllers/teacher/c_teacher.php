@@ -24,8 +24,8 @@ class c_teacher extends CI_Controller {
     public function index()
     {
 		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 		$this->template->view('template/main_view',$data);
-
     }
 
     public function menu_teacher()
@@ -44,7 +44,7 @@ class c_teacher extends CI_Controller {
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 		$this->template->view('teacher/data_teacher',$data);
 	}
-
+	
 	public function coop_student_teacher()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -60,16 +60,12 @@ class c_teacher extends CI_Controller {
 		if($data['student_code']) {
 			$this->load->model('m_activity');
 			$data['result'] = $this->m_activity->search_activity($data['student_code']);
-			// น่าจะเป็นส่วนแสดงชื่อนิสิต
-			// $this->load->model('m_student');
-			// $data['student_code'] = $this->session->userdata('student_code');
-			// $data['result'] = $this->m_student->get_student($data['student_code']);
+			
 		} else {
 			$data['result'] = array();
 		}
 		$this->template->view('teacher/activity_student_teacher',$data);
 	}
-	// ดูรางวัลการแข่งขัน
 	public function award_student_teacher()
 	{
 		$this->load->model('m_award');
@@ -125,6 +121,16 @@ class c_teacher extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$data['student_code'] = $this->input->get('textfield');
+		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_code']);
+		$data['activity'] = $this->m_activity->get_by_id($data['student_code']);
+		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
+		if($data['student_code']) {
+			$this->load->model('m_admin');
+			$data['result'] = $this->m_admin->search_studemt($data['student_code']);
+		} else {
+			$data['result'] = array();
+		}
 		$this->template->view('teacher/data_student_teacher',$data);
 	}
 
@@ -156,6 +162,13 @@ class c_teacher extends CI_Controller {
 	$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
 	// print_r($data);
 	$this->template->view('teacher/scholarship_detail_teacher',$data);
+	}
+
+	public function statistics_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/statistics_teacher',$data);
 	}
 
 }
