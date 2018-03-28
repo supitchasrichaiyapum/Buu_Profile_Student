@@ -8,6 +8,11 @@ class m_student extends CI_Model
             return $query->result_array()[0];
         }
 
+        public function update_datastudent($data, $student_id){
+            $this->db->where('Student_ID',$student_id);
+            return $this->db->update('Student',$data);
+        }
+
         public function get_transcript($id_student){
             $sql = "Select Student.Student_ID, Subject.Subject_Code, Subject.Subject_Name, Subject_has_Student.Subject_Credit, Subject_has_Student.Grade, Subject_has_Student.Term_Number, Subject_has_Student.Subject_Year
             from Student

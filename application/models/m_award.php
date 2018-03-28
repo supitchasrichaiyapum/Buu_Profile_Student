@@ -30,6 +30,17 @@ class m_award extends CI_Model
             $query = $this->db->query($sql);           
             return $query->result();
         }
+
+        public function get_Award_by_student($id){
+            $sql = "Select Award.Award_ID,Award.Award_Name, Award.Award_Term, Award.Award_Year, Award_has_Student.Award_Date, Award_has_Student.Student_ID, Award.Award_Amount, Award.Award_Giver 
+            from Award 
+            INNER JOIN Award_has_Student ON Award.Award_ID = Award_has_Student.Award_ID 
+            INNER JOIN Student ON Award_has_Student.Student_ID = Student.Student_ID
+            WHERE Award_has_Student.Student_ID = '".$id."' ";
+            $query = $this->db->query($sql);           
+            return $query->result();
+        }
+
         // แก้ไขข้อมูลรางวัลการแข่งขัน
         public function update_award($data, $award_id){
             $this->db->where('Award_ID', $award_id);

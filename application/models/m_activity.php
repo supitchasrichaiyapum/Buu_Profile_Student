@@ -26,6 +26,18 @@ class m_activity extends CI_Model
             return $query->result();
 
         }
+
+        public function get_by_id($id){
+
+            $sql = "Select Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year, Activity.Hour
+            from Activity
+            INNER JOIN Activity_has_Student ON Activity.Activitie_ID = Activity_has_Student.Activity_Activitie_ID
+            INNER JOIN Student ON Activity_has_Student.Student_Student_ID = Student.Student_ID
+            WHERE Activity_has_Student.Student_Student_ID = '".$id."' ";
+            $query = $this->db->query($sql);            
+            return $query->result();
+
+        }
 }
 
 ?>

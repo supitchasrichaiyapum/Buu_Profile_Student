@@ -30,6 +30,18 @@ class m_scholarship extends CI_Model
         $query = $this->db->query($sql);           
         return $query->result();
     }
+
+    // ส่วนไปแสดงข้อมูลในนิสิต
+    public function get_Scholarship_by_student($id){
+        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Scholarship_Date 
+        from Scholarship 
+        INNER JOIN Scholarship_has_Student ON Scholarship.Scholarship_ID = Scholarship_has_Student.Scholarship_ID 
+        INNER JOIN Student ON Scholarship_has_Student.Student_ID = Student.Student_ID
+        WHERE Scholarship_has_Student.Student_ID = '".$id."' ";
+        $query = $this->db->query($sql);           
+        return $query->result();
+    }
+    
     // แก้ไขข้อมูลทุนการศึกษา
     public function update_scholarship($data, $scholarship_id){
         $this->db->where('Scholarship_ID', $scholarship_id);

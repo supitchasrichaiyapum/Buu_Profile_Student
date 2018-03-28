@@ -160,11 +160,11 @@ class c_admin extends CI_Controller {
 		
 		redirect('admin/c_admin/award_student_admin/'.$award_id);
 	}
-	public function statistics_student_admin()
+	public function statistics_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/statistics_student_admin',$data);
+		$this->template->view('admin/statistics_admin',$data);
 	}
 	
 	public function consider_student_admin()
@@ -184,6 +184,9 @@ class c_admin extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['student_code'] = $this->input->get('textfield');
+		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_code']);
+		$data['activity'] = $this->m_activity->get_by_id($data['student_code']);
+		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
 		if($data['student_code']) {
 			$this->load->model('m_admin');
 			$data['result'] = $this->m_admin->search_studemt($data['student_code']);

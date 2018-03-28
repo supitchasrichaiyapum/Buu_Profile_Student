@@ -56,11 +56,6 @@ class Welcome extends CI_Controller {
 		$this->template->view('user/activity', $data);
 	}
 
-	public function coop()
-	{
-		$this->template->view('user/coop');
-	}
-
 	public function award()
 	{
 		$this->load->model('m_award');

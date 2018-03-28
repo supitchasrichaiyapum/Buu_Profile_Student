@@ -238,14 +238,97 @@ th {
                 </tr>
               </table>
     
-              <table style="width:100%">
-                <tr>
-                  <TH>6. สถานภาพการรับทุน</TH>
-                </tr>
-                <tr>
-                  <td></td>
-                </tr>
-              </table>
+              <table>
+            <tr>
+              <TH>6. สถานภาพการรับทุน</TH>
+            </tr>
+            <tr>
+            <?php 
+            if(count($scholarship) == 0) {
+                echo "<td>ไม่มีข้อมูล</td>";
+            } else if(count($scholarship)) { ?>
+
+            <td><b>ชื่อทุน </b></td>
+            <td><b>ผู้มอบทุน </b></td>
+            <td><b>จำนวนเงิน(บาท) </b></td>
+            <td><b>วันที่ได้รับทุน </b></td>
+
+            </tr>
+
+            <?php foreach ($scholarship as $student) { ?>
+
+            <tr>
+            <td><?php echo $student->Scholarship_Name ?></td>
+            <td><?php echo $student->Scholarship_Giver ?></td>
+            <td><?php echo $student->Scholarship_Amount ?></td>
+            <td><?php echo $student->Scholarship_Date ?></td>
+            </tr>
+
+            <?php   } 
+                  } ?>
+          </table>
+
+          <table>
+            <tr>
+              <TH>7. ข้อมูลกิจกรรม</TH>
+            </tr>
+            <?php 
+            if(count($activity) == 0) {
+                echo "<td>ไม่มีข้อมูล</td>";
+            } else if(count($activity)) { ?>
+
+                  <tr>
+                  <td><b>ชื่อกิจกรรม </td>
+                  <td><b>เทอม </td>
+                  <td><b>ปีการศึกษา </td>
+                  <td><b>ชั่วโมง </td>
+                  </tr>
+            
+            <?php foreach ($activity as $student) { ?>
+            <tr>
+            <td><?php echo $student->Activitie_Name ?></td>
+            <td><?php echo $student->Activity_Term ?></td>
+            <td><?php echo $student->Activity_Year ?></td>
+            <td><?php echo $student->Hour ?></td>
+            </tr>
+            <?php  
+                  }
+                } ?>
+            
+            
+          </table>
+
+          <table>
+            <tr>
+              <TH>8. ข้อมูลรางวัลการแข่งขัน</TH>
+            </tr>
+            <tr>
+
+            <?php 
+            if(count($award) == 0) {
+                      echo "<td>ไม่มีข้อมูล</td>";
+            } else if(count($award)) { ?>
+
+              <td><b>ชื่อรางวัลการแข่งขัน </b></td>
+              <td><b>เทอม </b></td>
+              <td><b>ปีการศึกษา </b></td>
+              <td><b>เงินรางวัล </b></td>
+              <td><b>อาจารย์ผู้ช่วย </b></td>
+
+            </tr>
+
+            <?php foreach ($award as $student) { ?>
+            <tr>
+            <td><?php echo $student->Award_Name ?></td>
+            <td><?php echo $student->Award_Term ?></td>
+            <td><?php echo $student->Award_Year ?></td>
+            <td><?php echo $student->Award_Amount ?></td>
+            <td><?php echo $student->Award_Giver ?></td>
+            </tr>
+            <?php   } 
+                  }  ?>
+
+          </table>
 
           <?php } ?>
           </table>
