@@ -76,6 +76,12 @@
                       <input type="text" class="form-control" id="Line" name="Line" value="<?php echo $student['Line'] ?>">
                     </div>
                   </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="Line">Line</label>
+                      <input type="text" class="form-control" id="Line" name="Line" value="<?php echo $student['Line'] ?>">
+                    </div>
+                  </div>
                 </div><br>
                 <B>2. ที่อยู่ปัจจุบัน</B><br>              
                 <div class="row">
