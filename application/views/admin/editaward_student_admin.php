@@ -9,9 +9,9 @@
               <strong><center>แก้ไขรางวัลการแข่งขัน</strong>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" >
-           <div class="card-body">
-         
+            <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" ><BR>
+            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
+           <div class="card-body">        
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input" >ชื่อรางวัล</label>
                             <div class="col-md-3">
@@ -46,7 +46,7 @@
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)</label>
+                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
                             <input type="text" id="Award_Amount" name="Award_Amount" class="form-control" required="" value="<?php echo $result[0]['Award_Amount']; ?>"><br>
                         </div>

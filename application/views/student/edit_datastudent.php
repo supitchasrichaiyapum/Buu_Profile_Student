@@ -9,7 +9,8 @@
         <Body>
         
         <div class="col-sm-12">
-        <form action="<?php echo site_url("student/c_student/post_edit_student/".$student['Student_ID']); ?>" method = "post">
+        <form action="<?php echo site_url("student/c_student/post_edit_student/".$student['Student_ID']); ?>" method = "post"><br>
+        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
             <div class="card">
               <div class="card-header">
               <strong><center>แก้ไขข้อมูลส่วนตัว</strong>

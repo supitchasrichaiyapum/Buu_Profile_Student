@@ -9,7 +9,8 @@
               <strong><center>แก้ไขกิจกรรม</strong>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editactivity_student_admin/".$result[0]['Activitie_ID']);?>" method="post" >
+            <form action="<?php echo site_url("admin/c_admin/editactivity_student_admin/".$result[0]['Activitie_ID']);?>" method="post" ><br>
+            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
            <div class="card-body">
          
                     <div class="form-group row">

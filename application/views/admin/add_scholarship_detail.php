@@ -10,7 +10,8 @@
             </div>
             <form action="<?php echo site_url("admin/c_admin/insert_student_scholarship/")?>" method="post" >
            <div class="card-body">
-                <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal"><br>
+                <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
                             <div class="col-md-3">
