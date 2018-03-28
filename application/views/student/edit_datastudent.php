@@ -9,12 +9,11 @@
         <Body>
         
         <div class="col-sm-12">
-        <form action="<?php echo site_url("student/c_student/post_edit_student/".$student['Student_ID']); ?>" method = "post">
+        <form action="<?php echo site_url("student/c_student/post_edit_student/".$student['Student_ID']); ?>" method="post" onsubmit="return confirm('ยืนยันการบันทึกหรือไม่ ?');">
             <div class="card">
               <div class="card-header">
               <strong><center>แก้ไขข้อมูลส่วนตัว</strong>
               </div>
-              <!-- <form action="<?php echo site_url("student/c_student/edit_student/".$result[0]['Student_ID']);?>" method="post" > -->
               <div class="card-body">
                 <B>1. ข้อมูลทั่วไป</B><br>
                 <div class="row">
@@ -53,12 +52,14 @@
                   </div>
                   <div class="form-group col-sm-4">
                     <br><label for="Blood">หมู่เลือด</label>
-                      <select class="form-control" id="Blood">
-                        <option>A</option>
-                        <option>B</option>
-                        <option>O</option>
-                        <option>AB</option>
-                        <option>ไม่ระบุ</option>
+                      <select class="form-control" id="Blood" name="Blood">
+                      <?php foreach(get_bloods() as $key => $blood){
+                        if($student['Blood'] == $key){
+                          echo '<option value="'.$key.'" selected>'.$blood.'</option>';
+                        } else {
+                          echo '<option value="'.$key.'">'.$blood.'</option>';
+                        }
+                      } ?>
                       </select>
                   </div> 
                 </div>
@@ -155,11 +156,14 @@
                     </div>
                     <div class="form-group col-sm-4">
                     <br><label for="Father_status">สถานภาพ</label>
-                      <select class="form-control" id="Father_status">
-                        <option>อยู่ด้วยกัน</option>
-                        <option>แยกกันอยู่</option>
-                        <option>หย่าร้าง</option>
-                        <option>ถึงแก่กรรม</option>
+                      <select class="form-control" id="Father_status" name="Father_Status">
+                      <?php foreach(get_status_creator() as $key => $status_creator){
+                        if($student['Father_Status'] == $key){
+                          echo '<option value="'.$key.'" selected>'.$status_creator.'</option>';
+                        } else {
+                          echo '<option value="'.$key.'">'.$status_creator.'</option>';
+                        }
+                      } ?>
                       </select>
                   </div>  
                 </div> 
@@ -238,12 +242,15 @@
                       </div>
                     </div>
                     <div class="form-group col-sm-4">
-                    <br><label for="Mother_status">สถานภาพ</label>
-                      <select class="form-control" id="Mother_status">
-                        <option>อยู่ด้วยกัน</option>
-                        <option>แยกกันอยู่</option>
-                        <option>หย่าร้าง</option>
-                        <option>ถึงแก่กรรม</option>
+                    <br><label for="Mother_Status">สถานภาพ</label>
+                      <select class="form-control" id="Mother_Status" name="Mother_Status">
+                        <?php foreach(get_status_creator() as $key => $status_creator){
+                          if($student['Mother_Status'] == $key){
+                            echo '<option value="'.$key.'" selected>'.$status_creator.'</option>';
+                          } else {
+                            echo '<option value="'.$key.'">'.$status_creator.'</option>';
+                          }
+                        } ?>
                       </select>
                   </div>  
                 </div> 
@@ -321,12 +328,20 @@
                         <input type="text" class="form-control" id="Parent_Career" name="Parent_Career" value="<?php echo $student['Parent_Career'] ?>">
                       </div>
                     </div>
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                      <br><label for="Parent_Status">ความสัมพันธ์</label>
-                        <input type="text" class="form-control" id="Parent_Status" name="Parent_Status" value="<?php echo $student['Parent_Status'] ?>">
-                      </div>
-                    </div>
+                    
+
+                    <div class="form-group col-sm-4">
+                    <br><label for="Parent_Status">ความสัมพันธ์</label>
+                      <select class="form-control" id="Parent_Status" name="Parent_Status">
+                        <?php foreach(get_status_parent() as $key => $status_parent){
+                          if($student['Parent_Status'] == $key){
+                            echo '<option value="'.$key.'" selected>'.$status_parent.'</option>';
+                          } else {
+                            echo '<option value="'.$key.'">'.$status_parent.'</option>';
+                          }
+                        } ?>
+                      </select>
+                  </div>  
                     
                   </div>
                   <div class="row">
@@ -389,29 +404,10 @@
                     </div>
                   </div>
                 </div><br>
-<<<<<<< HEAD:application/views/student/edit_datastudent.php
                 
-           <button type="button" class="btn btn-secondary">Cancel</button>    
-          <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" class="btn btn-primary">บันทึก</button>
           
           </form>
-=======
-                <B>6. สถานภาพการรับทุน</B><br>
-                <br>
-                <br>
-                <B>7. นิสิตเลือกว่าจะทำโปรเจคหรือสหกิจ</B><br>
-                <div class="col-md-ุ6 col-form-label">
-                    <div class="form-check form-check-inline mr-1">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" id="inline-radio1" value="option1" name="inline-radios">
-                      <label class="form-check-label" for="inline-radio1">โปรเจค&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                      <input class="form-check-input" type="radio" id="inline-radio2" value="option2" name="inline-radios">
-                      <label class="form-check-label" for="inline-radio2">สหกิจ</label>
-                    </div>
-                </div>
-                  <br><button type="delete" class="btn btn-secondary">ยกเลิก</button>
-                  <button type="submit" class="btn btn-primary">บันทึก</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <!-- </form> -->
->>>>>>> c73800d2f9e4e53c4b4227cca81bb4d1e91b1676:application/views/student/edit_student.php
               </div>
             </div>            
           </div>
