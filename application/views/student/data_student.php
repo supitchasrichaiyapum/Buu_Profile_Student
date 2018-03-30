@@ -12,7 +12,7 @@ th {
   <body>
 
         <div class="content-inner">
-          <!-- Page Header-->
+         
           <header class="page-header">
             <div class="container-fluid">
             </div>
@@ -56,6 +56,7 @@ th {
             </tr>
             <tr>
               <td><b>ชื่อปริญญา : </b><?php echo $student['Level'] ?></td>
+              <td><b>กรุ๊ปเลือด : </b><?php echo $student['Blood'] ?></td>
             </tr>
             <tr>
               <td><b>วิทยาเขต : </b><?php echo $student['Campus'] ?></td>
@@ -95,37 +96,14 @@ th {
             <tr>
               <td><b>จังหวัด : </b><?php echo $student['Homeaddress_Province'] ?></td>
               <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Homeaddress_Postcode'] ?></td>
-              <td><b>โทรศัพท์ : </b><?php echo $student['Homeaddress_Phone'] ?></td>
-              <td><b>E-mail : </b><?php echo $student['Homeaddress_Email'] ?></td>
+              <td><b>โทรศัพท์ : </b><?php echo $student['Student_Phone'] ?></td>
+              <td><b>E-mail : </b><?php echo $student['Student_Email'] ?></td>
             </tr>
           </table>
 
           <table>
             <tr>
               <TH>3. ที่อยู่ที่สามารถติดต่อได้(ที่อยู่ปัจจุบัน)</TH>
-            </tr>
-            <tr>
-              <TH>ที่อยู่หอพัก</TH>
-            </tr>
-            <tr>
-              <td><b>หอพัก : </b><?php echo $student['Dormitory_Name'] ?></td>
-              <td><b>ห้อง : </b><?php echo $student['Dormitory_Room'] ?></td>
-              <td><b>โทรศัพท์ : </b><?php echo $student['Dormitory_Phone'] ?></td>
-              <td><b>มือถือ : </b><?php echo $student['Dormitory_Mobile'] ?></td>
-            </tr>
-            <tr>
-              <td><b>เลขที่หอ : </b><?php echo $student['Dormitory_Number'] ?></td>
-              <td><b>หมู่ : </b><?php echo $student['Dormitory_Moo'] ?></td>
-              <td><b>ซอย : </b><?php echo $student['Dormitory_Soi'] ?></td>
-              <td><b>ตำบล : </b><?php echo $student['Dormitory_Tumbon'] ?></td>
-              <td><b>เขต / อำเภอ : </b><?php echo $student['Dormitory_Aumper'] ?></td>
-            </tr>
-            <tr>
-              <td><b>จังหวัด : </b><?php echo $student['Dormitory_Province'] ?></td>
-              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Dormitory_Postcode'] ?></td>
-            </tr>
-            <tr>
-              <TH>ที่อยู่บ้านพัก</TH>
             </tr>
             <tr>
               <td><b>บ้านเลขที่ : </b><?php echo $student['Address_Number'] ?></td>

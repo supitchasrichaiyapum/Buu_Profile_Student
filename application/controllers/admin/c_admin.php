@@ -171,17 +171,25 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/consider_student_admin',$data);
 	}
+
 	public function graduate_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/graduate_student_admin',$data);
 	}
+
 	public function data_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['student_code'] = $this->input->get('textfield');
+
+
+		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_code']);
+		$data['activity'] = $this->m_activity->get_by_student_id($data['student_code']);
+		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
+
 		if($data['student_code']) {
 			$this->load->model('m_admin');
 			$data['result'] = $this->m_admin->search_studemt($data['student_code']);
@@ -189,13 +197,82 @@ class c_admin extends CI_Controller {
 			$data['result'] = array();
 		}
 		$this->template->view('admin/data_student_admin',$data);
+		
 	}
-	public function editdata_student_admin()
+
+	public function editdata_student_admin($student_code)
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->load->model('m_student');
+		$data['result'] = $this->m_student->get_student($student_code);
 		$this->template->view('admin/editdata_student_admin',$data);
-    }
+	}
+	
+	public function post_edit_student_admin($student_code)
+	{
+		
+		$data['Student_NameEng'] = $this->input->post('Student_NameEng');
+		$data['Student_LNameENG'] = $this->input->post('Student_LNameENG');
+		$data['Student_Nickname'] = $this->input->post('Student_Nickname');
+		$data['Student_Phone'] = $this->input->post('Student_Phone');
+		$data['Student_Email'] = $this->input->post('Student_Email');
+		$data['Blood'] = $this->input->post('Blood');
+		$data['Facebook'] = $this->input->post('Facebook');
+		$data['Line'] = $this->input->post('Line');
+		$data['Address_Number'] = $this->input->post('Address_Number');
+		$data['Address_Moo'] = $this->input->post('Address_Moo');
+		$data['Address_Soi'] = $this->input->post('Address_Soi');
+		$data['Address_Tumbon'] = $this->input->post('Address_Tumbon');
+		$data['Address_Aumper'] = $this->input->post('Address_Aumper');
+		$data['Address_Province'] = $this->input->post('Address_Province');
+		$data['Address_Postcode'] = $this->input->post('Address_Postcode');
+		$data['Address_Phone'] = $this->input->post('Address_Phone');
+		$data['Address_Email'] = $this->input->post('Address_Email');
+		$data['Father_Name'] = $this->input->post('Father_Name');
+		$data['Father_Career'] = $this->input->post('Father_Career');
+		$data['Father_Status'] = $this->input->post('Father_Status');
+		$data['Fatheraddress_Number'] = $this->input->post('Fatheraddress_Number');
+		$data['Fatheraddress_Moo'] = $this->input->post('Fatheraddress_Moo');
+		$data['Fatheraddress_Soi'] = $this->input->post('Fatheraddress_Soi');
+		$data['Fatheraddress_Tumbon'] = $this->input->post('Fatheraddress_Tumbon');
+		$data['Fatheraddress_Aumper'] = $this->input->post('Fatheraddress_Aumper');
+		$data['Fatheraddress_Province'] = $this->input->post('Fatheraddress_Province');
+		$data['Fatheraddress_Postcode'] = $this->input->post('Fatheraddress_Postcode');
+		$data['Father_Phone'] = $this->input->post('Father_Phone');
+		$data['Father_Email'] = $this->input->post('Father_Email');
+		$data['Mother_Name'] = $this->input->post('Mother_Name');
+		$data['Mother_Career'] = $this->input->post('Mother_Career');
+		$data['Mother_Status'] = $this->input->post('Mother_Status');
+		$data['Motheraddress_Number'] = $this->input->post('Motheraddress_Number');
+		$data['Motheraddress_Moo'] = $this->input->post('Motheraddress_Moo');
+		$data['Motheraddress_Soi'] = $this->input->post('Motheraddress_Soi');
+		$data['Motheraddress_Tumbon'] = $this->input->post('Motheraddress_Tumbon');
+		$data['Motheraddress_Aumper'] = $this->input->post('Motheraddress_Aumper');
+		$data['Motheraddress_Province'] = $this->input->post('Motheraddress_Province');
+		$data['Motheraddress_Postcode'] = $this->input->post('Motheraddress_Postcode');
+		$data['Mother_Phone'] = $this->input->post('Mother_Phone');
+		$data['Mother_Email'] = $this->input->post('Mother_Email');
+		$data['Parent_Name'] = $this->input->post('Parent_Name');
+		$data['Parent_Career'] = $this->input->post('Parent_Career');
+		$data['Parent_Status'] = $this->input->post('Parent_Status');
+		$data['Parentaddress_Number'] = $this->input->post('Parentaddress_Number');
+		$data['Parentaddress_Moo'] = $this->input->post('Parentaddress_Moo');
+		$data['Parentaddress_Soi'] = $this->input->post('Parentaddress_Soi');
+		$data['Parentaddress_Tumbon'] = $this->input->post('Parentaddress_Tumbon');
+		$data['Parentaddress_Aumper'] = $this->input->post('Parentaddress_Aumper');
+		$data['Parentaddress_Province'] = $this->input->post('Parentaddress_Province');
+		$data['Parentaddress_Postcode'] = $this->input->post('Parentaddress_Postcode');
+		$data['Parent_Phone'] = $this->input->post('Parent_Phone');
+		$data['Parent_Email'] = $this->input->post('Parent_Email');
+		
+
+		
+		$this->m_student->update_datastudent($data, $student_code);
+		redirect('admin/c_admin/data_student_admin', 'refresh');
+		
+	}
+
     public function add_student()
     {
         $data['user_id'] = $this->session->userdata('user_id');
@@ -627,6 +704,7 @@ class c_admin extends CI_Controller {
 			$this->load->model('m_activity');
 			$this->m_activity->insert_activity($data);
 			redirect('admin/c_admin/activity_student');
+
 		}
 		// เพิ่มนิสิตในกิจกรรม
 		public function insert_form_student_activity($activity_id)
