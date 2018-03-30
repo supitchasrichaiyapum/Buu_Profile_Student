@@ -5,7 +5,7 @@ class m_activity extends CI_Model
 
         public function search_activity($Student_Code){
 
-            $sql = "Select Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year, Activity_has_Student.Student_Student_ID, Activity.Hour, Student.MrMs, Student.Student_NameTH, Student.Student_LNameTH, Student.Course
+            $sql = "Select Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year, Activity_has_Student.Student_Student_ID, Activity.Hour, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH, Student.Course
             from Activity
             INNER JOIN Activity_has_Student ON Activity.Activitie_ID = Activity_has_Student.Activity_Activitie_ID
             INNER JOIN Student ON Activity_has_Student.Student_Student_ID = Student.Student_ID
@@ -27,7 +27,7 @@ class m_activity extends CI_Model
 
         }
         public function get_all(){
-            $sql = "Select Activity.Activitie_ID,Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year,Activity.Hour, Activity_has_Student.Student_Student_ID, Student.MrMs, Student.Student_NameTH, Student.Student_LNameTH
+            $sql = "Select Activity.Activitie_ID,Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year,Activity.Hour, Activity_has_Student.Student_Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH
             from Activity 
             INNER JOIN Activity_has_Student ON Activity.Activitie_ID = Activity_has_Student.Activity_Activitie_ID 
             INNER JOIN Student ON Activity_has_Student.Student_Student_ID = Student.Student_ID";
@@ -47,7 +47,7 @@ class m_activity extends CI_Model
         }
 
         public function get_activity_by_id($id){
-            $sql = "Select Activity.Activitie_ID,Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year,Activity.Hour, Activity_has_Student.Student_Student_ID, Student.MrMs, Student.Student_NameTH, Student.Student_LNameTH
+            $sql = "Select Activity.Activitie_ID,Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year,Activity.Hour, Activity_has_Student.Student_Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH
             from Activity 
             INNER JOIN Activity_has_Student ON Activity.Activitie_ID = Activity_has_Student.Activity_Activitie_ID 
             INNER JOIN Student ON Activity_has_Student.Student_Student_ID = Student.Student_ID
@@ -60,7 +60,7 @@ class m_activity extends CI_Model
             $this->db->where('Activitie_ID', $activity_id);
             return $this->db->update('Activity',$data);
         }
-        // ลบรางวัลการแข่งขัน
+        // ลบกิจกรรม
         public function delete_activity_has_student($id){
             $this->db->where('Student_Student_ID',$id);
             $this->db->delete('Activity_has_Student');
