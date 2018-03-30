@@ -8,6 +8,8 @@
     return $terms;
     }
 
+   
+
 
     function get_bloods() {
         $bloods = array(

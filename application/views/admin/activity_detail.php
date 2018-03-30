@@ -9,29 +9,69 @@ th, td {
 section.dashboard-counts .row {
   padding: 5px 5px;
 }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
       </style>
   
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>กิจกรรม</center></h1>
+            <ul class="breadcrumb">
+                <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+                  <li><a href="<?php echo site_url('admin/c_admin/activity_student');?>">ข้อมูลกิจกรรม</a></li>
+                  <li><a href="<?php echo site_url('admin/c_admin/activity_student');?>">รายชื่อนิสิตในข้อมูลกิจกรรม</a></li>
+                  
+            </ul>
+            
+              
             </div>
           </header>
 
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
+            
               <div class="row bg-white has-shadow">
                 <!-- Item -->
                 <div class="container"><br>
-                <div align="right">
-                    <a href="<?php echo site_url('admin/c_admin/insert_form_student_activity/'.$activity_id);?>">
-                    <button type="submit" class="btn btn-success btn-sm" >เพิ่ม</button></a>
-                    </div> <br>
-				          
-                  <div class="container">
-                  
-                  <br>
+                <h1 class="no-margin-bottom"><center>เพิ่มนิสิตในข้อมูลกิจกรรม</center></h1>
+                <form action="<?php echo site_url("admin/c_admin/insert_student_activity/")?>" method="post" ><br>
+            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
+           <div class="card-body">
+                <!-- <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
+                            <div class="col-md-3">
+                                <input type="hidden" id="Activity_Activitie_ID" name="Activity_Activitie_ID" value="<?php echo $activity_id;?>">
+                                <input type="text" id="Student_Student_ID" name="Student_Student_ID" class="form-control" required="">                              
+                            </div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                    </div>
+                    <div class="text-center">            
+                    </div>
+                </form>                  
+                <br><hr><br><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
@@ -48,14 +88,14 @@ section.dashboard-counts .row {
   <?php foreach ($result1 as $row) { ?>
   <tr>
         <td><?php echo $row->Student_Student_ID ?> </td>
-        <td><?php echo $row->MrMs." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
+        <td><?php echo $row->Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
         <td><center>
         
-          <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_ID);?>"> -->
-          <form action="<?php echo site_url('admin/c_admin/delete_activity_has_student/');?>" method="post">
+          <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_Student_ID);?>"> -->
+          <form action="<?php echo site_url('admin/c_admin/delete_activity_has_student/'.$row->Student_Student_ID);?>" method="post">
           <input type="hidden" id="Activity_Activitie_ID" name="Activity_Activitie_ID" value="<?php echo $activity_id; ?>">
           <input type="hidden" id="Student_Student_ID" name="Student_Student_ID" value="<?php echo $row->Student_Student_ID; ?>">
-          <button type="submit" class="btn btn-danger btn-sm" >ลบ</button></a>
+          <button type="delete" class="btn btn-danger btn-sm" >ลบ</button></a>
           </form>
         </center></td>
       

@@ -21,30 +21,61 @@ th, td {
     cursor: pointer;
 }
 .button {border-radius: 8px;}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
 </style>
   
   <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
+            <ul class="breadcrumb">
+            <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+                <li><a href="<?php echo site_url('admin/c_admin/scholarship_student_admin');?>">ทุนการศึกษา</a></li>
+     
+            </ul>
+            
             </div>
           </header>
           <br>
         <Body>
         <div class="col-sm-12">
           <div class="card">
-            <div class="card-header">
-              <strong><center>ทุนการศึกษา</strong>
-            </div>
+            
             <div class="card-body">
                 <div class="container">
+                <h1 class="no-margin-bottom"><center>ทุนการศึกษา</center></h1><br>
+                <br>
                 <div align="right">
-                    <a href="<?php echo site_url('admin/c_admin/add_scholarship_student');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่ม</button></a>
+                    <a href="<?php echo site_url('admin/c_admin/add_scholarship_student');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อทุนการศึกษา</button></a>
                     </div>
                 </div><br><br>
+                
                 <table id="datatable" class="table table-striped table-bordered">
                   <thead>
                       <tr>
+                        
                         <th>ชื่อทุนการศึกษา</th>
                         <th>ผู้มอบทุนการศึกษา</th>
                         <th>จำนวนเงิน(บาท)</th>
