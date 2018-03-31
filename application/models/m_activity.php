@@ -60,7 +60,7 @@ class m_activity extends CI_Model
             $this->db->where('Activitie_ID', $activity_id);
             return $this->db->update('Activity',$data);
         }
-        // ลบรางวัลการแข่งขัน
+        // ลบกิจกรรม
         public function delete_activity_has_student($id){
             $this->db->where('Student_Student_ID',$id);
             $this->db->delete('Activity_has_Student');

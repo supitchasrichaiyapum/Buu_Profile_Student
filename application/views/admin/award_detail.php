@@ -9,13 +9,41 @@ th, td {
 section.dashboard-counts .row {
   padding: 5px 5px;
 }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
       </style>
   
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
+            <ul class="breadcrumb">
+                <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+                <li><a href="<?php echo site_url('admin/c_admin/award_student_admin');?>">รางวัลการแข่งขัน</a></li>
+                <li><a href="<?php echo site_url('admin/c_admin/award_detail');?>">เพิ่มนิสิตรางวัลการแข่งขัน</a></li>
+                  
+            </ul>
             </div>
           </header>
 
@@ -24,15 +52,32 @@ section.dashboard-counts .row {
               <div class="row bg-white has-shadow">
                 <!-- Item -->
                 <div class="container"><br>
-                <div align="right">
-                    <!-- <a href="<?php echo site_url('admin/c_admin/add_award_student');?>"><button class="button" type="submit">เพิ่ม</button></a> -->
-                    <a href="<?php echo site_url('admin/c_admin/insert_form_student_award/'.$award_id);?>">
-                    <button type="submit" class="btn btn-success btn-sm" >เพิ่ม</button></a>
-                    </div> <br>
-				          
-                  <div class="container">
-                  
-                  <br>
+                <h1 class="no-margin-bottom"><center>เพิ่มนิสิตรางวัลการแข่งขัน</center></h1>
+        
+            
+              <!-- <center><h1>เพิ่มรายชื่อนิสิตในรางวัลการแข่งขัน</h1></strong> -->
+        
+            <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" ><BR>          
+            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
+           <div class="card-body"><br>
+                <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label" for="text-input"><b>วัน / เดือน / ปี</b></label>
+                            <div class="col-md-3">
+                                <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
+                            </div>
+                        <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
+                            <div class="col-md-3">
+                                <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id;?>">
+                                <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">
+                                
+                            </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        
+                          <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                    </div>                   
+                </form>  
+        <br><hr><br><br>
+     
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
@@ -51,7 +96,7 @@ section.dashboard-counts .row {
   <tr>
         <td><?php echo $row->Award_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->MrMs." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
+        <td><?php echo $row->	Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
         <td><center>
         
           <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_ID);?>"> -->

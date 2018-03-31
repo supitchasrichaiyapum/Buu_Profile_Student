@@ -21,7 +21,6 @@ class c_admin extends CI_Controller {
     public function index()
     {
 		$data['user_id'] = $this->session->userdata('user_id');
-		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('template/main_view',$data);
     }
     public function menu_admin()
@@ -37,7 +36,18 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/data_admin',$data);
 	}
-	
+	public function activity_student_admin()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/activity_student_admin',$data);
+	}
+	public function add_activity_student()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/add_activity_student',$data);
+	}
 	// เพิ่มข้อมูลรางวัล
 	public function insert_form_award()
 	{
@@ -51,28 +61,15 @@ class c_admin extends CI_Controller {
 	// เพิ่มข้อมูลรางวัล
 	public function insert_award()
 	{
-		$this->form_validation->set_rules('Award_Name', 'ชื่อรางวัลการแข่งขัน', 'required');
-		$this->form_validation->set_rules('Award_Term', 'เทอม', 'required');
-		$this->form_validation->set_rules('Award_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('Award_Giver', 'ผู้มอบทุนการศึกษา', 'required');
-		$this->form_validation->set_rules('Award_Amount', 'จำนวนเงิน(บาท)', 'required|is_natural_no_zero');
-		if ($this->form_validation->run() == FALSE)
-		{
-				$this->insert_form_award() ;
-		}
-		else
-		{
-				$data['Award_Name'] = $this->input->post('Award_Name');
-				$data['Award_Term'] = $this->input->post('Award_Term');
-				$data['Award_Year'] = $this->input->post('Award_Year');
-				$data['Award_Giver'] = $this->input->post('Award_Giver');
-				$data['Award_Amount'] = $this->input->post('Award_Amount');
-				
-				$this->load->model('m_award');
-				$this->m_award->insert_award($data);
-				redirect('admin/c_admin/award_student_admin');
-				}
+		$data['Award_Name'] = $this->input->post('Award_Name');
+		$data['Award_Term'] = $this->input->post('Award_Term');
+		$data['Award_Year'] = $this->input->post('Award_Year');
+		$data['Award_Giver'] = $this->input->post('Award_Giver');
+		$data['Award_Amount'] = $this->input->post('Award_Amount');
 		
+		$this->load->model('m_award');
+		$this->m_award->insert_award($data);
+		redirect('admin/c_admin/award_student_admin');
 	}
 	// เพิ่มนิสิตในรางวัลการแข่งขัน
 	public function insert_form_student_award($award_id)
@@ -88,15 +85,7 @@ class c_admin extends CI_Controller {
 	// เพิ่มรายชื่อนิสิตในรางวัลการแข่งขัน
 	public function insert_student_award()
 	{
-		$this->form_validation->set_rules('Award_Date', 'วัน เดือน ปี', 'required');
-		$this->form_validation->set_rules('Student_ID', 'รหัสนิสิต', 'required|is_natural_no_zero');
-		if ($this->form_validation->run() == FALSE)
-		{		
-				$award_id = $this->input->post('Award_ID');
-				$this->insert_form_student_award($award_id) ;
-		}
-		else
-		{
+		$award_id = $this->input->post('Award_ID');
 		$data['Award_ID'] = $this->input->post('Award_ID');
 		$data['Award_Date'] = $this->input->post('Award_Date');
 		$data['Student_ID'] = $this->input->post('Student_ID');
@@ -104,7 +93,6 @@ class c_admin extends CI_Controller {
 		$this->load->model('m_award');
 		$this->m_award->insert_student_award($data);
 		redirect('admin/c_admin/award_detail/'.$award_id);
-		}
 	}
 	// ลบนิสิตรางวัลการแข่งขัน
 	public function delete_award_has_student(){
@@ -115,7 +103,6 @@ class c_admin extends CI_Controller {
 		$this->m_award->delete_award_has_student($student_id);
 		redirect('admin/c_admin/award_detail/'.$award_id);
 	}
-
 	// รายชื่อรางวัลการแข่งขัน
 	public function award_student_admin()
 	{
@@ -148,23 +135,16 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['result'] = $this->m_award->get_by_id($award_id);
 		// print_r($data);
+		// $this->load->model('m_award');
+		// $this->m_award->update_award($data);
 		// redirect('admin/c_admin/award_student_admin');
+		
+		// return true;
 		$this->template->view('admin/editaward_student_admin',$data);
 	}
 	// แก้ไขรายชื่อรางวัลการแข่งขัน
 	public function editaward_student_admin($award_id) 
 	{
-		$this->form_validation->set_rules('Award_Name', 'ชื่อรางวัลการแข่งขัน', 'required');
-		$this->form_validation->set_rules('Award_Term', 'เทอม', 'required');
-		$this->form_validation->set_rules('Award_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('Award_Giver', 'ผู้มอบทุนการศึกษา', 'required');
-		$this->form_validation->set_rules('Award_Amount', 'จำนวนเงิน(บาท)', 'required|is_natural_no_zero');
-		if ($this->form_validation->run() == FALSE)
-		{
-				$this->form_editaward_student_admin($award_id) ;
-		}
-		else
-		{
 		// print_r($_POST);
 		$data['Award_Name'] = $this->input->post('Award_Name');
 		$data['Award_Term'] = $this->input->post('Award_Term');
@@ -173,15 +153,16 @@ class c_admin extends CI_Controller {
 		$data['Award_Amount'] = $this->input->post('Award_Amount');
 		// print_r($data);
 		$this->load->model('m_award');
-		$this->m_award->update_award($data, $award_id);		
+		$this->m_award->update_award($data, $award_id);
+		
+		
 		redirect('admin/c_admin/award_student_admin/'.$award_id);
-		}
 	}
-	public function statistics_admin()
+	public function statistics_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/statistics_admin',$data);
+		$this->template->view('admin/statistics_student_admin',$data);
 	}
 	
 	public function consider_student_admin()
@@ -363,7 +344,7 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $key => $row) {
+                foreach($xlsx->getSheetData($sheet) as $row) {
 					if($key == 0) 
 						continue;
 					//date converted
@@ -372,14 +353,14 @@ class c_admin extends CI_Controller {
 					//gen faculty
 					if($faculty = $this->m_admin->search_faculty($row[8])) {
 						//found
-						$Faculty_ID = $faculty[0]['Faculty_ID'];
+						$Branch_ID = $faculty[0]['Branch_ID'];
 					} else {
 						//add new
 						$array['Branch'] = $row[8];
-						$Faculty_ID = $this->m_admin->insert_faculty($array);
+						$Branch_ID = $this->m_admin->insert_faculty($array);
 					}
 					$insert = array();
-					$insert['Faculty_ID'] = $Faculty_ID;
+					$insert['Branch_ID'] = $Branch_ID;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['MrMs'] = $row[2];
@@ -478,7 +459,7 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $key => $row) {
+                foreach($xlsx->getSheetData($sheet) as $row) {
 					if($key == 0)
 						continue;
 					// print_r($row);
@@ -549,9 +530,8 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $key => $row) {
-
-					if($key == 0 )
+                foreach($xlsx->getSheetData($sheet) as $row) {
+					if($key == 0)
 						continue;
 						
 					$insert = array();
@@ -581,7 +561,6 @@ class c_admin extends CI_Controller {
 		   $this->m_award->insert();
 		   redirect('admin/c_admin/award_student_admin');
         }
-
 		
 		public function update(){
 			
@@ -626,23 +605,12 @@ class c_admin extends CI_Controller {
 		// เพิ่มข้อมูลทุนการศึกษา
 		public function insert_scholarship()
 		{
-			$this->form_validation->set_rules('Scholarship_Name', 'ชื่อทุนการศึกษา', 'required');
-			$this->form_validation->set_rules('Scholarship_Giver', 'ผู้มอบทุนการศึกษา', 'required');
-			$this->form_validation->set_rules('Scholarship_Amount', 'จำนวน(บาท)', 'required|is_natural_no_zero');
-			if ($this->form_validation->run() == FALSE)
-			{
-					$this->insert_form_scholarship() ;
-			}
-			else
-			{
 			$data['Scholarship_Name'] = $this->input->post('Scholarship_Name');
 			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
 			$data['Scholarship_Amount'] = $this->input->post('Scholarship_Amount');
-
 			$this->load->model('m_scholarship');
 			$this->m_scholarship->insert_scholarship($data);
 			redirect('admin/c_admin/scholarship_student_admin');
-			}
 		}
 		// เพิ่มนิสิตในทุนการศึกษา
 		public function insert_form_student_scholarship($scholarship_id)
@@ -658,15 +626,7 @@ class c_admin extends CI_Controller {
 		// เพิ่มรายชื่อนิสิตในทุนการศึกษา
 		public function insert_student_scholarship()
 		{
-			$this->form_validation->set_rules('Scholarship_Date', 'วัน เดือน ปี', 'required');
-			$this->form_validation->set_rules('Student_ID', 'รหัสนิสิต', 'required|is_natural_no_zero');
-			if ($this->form_validation->run() == FALSE)
-			{
-					$scholarship_id = $this->input->post('Scholarship_ID');
-					$this->insert_form_student_scholarship($scholarship_id) ;
-			}
-			else
-			{	
+			$scholarship_id = $this->input->post('Scholarship_ID');
 			$data['Scholarship_ID'] = $this->input->post('Scholarship_ID');
 			$data['Scholarship_Date'] = $this->input->post('Scholarship_Date');
 			$data['Student_ID'] = $this->input->post('Student_ID');
@@ -674,7 +634,6 @@ class c_admin extends CI_Controller {
 			$this->load->model('m_scholarship');
 			$this->m_scholarship->insert_student_scholarship($data);
 			redirect('admin/c_admin/scholarship_detail/'.$scholarship_id);
-			}
 		}
 		// ลบนิสิตทุนการศึกษาar
 		public function delete_scholarship_has_scholarship($scholarship_id){
@@ -685,7 +644,6 @@ class c_admin extends CI_Controller {
 			$this->m_scholarship->delete_scholarship_has_student($student_id);
 			redirect('admin/c_admin/scholarship_detail/'.$scholarship_id);
 		}
-
 		// รายชื่อทุนการศึกษา
 		public function scholarship_student_admin()
 		{
@@ -726,26 +684,17 @@ class c_admin extends CI_Controller {
 		// แก้ไขรายชื่อทุนการศึกษา
 		public function editscholarship_student_admin($scholarship_id) 
 		{
-			$this->form_validation->set_rules('Scholarship_Name', 'ชื่อทุนการศึกษา', 'required');
-			$this->form_validation->set_rules('Scholarship_Giver', 'ผู้มอบทุนการศึกษา', 'required');
-			$this->form_validation->set_rules('Scholarship_Amount', 'จำนวน(บาท)', 'required|is_natural_no_zero');
-			if ($this->form_validation->run() == FALSE)
-			{
-					$this->form_editscholarship_student_admin($scholarship_id) ;
-			}
-			else
-			{
 			// print_r($_POST);
 			$data['Scholarship_Name'] = $this->input->post('Scholarship_ID');
 			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
 			$data['Scholarship_Amount'] = $this->input->post('Scholarship_Amount');
 			// print_r($data);
 			$this->load->model('m_scholarship');
-			$this->m_scholarship->update_scholarship($data, $scholarship_id);			
+			$this->m_scholarship->update_scholarship($data, $scholarship_id);
+			
+			
 			redirect('admin/c_admin/scholarship_student_admin/'.$scholarship_id);
-			}
 		}
-
 		// เพิ่มกิจกรรม
 		public function insert_form_activity()
 		{
@@ -757,16 +706,6 @@ class c_admin extends CI_Controller {
 		// เพิ่มกิจกรรม
 		public function insert_activity()
 		{
-			$this->form_validation->set_rules('Activitie_Name', 'ชื่อกิจกรรม', 'required');
-			$this->form_validation->set_rules('Activity_Term', 'เทอม', 'required');
-			$this->form_validation->set_rules('Activity_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
-			$this->form_validation->set_rules('Hour', 'ชั่วโมง', 'required');
-			if ($this->form_validation->run() == FALSE)
-			{
-					$this->insert_form_activity() ;
-			}
-			else
-			{
 			$data['Activitie_Name'] = $this->input->post('Activitie_Name');
 			$data['Activity_Term'] = $this->input->post('Activity_Term');
 			$data['Activity_Year'] = $this->input->post('Activity_Year');
@@ -790,32 +729,24 @@ class c_admin extends CI_Controller {
 		// เพิ่มรายชื่อนิสิตในกิจกรรม
 		public function insert_student_activity()
 		{
-			$this->form_validation->set_rules('Student_Student_ID', 'รหัสนิสิต', 'required|is_natural_no_zero');
-			if ($this->form_validation->run() == FALSE)
-			{		
-					$activity_id = $this->input->post('Activity_Activitie_ID');
-					$this->insert_form_student_activity($activity_id) ;
-			}
-			else
-			{		
+			$activity_id = $this->input->post('Activity_Activitie_ID');
 			$data['Activity_Activitie_ID'] = $this->input->post('Activity_Activitie_ID');
 			$data['Student_Student_ID'] = $this->input->post('Student_Student_ID');
 			
 			$this->load->model('m_activity');
 			$this->m_activity->insert_student_activity($data);
 			redirect('admin/c_admin/activity_detail/'.$activity_id);
-			}
 		}
+		
 		// ลบนิสิตกิจกรรม
 		public function delete_activity_has_student(){
 			// print_r($_POST);
 			$activity_id = $this->input->post('Activitie_ID');
 			$student_id = $this->input->post('Student_ID');
 			$this->load->model('m_activity');
-			$this->m_activity->delete_activity_has_student($student_id);
+			$this->m_activity->delete_activity_has_student($id);
 			redirect('admin/c_admin/activity_detail/'.$activity_id);
 		}
-
 		// รายชื่อกิจกรรม
 		public function activity_student()
 		{
@@ -827,7 +758,7 @@ class c_admin extends CI_Controller {
 			// print_r($data);
 			$this->template->view('admin/activity_student_admin',$data);
 		}
-		// รายชื่อนิสิตในกิจกรรม
+		// รายชื่อนิสิตกิจกรรม
 		public function activity_detail($id)
 		{
 			$data['activity_id'] = $id;
@@ -854,16 +785,6 @@ class c_admin extends CI_Controller {
 		// แก้ไขรายชื่อกิจกรรม
 		public function editactivity_student_admin($activity_id) 
 		{
-			$this->form_validation->set_rules('Activitie_Name', 'ชื่อกิจกรรม', 'required');
-			$this->form_validation->set_rules('Activity_Term', 'เทอม', 'required');
-			$this->form_validation->set_rules('Activity_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
-			$this->form_validation->set_rules('Hour', 'ชั่วโมง', 'required');
-			if ($this->form_validation->run() == FALSE)
-			{
-					$this->form_editactivity_student_admin($activity_id) ;
-			}
-			else
-			{
 			// print_r($_POST);
 			$data['Activitie_Name'] = $this->input->post('Activitie_Name');
 			$data['Activity_Term'] = $this->input->post('Activity_Term');
@@ -873,7 +794,7 @@ class c_admin extends CI_Controller {
 			$this->load->model('m_activity');
 			$this->m_activity->update_activity($data, $activity_id);			
 			redirect('admin/c_admin/activity_student/'.$activity_id);
-			}
 		}
+
 	}
 ?>

@@ -9,27 +9,72 @@ th, td {
 section.dashboard-counts .row {
   padding: 5px 5px;
 }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
       </style>
   
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h1 class="no-margin-bottom"><center>ทุนการศึกษา</center></h1>
+            <ul class="breadcrumb">
+            <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+                <li><a href="<?php echo site_url('admin/c_admin/scholarship_student_admin');?>">ทุนการศึกษา</a></li>
+                <li><a href="<?php echo site_url('admin/c_admin/insert_form_student_scholarship/');?>">เพิ่มนิสิตในทุนการศึกษา</a></li>
+            </ul>
+            
             </div>
           </header>
 
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
+           
                 <!-- Item -->
-                <div class="container"><br>
-                  <div align="right">
-                    <a href="<?php echo site_url('admin/c_admin/insert_form_student_scholarship/'.$scholarship_id);?>">
-                    <button type="submit" class="btn btn-success btn-sm" >เพิ่ม</button></a>
-                    </div> <br>
-                  <div class="container">
-                  
+                <div class="container"> <br>
+                <cenet><h1 class="no-margin-bottom"><center>เพิ่มนิสิตในทุนการศึกษา</center></h1><br>
+                <form action="<?php echo site_url("admin/c_admin/insert_student_scholarship/")?>" method="post" >
+           <div class="card-body">
+                <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal"><br>
+                <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label" for="text-input"><b>วัน / เดือน / ปี</b></label>
+                            <div class="col-md-3">
+                                <input type="date" id="Scholarship_Date" name="Scholarship_Date" class="form-control" required="">
+                            </div>
+                        <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
+                            <div class="col-md-3">
+                                <input type="hidden" id="Scholarship_ID" name="Scholarship_ID" value="<?php echo $scholarship_id;?>">
+                                <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">                           
+                            </div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                    </div>     
+                    <div class="text-center">                                    
+                    </div>
+                </form>
+                <br><hr><br>
+                  <div class="container">               
                   <br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
@@ -49,7 +94,7 @@ section.dashboard-counts .row {
   <tr>
         <td><?php echo $row->Scholarship_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->MrMs." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
+        <td><?php echo $row->Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
         <td><center>
         <form action="<?php echo site_url('admin/c_admin/delete_scholarship_has_scholarship/'.$row->Scholarship_ID);?>" method="post">
           <input type="hidden" id="Scholarship_ID" name="Scholarship_ID" value="<?php echo $scholarship_id; ?>">
