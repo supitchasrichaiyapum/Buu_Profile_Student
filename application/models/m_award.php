@@ -2,7 +2,7 @@
 class m_award extends CI_Model
 {
         public function get_all(){
-            $sql = "Select Award.Award_ID,Award.Award_Name, Award.Award_Term, Award.Award_Year, Award_has_Student.Award_Date, Award_has_Student.Student_ID, Student.MrMs, Student.Student_NameTH, Student.Student_LNameTH, Award.Award_Amount, Award.Award_Giver 
+            $sql = "Select Award.Award_ID,Award.Award_Name, Award.Award_Term, Award.Award_Year, Award_has_Student.Award_Date, Award_has_Student.Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH, Award.Award_Amount, Award.Award_Giver 
             from Award 
             INNER JOIN Award_has_Student ON Award.Award_ID = Award_has_Student.Award_ID 
             INNER JOIN Student ON Award_has_Student.Student_ID = Student.Student_ID";
@@ -22,7 +22,7 @@ class m_award extends CI_Model
         }
 
         public function get_Award_by_id($id){
-            $sql = "Select Award.Award_ID,Award.Award_Name, Award.Award_Term, Award.Award_Year, Award_has_Student.Award_Date, Award_has_Student.Student_ID, Student.MrMs, Student.Student_NameTH, Student.Student_LNameTH, Award.Award_Amount, Award.Award_Giver 
+            $sql = "Select Award.Award_ID,Award.Award_Name, Award.Award_Term, Award.Award_Year, Award_has_Student.Award_Date, Award_has_Student.Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH, Award.Award_Amount, Award.Award_Giver 
             from Award 
             INNER JOIN Award_has_Student ON Award.Award_ID = Award_has_Student.Award_ID 
             INNER JOIN Student ON Award_has_Student.Student_ID = Student.Student_ID

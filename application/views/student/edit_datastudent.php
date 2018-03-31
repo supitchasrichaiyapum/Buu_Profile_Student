@@ -67,6 +67,13 @@
                   </div> 
                 </div>
                 <div class="row">
+                  
+                <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="Teacher_ID">อาจารย์ที่ปรึกษา</label>
+                      <input type="text" class="form-control" id="Teacher_ID" name="Teacher_ID" value="<?php echo $student['Teacher_ID'] ?>">
+                    </div>
+                  </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <br><label for="Facebook">Facebook</label>
@@ -79,13 +86,9 @@
                       <input type="text" class="form-control" id="Line" name="Line" value="<?php echo $student['Line'] ?>">
                     </div>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <br><label for="Line">Line</label>
-                      <input type="text" class="form-control" id="Line" name="Line" value="<?php echo $student['Line'] ?>">
-                    </div>
-                  </div>
+
                 </div><br>
+
                 <B>2. ที่อยู่ปัจจุบัน</B><br>              
                 <div class="row">
                   <div class="col-sm-3">
@@ -108,7 +111,7 @@
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Address_Tumbon">ตำบล</label>
+                      <br><label for="Address_Tumbon">ตำบล / แขวง</label>
                       <input type="text" class="form-control" id="Address_Tumbon" name="Address_Tumbon" value="<?php echo $student['Address_Tumbon'] ?>">
                     </div>
                   </div>
@@ -116,7 +119,7 @@
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Address_Aumper">เขต/อำเภอ</label>
+                      <br><label for="Address_Aumper">อำเภอ / เขต</label>
                       <input type="text" class="form-control" id="Address_Aumper" name="Address_Aumper" value="<?php echo $student['Address_Aumper'] ?>">
                     </div>
                   </div>
@@ -197,7 +200,7 @@
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Tumbon">ตำบล</label>
+                      <br><label for="Fatheraddress_Tumbon">ตำบล / แขวง</label>
                       <input type="text" class="form-control" id="Fatheraddress_Tumbon" name="Fatheraddress_Tumbon" value="<?php echo $student['Fatheraddress_Tumbon'] ?>">
                     </div>
                   </div>
@@ -205,7 +208,7 @@
                   <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Aumper">เขต/อำเภอ</label>
+                      <br><label for="Fatheraddress_Aumper">อำเภอ / เขต</label>
                       <input type="text" class="form-control" id="Fatheraddress_Aumper" name="Fatheraddress_Aumper" value="<?php echo $student['Fatheraddress_Aumper'] ?>">
                     </div>
                   </div>
@@ -284,7 +287,7 @@
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Tumbon">ตำบล</label>
+                      <br><label for="Motheraddress_Tumbon">ตำบล / แขวง</label>
                       <input type="text" class="form-control" id="Motheraddress_Tumbon" name="Motheraddress_Tumbon" value="<?php echo $student['Motheraddress_Tumbon'] ?>">
                     </div>
                   </div>
@@ -292,7 +295,7 @@
                   <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Aumper">เขต/อำเภอ</label>
+                      <br><label for="Motheraddress_Aumper">อำเภอ / เขต</label>
                       <input type="text" class="form-control" id="Motheraddress_Aumper" name="Motheraddress_Aumper" value="<?php echo $student['Motheraddress_Aumper'] ?>">
                     </div>
                   </div>
@@ -374,7 +377,7 @@
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Tumbon">ตำบล</label>
+                      <br><label for="Parentaddress_Tumbon">ตำบล / แขวง</label>
                       <input type="text" class="form-control" id="Parentaddress_Tumbon" name="Parentaddress_Tumbon" value="<?php echo $student['Parentaddress_Tumbon'] ?>">
                     </div>
                   </div>
@@ -382,7 +385,7 @@
                   <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Aumper">เขต/อำเภอ</label>
+                      <br><label for="Parentaddress_Aumper">อำเภอ / เขต</label>
                       <input type="text" class="form-control" id="Parentaddress_Aumper" name="Parentaddress_Aumper" value="<?php echo $student['Parentaddress_Aumper'] ?>">
                     </div>
                   </div>

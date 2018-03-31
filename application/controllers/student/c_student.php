@@ -45,6 +45,7 @@ class c_student extends CI_Controller {
 		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['user_id']);
 		$data['activity'] = $this->m_activity->get_by_student_id($data['user_id']);
 		$data['award'] = $this->m_award->get_Award_by_student($data['user_id']);
+		$data['status'] = $this->m_student->status($data['user_id']);
 		$this->template->view('student/data_student',$data);
 	}
 
@@ -185,6 +186,7 @@ class c_student extends CI_Controller {
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$data['transcript'] = $this->m_student->get_transcript($data['user_id']);
 		$data['GPA'] = $this->m_student->get_GPA($data['user_id']);
+		$data['status'] = $this->m_student->status($data['user_id']);
 		$this->template->view('student/transcript_student',$data);
 	}
 
@@ -237,6 +239,7 @@ class c_student extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$data['status'] = $this->m_student->status($data['user_id']);
 		$this->template->view('student/coop_student',$data);
 	}
 	

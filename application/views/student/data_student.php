@@ -31,7 +31,7 @@ th {
               <TH>1. ข้อมูลทั่วไป</TH>
             </tr>
             <tr>
-              <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $student['MrMs'] ?> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?></td>
+              <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $student['Prefix'] ?> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?></td>
               <td><b>ชื่อเล่น : </b><?php echo $student['Student_Nickname'] ?> </td>
             </tr>
             <tr>
@@ -63,12 +63,12 @@ th {
               <td><b>ปีการศึกษาที่เข้า : </b><?php echo $student['Entry_Years'] ?></td>
             </tr>
             <tr>
-              <td><b>สถานภาพ : </b><?php echo $student['Status_ID'] ?></td>
+              <td><b>สถานภาพ : </b><?php echo $status['Status_Name'] ?></td>
               <td><b>วิธีรับเข้า : </b><?php echo $student['Entry_Method'] ?></td>
             </tr>
             <tr>
               <td><b>วุฒิก่อนเข้ารับการศึกษา : </b><?php echo $student['HighesEd'] ?></td>
-              <td><b>จบการศึกษาจาก : </b><?php echo $student['GradFromSchool'] ?></td>
+              <td><b>จบการศึกษาจาก : </b><?php echo $student['Gradfromschool'] ?></td>
             </tr>
             <tr>
               <td><b>อาจารย์ที่ปรึกษา : </b></td>

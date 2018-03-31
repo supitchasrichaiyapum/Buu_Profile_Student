@@ -126,20 +126,33 @@ class c_teacher extends CI_Controller {
 		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_code']);
 		$data['activity'] = $this->m_activity->get_by_student_id($data['student_code']);
 		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
+		$data['status'] = $this->m_admin->search_student_status($data['student_code']);
 		if($data['student_code']) {
 			$this->load->model('m_admin');
-			$data['result'] = $this->m_admin->search_studemt($data['student_code']);
+			$data['result'] = $this->m_admin->search_student($data['student_code']);
 		} else {
 			$data['result'] = array();
 		}
 		$this->template->view('teacher/data_student_teacher',$data);
 	}
 
-	public function edit_student_teacher()
+	public function transcript_student_teacher($student_code)
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
-		$this->template->view('teacher/edit_student_teacher',$data);
+		$this->load->model('m_student');
+		$data['result'] = $this->m_student->get_student($student_code);
+		$data['transcript'] = $this->m_student->get_transcript($student_code);
+		$data['GPA'] = $this->m_student->get_GPA($student_code);
+		$data['status'] = $this->m_admin->search_student_status($student_code);
+		$this->template->view('admin/transcript_student_admin',$data);
+	}
+
+	public function editdata_student_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$this->template->view('teacher/editdata_student_teacher',$data);
 	}
 
 

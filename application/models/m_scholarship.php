@@ -2,7 +2,7 @@
 class m_scholarship extends CI_Model
 {
     public function get_all(){
-        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Scholarship_Date, Scholarship_has_Student.Student_ID, Student.MrMs, Student.Student_NameTH, Student.Student_LNameTH 
+        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Scholarship_Date, Scholarship_has_Student.Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH 
         from Scholarship 
         INNER JOIN Scholarship_has_Student ON Scholarship.Scholarship_ID = Scholarship_has_Student.Scholarship_ID 
         INNER JOIN Student ON Scholarship_has_Student.Student_ID = Student.Student_ID";
@@ -22,7 +22,7 @@ class m_scholarship extends CI_Model
     }
 
     public function get_Scholarship_by_id($id){
-        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Scholarship_Date, Scholarship_has_Student.Student_ID, Student.MrMs, Student.Student_NameTH, Student.Student_LNameTH 
+        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Scholarship_Date, Scholarship_has_Student.Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH 
         from Scholarship 
         INNER JOIN Scholarship_has_Student ON Scholarship.Scholarship_ID = Scholarship_has_Student.Scholarship_ID 
         INNER JOIN Student ON Scholarship_has_Student.Student_ID = Student.Student_ID
