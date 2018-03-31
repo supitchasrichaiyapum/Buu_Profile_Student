@@ -19,17 +19,19 @@ class m_admin extends CI_Model
             return $query->result_array();
         }
 
-        public function graduate_actoradmin()
-	    {
-            $data['user_id'] = $this->session->userdata('user_id');
-            $data['admin'] = $this->m_admin->get_admin($data['user_id']);
-            $this->template->view('admin/graduate_actoradmin',$data);
-        }
-
-        public function search_studemt($Student_Code){
+        public function search_student($Student_Code){
             $sql = "Select *
             from Student
             WHERE Student.Student_ID = '".$Student_Code."' ";
+            $query = $this->db->query($sql);            
+            return $query->result();
+        }
+
+        public function search_student_status($Student_id){
+            $sql = "SELECT Status.Status_Name 
+            FROM Student 
+            INNER JOIN Status ON Student.Status_ID = Status.Status_ID
+            WHERE Student.Student_ID = '".$Student_id."' ";
             $query = $this->db->query($sql);            
             return $query->result();
         }

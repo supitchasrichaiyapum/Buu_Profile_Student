@@ -12,23 +12,23 @@
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
                     <li><a href=""><i class="far fa-user"></i> ข้อมูลอาจารย์ </a></li>
-                    <li><a href="activity_student_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรมนิสิต </a></li>
-                    <li><a href="award_student_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
-                    <li><a href="scholarship_student_teacher"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
+                    <li><a href="/teacher/c_teacher/activity_student_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรมนิสิต </a></li>
+                    <li><a href="/teacher/c_teacher/award_student_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
+                    <li><a href="/teacher/c_teacher/scholarship_student_teacher"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
                     <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="fas fa-database"></i> ข้อมูลสถิตินิสิต </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled">
-                                        <li><a href="statistics_teacher"> สถิติจำนวนนิสิต </a></li>
-                                        <li><a href="consider_teacher"> รายชื่อรอพินิจ </a></li>
+                                        <li><a href="/teacher/c_teacher/statistics_teacher"> สถิติจำนวนนิสิต </a></li>
+                                        <li><a href="/teacher/c_teacher/consider_teacher"> รายชื่อรอพินิจ </a></li>
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
-                                <li><a href="data_student_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="/teacher/c_teacher/data_student_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="graduate_actorteacher"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+                    <li><a href="/teacher/c_teacher/graduate_actorteacher"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
           </ul>
         </nav>
 

@@ -48,7 +48,7 @@ th {
                
                 <div align="right">
                 <a href="<?php echo site_url("admin/c_admin/editdata_student_admin/".$result[0]->Student_ID); ?>"><button type="submit" class="btn btn-sm btn-primary"> แก้ไข </button></a>
-                <!-- <a href="<?php echo site_url("admin/c_admin/editdata_student_admin/".$result[0]->Student_ID); ?>"><button type="submit" class="btn btn-sm btn-primary"> ผลการศึกษา </button></a> -->
+                <a href="<?php echo site_url("admin/c_admin/transcript_student_admin/".$result[0]->Student_ID); ?>"><button type="submit" class="btn btn-sm btn-primary"> ผลการศึกษา </button></a>
                 </div>
                 
 
@@ -57,7 +57,7 @@ th {
                   <TH>1. ข้อมูลทั่วไป</TH>
                 </tr>
                 <tr>
-                  <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $result[0]->MrMs." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH ?></td>
+                  <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $result[0]->Prefix." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH ?></td>
                   <td><b>ชื่อเล่น : </b><?php echo $result[0]->Student_Nickname ?> </td>
                 </tr>
                 <tr>
@@ -88,12 +88,12 @@ th {
                   <td><b>ปีการศึกษาที่เข้า : </b><?php echo $result[0]->Entry_Years ?></td>
                 </tr>
                 <tr>
-                  <td><b>สถานภาพ : </b><?php echo $result[0]->Status_ID ?></td>
+                  <td><b>สถานภาพ : </b><?php echo $status[0]->Status_Name ?></td>
                   <td><b>วิธีรับเข้า : </b><?php echo $result[0]->Entry_Method ?></td>
                 </tr>
                 <tr>
                   <td><b>วุฒิก่อนเข้ารับการศึกษา : </b><?php echo $result[0]->HighesEd ?></td>
-                  <td><b>จบการศึกษาจาก : </b><?php echo $result[0]->GradFromSchool ?></td>
+                  <td><b>จบการศึกษาจาก : </b><?php echo $result[0]->Gradfromschool ?></td>
                 </tr>
                 <tr>
                   <td><b>อาจารย์ที่ปรึกษา : </b></td>

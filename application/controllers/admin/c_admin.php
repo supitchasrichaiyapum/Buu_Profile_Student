@@ -184,20 +184,30 @@ class c_admin extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['student_code'] = $this->input->get('textfield');
-
-
 		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_code']);
 		$data['activity'] = $this->m_activity->get_by_student_id($data['student_code']);
 		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
-
+		$data['status'] = $this->m_admin->search_student_status($data['student_code']);
 		if($data['student_code']) {
 			$this->load->model('m_admin');
-			$data['result'] = $this->m_admin->search_studemt($data['student_code']);
+			$data['result'] = $this->m_admin->search_student($data['student_code']);
 		} else {
 			$data['result'] = array();
 		}
 		$this->template->view('admin/data_student_admin',$data);
 		
+	}
+
+	public function transcript_student_admin($student_code)
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->load->model('m_student');
+		$data['result'] = $this->m_student->get_student($student_code);
+		$data['transcript'] = $this->m_student->get_transcript($student_code);
+		$data['GPA'] = $this->m_student->get_GPA($student_code);
+		$data['status'] = $this->m_admin->search_student_status($student_code);
+		$this->template->view('admin/transcript_student_admin',$data);
 	}
 
 	public function editdata_student_admin($student_code)
@@ -705,9 +715,10 @@ class c_admin extends CI_Controller {
 			$this->m_activity->insert_activity($data);
 			redirect('admin/c_admin/activity_student');
 
-		}
+		}}
 		// เพิ่มนิสิตในกิจกรรม
 		public function insert_form_student_activity($activity_id)
+		
 		{
 			$data['activity_id'] = $activity_id;
 			$data['user_id'] = $this->session->userdata('user_id');

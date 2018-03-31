@@ -5,7 +5,7 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=<?php echo $this->session->userdata('user_id');?>" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title" style="margin: 0 auto;">
-                    <h1 class="h5"> <?php echo $student['MrMs'] ?> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?> </h1>
+                    <h1 class="h5"> <?php echo $student['Prefix'] ?> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?> </h1>
                         <p> <?php echo $student['Student_ID'] ?> </p>
                 </div>
          </div>
@@ -30,5 +30,6 @@
                                 </ul>
                     </li>
                     <li><a href="graduate_actorstudent"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+                   
           </ul>
         </nav>
