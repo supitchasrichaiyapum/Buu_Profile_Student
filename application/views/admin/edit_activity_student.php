@@ -31,7 +31,7 @@ ul.breadcrumb li a:hover {
             <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li><a href="<?php echo site_url('admin/c_admin/activity_student');?>">ข้อมูลกิจกรรม</a></li>
-                <li><a href="<?php echo site_url('admin/c_admin/form_editactivity_student_admin');?>">แก้ไขข้อมูลกิจกรรม</a></li>
+                <li>แก้ไขข้อมูลกิจกรรม</li>
             </ul>
             
             </div>
