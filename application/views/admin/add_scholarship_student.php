@@ -63,7 +63,7 @@ ul.breadcrumb li a:hover {
             <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li><a href="<?php echo site_url('admin/c_admin/scholarship_student_admin');?>">ทุนการศึกษา</a></li>
-                <li><a href="<?php echo site_url('admin/c_admin/insert_form_scholarship/');?>">เพิ่มรายชื่อทุนการศึกษา</a></li>
+                <li>เพิ่มรายชื่อทุนการศึกษา</li>
                  
             </ul>
             

@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class c_user extends CI_Controller {
-
+	public function menu_user()
+	{
+		$this->template->view('template/main_view');
+		
+	}
 // ดูรางวัลการแข่งขัน
 	public function award()
 	{

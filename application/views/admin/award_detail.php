@@ -41,7 +41,7 @@ ul.breadcrumb li a:hover {
             <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li><a href="<?php echo site_url('admin/c_admin/award_student_admin');?>">รางวัลการแข่งขัน</a></li>
-                <li><a href="<?php echo site_url('admin/c_admin/award_detail');?>">เพิ่มนิสิตรางวัลการแข่งขัน</a></li>
+                <li>เพิ่มนิสิตรางวัลการแข่งขัน</li>
                   
             </ul>
             </div>

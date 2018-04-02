@@ -40,7 +40,7 @@ ul.breadcrumb li a:hover {
             <div class="container-fluid">
             <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
-                  <li><a href="<?php echo site_url('admin/c_admin/activity_student');?>">ข้อมูลกิจกรรม</a></li>
+                  <li>ข้อมูลกิจกรรม</li>
                   
             </ul>
             

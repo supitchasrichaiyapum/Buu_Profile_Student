@@ -659,14 +659,14 @@ class c_admin extends CI_Controller {
 		// รายชื่อนิสิตในทุนการศึกษา
 		public function scholarship_detail($id)
 		{
-		$data['scholarship_id'] = $id;
-		// print_r($id);
-		$this->load->model('m_scholarship');
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
-		// print_r($data);
-		$this->template->view('admin/scholarship_detail',$data);
+			$data['scholarship_id'] = $id;
+			// print_r($id);
+			$this->load->model('m_scholarship');
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
+			// print_r($data);
+			$this->template->view('admin/scholarship_detail',$data);
 		}
 		// แก้ไขรายชื่อทุนการศึกษา
 		public function form_editscholarship_student_admin($scholarship_id) 
@@ -739,14 +739,13 @@ class c_admin extends CI_Controller {
 			$this->m_activity->insert_student_activity($data);
 			redirect('admin/c_admin/activity_detail/'.$activity_id);
 		}
-		
 		// ลบนิสิตกิจกรรม
-		public function delete_activity_has_student(){
+		public function delete_activity_has_student($activity_id){
 			// print_r($_POST);
-			$activity_id = $this->input->post('Activitie_ID');
-			$student_id = $this->input->post('Student_ID');
+			$activity_id = $this->input->post('Activity_Activitie_ID');
+			$student_id = $this->input->post('Student_Student_ID');
 			$this->load->model('m_activity');
-			$this->m_activity->delete_activity_has_student($id);
+			$this->m_activity->delete_activity_has_student($student_id);
 			redirect('admin/c_admin/activity_detail/'.$activity_id);
 		}
 		// รายชื่อกิจกรรม
