@@ -52,12 +52,6 @@ class m_award extends CI_Model
             $this->db->delete('Award_has_Student');
             return true;
         }
-        // public function delete_award(){
-        //     $this->db->order_by('Award_ID','DESC');
-        //     $query = $this->db->get('Award');
-        //     return $query->result_array();
-        // }
-
         public function get_by_id($id){
                 $this->db->where('Award_ID',$id);
                 $query = $this->db->get('Award');
