@@ -43,7 +43,7 @@ section.dashboard-counts .row {
   <tr>
         <td><?php echo $row->Award_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->MrMs." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
+        <td><?php echo $row->Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
         <!-- <td><center> -->
         
           <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_ID);?>"> -->

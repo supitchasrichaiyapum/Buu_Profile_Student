@@ -111,19 +111,20 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['result'] = $this->m_award->get_all_award();
 		$data['result1'] = $this->m_award->get_by_id_award_has_student($data['result']);
-		// print_r($data);
+		
 		$this->template->view('admin/award_student_admin',$data);
 	}
 	// รายชื่อนิสิตในรางวัลนั้นๆ
-	public function award_detail($id)
-	{
+	public function award_detail($id,$award_year)
+	{	
+		
 		$data['award_id'] = $id;
-		// print_r($id);
+		$data['award_year'] = $award_year;
 		$this->load->model('m_award');
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['result1'] = $this->m_award->get_Award_by_id($id);
-		// print_r($data);
+		
 		$this->template->view('admin/award_detail',$data);
 	}
 	// แก้ไขรายชื่อรางวัลการแข่งขัน
@@ -158,11 +159,11 @@ class c_admin extends CI_Controller {
 		
 		redirect('admin/c_admin/award_student_admin/'.$award_id);
 	}
-	public function statistics_student_admin()
+	public function statistics_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$this->template->view('admin/statistics_student_admin',$data);
+		$this->template->view('admin/statistics_admin',$data);
 	}
 	
 	public function consider_student_admin()
@@ -706,6 +707,7 @@ class c_admin extends CI_Controller {
 		// เพิ่มกิจกรรม
 		public function insert_activity()
 		{
+			
 			$data['Activitie_Name'] = $this->input->post('Activitie_Name');
 			$data['Activity_Term'] = $this->input->post('Activity_Term');
 			$data['Activity_Year'] = $this->input->post('Activity_Year');
@@ -718,7 +720,6 @@ class c_admin extends CI_Controller {
 		}
 		// เพิ่มนิสิตในกิจกรรม
 		public function insert_form_student_activity($activity_id)
-		
 		{
 			$data['activity_id'] = $activity_id;
 			$data['user_id'] = $this->session->userdata('user_id');
@@ -727,6 +728,7 @@ class c_admin extends CI_Controller {
 			$this->template->view('admin/add_activity_student',$data);
 		}
 		// เพิ่มรายชื่อนิสิตในกิจกรรม
+
 		public function insert_student_activity()
 		{
 			$activity_id = $this->input->post('Activity_Activitie_ID');
@@ -754,7 +756,7 @@ class c_admin extends CI_Controller {
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$data['result'] = $this->m_activity->get_all_activity();
 			$data['result1'] = $this->m_activity->get_by_id_activity_has_student($data['result']);
-			// print_r($data);
+			print_r($data);
 			$this->template->view('admin/activity_student_admin',$data);
 		}
 		// รายชื่อนิสิตกิจกรรม

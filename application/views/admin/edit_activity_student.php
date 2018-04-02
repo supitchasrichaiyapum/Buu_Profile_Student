@@ -72,7 +72,7 @@ ul.breadcrumb li a:hover {
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
                         <div class="input-group col-md-5">     
-                                <select name="Award_Year" onchange="open_iframe_Box()">
+                                <select name="Activity_Year" onchange="open_iframe_Box()">
                                     <?php
                                         $year = date('Y')+543;
                                         //++ year

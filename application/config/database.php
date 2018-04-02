@@ -100,7 +100,9 @@ $query_builder = TRUE;
 
 
 
-// // อันเก่า
+
+// อันเก่า
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => '103.86.50.206',
