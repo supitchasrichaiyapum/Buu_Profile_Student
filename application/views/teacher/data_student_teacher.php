@@ -46,7 +46,6 @@ th {
 
                 
                 <div align="right">
-                <a href="<?php echo site_url("teacher/c_teacher/editdata_student_teacher/".$result[0]->Student_ID); ?>"><button type="submit" class="btn btn-sm btn-primary"> แก้ไข </button></a>
                 <a href="<?php echo site_url("teacher/c_teacher/transcript_student_teacher/".$result[0]->Student_ID); ?>"><button type="submit" class="btn btn-sm btn-primary"> ผลการศึกษา </button></a>
                 </div>
                 
@@ -128,26 +127,6 @@ th {
               <table style="width:100%">
                 <tr>
                   <TH>3. ที่อยู่ที่สามารถติดต่อได้(ที่อยู่ปัจจุบัน)</TH>
-                </tr>
-                <tr>
-                  <TH>ที่อยู่หอพัก</TH>
-                </tr>
-                <tr>
-                  <td><b>หอพัก : </b><?php echo $result[0]->Dormitory_Name ?></td>
-                  <td><b>ห้อง : </b><?php echo $result[0]->Dormitory_Room ?></td>
-                  <td><b>โทรศัพท์ : </b><?php echo $result[0]->Dormitory_Phone ?></td>
-                  <td><b>มือถือ : </b><?php echo $result[0]->Dormitory_Mobile ?></td>
-                </tr>
-                <tr>
-                  <td><b>เลขที่หอ : </b><?php echo $result[0]->Dormitory_Number ?></td>
-                  <td><b>หมู่ : </b><?php echo $result[0]->Dormitory_Moo ?></td>
-                  <td><b>ซอย : </b><?php echo $result[0]->Dormitory_Soi ?></td>
-                  <td><b>ตำบล : </b><?php echo $result[0]->Dormitory_Tumbon ?></td>
-                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Dormitory_Aumper ?></td>
-                </tr>
-                <tr>
-                  <td><b>จังหวัด : </b><?php echo $result[0]->Dormitory_Province ?></td>
-                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Dormitory_Postcode ?></td>
                 </tr>
                 <tr>
                   <TH>ที่อยู่บ้านพัก</TH>

@@ -72,10 +72,10 @@ class m_activity extends CI_Model
                 return $query->result_array();
             }
         
-            public function insert_activity($data){
+        public function insert_activity($data){
                 return $this->db->insert('Activity',$data);
             }
-            public function insert_student_activity($data){
+        public function insert_student_activity($data){
                 return $this->db->insert('Activity_has_Student',$data);
             }
 

@@ -10,7 +10,7 @@ class m_student extends CI_Model
 
         public function update_datastudent($data, $student_id){
             $this->db->where('Student_ID',$student_id);
-            return $this->db->update('Student',$data);
+            return $this->db->repalce('Student',$data);
         }
 
         public function status($ID_Student){
