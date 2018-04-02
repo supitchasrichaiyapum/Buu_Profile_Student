@@ -61,7 +61,10 @@ class c_login extends CI_Controller {
             redirect('welcome');
 
         } else {
+
+            // การ login แบบอันหลอกๆ
             $data =  $this->m_login->xlogin($username, $password);
+
             // print_r($data);
             // die();
             if($data) {
@@ -79,7 +82,7 @@ class c_login extends CI_Controller {
         }
                 // print_r($userdata);
                 // die();
-    } 
+    }
             
 
     public function logout()
