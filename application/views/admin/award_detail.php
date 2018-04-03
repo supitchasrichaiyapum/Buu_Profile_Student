@@ -64,11 +64,11 @@ ul.breadcrumb li a:hover {
                     <div class="form-group row">
                         <label class="col-md-2 col-form-label" for="text-input"><b>วัน / เดือน / ปี</b></label>
                             <div class="col-md-3">
-                            <label><code>* เลือกปีการแข่งขันให้เป็นปี : <?php echo $award_year - 543 ?> </code>
                                 <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
                             </div>
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
+                            
                                 <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id;?>">
                                 <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">
                                 

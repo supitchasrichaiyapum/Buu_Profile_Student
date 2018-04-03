@@ -44,7 +44,7 @@
                           
                           <img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=<?php echo $student_code ?>" style="float:left;"> <br>
                           <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; รหัสนิสิต : <?php echo $result[0]->Student_Student_ID ?> </p>
-                          <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ชื่อ - นามสกุล : <?php echo $result[0]->MrMs." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH ?> </p>
+                          <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ชื่อ - นามสกุล : <?php echo $result[0]->Prefix." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH ?> </p>
                           <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; หลักสูตร : <?php echo $result[0]->Course ?> </p>
                           <br><br><br><br>
                           <TR>
