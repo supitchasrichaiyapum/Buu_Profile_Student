@@ -86,8 +86,10 @@ ul.breadcrumb li a:hover {
                             <td><?php echo $row['Award_Giver'];?></td>
                             <td><?php echo $row['Award_Amount'];?></td>
                             <td><center>
+
                               <a href="<?php echo site_url('admin/c_admin/award_detail/'.$row['Award_ID']."/".$row['Award_Year']);?>">
                               <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้ได้รับรางวัล</button>&nbsp;
+
                               <a href="<?php echo site_url('admin/c_admin/form_editaward_student_admin/'.$row['Award_ID']);?>">                              
                               <button type="button" class="btn btn-warning btn-sm"></i> แก้ไข</button><br>
                               </center></td>

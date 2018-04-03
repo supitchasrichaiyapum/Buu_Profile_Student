@@ -416,6 +416,89 @@
                     </div>
                   </div>
                 </div><br>
+
+                <B>5. ข้อมูลผู้ที่ติดต่อได้</B><br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <br><label for="Contact_Name">ชื่อ</label>
+                        <input type="text" class="form-control" id="Contact_Name" name="Contact_Name" value="<?php echo $student['Contact_Name'] ?>">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                    <br><label for="Contact_Status">ความสัมพันธ์</label>
+                      <select class="form-control" id="Contact_Status" name="Contact_Status">
+                        <?php foreach(get_status_parent() as $key => $status_parent){
+                          if($student['Contact_Status'] == $key){
+                            echo '<option value="'.$key.'" selected>'.$status_parent.'</option>';
+                          } else {
+                            echo '<option value="'.$key.'">'.$status_parent.'</option>';
+                          }
+                        } ?>
+                      </select>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="Contact_Email">E-Mail</label>
+                      <input type="text" class="form-control" id="Contact_Email" name="Contact_Email" value="<?php echo $student['Contact_Email'] ?>">
+                    </div>
+                  </div>
+                <br>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contactaddress_Number">ที่อยู่ของผู้ที่ติดต่อได้</label>
+                      <input type="text" class="form-control" id="Contactaddress_Number" name="Contactaddress_Number" value="<?php echo $student['Contactaddress_Number'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contactaddress_Tumbon">ตำบล / แขวง</label>
+                      <input type="text" class="form-control" id="Contactaddress_Tumbon" name="Contactaddress_Tumbon" value="<?php echo $student['Contactaddress_Tumbon'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contactaddress_Aumper">อำเภอ / เขต</label>
+                      <input type="text" class="form-control" id="Contactaddress_Aumper" name="Contactaddress_Aumper" value="<?php echo $student['Contactaddress_Aumper'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contactaddress_Province">จังหวัด</label>
+                      <input type="text" class="form-control" id="Contactaddress_Province" name="Contactaddress_Province" value="<?php echo $student['Contactaddress_Province'] ?>">
+                    </div>
+                  </div>
+                  
+
+
+                </div>    
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contactaddress_Postcode">รหัสไปรษณีย์</label>
+                      <input type="text" class="form-control" id="Contactaddress_Postcode" name="Contactaddress_Postcode" value="<?php echo $student['Contactaddress_Postcode'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Phone">โทรศัพท์</label>
+                      <input type="text" class="form-control" id="Contact_Phone" name="Contact_Phone" value="<?php echo $student['Contact_Phone'] ?>">
+                    </div>
+                  </div>
+                </div>             
+                
+
+                
                 
           <button type="submit" class="btn btn-primary">บันทึก</button>
           

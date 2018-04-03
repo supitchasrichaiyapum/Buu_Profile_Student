@@ -62,8 +62,10 @@ ul.breadcrumb li a:hover {
            <div class="card-body"><br>
                 <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                     <div class="form-group row">
+
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
+                            
                                 <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id;?>">
                                 <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">
                                 

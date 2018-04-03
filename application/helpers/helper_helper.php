@@ -7,6 +7,7 @@
         );
     return $terms;
     }
+
     function get_bloods() {
         $bloods = array(
             ' ' => 'ไม่ระบุ',
@@ -56,5 +57,15 @@
         );
     return $course;
     }
+
+    function get_scholarship() {
+        $scholarship = array(
+            'ทุนผลการเรียนดีเด่น' => 'ทุนผลการเรียนดีเด่น',
+            'ทุนกิจกรรม' => 'ทุนกิจกรรม',
+            'ทุนขาดแคลนทุนทรัพย์' => 'ทุนขาดแคลนทุนทรัพย์'
+        );
+    return $scholarship;
+    }
+
 
 ?>

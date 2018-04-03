@@ -59,16 +59,13 @@ ul.breadcrumb li a:hover {
                 <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal"><br>
                 <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
                     <div class="form-group row">
-                        <label class="col-md-2 col-form-label" for="text-input"><b>วัน / เดือน / ปี</b></label>
-                            <div class="col-md-3">
-                                <input type="date" id="Scholarship_Date" name="Scholarship_Date" class="form-control" required="">
-                            </div>
+                       
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
                                 <input type="hidden" id="Scholarship_ID" name="Scholarship_ID" value="<?php echo $scholarship_id;?>">
                                 <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">                           
                             </div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                            <button type="submit" class="btn btn-sm btn-success"> บันทึก </button>
                     </div>     
                     <div class="text-center">                                    
                     </div>
@@ -80,10 +77,9 @@ ul.breadcrumb li a:hover {
 <thead>
             <tr>
 
-              <th>วัน เดือน ปี </th>
               <th>รหัสนิสิต </th>
-              <th>ชื่อ - นามสกุล</th>
-              
+              <th>ชื่อ - นามสกุล </th>
+              <th>หลักสูตร </th>
                
               <th></th>   
                         
@@ -92,17 +88,15 @@ ul.breadcrumb li a:hover {
 <tbody>
 <?php foreach ($result1 as $row) { ?>
   <tr>
-        <td><?php echo $row->Scholarship_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
+        <td><?php echo $row->Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?> </td>
+        <td><?php echo $row->Course ?></td>
         <td><center>
         <form action="<?php echo site_url('admin/c_admin/delete_scholarship_has_scholarship/'.$row->Scholarship_ID);?>" method="post">
           <input type="hidden" id="Scholarship_ID" name="Scholarship_ID" value="<?php echo $scholarship_id; ?>">
           <input type="hidden" id="Student_ID" name="Student_ID" value="<?php echo $row->Student_ID; ?>">
           <button type="submit" class="btn btn-danger btn-sm" >ลบ</button></a>
           </form>
-
-         
         </center></td>
       
 
