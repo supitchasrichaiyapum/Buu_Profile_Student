@@ -23,7 +23,7 @@ th, td {
 .button {border-radius: 8px;}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ul.breadcrumb {
-    padding: 10px 16px;
+    padding: 5px 16px;
     list-style: none;
     background-color: #eee;
 }
@@ -36,14 +36,7 @@ ul.breadcrumb li+li:before {
     color: black;
     content: "/\00a0";
 }
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
+
 </style>
   
   <div class="content-inner">
@@ -78,7 +71,10 @@ ul.breadcrumb li a:hover {
                         
                         <th>ชื่อทุนการศึกษา</th>
                         <th>ผู้มอบทุนการศึกษา</th>
-                        <th>จำนวนเงิน(บาท)</th>
+                        <th>ปีการศึกษา</th>
+                        <th>จำนวนทุน</th>
+                        <th>จำนวนเงินทุนละ(บาท)</th>
+                        <th>รวมเป็นเงิน(บาท)</th>
                         <th></th>
                       </tr>
                   </thead>   
@@ -87,7 +83,10 @@ ul.breadcrumb li a:hover {
                     <tr> 
                       <td><?php echo $row['Scholarship_Name'] ?></td>
                       <td><?php echo $row['Scholarship_Giver'] ?></td>
+                      <td><?php echo $row['Scholarship_Year'] ?></td>
+                      <td><?php echo $row['Scholarship_Count'] ?></td>
                       <td><?php echo $row['Scholarship_Amount'] ?></td>
+                      <td><?php echo $row['Scholarship_Amounttotal'] ?></td>
                       <td><center>
                         <a href="<?php echo site_url('admin/c_admin/scholarship_detail/'.$row['Scholarship_ID']);?>">
                         <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียด</button>&nbsp;
@@ -103,8 +102,6 @@ ul.breadcrumb li a:hover {
               </div>
             </div>
          
-
-
     <script>
       $(document).ready(function() {
           $('#datatable').DataTable();

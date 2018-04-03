@@ -115,11 +115,11 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/award_student_admin',$data);
 	}
 	// รายชื่อนิสิตในรางวัลนั้นๆ
-	public function award_detail($id,$award_year)
+	public function award_detail($id)
 	{	
 		
 		$data['award_id'] = $id;
-		$data['award_year'] = $award_year;
+		
 		$this->load->model('m_award');
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
@@ -608,7 +608,10 @@ class c_admin extends CI_Controller {
 		{
 			$data['Scholarship_Name'] = $this->input->post('Scholarship_Name');
 			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
+			$data['Scholarship_Year'] = $this->input->post('Scholarship_Year');
+			$data['Scholarship_Count'] = $this->input->post('Scholarship_Count');
 			$data['Scholarship_Amount'] = $this->input->post('Scholarship_Amount');
+			$data['Scholarship_Amounttotal'] = $this->input->post('Scholarship_Amounttotal');
 			$this->load->model('m_scholarship');
 			$this->m_scholarship->insert_scholarship($data);
 			redirect('admin/c_admin/scholarship_student_admin');
@@ -629,9 +632,7 @@ class c_admin extends CI_Controller {
 		{
 			$scholarship_id = $this->input->post('Scholarship_ID');
 			$data['Scholarship_ID'] = $this->input->post('Scholarship_ID');
-			$data['Scholarship_Date'] = $this->input->post('Scholarship_Date');
 			$data['Student_ID'] = $this->input->post('Student_ID');
-			
 			$this->load->model('m_scholarship');
 			$this->m_scholarship->insert_student_scholarship($data);
 			redirect('admin/c_admin/scholarship_detail/'.$scholarship_id);
@@ -686,9 +687,12 @@ class c_admin extends CI_Controller {
 		public function editscholarship_student_admin($scholarship_id) 
 		{
 			// print_r($_POST);
-			$data['Scholarship_Name'] = $this->input->post('Scholarship_ID');
+			$data['Scholarship_Name'] = $this->input->post('Scholarship_Name');
 			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
+			$data['Scholarship_Year'] = $this->input->post('Scholarship_Year');
+			$data['Scholarship_Count'] = $this->input->post('Scholarship_Count');
 			$data['Scholarship_Amount'] = $this->input->post('Scholarship_Amount');
+			$data['Scholarship_Amounttotal'] = $this->input->post('Scholarship_Amounttotal');
 			// print_r($data);
 			$this->load->model('m_scholarship');
 			$this->m_scholarship->update_scholarship($data, $scholarship_id);
@@ -756,7 +760,6 @@ class c_admin extends CI_Controller {
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$data['result'] = $this->m_activity->get_all_activity();
 			$data['result1'] = $this->m_activity->get_by_id_activity_has_student($data['result']);
-			print_r($data);
 			$this->template->view('admin/activity_student_admin',$data);
 		}
 		// รายชื่อนิสิตกิจกรรม

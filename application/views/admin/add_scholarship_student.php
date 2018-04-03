@@ -84,24 +84,64 @@ ul.breadcrumb li a:hover {
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">ชื่อทุนการศึกษา</label>
                                             <div class="col-md-3">
-                                            <input type="text" id="Scholarship_Name" name="Scholarship_Name" class="form-control" required="">
+                                            <select id="Scholarship_Name" name="Scholarship_Name" class="form-control">
+                                                <option value="ทุนผลการเรียนดีเด่น">ทุนผลการเรียนดีเด่น</option>
+                                                <option value="ทุนกิจกรรม">ทุนกิจกรรม</option>
+                                                <option value="ทุนขาดแคลนทุนทรัพย์">ทุนขาดแคลนทุนทรัพย์</option>
+                                            </select>
                                             </div>
-                                    </div>                                    
+                                    </div>   
+
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">ผู้มอบทุนการศึกษา</label>
                                             <div class="col-md-3">
                                                 <input type="text" id="Scholarship_Giver" name="Scholarship_Giver" class="form-control" required="">
                                             </div>
                                     </div>
+                    
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)<code>* ตัวอย่าง 5000</code></label>
+                                        <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
+                                            <div class="col-md-3">
+                                            <select name="Scholarship_Year" id="Scholarship_Year" onchange="open_iframe_Box()" class="form-control">
+                                            <?php
+                                                $year = date('Y')+543;
+                                                //++ year
+                                                for($i=$year-1;$i<$year+1;$i++) {
+                                                    if($i == $year) {
+                                                        echo '<option value="'.$i.'" selected>'.$i.'</option>';
+                                                    } else {
+                                                        echo '<option value="'.$i.'">'.$i.'</option>';		
+                                                    }
+                                                }
+                                            ?>
+                                            </select>   
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">จำนวนทุน</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="Scholarship_Count" name="Scholarship_Count" class="form-control" required="">
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">จำนวนเงินทุนละ(บาท)<code>* ตัวอย่าง 5000</code></label>
                                             <div class="col-md-3">
                                                 <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="">
                                             </div>
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">รวมเป็นเงิน<code>* ตัวอย่าง 5000</code></label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control" required="">
+                                            </div>
+                                    </div>
+
                                     <center>
                                     <button type="reset" class="btn btn-sm btn-danger"> ยกเลิก </button>
-                                    <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                                    <button type="submit" class="btn btn-sm btn-success"> บันทึก </button>
                                     </center>
                                 </div>
                             </div>
