@@ -62,11 +62,6 @@ ul.breadcrumb li a:hover {
            <div class="card-body"><br>
                 <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                     <div class="form-group row">
-                        <label class="col-md-2 col-form-label" for="text-input"><b>วัน / เดือน / ปี</b></label>
-                            <div class="col-md-3">
-                            <label><code>* เลือกปีการแข่งขันให้เป็นปี : <?php echo $award_year - 543 ?> </code>
-                                <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
-                            </div>
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
                                 <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id;?>">
@@ -74,7 +69,7 @@ ul.breadcrumb li a:hover {
                                 
                             </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         
-                          <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                          <button type="submit" class="btn btn-sm btn-success"> บันทึก </button>
                     </div>                   
                 </form>  
         <br><hr><br><br>
@@ -82,8 +77,6 @@ ul.breadcrumb li a:hover {
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
-
-              <th>วัน เดือน ปี </th>
               <th>รหัสนิสิต </th>
               <th>ชื่อ - นามสกุล</th>
               
@@ -95,7 +88,6 @@ ul.breadcrumb li a:hover {
 <tbody>
   <?php foreach ($result1 as $row) { ?>
   <tr>
-        <td><?php echo $row->Award_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
         <td><?php echo $row->	Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
         <td><center>

@@ -82,7 +82,7 @@ ul.breadcrumb li a:hover {
                             <td><?php echo $row['Hour'];?></td>
                             <td><center>
                               <a href="<?php echo site_url('admin/c_admin/activity_detail/'.$row['Activitie_ID']);?>">
-                              <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียด</button>&nbsp;
+                              <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้เข้าร่วมโครงการ</button>&nbsp;
                               <a href="<?php echo site_url('admin/c_admin/form_editactivity_student_admin/'.$row['Activitie_ID']);?>">
                               <button type="button" class="btn btn-warning btn-sm"></i> แก้ไข</button><br>
                             </center></td>

@@ -55,7 +55,7 @@ th, td {
                       <td><?php echo $row['Scholarship_Amount'] ?></td>
                       <td><center>
                         <a href="<?php echo site_url('student/c_student/scholarship_detail/'.$row['Scholarship_ID']);?>">
-                        <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียด</button>&nbsp;
+                        <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้รับทุน</button>&nbsp;
                       </center></td>
                     </tr>    
                     <?php } ?>  

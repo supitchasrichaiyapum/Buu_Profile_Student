@@ -77,7 +77,7 @@ ul.breadcrumb li a:hover {
                             <td><?php echo $row['Award_Amount'];?></td>
                             <td><center>
                               <a href="<?php echo site_url('user/c_user/award_detail_user/'.$row['Award_ID']);?>">
-                                <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียด</button>&nbsp;
+                                <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้ได้รับรางวัล</button>&nbsp;
                             </center></td>
                         </tr>      
                       <?php } ?>

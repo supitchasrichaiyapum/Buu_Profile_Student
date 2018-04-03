@@ -90,7 +90,7 @@ ul.breadcrumb li a:hover {
                       <td><?php echo $row['Scholarship_Amount'] ?></td>
                       <td><center>
                         <a href="<?php echo site_url('admin/c_admin/scholarship_detail/'.$row['Scholarship_ID']);?>">
-                        <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียด</button>&nbsp;
+                        <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้รับทุน</button>&nbsp;
                         <a href="<?php echo site_url('admin/c_admin/form_editscholarship_student_admin/'.$row['Scholarship_ID']);?>">
                         <button type="button" class="btn btn-warning btn-sm"></i> แก้ไข</button><br>
                       </center></td>

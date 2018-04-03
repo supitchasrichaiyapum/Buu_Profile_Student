@@ -31,7 +31,7 @@ ul.breadcrumb li a:hover {
           <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li><a href="<?php echo site_url('admin/c_admin/award_student_admin');?>">รางวัลการแข่งขัน</a></li>
-                <li>เพิ่มรางวัลการแข่งขัน</li>
+                <li>เพิ่มรางวัลหรือผลงาน</li>
             </ul>
             </div>
           </header>
@@ -40,13 +40,32 @@ ul.breadcrumb li a:hover {
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                <h1><strong><center>เพิ่มรายชื่อรางวัลการแข่งขัน</strong></h1>
+                <h1><strong><center>เพิ่มรางวัลหรือผลงาน</strong></h1>
                 </div>
                     <div class="card-body">
                         <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" >  <BR>                  
-                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
+                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>    
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัลการแข่งขัน</label>
+                            <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
+                                <div class="col-md-3">
+                                    <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
+                                </div>  
+                        </div> 
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="text-input">หลักสูตร</label>
+                            <div class="col-md-3">
+                                <select id="Award_Course" name="Award_Course" class="form-control">
+                                    <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
+                                    <option value="วท.บ. วิทยาการคอมพิวเตอร์">วท.บ. วิทยาการคอมพิวเตอร์</option>
+                                    <option value="วท.บ. วิศวกรรมซอร์ฟแวร์">วท.บ. วิศวกรรมซอร์ฟแวร์</option>
+                                    <option value="วท.ม. เทคโนโลยีสารสนเทศ">วท.ม. เทคโนโลยีสารสนเทศ</option>
+                                    <option value="วท.ม. วิทยาการคอมพิวเตอร์">วท.ม. วิทยาการคอมพิวเตอร์</option>
+                                    <option value="ปร.ด. วิทยาการคอมพิวเตอร์">ปร.ด. วิทยาการคอมพิวเตอร์</option>
+                                </select>
+                            </div>      
+                        </div>             
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัลหรือชื่อผลงาน</label>
                             <div class="col-md-3">
                                 <input type="text" id="Award_Name" name="Award_Name" class="form-control">
                             </div>
@@ -55,9 +74,9 @@ ul.breadcrumb li a:hover {
                         <label class="col-md-3 col-form-label" for="text-input">เทอม</label>
                             <div class="col-md-3">
                                 <select id="Award_Term" name="Award_Term" class="form-control">
-                                    <option value="1">เทอม 1</option>
-                                    <option value="2">เทอม 2</option>
-                                    <option value="3">ซัมเมอร์</option>
+                                    <option value="เทอม 1">เทอม 1</option>
+                                    <option value="เทอม 2">เทอม 2</option>
+                                    <option value="ซัมเมอร์">ซัมเมอร์</option>
                                 </select>
                             </div>                           
                         </div>  
@@ -80,13 +99,13 @@ ul.breadcrumb li a:hover {
                             </div>
                         </div>  
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input">อาจารย์ผู้ช่วย</label>
+                            <label class="col-md-3 col-form-label" for="text-input">อาจารย์ผู้ทำผลงานร่วม</label>
                             <div class="col-md-3">
                                 <input type="text" id="Award_Giver" name="Award_Giver" class="form-control"><br>
                             </div>
                         </div> 
                         <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)<code>* ตัวอย่าง 5000</code></label>
+                        <label class="col-md-3 col-form-label" for="text-input">เงินรางวัล(บาท)<code>* ตัวอย่าง 5000</code></label>
 
                             <div class="col-md-3">
                                 <input type="text" id="Award_Amount" name="Award_Amount" class="form-control" required=""><br>
@@ -94,7 +113,7 @@ ul.breadcrumb li a:hover {
                     </div>
                         <div class="text-center">
                             <button type="reset" class="btn btn-sm btn-danger"> ยกเลิก </button>
-                            <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                            <button type="submit" class="btn btn-sm btn-success"> บันทึก </button>
                         </div>
 
 </form>
