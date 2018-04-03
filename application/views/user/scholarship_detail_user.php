@@ -72,11 +72,7 @@ ul.breadcrumb li a:hover {
   <tr>
         <td><?php echo $row->Scholarship_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
-
-      
-
-    
+        <td><?php echo $row->Prefix." ".$row->Student_Name_TH." ".$row->Student_Lname_TH ?>    
   </tr>      
 <?php } ?>
 

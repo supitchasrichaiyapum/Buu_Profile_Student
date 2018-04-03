@@ -224,9 +224,67 @@ class c_admin extends CI_Controller {
 	
 	public function post_edit_student_admin($student_code)
 	{
-		
-		$data['Student_NameEng'] = $this->input->post('Student_NameEng');
-		$data['Student_LNameENG'] = $this->input->post('Student_LNameENG');
+		$this->form_validation->set_rules('Student_Name_Eng', 'ชื่อภาษาอังกฤษ', 'required');
+		$this->form_validation->set_rules('Student_Lname_Eng', 'นามสกุลภาษาอังกฤษ', 'required');
+		$this->form_validation->set_rules('Student_Nickname', 'ชื่อเล่น', 'required');
+		$this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'required|valid_email');
+		$this->form_validation->set_rules('Blood', 'กรุ๊ปเลือด', 'required');
+		$this->form_validation->set_rules('Facebook', 'Facebook', 'required');
+		$this->form_validation->set_rules('Line', 'Line', 'required');
+		$this->form_validation->set_rules('Address_Number', 'นิสิต : บ้านเลขที่', 'required');
+		// $this->form_validation->set_rules('Address_Moo', 'นิสิต : หมู่', 'is_natural_no_zero');
+		$this->form_validation->set_rules('Address_Soi', 'นิสิต : ซอย', 'required');
+		$this->form_validation->set_rules('Address_Tumbon', 'นิสิต : ตำบล', 'required');
+		$this->form_validation->set_rules('Address_Aumper', 'นิสิต : อำเภอ', 'required');
+		$this->form_validation->set_rules('Address_Province', 'นิสิต : จังหวัด', 'required');
+		$this->form_validation->set_rules('Address_Postcode', 'นิสิต : รหัสไปรษณีย์', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required');
+		$this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'valid_email');
+		$this->form_validation->set_rules('Father_Name', 'ชื่อ-นามสกุลบิดา', 'required');
+		$this->form_validation->set_rules('Father_Career', 'อาชีพบิดา', 'required');
+		$this->form_validation->set_rules('Father_Status', 'ความสัมพันธ์บิดา', 'required');
+		$this->form_validation->set_rules('Father_Address_Number', 'บิดา : บ้านเลขที่', 'required');
+		// $this->form_validation->set_rules('Father_Address_Moo', 'บิดา : หมู่', 'is_natural_no_zero');
+		$this->form_validation->set_rules('Father_Address_Soi', 'บิดา : ซอย', 'required');
+		$this->form_validation->set_rules('Father_Address_Tumbon', 'บิดา : ตำบล', 'required');
+		$this->form_validation->set_rules('Father_Address_Aumper', 'บิดา : อำเภอ', 'required');
+		$this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required');
+		$this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณ๊ย์', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Father_Phone', 'บิดา : เบอร์โทรศัพท์', 'required');
+		// $this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'required|valid_email');
+		$this->form_validation->set_rules('Mother_Name', 'ชื่อ-นามสกุลมารดา', 'required');
+		$this->form_validation->set_rules('Mother_Career', 'อาชีพมารดา', 'required');
+		$this->form_validation->set_rules('Mother_Status', 'ความสัมพันธ์มารดา', 'required');
+		$this->form_validation->set_rules('Mother_Address_Number', 'มารดา : บ้านเลขที่', 'required');
+		// $this->form_validation->set_rules('Mother_Address_Moo', 'มารดา : หมู่', 'is_natural_no_zero');
+		$this->form_validation->set_rules('Mother_Address_Soi', 'มารดา : ซอย', 'required');
+		$this->form_validation->set_rules('Mother_Address_Tumbon', 'มารดา : ตำบล', 'required');
+		$this->form_validation->set_rules('Mother_Address_Aumper', 'มารดา : อำเภอ', 'required');
+		$this->form_validation->set_rules('Mother_Address_Province', 'มารดา : จังหวัด', 'required');
+		$this->form_validation->set_rules('Mother_Address_Postcode', 'มารดา : รหัสไปรษณีย์', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Mother_Phone', 'มารดา : เบอร์โทรศัพท์', 'required');
+		// $this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'required|valid_email');
+		$this->form_validation->set_rules('Parent_Name', 'ชื่อ-นามสกุลผู้ปกครอง', 'required');
+		$this->form_validation->set_rules('Parent_Career', 'อาชีพผู้ปกครอง', 'required');
+		$this->form_validation->set_rules('Parent_Status', 'ความสัมพันธ์ผู้ปกครอง', 'required');
+		$this->form_validation->set_rules('Parent_Address_Number', 'ผู้ปกครอง : บ้านเลขที่', 'required');
+		// $this->form_validation->set_rules('Parent_Address_Moo', 'ผู้ปกครอง : หมู่', 'is_natural_no_zero');
+		$this->form_validation->set_rules('Parent_Address_Soi', 'ผู้ปกครอง : ซอย', 'required');
+		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ปกครอง : ตำบล', 'required');
+		$this->form_validation->set_rules('Parent_Address_Aumper', 'ผู้ปกครอง : อำเภอ', 'required');
+		$this->form_validation->set_rules('Parent_Address_Province', 'ผู้ปกครอง : จังหวัด', 'required');
+		$this->form_validation->set_rules('Parent_Address_Postcode', 'ผู้ปกครอง : รหัสไปรษณีย์', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Parent_Phone', 'ผู้ปกครอง : เบอร์โทรศัพท์', 'required');
+		// $this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'required|valid_email');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->edit_datastudent() ;
+		}
+		else
+		{
+		$data['Student_Name_Eng'] = $this->input->post('Student_Name_Eng');
+		$data['Student_Lname_Eng'] = $this->input->post('Student_Lname_Eng');
 		$data['Student_Nickname'] = $this->input->post('Student_Nickname');
 		$data['Student_Phone'] = $this->input->post('Student_Phone');
 		$data['Student_Email'] = $this->input->post('Student_Email');
@@ -245,44 +303,39 @@ class c_admin extends CI_Controller {
 		$data['Father_Name'] = $this->input->post('Father_Name');
 		$data['Father_Career'] = $this->input->post('Father_Career');
 		$data['Father_Status'] = $this->input->post('Father_Status');
-		$data['Fatheraddress_Number'] = $this->input->post('Fatheraddress_Number');
-		$data['Fatheraddress_Moo'] = $this->input->post('Fatheraddress_Moo');
-		$data['Fatheraddress_Soi'] = $this->input->post('Fatheraddress_Soi');
-		$data['Fatheraddress_Tumbon'] = $this->input->post('Fatheraddress_Tumbon');
-		$data['Fatheraddress_Aumper'] = $this->input->post('Fatheraddress_Aumper');
-		$data['Fatheraddress_Province'] = $this->input->post('Fatheraddress_Province');
-		$data['Fatheraddress_Postcode'] = $this->input->post('Fatheraddress_Postcode');
+		$data['Father_Address_Number'] = $this->input->post('Father_Address_Number');
+		$data['Father_Address_Moo'] = $this->input->post('Father_Address_Moo');
+		$data['Father_Address_Soi'] = $this->input->post('Father_Address_Soi');
+		$data['Father_Address_Tumbon'] = $this->input->post('Father_Address_Tumbon');
+		$data['Father_Address_Aumper'] = $this->input->post('Father_Address_Aumper');
+		$data['Father_Address_Province'] = $this->input->post('Father_Address_Province');
+		$data['Father_Address_Postcode'] = $this->input->post('Father_Address_Postcode');
 		$data['Father_Phone'] = $this->input->post('Father_Phone');
 		$data['Father_Email'] = $this->input->post('Father_Email');
 		$data['Mother_Name'] = $this->input->post('Mother_Name');
 		$data['Mother_Career'] = $this->input->post('Mother_Career');
 		$data['Mother_Status'] = $this->input->post('Mother_Status');
-		$data['Motheraddress_Number'] = $this->input->post('Motheraddress_Number');
-		$data['Motheraddress_Moo'] = $this->input->post('Motheraddress_Moo');
-		$data['Motheraddress_Soi'] = $this->input->post('Motheraddress_Soi');
-		$data['Motheraddress_Tumbon'] = $this->input->post('Motheraddress_Tumbon');
-		$data['Motheraddress_Aumper'] = $this->input->post('Motheraddress_Aumper');
-		$data['Motheraddress_Province'] = $this->input->post('Motheraddress_Province');
-		$data['Motheraddress_Postcode'] = $this->input->post('Motheraddress_Postcode');
+		$data['Mother_Address_Number'] = $this->input->post('Mother_Address_Number');
+		$data['Mother_Address_Moo'] = $this->input->post('Mother_Address_Moo');
+		$data['Mother_Address_Soi'] = $this->input->post('Mother_Address_Soi');
+		$data['Mother_Address_Tumbon'] = $this->input->post('Mother_Address_Tumbon');
+		$data['Mother_Address_Aumper'] = $this->input->post('Mother_Address_Aumper');
+		$data['Mother_Address_Province'] = $this->input->post('Mother_Address_Province');
+		$data['Mother_Address_Postcode'] = $this->input->post('Mother_Address_Postcode');
 		$data['Mother_Phone'] = $this->input->post('Mother_Phone');
 		$data['Mother_Email'] = $this->input->post('Mother_Email');
-		$data['Parent_Name'] = $this->input->post('Parent_Name');
-		$data['Parent_Career'] = $this->input->post('Parent_Career');
-		$data['Parent_Status'] = $this->input->post('Parent_Status');
-		$data['Parentaddress_Number'] = $this->input->post('Parentaddress_Number');
-		$data['Parentaddress_Moo'] = $this->input->post('Parentaddress_Moo');
-		$data['Parentaddress_Soi'] = $this->input->post('Parentaddress_Soi');
-		$data['Parentaddress_Tumbon'] = $this->input->post('Parentaddress_Tumbon');
-		$data['Parentaddress_Aumper'] = $this->input->post('Parentaddress_Aumper');
-		$data['Parentaddress_Province'] = $this->input->post('Parentaddress_Province');
-		$data['Parentaddress_Postcode'] = $this->input->post('Parentaddress_Postcode');
-		$data['Parent_Phone'] = $this->input->post('Parent_Phone');
-		$data['Parent_Email'] = $this->input->post('Parent_Email');
-		
-
-		
-		$this->m_student->update_datastudent($data, $student_code);
-		redirect('admin/c_admin/data_student_admin', 'refresh');
+		$data['Contact_Name'] = $this->input->post('Contact_Name');
+		$data['Contact_Status'] = $this->input->post('Contact_Status');
+		$data['Contact_Email'] = $this->input->post('Contact_Email');
+		$data['Contact_Address_Number'] = $this->input->post('Contact_Address_Number');
+		$data['Contact_Address_Tumbon'] = $this->input->post('Contact_Address_Tumbon');
+		$data['Contact_Address_Aumper'] = $this->input->post('Contact_Address_Aumper');
+		$data['Contact_Address_Province'] = $this->input->post('Contact_Address_Province');
+		$data['Contact_Address_Postcode'] = $this->input->post('Contact_Address_Postcode');
+		$data['Contact_Phone'] = $this->input->post('Contact_Phone');
+		$this->m_student->update_datastudent($data, $this->session->userdata('user_id'));
+		redirect('student/c_student/data_student', 'refresh');
+		}
 		
 	}
 
@@ -367,10 +420,10 @@ class c_admin extends CI_Controller {
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['MrMs'] = $row[2];
-					$insert['Student_NameTH'] = $row[3];
-					$insert['Student_LNameTH'] = $row[4];
-					$insert['Student_NameEng'] = $row[5];
-					$insert['Student_LNameENG'] = $row[6];
+					$insert['Student_Name_TH'] = $row[3];
+					$insert['Student_Lname_TH'] = $row[4];
+					$insert['Student_Name_Eng'] = $row[5];
+					$insert['Student_Lname_Eng'] = $row[6];
 					$insert['Campus'] = $row[7];
 					$insert['Course'] = $row[8];
 					$insert['Level'] = $row[9];
@@ -388,25 +441,25 @@ class c_admin extends CI_Controller {
 					$insert['Mother_Name'] = $row[22];
 					$insert['Parent_Name'] = $row[23];
 					$insert['Contact_Name'] = $row[24];
-					$insert['Homeaddress_Number'] = $row[25];
-					$insert['Homeaddress_Moo'] = $row[26];
-					$insert['Homeaddress_Soi'] = $row[27];
-					$insert['Homeaddress_Tumbon'] = $row[28];
-					$insert['Homeaddress_Aumper'] = $row[29];
-					$insert['Homeaddress_Province'] = $row[30];
-					$insert['Homeaddress_Postcode'] = $row[31];
-					$insert['Parentaddress_Number'] = $row[32];
-					$insert['Parentaddress_Moo'] = $row[33];
-					$insert['Parentaddress_Soi'] = $row[34];
-					$insert['Parentaddress_Tumbon'] = $row[35];
-					$insert['Parentaddress_Aumper'] = $row[36];
-					$insert['Parentaddress_Province'] = $row[37];
-					$insert['Parentaddress_Postcode'] = $row[38];
-					$insert['Contactaddress_Number'] = $row[39];
-					$insert['Contactaddress_Tumbon'] = $row[40];
-					$insert['Contactaddress_Aumper'] = $row[41];
-					$insert['Contactaddress_Province'] = $row[42];
-					$insert['Contactaddress_Postcode'] = $row[43];
+					$insert['Home_Address_Number'] = $row[25];
+					$insert['Home_Address_Moo'] = $row[26];
+					$insert['Home_Address_Soi'] = $row[27];
+					$insert['Home_Address_Tumbon'] = $row[28];
+					$insert['Home_Address_Aumper'] = $row[29];
+					$insert['Home_Address_Province'] = $row[30];
+					$insert['Home_Address_Postcode'] = $row[31];
+					$insert['Parent_Address_Number'] = $row[32];
+					$insert['Parent_Address_Moo'] = $row[33];
+					$insert['Parent_Address_Soi'] = $row[34];
+					$insert['Parent_Address_Tumbon'] = $row[35];
+					$insert['Parent_Address_Aumper'] = $row[36];
+					$insert['Parent_Address_Province'] = $row[37];
+					$insert['Parent_Address_Postcode'] = $row[38];
+					$insert['Contact_Address_Number'] = $row[39];
+					$insert['Contact_Address_Tumbon'] = $row[40];
+					$insert['Contact_Address_Aumper'] = $row[41];
+					$insert['Contact_Address_Province'] = $row[42];
+					$insert['Contact_Address_Postcode'] = $row[43];
 					$insert['Blood'] = $row[44];
 					$insert['Degree'] = $row[45];
 					// print_r($row);

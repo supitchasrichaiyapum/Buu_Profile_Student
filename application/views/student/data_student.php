@@ -31,11 +31,11 @@ th {
               <TH>1. ข้อมูลทั่วไป</TH>
             </tr>
             <tr>
-              <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $student['Prefix'] ?> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?></td>
+              <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $student['Prefix'] ?> <?php echo $student['Student_Name_TH'] ?> <?php echo $student['Student_Lname_TH'] ?></td>
               <td><b>ชื่อเล่น : </b><?php echo $student['Student_Nickname'] ?> </td>
             </tr>
             <tr>
-              <td><b>ชื่อ - นานสกุล(ภาษาอังกฤษ) : </b><?php echo $student['Student_NameEng'] ?> <?php echo $student['Student_LNameENG'] ?></td>
+              <td><b>ชื่อ - นานสกุล(ภาษาอังกฤษ) : </b><?php echo $student['Student_Name_Eng'] ?> <?php echo $student['Student_Lname_Eng'] ?></td>
               <td><b>เบอร์โทร : </b><?php echo $student['Student_Phone'] ?></td>
             </tr>
               <tr>
@@ -67,7 +67,7 @@ th {
               <td><b>วิธีรับเข้า : </b><?php echo $student['Entry_Method'] ?></td>
             </tr>
             <tr>
-              <td><b>วุฒิก่อนเข้ารับการศึกษา : </b><?php echo $student['HighesEd'] ?></td>
+              <td><b>วุฒิก่อนเข้ารับการศึกษา : </b><?php echo $student['Highes_Ed'] ?></td>
               <td><b>จบการศึกษาจาก : </b><?php echo $student['Gradfromschool'] ?></td>
             </tr>
             <tr>
@@ -92,15 +92,15 @@ th {
               <TH>2. ที่อยู่ตามทะเบียนบ้าน</TH>
             </tr>
             <tr>
-              <td><b>บ้านเลขที่ : </b><?php echo $student['Homeaddress_Number'] ?></td>
-              <td><b>หมู่ : </b><?php echo $student['Homeaddress_Moo'] ?></td>
-              <td><b>ซอย : </b><?php echo $student['Homeaddress_Soi'] ?></td>
-              <td><b>ตำบล / แขวง : </b><?php echo $student['Homeaddress_Tumbon'] ?></td>
-              <td><b>เขต / อำเภอ : </b><?php echo $student['Homeaddress_Aumper'] ?></td>
+              <td><b>บ้านเลขที่ : </b><?php echo $student['Home_Address_Number'] ?></td>
+              <td><b>หมู่ : </b><?php echo $student['Home_Address_Moo'] ?></td>
+              <td><b>ซอย : </b><?php echo $student['Home_Address_Soi'] ?></td>
+              <td><b>ตำบล / แขวง : </b><?php echo $student['Home_Address_Tumbon'] ?></td>
+              <td><b>เขต / อำเภอ : </b><?php echo $student['Home_Address_Aumper'] ?></td>
             </tr>
             <tr>
-              <td><b>จังหวัด : </b><?php echo $student['Homeaddress_Province'] ?></td>
-              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Homeaddress_Postcode'] ?></td>
+              <td><b>จังหวัด : </b><?php echo $student['Home_Address_Province'] ?></td>
+              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Home_Address_Postcode'] ?></td>
               <td><b>โทรศัพท์ : </b><?php echo $student['Student_Phone'] ?></td>
               <td><b>E-mail : </b><?php echo $student['Student_Email'] ?></td>
             </tr>
@@ -139,15 +139,15 @@ th {
               <td><h5>ที่อยู่บิดา</h5></td>
             </tr>
             <tr>
-              <td><b>บ้านเลขที่ : </b><?php echo $student['Fatheraddress_Number'] ?></td>
-              <td><b>หมู่ : </b><?php echo $student['Fatheraddress_Moo'] ?></td>
-              <td><b>ซอย : </b><?php echo $student['Fatheraddress_Soi'] ?></td>
-              <td><b>ตำบล / แขวง : </b><?php echo $student['Fatheraddress_Tumbon'] ?></td>
-              <td><b>เขต / อำเภอ : </b><?php echo $student['Fatheraddress_Aumper'] ?></td>
+              <td><b>บ้านเลขที่ : </b><?php echo $student['Father_Address_Number'] ?></td>
+              <td><b>หมู่ : </b><?php echo $student['Father_Address_Moo'] ?></td>
+              <td><b>ซอย : </b><?php echo $student['Father_Address_Soi'] ?></td>
+              <td><b>ตำบล / แขวง : </b><?php echo $student['Father_Address_Tumbon'] ?></td>
+              <td><b>เขต / อำเภอ : </b><?php echo $student['Father_Address_Aumper'] ?></td>
             </tr>
             <tr>
-              <td><b>จังหวัด : </b><?php echo $student['Fatheraddress_Province'] ?></td>
-              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Fatheraddress_Postcode'] ?></td>
+              <td><b>จังหวัด : </b><?php echo $student['Father_Address_Province'] ?></td>
+              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Father_Address_Postcode'] ?></td>
               <td><b>E-mail : </b><?php echo $student['Father_Email'] ?></td>
             </tr>
             <tr>
@@ -160,15 +160,15 @@ th {
               <td><h5>ที่อยู่มารดา</h5></td>
             </tr>
             <tr>
-              <td><b>บ้านเลขที่ : </b><?php echo $student['Motheraddress_Number'] ?></td>
-              <td><b>หมู่ : </b><?php echo $student['Motheraddress_Moo'] ?></td>
-              <td><b>ซอย : </b><?php echo $student['Motheraddress_Soi'] ?></td>
-              <td><b>ตำบล / แขวง : </b><?php echo $student['Motheraddress_Tumbon'] ?></td>
-              <td><b>เขต / อำเภอ : </b><?php echo $student['Motheraddress_Aumper'] ?></td>
+              <td><b>บ้านเลขที่ : </b><?php echo $student['Mother_Address_Number'] ?></td>
+              <td><b>หมู่ : </b><?php echo $student['Mother_Address_Moo'] ?></td>
+              <td><b>ซอย : </b><?php echo $student['Mother_Address_Soi'] ?></td>
+              <td><b>ตำบล / แขวง : </b><?php echo $student['Mother_Address_Tumbon'] ?></td>
+              <td><b>เขต / อำเภอ : </b><?php echo $student['Mother_Address_Aumper'] ?></td>
             </tr>
             <tr>
-              <td><b>จังหวัด : </b><?php echo $student['Motheraddress_Province'] ?></td>
-              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Motheraddress_Postcode'] ?></td>
+              <td><b>จังหวัด : </b><?php echo $student['Mother_Address_Province'] ?></td>
+              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Mother_Address_Postcode'] ?></td>
               <td><b>E-mail : </b><?php echo $student['Mother_Email'] ?></td>
             </tr>
           </table>
@@ -182,15 +182,15 @@ th {
               <td><b>ความสัมพันธ์  : </b><?php echo $student['Parent_Status'] ?></td>
             </tr>
             <tr>
-              <td><b>บ้านเลขที่ : </b><?php echo $student['Parentaddress_Number'] ?></td>
-              <td><b>หมู่ : </b><?php echo $student['Parentaddress_Moo'] ?></td>
-              <td><b>ซอย : </b><?php echo $student['Parentaddress_Soi'] ?></td>
-              <td><b>ตำบล / แขวง : </b><?php echo $student['Parentaddress_Tumbon'] ?></td>
-              <td><b>เขต / อำเภอ : </b><?php echo $student['Parentaddress_Aumper'] ?></td>
+              <td><b>บ้านเลขที่ : </b><?php echo $student['Parent_Address_Number'] ?></td>
+              <td><b>หมู่ : </b><?php echo $student['Parent_Address_Moo'] ?></td>
+              <td><b>ซอย : </b><?php echo $student['Parent_Address_Soi'] ?></td>
+              <td><b>ตำบล / แขวง : </b><?php echo $student['Parent_Address_Tumbon'] ?></td>
+              <td><b>เขต / อำเภอ : </b><?php echo $student['Parent_Address_Aumper'] ?></td>
             </tr>
             <tr>
-              <td><b>จังหวัด : </b><?php echo $student['Parentaddress_Province'] ?></td>
-              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Parentaddress_Postcode'] ?></td>
+              <td><b>จังหวัด : </b><?php echo $student['Parent_Address_Province'] ?></td>
+              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Parent_Address_Postcode'] ?></td>
               <td><b>โทรศัพท์ : </b><?php echo $student['Parent_Phone'] ?></td>
               <td><b>E-mail : </b><?php echo $student['Parent_Email'] ?></td>
             </tr>
@@ -205,13 +205,13 @@ th {
               <td><b>ความสัมพันธ์  : </b><?php echo $student['Contact_Status'] ?></td>
             </tr>
             <tr>
-              <td><b>ที่อยู่ผู้ติดต่อได้ : </b><?php echo $student['Contactaddress_Number'] ?></td>
-              <td><b>ตำบล / แขวง : </b><?php echo $student['Contactaddress_Tumbon'] ?></td>
-              <td><b>เขต / อำเภอ : </b><?php echo $student['Contactaddress_Aumper'] ?></td>
-              <td><b>จังหวัด : </b><?php echo $student['Contactaddress_Province'] ?></td>
+              <td><b>ที่อยู่ผู้ติดต่อได้ : </b><?php echo $student['Contact_Address_Number'] ?></td>
+              <td><b>ตำบล / แขวง : </b><?php echo $student['Contact_Address_Tumbon'] ?></td>
+              <td><b>เขต / อำเภอ : </b><?php echo $student['Contact_Address_Aumper'] ?></td>
+              <td><b>จังหวัด : </b><?php echo $student['Contact_Address_Province'] ?></td>
             </tr>
             <tr>
-              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Contactaddress_Postcode'] ?></td>
+              <td><b>รหัสไปรษณีย์ : </b><?php echo $student['Contact_Address_Postcode'] ?></td>
               <td><b>โทรศัพท์ : </b><?php echo $student['Contact_Phone'] ?></td>
               <td><b>E-mail : </b><?php echo $student['Contact_Email'] ?></td>
             </tr>
@@ -229,8 +229,9 @@ th {
 
             <td><b>ชื่อทุน </b></td>
             <td><b>ผู้มอบทุน </b></td>
+            <td><b>ปีการศึกษา</b></td>
             <td><b>จำนวนเงิน(บาท) </b></td>
-            <td><b>ชั่วโมง </b></td>
+            
 
             </tr>
 
@@ -239,8 +240,9 @@ th {
             <tr>
             <td><?php echo $student->Scholarship_Name ?></td>
             <td><?php echo $student->Scholarship_Giver ?></td>
+            <td><?php echo $student->Scholarship_Year ?></td>
             <td><?php echo $student->Scholarship_Amount ?></td>
-            <td><?php echo $student->Scholarship_Date ?></td>
+            
             </tr>
 
             <?php   } 
