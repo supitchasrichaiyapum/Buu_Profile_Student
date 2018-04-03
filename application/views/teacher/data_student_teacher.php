@@ -55,11 +55,11 @@ th {
                   <TH>1. ข้อมูลทั่วไป</TH>
                 </tr>
                 <tr>
-                  <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $result[0]->Prefix." ".$result[0]->Student_NameTH." ".$result[0]->Student_LNameTH ?></td>
+                  <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $result[0]->Prefix." ".$result[0]->Student_Name_TH." ".$result[0]->Student_Lname_TH ?></td>
                   <td><b>ชื่อเล่น : </b><?php echo $result[0]->Student_Nickname ?> </td>
                 </tr>
                 <tr>
-                  <td><b>ชื่อ - นานสกุล(ภาษาอังกฤษ) : </b><?php echo $result[0]->Student_NameEng ?> <?php echo $result[0]->Student_LNameENG ?></td>
+                  <td><b>ชื่อ - นานสกุล(ภาษาอังกฤษ) : </b><?php echo $result[0]->Student_Name_Eng ?> <?php echo $result[0]->Student_Lname_Eng ?></td>
                   <td><b>เบอร์โทร : </b><?php echo $result[0]->Student_Phone ?></td>
                 </tr>
                   <tr>
@@ -90,7 +90,7 @@ th {
                   <td><b>วิธีรับเข้า : </b><?php echo $result[0]->Entry_Method ?></td>
                 </tr>
                 <tr>
-                  <td><b>วุฒิก่อนเข้ารับการศึกษา : </b><?php echo $result[0]->HighesEd ?></td>
+                  <td><b>วุฒิก่อนเข้ารับการศึกษา : </b><?php echo $result[0]->Highes_Ed ?></td>
                   <td><b>จบการศึกษาจาก : </b><?php echo $result[0]->Gradfromschool ?></td>
                 </tr>
                 <tr>
@@ -110,17 +110,17 @@ th {
                   <TH>2. ที่อยู่ตามทะเบียนบ้าน</TH>
                 </tr>
                 <tr>
-                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Homeaddress_Number ?></td>
-                  <td><b>หมู่ : </b><?php echo $result[0]->Homeaddress_Moo ?></td>
-                  <td><b>ซอย : </b><?php echo $result[0]->Homeaddress_Soi ?></td>
-                  <td><b>ตำบล : </b><?php echo $result[0]->Homeaddress_Tumbon ?></td>
-                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Homeaddress_Aumper ?></td>
+                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Home_Address_Number ?></td>
+                  <td><b>หมู่ : </b><?php echo $result[0]->Home_Address_Moo ?></td>
+                  <td><b>ซอย : </b><?php echo $result[0]->Home_Address_Soi ?></td>
+                  <td><b>ตำบล : </b><?php echo $result[0]->Home_Address_Tumbon ?></td>
+                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Home_Address_Aumper ?></td>
                 </tr>
                 <tr>
-                  <td><b>จังหวัด : </b><?php echo $result[0]->Homeaddress_Province ?></td>
-                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Homeaddress_Postcode ?></td>
-                  <td><b>โทรศัพท์ : </b><?php echo $result[0]->Homeaddress_Phone ?></td>
-                  <td><b>E-mail : </b><?php echo $result[0]->Homeaddress_Email ?></td>
+                  <td><b>จังหวัด : </b><?php echo $result[0]->Home_Address_Province ?></td>
+                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Home_Address_Postcode ?></td>
+                  <td><b>โทรศัพท์ : </b><?php echo $result[0]->Home_Address_Phone ?></td>
+                  <td><b>E-mail : </b><?php echo $result[0]->Home_Address_Email ?></td>
                 </tr>
               </table>
     
@@ -160,15 +160,15 @@ th {
                   <td><h5>ที่อยู่บิดา</h5></td>
                 </tr>
                 <tr>
-                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Fatheraddress_Number ?></td>
-                  <td><b>หมู่ : </b><?php echo $result[0]->Fatheraddress_Moo ?></td>
-                  <td><b>ซอย : </b><?php echo $result[0]->Fatheraddress_Soi ?></td>
-                  <td><b>ตำบล : </b><?php echo $result[0]->Fatheraddress_Tumbon ?></td>
-                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Fatheraddress_Aumper ?></td>
+                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Father_Address_Number ?></td>
+                  <td><b>หมู่ : </b><?php echo $result[0]->Father_Address_Moo ?></td>
+                  <td><b>ซอย : </b><?php echo $result[0]->Father_Address_Soi ?></td>
+                  <td><b>ตำบล : </b><?php echo $result[0]->Father_Address_Tumbon ?></td>
+                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Father_Address_Aumper ?></td>
                 </tr>
                 <tr>
-                  <td><b>จังหวัด : </b><?php echo $result[0]->Fatheraddress_Province ?></td>
-                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Fatheraddress_Postcode ?></td>
+                  <td><b>จังหวัด : </b><?php echo $result[0]->Father_Address_Province ?></td>
+                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Father_Address_Postcode ?></td>
                   <td><b>E-mail : </b><?php echo $result[0]->Father_Email ?></td>
                 </tr>
                 <tr>
@@ -181,15 +181,15 @@ th {
                   <td><h5>ที่อยู่มารดา</h5></td>
                 </tr>
                 <tr>
-                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Motheraddress_Number ?></td>
-                  <td><b>หมู่ : </b><?php echo $result[0]->Motheraddress_Moo ?></td>
-                  <td><b>ซอย : </b><?php echo $result[0]->Motheraddress_Soi ?></td>
-                  <td><b>ตำบล : </b><?php echo $result[0]->Motheraddress_Tumbon ?></td>
-                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Motheraddress_Aumper ?></td>
+                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Mother_Address_Number ?></td>
+                  <td><b>หมู่ : </b><?php echo $result[0]->Mother_Address_Moo ?></td>
+                  <td><b>ซอย : </b><?php echo $result[0]->Mother_Address_Soi ?></td>
+                  <td><b>ตำบล : </b><?php echo $result[0]->Mother_Address_Tumbon ?></td>
+                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Mother_Address_Aumper ?></td>
                 </tr>
                 <tr>
-                  <td><b>จังหวัด : </b><?php echo $result[0]->Motheraddress_Province ?></td>
-                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Motheraddress_Postcode ?></td>
+                  <td><b>จังหวัด : </b><?php echo $result[0]->Mother_Address_Province ?></td>
+                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Mother_Address_Postcode ?></td>
                   <td><b>E-mail : </b><?php echo $result[0]->Mother_Email ?></td>
                 </tr>
               </table>
@@ -203,15 +203,15 @@ th {
                   <td><b>ความสัมพันธ์  : </b><?php echo $result[0]->Parent_Status ?></td>
                 </tr>
                 <tr>
-                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Parentaddress_Number ?></td>
-                  <td><b>หมู่ : </b><?php echo $result[0]->Parentaddress_Moo ?></td>
-                  <td><b>ซอย : </b><?php echo $result[0]->Parentaddress_Soi ?></td>
-                  <td><b>ตำบล : </b><?php echo $result[0]->Parentaddress_Tumbon ?></td>
-                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Parentaddress_Aumper ?></td>
+                  <td><b>บ้านเลขที่ : </b><?php echo $result[0]->Parent_Address_Number ?></td>
+                  <td><b>หมู่ : </b><?php echo $result[0]->Parent_Address_Moo ?></td>
+                  <td><b>ซอย : </b><?php echo $result[0]->Parent_Address_Soi ?></td>
+                  <td><b>ตำบล : </b><?php echo $result[0]->Parent_Address_Tumbon ?></td>
+                  <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Parent_Address_Aumper ?></td>
                 </tr>
                 <tr>
-                  <td><b>จังหวัด : </b><?php echo $result[0]->Parentaddress_Province ?></td>
-                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Parentaddress_Postcode ?></td>
+                  <td><b>จังหวัด : </b><?php echo $result[0]->Parent_Address_Province ?></td>
+                  <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Parent_Address_Postcode ?></td>
                   <td><b>โทรศัพท์ : </b><?php echo $result[0]->Parent_Phone ?></td>
                   <td><b>E-mail : </b><?php echo $result[0]->Parent_Email ?></td>
                 </tr>

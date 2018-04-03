@@ -5,7 +5,7 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="http://reg.buu.ac.th/registrar/getstudentimage.asp?id=<?php echo $this->session->userdata('user_id');?>" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title" style="margin: 0 auto;">
-                    <h1 class="h5"> <?php echo $student['Prefix'] ?> <?php echo $student['Student_NameTH'] ?> <?php echo $student['Student_LNameTH'] ?> </h1>
+                    <h1 class="h5"> <?php echo $student['Prefix'] ?> <?php echo $student['Student_Name_TH'] ?> <?php echo $student['Student_Lname_TH'] ?> </h1>
                         <p> <?php echo $student['Student_ID'] ?> </p>
                 </div>
          </div>

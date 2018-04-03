@@ -2,7 +2,7 @@
 class m_scholarship extends CI_Model
 {
     public function get_all(){
-        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH, Student.Course
+        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Year, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Student_ID, Student.Prefix, Student.Student_Name_TH, Student.Student_Lname_TH, Student.Course
         from Scholarship 
         INNER JOIN Scholarship_has_Student ON Scholarship.Scholarship_ID = Scholarship_has_Student.Scholarship_ID 
         INNER JOIN Student ON Scholarship_has_Student.Student_ID = Student.Student_ID";
@@ -22,7 +22,7 @@ class m_scholarship extends CI_Model
     }
 
     public function get_Scholarship_by_id($id){
-        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Student_ID, Student.Prefix, Student.Student_NameTH, Student.Student_LNameTH, Student.Course
+        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Year, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Student_ID, Student.Prefix, Student.Student_Name_TH, Student.Student_Lname_TH, Student.Course
         from Scholarship 
         INNER JOIN Scholarship_has_Student ON Scholarship.Scholarship_ID = Scholarship_has_Student.Scholarship_ID 
         INNER JOIN Student ON Scholarship_has_Student.Student_ID = Student.Student_ID
@@ -33,7 +33,7 @@ class m_scholarship extends CI_Model
 
     // ส่วนไปแสดงข้อมูลในนิสิต
     public function get_Scholarship_by_student($id){
-        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount
+        $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship.Scholarship_Year
         from Scholarship 
         INNER JOIN Scholarship_has_Student ON Scholarship.Scholarship_ID = Scholarship_has_Student.Scholarship_ID 
         INNER JOIN Student ON Scholarship_has_Student.Student_ID = Student.Student_ID

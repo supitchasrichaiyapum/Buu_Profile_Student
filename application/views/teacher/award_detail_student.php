@@ -34,7 +34,6 @@ section.dashboard-counts .row {
               <th>วัน เดือน ปี </th>
               <th>รหัสนิสิต </th>
               <th>ชื่อ - นามสกุล</th>
-              <!-- <th></th>    -->
                         
             </tr>
 </thead>   
@@ -43,19 +42,7 @@ section.dashboard-counts .row {
   <tr>
         <td><?php echo $row->Award_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
-        <!-- <td><center> -->
-        
-          <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_ID);?>"> -->
-          <!-- <form action="<?php echo site_url('admin/c_admin/delete_award_has_student/');?>" method="post">
-          <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id; ?>">
-          <input type="hidden" id="Student_ID" name="Student_ID" value="<?php echo $row->Student_ID; ?>">
-          <button type="submit" class="btn btn-danger btn-sm" >ลบ</button></a>
-          </form>
-        </center></td> -->
-      
-
-    
+        <td><?php echo $row->Prefix." ".$row->Student_Name_TH." ".$row->Student_Lname_TH ?>    
   </tr>      
 <?php } ?>
 

@@ -91,7 +91,7 @@ ul.breadcrumb li a:hover {
   <?php foreach ($result1 as $row) { ?>
   <tr>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->	Prefix." ".$row->Student_NameTH." ".$row->Student_LNameTH ?>    
+        <td><?php echo $row->Prefix." ".$row->Student_Name_TH." ".$row->Student_Lname_TH ?>    
         <td><center>
         
           <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_ID);?>"> -->
