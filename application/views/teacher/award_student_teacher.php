@@ -51,7 +51,7 @@ section.dashboard-counts .row {
                             <td><?php echo $row['Award_Amount'];?></td>
                             <td><center>
                               <a href="<?php echo site_url('teacher/c_teacher/award_detail_student/'.$row['Award_ID']);?>">
-                                <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียด</button>&nbsp;
+                                <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้ได้รับรางวัล</button>&nbsp;
                             </center></td>
                         </tr>      
                       <?php } ?>

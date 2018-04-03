@@ -42,14 +42,35 @@ ul.breadcrumb li a:hover {
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
-              <h1><strong><center>แก้ไขรางวัลการแข่งขัน</strong></h1>
+              <h1><strong><center>แก้ไขรางวัลหรือผลงาน</strong></h1>
             </div>
             
             <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" ><BR>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
            <div class="card-body">        
+           <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
+                                <div class="col-md-3">
+                                    <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="" value="<?php echo $result[0]['Award_Date']; ?>">
+                                </div>  
+                        </div> 
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input" >ชื่อรางวัล</label>
+                        <label class="col-md-3 col-form-label" for="text-input">หลักสูตร</label>
+                            <div class="col-md-3">
+                                <select id="Award_Course" name="Award_Course" class="form-control" >                                    
+                                    <?php foreach(get_courses() as $key => $course){
+                                        if($result[0]['Award_Course'] == $key){
+                                            echo '<option value="'.$key.'" selected> '.$course.' </option>';                                          
+                                        } else {
+                                            echo '<option value="'.$key.'" > '.$course.' </option>';
+                                        }
+                                     } ?>
+                                    
+                                </select>
+                            </div>                           
+                    </div> 
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="text-input" >ชื่อรางวัลหรือชื่อผลงาน</label>
                             <div class="col-md-3">
                                 <input type="text" id="Award_Name" name="Award_Name" class="form-control" required="" value="<?php echo $result[0]['Award_Name']; ?>">
                             </div>
@@ -71,7 +92,7 @@ ul.breadcrumb li a:hover {
                     </div> 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
-                        <div class="input-group col-md-5">     
+                        <div class="input-group col-md-5" >     
                             <select name="Award_Year" onchange="open_iframe_Box()">
                                 <?php
                                     $year = date('Y')+543;
@@ -88,13 +109,13 @@ ul.breadcrumb li a:hover {
                         </div>
                     </div>  
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">อาจารย์ผู้ช่วย</label>
+                        <label class="col-md-3 col-form-label" for="text-input">อาจารย์ผู้ทำผลงานร่วม</label>
                         <div class="col-md-3">
                             <input type="text" id="Award_Giver" name="Award_Giver" class="form-control" required=""  value="<?php echo $result[0]['Award_Giver']; ?>"><br>
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)<code>* ตัวอย่าง 5000</code></label>
+                        <label class="col-md-3 col-form-label" for="text-input">เงินรางวัล(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
                             <input type="text" id="Award_Amount" name="Award_Amount" class="form-control" required="" value="<?php echo $result[0]['Award_Amount']; ?>"><br>
                         </div>

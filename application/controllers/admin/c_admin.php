@@ -48,6 +48,8 @@ class c_admin extends CI_Controller {
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$this->template->view('admin/add_activity_student',$data);
 	}
+	
+	
 	// เพิ่มข้อมูลรางวัล
 	public function insert_form_award()
 	{
@@ -61,6 +63,8 @@ class c_admin extends CI_Controller {
 	// เพิ่มข้อมูลรางวัล
 	public function insert_award()
 	{
+		$data['Award_Date'] = $this->input->post('Award_Date');
+		$data['Award_Course'] = $this->input->post('Award_Course');
 		$data['Award_Name'] = $this->input->post('Award_Name');
 		$data['Award_Term'] = $this->input->post('Award_Term');
 		$data['Award_Year'] = $this->input->post('Award_Year');
@@ -87,7 +91,6 @@ class c_admin extends CI_Controller {
 	{
 		$award_id = $this->input->post('Award_ID');
 		$data['Award_ID'] = $this->input->post('Award_ID');
-		$data['Award_Date'] = $this->input->post('Award_Date');
 		$data['Student_ID'] = $this->input->post('Student_ID');
 		
 		$this->load->model('m_award');
@@ -119,7 +122,6 @@ class c_admin extends CI_Controller {
 	{	
 		
 		$data['award_id'] = $id;
-		
 		$this->load->model('m_award');
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
