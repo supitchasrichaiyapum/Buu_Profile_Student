@@ -65,6 +65,13 @@ class m_student extends CI_Model
             $query = $this->db->get();
             return $query->result_array();
         }
+        public function search_grade($array) {
+            $this->db->where('Student_ID', $array['Student_ID']);
+            $this->db->where('GPAX', $array['GPAX']);
+            $this->db->from('Student');
+            $query = $this->db->get();
+            return $query->result_array();
+        }
       
         public function update_registstudent($array) {
             $this->db->where('Student_ID', $array['Student_ID']);
@@ -80,12 +87,29 @@ class m_student extends CI_Model
             $this->db->where('GPA_Term', $array['GPA_Term']);
             return $this->db->update('GPA', $array);
         }
+        public function update_grade($array) {
+            $this->db->where('Student_ID', $array['Student_ID']);
+            unset($array['Student_ID']);
+            return $this->db->update('Student', $array);
+        }
 
         public function search_subject($subject_code) {
             $this->db->where('Subject_Code', $subject_code);
             $this->db->from('Subject');
             $query = $this->db->get();
             return $query->result_array();
+        }
+        public function add_student($array) {
+            return $this->db->insert('Student', $array);
+        }
+        public function add_registstudent($array) {
+            return $this->db->insert('Subject_has_Student', $array);
+        }
+        public function add_gradstudent($array) {
+            return $this->db->insert('GPA', $array);
+        }
+        public function add_grade($array) {
+            return $this->db->insert('Student', $array);
         }
 
         public function graduate_actorstudent()
