@@ -14,10 +14,12 @@ class m_activity extends CI_Model
             return $query->result();
         }
 
-        public function search_student($Student_Code,$Student_Name,$Student_Lname){
-            $sql = "SELECT Student.Student_ID, Student.Student_Name_Th, Student.Student_Lname_Th, Student.Course 
-            FROM Student 
-            WHERE Student.Student_ID LIKE '".$Student_Code."' OR Student.Student_Name_Th LIKE '".$Student_Name."' OR Student.Student_Lname_Th LIKE '".$Student_Lname."' ";
+        public function search_student_activity($Student_Code){
+            $sql = "SELECT Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year, Activity_has_Student.Student_Student_ID, Activity.Hour, Student.Student_Prefix, Student.Student_Name_Th, Student.Student_Lname_Th, Student.Course
+                    FROM Activity
+                    INNER JOIN Activity_has_Student ON Activity.Activitie_ID = Activity_has_Student.Activity_Activitie_ID
+                    INNER JOIN Student ON Activity_has_Student.Student_Student_ID = Student.Student_ID
+                    WHERE Activity_has_Student.Student_Student_ID LIKE '".$Student_Code."'";
             $query = $this->db->query($sql);            
             return $query->result();
         }

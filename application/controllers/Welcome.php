@@ -44,6 +44,20 @@ class Welcome extends CI_Controller {
        redirect('c_login/login');
 	}
 	
+	// public function student_activity()
+	// {
+	// 	$data['student_code'] = $this->input->get('textfield');
+		
+	// 	if($data['student_code']) {
+	// 		$this->load->model('m_activity');
+	// 		$data['result'] = $this->m_activity->search_student_activity($data['student_code']);
+	// 	} else {
+	// 		$data['result'] = array();
+	// 	}
+	// 	print_r($data);
+	// 	$this->template->view('user/activity', $data);
+	// }
+
 	public function activity()
 	{
 		$data['student_code'] = $this->input->get('textfield');
