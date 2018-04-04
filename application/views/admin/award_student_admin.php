@@ -54,7 +54,6 @@ ul.breadcrumb li a:hover {
                 <div class="container"><br>
                 <center><h1 class="no-margin-bottom">รางวัลการแข่งขัน</h1></center><br>
                 <div align="left">
-                    <!-- <a href="<?php echo site_url('admin/c_admin/add_award_student');?>"><button class="button" type="submit">เพิ่ม</button></a> -->
                     <a href="<?php echo site_url('admin/c_admin/insert_form_award');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อรางวัลหรือผลงาน</button></a>
                     </div>
                 </div>
@@ -65,13 +64,11 @@ ul.breadcrumb li a:hover {
                       <thead>
                                   <tr>
                                     <th>วัน เดือน ปี</th>
-                                    <th>หลักสูตร</th>
                                     <th>ชื่อรางวัลหรือผลงาน</th>
                                     <th>เทอม</th>
                                     <th>ปีการศึกษา</th>  
                                     <th>อาจารย์ผู้ทำผลงานร่วม</th>  
                                     <th>เงินรางวัล(บาท)</th>
-                                    
                                     <th></th>             
                                   </tr>
                       </thead>   
@@ -79,7 +76,6 @@ ul.breadcrumb li a:hover {
                       <?php $i=1; foreach ($result as $row) { ?>
                         <tr>
                             <td><?php echo $row['Award_Date'];?></td>
-                            <td><?php echo $row['Award_Course'];?></td>
                             <td><?php echo $row['Award_Name'];?></td>
                             <td><?php echo $row['Award_Term'];?></td>
                             <td><?php echo $row['Award_Year'];?></td>
@@ -103,6 +99,7 @@ ul.breadcrumb li a:hover {
             </div>
           </div>
           </section>           
+          
                           <script>
                             $(document).ready(function() {
                                 $('#datatable').DataTable();

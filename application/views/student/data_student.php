@@ -31,7 +31,7 @@ th {
               <TH>1. ข้อมูลทั่วไป</TH>
             </tr>
             <tr>
-              <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $student['Prefix'] ?> <?php echo $student['Student_Name_TH'] ?> <?php echo $student['Student_Lname_TH'] ?></td>
+              <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $student['Student_Prefix'] ?> <?php echo $student['Student_Name_Th'] ?> <?php echo $student['Student_Lname_Th'] ?></td>
               <td><b>ชื่อเล่น : </b><?php echo $student['Student_Nickname'] ?> </td>
             </tr>
             <tr>

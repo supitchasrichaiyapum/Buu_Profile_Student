@@ -54,21 +54,7 @@ ul.breadcrumb li a:hover {
                                     <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="" value="<?php echo $result[0]['Award_Date']; ?>">
                                 </div>  
                         </div> 
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">หลักสูตร</label>
-                            <div class="col-md-3">
-                                <select id="Award_Course" name="Award_Course" class="form-control" >                                    
-                                    <?php foreach(get_courses() as $key => $course){
-                                        if($result[0]['Award_Course'] == $key){
-                                            echo '<option value="'.$key.'" selected> '.$course.' </option>';                                          
-                                        } else {
-                                            echo '<option value="'.$key.'" > '.$course.' </option>';
-                                        }
-                                     } ?>
-                                    
-                                </select>
-                            </div>                           
-                    </div> 
+                    
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input" >ชื่อรางวัลหรือชื่อผลงาน</label>
                             <div class="col-md-3">
@@ -92,8 +78,8 @@ ul.breadcrumb li a:hover {
                     </div> 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
-                        <div class="input-group col-md-5" >     
-                            <select name="Award_Year" onchange="open_iframe_Box()">
+                        <div class="input-group col-md-3" >     
+                            <select name="Award_Year" onchange="open_iframe_Box()" class="form-control">
                                 <?php
                                     $year = date('Y')+543;
                                     //++ year

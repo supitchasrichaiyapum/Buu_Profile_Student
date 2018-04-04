@@ -81,8 +81,7 @@ ul.breadcrumb li a:hover {
             <tr>
               <th>รหัสนิสิต </th>
               <th>ชื่อ - นามสกุล</th>
-              
-               
+              <th>หลักสูตร</th>
               <th></th>   
                         
             </tr>
@@ -91,10 +90,9 @@ ul.breadcrumb li a:hover {
   <?php foreach ($result1 as $row) { ?>
   <tr>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->Prefix." ".$row->Student_Name_TH." ".$row->Student_Lname_TH ?>    
+        <td><?php echo $row->Student_Prefix." ".$row->Student_Name_Th." ".$row->Student_Lname_Th ?> </td>
+        <td><?php echo $row->Course ?> </td>
         <td><center>
-        
-          <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_ID);?>"> -->
           <form action="<?php echo site_url('admin/c_admin/delete_award_has_student/');?>" method="post">
           <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id; ?>">
           <input type="hidden" id="Student_ID" name="Student_ID" value="<?php echo $row->Student_ID; ?>">

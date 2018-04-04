@@ -51,19 +51,7 @@ ul.breadcrumb li a:hover {
                                     <input type="date" id="Award_Date" name="Award_Date" class="form-control" required="">
                                 </div>  
                         </div> 
-                        <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input">หลักสูตร</label>
-                            <div class="col-md-3">
-                                <select id="Award_Course" name="Award_Course" class="form-control">
-                                    <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
-                                    <option value="วท.บ. วิทยาการคอมพิวเตอร์">วท.บ. วิทยาการคอมพิวเตอร์</option>
-                                    <option value="วท.บ. วิศวกรรมซอร์ฟแวร์">วท.บ. วิศวกรรมซอร์ฟแวร์</option>
-                                    <option value="วท.ม. เทคโนโลยีสารสนเทศ">วท.ม. เทคโนโลยีสารสนเทศ</option>
-                                    <option value="วท.ม. วิทยาการคอมพิวเตอร์">วท.ม. วิทยาการคอมพิวเตอร์</option>
-                                    <option value="ปร.ด. วิทยาการคอมพิวเตอร์">ปร.ด. วิทยาการคอมพิวเตอร์</option>
-                                </select>
-                            </div>      
-                        </div>             
+                        
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัลหรือชื่อผลงาน</label>
                             <div class="col-md-3">
@@ -82,8 +70,8 @@ ul.breadcrumb li a:hover {
                         </div>  
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
-                            <div class="input-group col-md-5">     
-                                <select name="Award_Year" onchange="open_iframe_Box()">
+                            <div class="input-group col-md-3">     
+                                <select name="Award_Year" onchange="open_iframe_Box()" class="form-control">
                                     <?php
                                         $year = date('Y')+543;
                                         //++ year

@@ -42,7 +42,7 @@ section.dashboard-counts .row {
   <tr>
         <td><?php echo $row->Award_Date ?> </td>
         <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->MrMs." ".$row->Student_Name_TH." ".$row->Student_Lname_TH ?>    
+        <td><?php echo $row->Student_Prefix." ".$row->Student_Name_Th." ".$row->Student_Lname_Th ?>    
   </tr>      
 <?php } ?>
 

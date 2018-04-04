@@ -419,9 +419,9 @@ class c_admin extends CI_Controller {
 					$insert['Branch_ID'] = $Branch_ID;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
-					$insert['MrMs'] = $row[2];
-					$insert['Student_Name_TH'] = $row[3];
-					$insert['Student_Lname_TH'] = $row[4];
+					$insert['Student_Prefix'] = $row[2];
+					$insert['Student_Name_Th'] = $row[3];
+					$insert['Student_Lname_Th'] = $row[4];
 					$insert['Student_Name_Eng'] = $row[5];
 					$insert['Student_Lname_Eng'] = $row[6];
 					$insert['Campus'] = $row[7];

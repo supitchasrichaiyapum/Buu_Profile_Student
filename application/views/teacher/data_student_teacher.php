@@ -55,7 +55,7 @@ th {
                   <TH>1. ข้อมูลทั่วไป</TH>
                 </tr>
                 <tr>
-                  <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $result[0]->Prefix." ".$result[0]->Student_Name_TH." ".$result[0]->Student_Lname_TH ?></td>
+                  <td><b>ชื่อ - นานสกุล(ภาษาไทย) : </b><?php echo $result[0]->Student_Prefix." ".$result[0]->Student_Name_Th." ".$result[0]->Student_Lname_Th ?></td>
                   <td><b>ชื่อเล่น : </b><?php echo $result[0]->Student_Nickname ?> </td>
                 </tr>
                 <tr>
@@ -216,10 +216,31 @@ th {
                   <td><b>E-mail : </b><?php echo $result[0]->Parent_Email ?></td>
                 </tr>
               </table>
+
+              <table>
+            <tr>
+              <TH>6. ที่อยู่ของผู้ที่ติดต่อ</TH>
+            </tr>
+            <tr>
+              <td><b>ชื่อ  : </b><?php echo $result[0]->Contact_Name ?></td>
+              <td><b>ความสัมพันธ์  : </b><?php echo $result[0]->Contact_Status ?></td>
+            </tr>
+            <tr>
+              <td><b>ที่อยู่ผู้ติดต่อได้ : </b><?php echo $result[0]->Contact_Address_Number ?></td>
+              <td><b>ตำบล / แขวง : </b><?php echo $result[0]->Contact_Address_Tumbon ?></td>
+              <td><b>เขต / อำเภอ : </b><?php echo $result[0]->Contact_Address_Aumper ?></td>
+              <td><b>จังหวัด : </b><?php echo $result[0]->Contact_Address_Province ?></td>
+            </tr>
+            <tr>
+              <td><b>รหัสไปรษณีย์ : </b><?php echo $result[0]->Contact_Address_Postcode ?></td>
+              <td><b>โทรศัพท์ : </b><?php echo $result[0]->Contact_Phone ?></td>
+              <td><b>E-mail : </b><?php echo $result[0]->Contact_Email ?></td>
+            </tr>
+          </table>
     
               <table>
             <tr>
-              <TH>6. สถานภาพการรับทุน</TH>
+              <TH>7. สถานภาพการรับทุน</TH>
             </tr>
             <tr>
             <?php 
@@ -227,10 +248,10 @@ th {
                 echo "<td>ไม่มีข้อมูล</td>";
             } else if(count($scholarship)) { ?>
 
-            <td><b>ชื่อทุน </b></td>
-            <td><b>ผู้มอบทุน </b></td>
-            <td><b>จำนวนเงิน(บาท) </b></td>
-            <td><b>วันที่ได้รับทุน </b></td>
+              <td><b>ชื่อทุน </b></td>
+              <td><b>ผู้มอบทุน </b></td>
+              <td><b>ปีการศึกษา</b></td>
+              <td><b>จำนวนเงิน(บาท) </b></td>
 
             </tr>
 
@@ -239,8 +260,8 @@ th {
             <tr>
             <td><?php echo $student->Scholarship_Name ?></td>
             <td><?php echo $student->Scholarship_Giver ?></td>
+            <td><?php echo $student->Scholarship_Year ?></td>
             <td><?php echo $student->Scholarship_Amount ?></td>
-            <td><?php echo $student->Scholarship_Date ?></td>
             </tr>
 
             <?php   } 
@@ -249,7 +270,7 @@ th {
 
           <table>
             <tr>
-              <TH>7. ข้อมูลกิจกรรม</TH>
+              <TH>8. ข้อมูลกิจกรรม</TH>
             </tr>
             <?php 
             if(count($activity) == 0) {
@@ -279,7 +300,7 @@ th {
 
           <table>
             <tr>
-              <TH>8. ข้อมูลรางวัลการแข่งขัน</TH>
+              <TH>9. ข้อมูลรางวัลการแข่งขัน</TH>
             </tr>
             <tr>
 
