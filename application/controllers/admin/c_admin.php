@@ -236,65 +236,64 @@ class c_admin extends CI_Controller {
 	
 	public function post_edit_student_admin($student_code)
 	{
-		$this->form_validation->set_rules('Student_Name_Eng', 'ชื่อภาษาอังกฤษ', 'required');
-		$this->form_validation->set_rules('Student_Lname_Eng', 'นามสกุลภาษาอังกฤษ', 'required');
-		$this->form_validation->set_rules('Student_Nickname', 'ชื่อเล่น', 'required');
-		$this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'required|valid_email');
-		$this->form_validation->set_rules('Blood', 'กรุ๊ปเลือด', 'required');
-		$this->form_validation->set_rules('Facebook', 'Facebook', 'required');
-		$this->form_validation->set_rules('Line', 'Line', 'required');
-		$this->form_validation->set_rules('Address_Number', 'นิสิต : บ้านเลขที่', 'required');
-		// $this->form_validation->set_rules('Address_Moo', 'นิสิต : หมู่', 'is_natural_no_zero');
-		$this->form_validation->set_rules('Address_Soi', 'นิสิต : ซอย', 'required');
-		$this->form_validation->set_rules('Address_Tumbon', 'นิสิต : ตำบล', 'required');
-		$this->form_validation->set_rules('Address_Aumper', 'นิสิต : อำเภอ', 'required');
-		$this->form_validation->set_rules('Address_Province', 'นิสิต : จังหวัด', 'required');
-		$this->form_validation->set_rules('Address_Postcode', 'นิสิต : รหัสไปรษณีย์', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required');
-		$this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'valid_email');
-		$this->form_validation->set_rules('Father_Name', 'ชื่อ-นามสกุลบิดา', 'required');
-		$this->form_validation->set_rules('Father_Career', 'อาชีพบิดา', 'required');
-		$this->form_validation->set_rules('Father_Status', 'ความสัมพันธ์บิดา', 'required');
-		$this->form_validation->set_rules('Father_Address_Number', 'บิดา : บ้านเลขที่', 'required');
-		// $this->form_validation->set_rules('Father_Address_Moo', 'บิดา : หมู่', 'is_natural_no_zero');
-		$this->form_validation->set_rules('Father_Address_Soi', 'บิดา : ซอย', 'required');
-		$this->form_validation->set_rules('Father_Address_Tumbon', 'บิดา : ตำบล', 'required');
-		$this->form_validation->set_rules('Father_Address_Aumper', 'บิดา : อำเภอ', 'required');
-		$this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required');
-		$this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณ๊ย์', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('Father_Phone', 'บิดา : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'required|valid_email');
-		$this->form_validation->set_rules('Mother_Name', 'ชื่อ-นามสกุลมารดา', 'required');
-		$this->form_validation->set_rules('Mother_Career', 'อาชีพมารดา', 'required');
-		$this->form_validation->set_rules('Mother_Status', 'ความสัมพันธ์มารดา', 'required');
-		$this->form_validation->set_rules('Mother_Address_Number', 'มารดา : บ้านเลขที่', 'required');
-		// $this->form_validation->set_rules('Mother_Address_Moo', 'มารดา : หมู่', 'is_natural_no_zero');
-		$this->form_validation->set_rules('Mother_Address_Soi', 'มารดา : ซอย', 'required');
-		$this->form_validation->set_rules('Mother_Address_Tumbon', 'มารดา : ตำบล', 'required');
-		$this->form_validation->set_rules('Mother_Address_Aumper', 'มารดา : อำเภอ', 'required');
-		$this->form_validation->set_rules('Mother_Address_Province', 'มารดา : จังหวัด', 'required');
-		$this->form_validation->set_rules('Mother_Address_Postcode', 'มารดา : รหัสไปรษณีย์', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('Mother_Phone', 'มารดา : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'required|valid_email');
-		$this->form_validation->set_rules('Parent_Name', 'ชื่อ-นามสกุลผู้ปกครอง', 'required');
-		$this->form_validation->set_rules('Parent_Career', 'อาชีพผู้ปกครอง', 'required');
-		$this->form_validation->set_rules('Parent_Status', 'ความสัมพันธ์ผู้ปกครอง', 'required');
-		$this->form_validation->set_rules('Parent_Address_Number', 'ผู้ปกครอง : บ้านเลขที่', 'required');
-		// $this->form_validation->set_rules('Parent_Address_Moo', 'ผู้ปกครอง : หมู่', 'is_natural_no_zero');
-		$this->form_validation->set_rules('Parent_Address_Soi', 'ผู้ปกครอง : ซอย', 'required');
-		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ปกครอง : ตำบล', 'required');
-		$this->form_validation->set_rules('Parent_Address_Aumper', 'ผู้ปกครอง : อำเภอ', 'required');
-		$this->form_validation->set_rules('Parent_Address_Province', 'ผู้ปกครอง : จังหวัด', 'required');
-		$this->form_validation->set_rules('Parent_Address_Postcode', 'ผู้ปกครอง : รหัสไปรษณีย์', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('Parent_Phone', 'ผู้ปกครอง : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'required|valid_email');
-		if ($this->form_validation->run() == FALSE)
-		{
-			$this->edit_datastudent() ;
-		}
-		else
-		{
+		// $this->form_validation->set_rules('Student_Name_Eng', 'ชื่อภาษาอังกฤษ', 'required');
+		// $this->form_validation->set_rules('Student_Lname_Eng', 'นามสกุลภาษาอังกฤษ', 'required');
+		// $this->form_validation->set_rules('Student_Nickname', 'ชื่อเล่น', 'required');
+		// $this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required|is_natural_no_zero');
+		// $this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'required|valid_email');
+		// $this->form_validation->set_rules('Blood', 'กรุ๊ปเลือด', 'required');
+		// $this->form_validation->set_rules('Facebook', 'Facebook', 'required');
+		// $this->form_validation->set_rules('Line', 'Line', 'required');
+		// $this->form_validation->set_rules('Address_Number', 'นิสิต : บ้านเลขที่', 'required');
+		// // $this->form_validation->set_rules('Address_Moo', 'นิสิต : หมู่', 'is_natural_no_zero');
+		// $this->form_validation->set_rules('Address_Soi', 'นิสิต : ซอย', 'required');
+		// $this->form_validation->set_rules('Address_Tumbon', 'นิสิต : ตำบล', 'required');
+		// $this->form_validation->set_rules('Address_Aumper', 'นิสิต : อำเภอ', 'required');
+		// $this->form_validation->set_rules('Address_Province', 'นิสิต : จังหวัด', 'required');
+		// $this->form_validation->set_rules('Address_Postcode', 'นิสิต : รหัสไปรษณีย์', 'required|is_natural_no_zero');
+		// $this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required');
+		// $this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'valid_email');
+		// $this->form_validation->set_rules('Father_Name', 'ชื่อ-นามสกุลบิดา', 'required');
+		// $this->form_validation->set_rules('Father_Career', 'อาชีพบิดา', 'required');
+		// $this->form_validation->set_rules('Father_Status', 'ความสัมพันธ์บิดา', 'required');
+		// $this->form_validation->set_rules('Father_Address_Number', 'บิดา : บ้านเลขที่', 'required');
+		// // $this->form_validation->set_rules('Father_Address_Moo', 'บิดา : หมู่', 'is_natural_no_zero');
+		// $this->form_validation->set_rules('Father_Address_Soi', 'บิดา : ซอย', 'required');
+		// $this->form_validation->set_rules('Father_Address_Tumbon', 'บิดา : ตำบล', 'required');
+		// $this->form_validation->set_rules('Father_Address_Aumper', 'บิดา : อำเภอ', 'required');
+		// $this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required');
+		// $this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณ๊ย์', 'required|is_natural_no_zero');
+		// $this->form_validation->set_rules('Father_Phone', 'บิดา : เบอร์โทรศัพท์', 'required');
+		// // $this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'required|valid_email');
+		// $this->form_validation->set_rules('Mother_Name', 'ชื่อ-นามสกุลมารดา', 'required');
+		// $this->form_validation->set_rules('Mother_Career', 'อาชีพมารดา', 'required');
+		// $this->form_validation->set_rules('Mother_Status', 'ความสัมพันธ์มารดา', 'required');
+		// $this->form_validation->set_rules('Mother_Address_Number', 'มารดา : บ้านเลขที่', 'required');
+		// // $this->form_validation->set_rules('Mother_Address_Moo', 'มารดา : หมู่', 'is_natural_no_zero');
+		// $this->form_validation->set_rules('Mother_Address_Soi', 'มารดา : ซอย', 'required');
+		// $this->form_validation->set_rules('Mother_Address_Tumbon', 'มารดา : ตำบล', 'required');
+		// $this->form_validation->set_rules('Mother_Address_Aumper', 'มารดา : อำเภอ', 'required');
+		// $this->form_validation->set_rules('Mother_Address_Province', 'มารดา : จังหวัด', 'required');
+		// $this->form_validation->set_rules('Mother_Address_Postcode', 'มารดา : รหัสไปรษณีย์', 'required|is_natural_no_zero');
+		// $this->form_validation->set_rules('Mother_Phone', 'มารดา : เบอร์โทรศัพท์', 'required');
+		// // $this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'required|valid_email');
+		// $this->form_validation->set_rules('Parent_Name', 'ชื่อ-นามสกุลผู้ปกครอง', 'required');
+		// $this->form_validation->set_rules('Parent_Career', 'อาชีพผู้ปกครอง', 'required');
+		// $this->form_validation->set_rules('Parent_Status', 'ความสัมพันธ์ผู้ปกครอง', 'required');
+		// $this->form_validation->set_rules('Parent_Address_Number', 'ผู้ปกครอง : บ้านเลขที่', 'required');
+		// // $this->form_validation->set_rules('Parent_Address_Moo', 'ผู้ปกครอง : หมู่', 'is_natural_no_zero');
+		// $this->form_validation->set_rules('Parent_Address_Soi', 'ผู้ปกครอง : ซอย', 'required');
+		// $this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ปกครอง : ตำบล', 'required');
+		// $this->form_validation->set_rules('Parent_Address_Aumper', 'ผู้ปกครอง : อำเภอ', 'required');
+		// $this->form_validation->set_rules('Parent_Address_Province', 'ผู้ปกครอง : จังหวัด', 'required');
+		// $this->form_validation->set_rules('Parent_Address_Postcode', 'ผู้ปกครอง : รหัสไปรษณีย์', 'required|is_natural_no_zero');
+		// $this->form_validation->set_rules('Parent_Phone', 'ผู้ปกครอง : เบอร์โทรศัพท์', 'required');
+		// // $this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'required|valid_email');
+		// if ($this->form_validation->run() == FALSE)
+		// {
+		// 	$this->editdata_student_admin($student_code) ;
+		// } else {
+			
 		$data['Student_Name_Eng'] = $this->input->post('Student_Name_Eng');
 		$data['Student_Lname_Eng'] = $this->input->post('Student_Lname_Eng');
 		$data['Student_Nickname'] = $this->input->post('Student_Nickname');
@@ -345,11 +344,10 @@ class c_admin extends CI_Controller {
 		$data['Contact_Address_Province'] = $this->input->post('Contact_Address_Province');
 		$data['Contact_Address_Postcode'] = $this->input->post('Contact_Address_Postcode');
 		$data['Contact_Phone'] = $this->input->post('Contact_Phone');
-		$this->m_student->update_datastudent($data, $this->session->userdata('user_id'));
-		redirect('student/c_student/data_student', 'refresh');
+
+		$this->m_student->update_datastudent($data, $student_code);
+		redirect('admin/c_admin/data_student_admin', 'refresh');
 		}
-		
-	}
 
     public function add_student()
     {
