@@ -27,7 +27,8 @@ class m_admin extends CI_Model
             return $query->result();
         }
 
-        public function search_student_status($Student_id){
+        public function search_student_status($Student_id)
+        {
             $sql = "SELECT Status.Status_Name 
             FROM Student 
             INNER JOIN Status ON Student.Status_ID = Status.Status_ID
@@ -35,6 +36,7 @@ class m_admin extends CI_Model
             $query = $this->db->query($sql);            
             return $query->result();
         }
+
         // โปรสูง โปรต่ำ
         public function search_student_between_gpax($gpax_low, $gpax_high){
             $this->db->where('Status_ID', 10);

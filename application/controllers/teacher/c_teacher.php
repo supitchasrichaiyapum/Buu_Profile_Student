@@ -127,6 +127,8 @@ class c_teacher extends CI_Controller {
 		$data['activity'] = $this->m_activity->get_by_student_id($data['student_code']);
 		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
 		$data['status'] = $this->m_admin->search_student_status($data['student_code']);
+		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_code']);
+		$data['GPA'] = $this->m_student->get_GPA($data['student_code']);
 		if($data['student_code']) {
 			$this->load->model('m_admin');
 			$data['result'] = $this->m_admin->search_student($data['student_code']);
@@ -145,6 +147,7 @@ class c_teacher extends CI_Controller {
 		$data['transcript'] = $this->m_student->get_transcript($student_code);
 		$data['GPA'] = $this->m_student->get_GPA($student_code);
 		$data['status'] = $this->m_admin->search_student_status($student_code);
+		$data['transcript_rows'] = $this->m_student->get_year_transcript($student_code);
 		$this->template->view('admin/transcript_student_admin',$data);
 	}
 
@@ -153,6 +156,7 @@ class c_teacher extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 		$this->template->view('teacher/editdata_student_teacher',$data);
+		
 	}
 
 

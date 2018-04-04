@@ -155,12 +155,15 @@
             </div>
             <div class="form-group col-sm-4">
             <br><label for="Father_status">สถานภาพ</label>
-              <select class="form-control" id="Father_status">
-                <option>อยู่ด้วยกัน</option>
-                <option>แยกกันอยู่</option>
-                <option>หย่าร้าง</option>
-                <option>ถึงแก่กรรม</option>
-              </select>
+                  <select class="form-control" id="Father_status" name="Father_Status">
+                  <?php foreach(get_status_creator() as $key => $status_creator){
+                    if($result['Father_Status'] == $key){
+                      echo '<option value="'.$key.'" selected>'.$status_creator.'</option>';
+                    } else {
+                      echo '<option value="'.$key.'">'.$status_creator.'</option>';
+                    }
+                  } ?>
+                  </select>
           </div>  
         </div> 
         <div class="row">
@@ -238,15 +241,19 @@
               </div>
             </div>
             <div class="form-group col-sm-4">
-            <br><label for="Mother_status">สถานภาพ</label>
-              <select class="form-control" id="Mother_status">
-                <option>อยู่ด้วยกัน</option>
-                <option>แยกกันอยู่</option>
-                <option>หย่าร้าง</option>
-                <option>ถึงแก่กรรม</option>
-              </select>
+            <br><label for="Mother_Status">สถานภาพ</label>
+                <select class="form-control" id="Mother_Status" name="Mother_Status">
+                <?php foreach(get_status_creator() as $key => $status_creator){
+                  if($result['Mother_Status'] == $key){
+                    echo '<option value="'.$key.'" selected>'.$status_creator.'</option>';
+                  } else {
+                    echo '<option value="'.$key.'">'.$status_creator.'</option>';
+                  }
+                } ?>
+                </select>
           </div>  
         </div> 
+        
         <div class="row">
           <div class="col-sm-3">
             <div class="form-group">
@@ -324,7 +331,15 @@
             <div class="col-sm-4">
               <div class="form-group">
               <br><label for="Parent_Status">ความสัมพันธ์</label>
-                <input type="text" class="form-control" id="Parent_Status" name="Parent_Status" value="<?php echo $result['Parent_Status'] ?>">
+                      <select class="form-control" id="Parent_Status" name="Parent_Status">
+                                <?php foreach(get_status_parent() as $key => $status_parent){
+                                  if($result['Parent_Status'] == $key){
+                                    echo '<option value="'.$key.'" selected>'.$status_parent.'</option>';
+                                  } else {
+                                    echo '<option value="'.$key.'">'.$status_parent.'</option>';
+                                  }
+                                } ?>
+                      </select>
               </div>
             </div>
             
@@ -389,6 +404,86 @@
             </div>
           </div>
         </div><br>
+
+        <B>5. ข้อมูลผู้ที่ติดต่อได้</B><br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <br><label for="Contact_Name">ชื่อ</label>
+                        <input type="text" class="form-control" id="Contact_Name" name="Contact_Name" value="<?php echo $result['Contact_Name'] ?>">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                    <br><label for="Contact_Status">ความสัมพันธ์</label>
+                      <select class="form-control" id="Contact_Status" name="Contact_Status">
+                        <?php foreach(get_status_parent() as $key => $status_parent){
+                          if($result['Contact_Status'] == $key){
+                            echo '<option value="'.$key.'" selected>'.$status_parent.'</option>';
+                          } else {
+                            echo '<option value="'.$key.'">'.$status_parent.'</option>';
+                          }
+                        } ?>
+                      </select>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="Contact_Email">E-Mail</label>
+                      <input type="text" class="form-control" id="Contact_Email" name="Contact_Email" value="<?php echo $result['Contact_Email'] ?>">
+                    </div>
+                  </div>
+                <br>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Number">ที่อยู่ของผู้ที่ติดต่อได้</label>
+                      <input type="text" class="form-control" id="Contact_Address_Number" name="Contact_Address_Number" value="<?php echo $result['Contact_Address_Number'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Tumbon">ตำบล / แขวง</label>
+                      <input type="text" class="form-control" id="Contact_Address_Tumbon" name="Contact_Address_Tumbon" value="<?php echo $result['Contact_Address_Tumbon'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Aumper">อำเภอ / เขต</label>
+                      <input type="text" class="form-control" id="Contact_Address_Aumper" name="Contact_Address_Aumper" value="<?php echo $result['Contact_Address_Aumper'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Province">จังหวัด</label>
+                      <input type="text" class="form-control" id="Contact_Address_Province" name="Contact_Address_Province" value="<?php echo $result['Contact_Address_Province'] ?>">
+                    </div>
+                  </div>
+                  
+
+
+                </div>    
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Postcode">รหัสไปรษณีย์</label>
+                      <input type="text" class="form-control" id="Contact_Address_Postcode" name="Contact_Address_Postcode" value="<?php echo $result['Contact_Address_Postcode'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Phone">โทรศัพท์</label>
+                      <input type="text" class="form-control" id="Contact_Phone" name="Contact_Phone" value="<?php echo $result['Contact_Phone'] ?>">
+                    </div>
+                  </div>
+                </div>             
         
   <button type="submit" class="btn btn-primary">บันทึก</button>
   

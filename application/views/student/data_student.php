@@ -43,12 +43,12 @@ th {
               <td><b>เลขบัตรประชาชน : </b><?php echo $student['Student_IdNum'] ?></td>
             </tr>
             <tr>
-              <td><b>ชั้นปี : </b></td>
+              <td><b>ชั้นปี : </b><?php $level = $GPA_Year[0]->GPA_Year-$student['Entry_Years']; echo ++$level; ?></td>
               <td><b>หลักสูตร : </b><?php echo $student['Course'] ?></td>
             </tr>
             <tr>
               <td><b>สาขาวิชา : </b></td>
-              <td><b>จำนวนหน่วยกิตที่เรียน : </b></td>
+              <td><b>จำนวนหน่วยกิตที่เรียน : </b><?php $allCA = 0; foreach ($GPA as $row) { if($row->GPA>0) $allCA += $row->CA; } echo $allCA;?></td>
             </tr>
             <tr>
               <td><b>GPAX : </b><?php echo $student['GPAX'] ?></td>

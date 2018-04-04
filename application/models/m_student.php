@@ -33,6 +33,23 @@ class m_student extends CI_Model
             return $query->result();
         }
 
+        public function get_year_transcript($id_student)
+        {
+            $sql = "select GPA_Term, GPA_Year FROM GPA where Student_ID = '".$id_student."'order by GPA_Year ASC";
+            $query = $this->db->query($sql);            
+            return $query->result();
+        }
+
+        public function get_GPA_Year($id_student)
+        {
+            $sql = "SELECT GPA_Year 
+            FROM GPA 
+            WHERE Student_ID = '".$id_student."' 
+            ORDER BY GPA_Year DESC LIMIT 0,1";
+            $query = $this->db->query($sql);            
+            return $query->result();
+        }
+
         public function get_GPA($student_id){
            $sql = "Select * from GPA
            WHERE GPA.Student_ID = '".$student_id."'";

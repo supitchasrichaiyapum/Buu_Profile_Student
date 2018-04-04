@@ -69,12 +69,12 @@ th {
                   <td><b>เลขบัตรประชาชน : </b><?php echo $result[0]->Student_IdNum ?></td>
                 </tr>
                 <tr>
-                  <td><b>ชั้นปี : </b></td>
+                  <td><b>ชั้นปี : </b><?php $level = $GPA_Year[0]->GPA_Year-$result[0]->Entry_Years; echo ++$level; ?></td>
                   <td><b>หลักสูตร : </b><?php echo $result[0]->Course ?></td>
                 </tr>
                 <tr>
                   <td><b>สาขาวิชา : </b></td>
-                  <td><b>จำนวนหน่วยกิตที่เรียน : </b></td>
+                  <td><b>จำนวนหน่วยกิตที่เรียน : </b><?php $allCA = 0; foreach ($GPA as $row) { if($row->GPA>0) $allCA += $row->CA; } echo $allCA;?></td>
                 </tr>
                 <tr>
                   <td><b>GPAX : </b><?php echo $result[0]->GPAX ?></td>
@@ -82,6 +82,7 @@ th {
                 </tr>
                 <tr>
                   <td><b>ชื่อปริญญา : </b><?php echo $result[0]->Level ?></td>
+                  <td><b>กรุ๊ปเลือด : </b><?php echo $result[0]->Blood ?></td>
                 </tr>
                 <tr>
                   <td><b>วิทยาเขต : </b><?php echo $result[0]->Campus ?></td>
@@ -96,6 +97,11 @@ th {
                   <td><b>จบการศึกษาจาก : </b><?php echo $result[0]->Gradfromschool ?></td>
                 </tr>
                 <tr>
+                  <td><b>สัญชาติ : </b><?php echo $result[0]->Notionnality ?></td>
+                  <td><b>ศาสนา : </b><?php echo $result[0]->Relidion ?></td>
+                </tr>
+                <tr>
+                  <td><b>ปี / เดือน / วัน (ที่เกิด) : </b><?php echo $result[0]->Birthday ?></td>
                   <td><b>อาจารย์ที่ปรึกษา : </b></td>
                 </tr>
                 <tr>

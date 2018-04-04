@@ -16,13 +16,16 @@
               <p class="text-muted"><?php echo $student['Student_ID'] ?> : <?php echo $student['Student_Prefix'] ?> <?php echo $student['Student_Name_Th'] ?> <?php echo $student['Student_Lname_Th'] ?> </p>
               <p class="text-muted">หลักสูตร : <?php echo $student['Course'] ?> </p>
               <p class="text-muted">สถานภาพ : <?php echo $status['Status_Name'] ?> </p>
-              <p class="text-muted">หน่วยกิตรวม : <?php $allCA = 0; foreach ($GPA as $row) { $allCA += $row->CA; } echo $allCA;?> </p>
+              <p class="text-muted">หน่วยกิตรวม : <?php $allCA = 0; foreach ($GPA as $row) { if($row->GPA>0) $allCA += $row->CA; } echo $allCA;?> </p>
+              <p class="text-muted">GPAX : <?php echo $student['GPAX']?> </p>
               <br>
 
-              <table border="1" width="600" cellspacing="2" cellpadding="0" class="normaldetail">
+              <?php foreach($transcript_rows as $row_table) { ?>
+
+              <table border="1" width="600" cellspacing="2" cellpadding="0" class="table table-responsive-sm table-bordered">
                 <thead>
-                  <tr class="tableheaderdetail">
-                  <th colspan="4" bgcolor="#8080ff" ><CENTER>ภาคการศึกษาที่ &nbsp; 1/2557</CENTER></th>
+                  <tr>
+                  <th colspan="4" bgcolor="#8080ff" ><CENTER>ภาคการศึกษาที่ &nbsp; <?php echo $row_table->GPA_Term.'/'.$row_table->GPA_Year;?></CENTER></th>
                   </tr>
                   <tr bgcolor="#E0E0FF">
                   <th><CENTER>รหัสวิชา</CENTER></th>
@@ -34,65 +37,15 @@
                   <tbody>
                   <?php foreach ($transcript as $row) { ?>
                     <tr bgcolor="#F6F6FF">
-                      <?php if($row->Term_Number == 1 AND $student['Entry_Years'] == $row->Subject_Year) { ?>
-                      <td width="100">&nbsp;&nbsp;&nbsp;<?php echo $row->Subject_Code ?> </td>
-                      <td width="450">&nbsp;&nbsp;&nbsp;<?php echo $row->Subject_Name ?> </td>
+                      <?php if($row->Term_Number == $row_table->GPA_Term AND $row_table->GPA_Year == $row->Subject_Year) { ?>
+                      <td width="100"><?php echo $row->Subject_Code ?> </td>
+                      <td><?php echo $row->Subject_Name ?> </td>
                       <td width="70" align="CENTER"><?php echo $row->Subject_Credit ?> </td>
-                      <td width="30">&nbsp;<?php echo $row->Grade ?> </td>
+                      <td width="30" align="CENTER"><?php echo $row->Grade ?> </td>
                     </tr>      
                   <?php } } ?>
                 </tbody>
             </table> <br>
+          <?php } ?>
 
-            <table class="table table-responsive-sm table-bordered">
-                <thead>
-                  <tr>
-                  <th colspan="4" bgcolor="#8080ff"><CENTER>ภาคการศึกษาที่ &nbsp; 2/2557 </CENTER></th>
-                  </tr>
-                  <tr bgcolor="#E0E0FF">
-                  <th>รหัสวิชา</th>
-                  <th>ชื่อรายวิชา</th>
-                  <th>หน่วยกิต</th>
-                  <th>เกรด</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php foreach ($transcript as $row) { ?>
-                    <tr bgcolor="#F6F6FF">
-                      <?php if($row->Term_Number == 2 AND $student['Entry_Years'] == $row->Subject_Year) { ?>
-                      <td><?php echo $row->Subject_Code ?> </td>
-                      <td><?php echo $row->Subject_Name ?> </td>
-                      <td><?php echo $row->Subject_Credit ?> </td>
-                      <td><?php echo $row->Grade ?> </td>
-                    </tr>      
-                  <?php } } ?>
-                </tbody>
-            </table> <br>
-
-            <table class="table table-responsive-sm table-bordered">
-                <thead>
-                  <tr>
-                  <th colspan="4" bgcolor="#8080ff"><CENTER>ภาคการศึกษาที่ &nbsp; 3/2557 </CENTER></th>
-                  </tr>
-                  <tr bgcolor="#E0E0FF">
-                  <th>รหัสวิชา</th>
-                  <th>ชื่อรายวิชา</th>
-                  <th>หน่วยกิต</th>
-                  <th>เกรด</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php foreach ($transcript as $row) { ?>
-                    <tr bgcolor="#F6F6FF">
-                      <?php if($row->Term_Number == 3 AND $student['Entry_Years'] == $row->Subject_Year) { ?>
-                      <td><?php echo $row->Subject_Code ?> </td>
-                      <td><?php echo $row->Subject_Name ?> </td>
-                      <td><?php echo $row->Subject_Credit ?> </td>
-                      <td><?php echo $row->Grade ?> </td>
-                    </tr>      
-                  <?php } } ?>
-                </tbody>
-            </table> <br>
-
-        
 </Body>
