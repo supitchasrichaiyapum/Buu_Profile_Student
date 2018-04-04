@@ -43,7 +43,10 @@ th, td {
                       <tr>
                         <th>ชื่อทุนการศึกษา</th>
                         <th>ผู้มอบทุนการศึกษา</th>
-                        <th>จำนวนเงิน(บาท)</th>
+                        <th>ปีการศึกษา</th>
+                        <th>จำนวนทุน</th>
+                        <th>จำนวนเงินทุนละ(บาท)</th>
+                        <th>รวมเป็นเงิน(บาท)</th>
                         <th></th>
                       </tr>
                   </thead>   
@@ -52,7 +55,10 @@ th, td {
                     <tr> 
                       <td><?php echo $row['Scholarship_Name'] ?></td>
                       <td><?php echo $row['Scholarship_Giver'] ?></td>
+                      <td><?php echo $row['Scholarship_Year'] ?></td>
+                      <td><?php echo $row['Scholarship_Count'] ?></td>
                       <td><?php echo $row['Scholarship_Amount'] ?></td>
+                      <td><?php echo $row['Scholarship_Amounttotal'] ?></td>
                       <td><center>
                         <a href="<?php echo site_url('teacher/c_teacher/scholarship_detail_teacher/'.$row['Scholarship_ID']);?>">
                         <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้รับทุน</button>&nbsp;

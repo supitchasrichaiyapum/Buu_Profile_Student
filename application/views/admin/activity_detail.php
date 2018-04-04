@@ -59,7 +59,6 @@ ul.breadcrumb li a:hover {
                 <form action="<?php echo site_url("admin/c_admin/insert_student_activity/")?>" method="post" ><br>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
            <div class="card-body">
-                <!-- <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
                     <div class="form-group row">
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
@@ -88,10 +87,8 @@ ul.breadcrumb li a:hover {
   <?php foreach ($result1 as $row) { ?>
   <tr>
         <td><?php echo $row->Student_Student_ID ?> </td>
-        <td><?php echo $row->Prefix." ".$row->Student_Name_TH." ".$row->Student_Lname_TH ?>    
+        <td><?php echo $row->Student_Prefix." ".$row->Student_Name_Th." ".$row->Student_Lname_Th ?>    
         <td><center>
-        
-          <!-- <a href="<?php echo site_url('admin/c_admin/delete_award_has_student/'.$row->Student_Student_ID);?>"> -->
           <form action="<?php echo site_url('admin/c_admin/delete_activity_has_student/'.$row->Student_Student_ID);?>" method="post">
           <input type="hidden" id="Activity_Activitie_ID" name="Activity_Activitie_ID" value="<?php echo $activity_id; ?>">
           <input type="hidden" id="Student_Student_ID" name="Student_Student_ID" value="<?php echo $row->Student_Student_ID; ?>">

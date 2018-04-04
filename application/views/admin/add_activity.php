@@ -42,12 +42,6 @@ ul.breadcrumb li a:hover {
                 <h1><strong><center>เพิ่มกิจกรรม</strong></h1>
                 </div>
                     <div class="card-body">
-                        <!-- <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input"><h3>ชื่อรางวัลการแข่งขัน</h3></label>
-                                <div class="col-md-9">                        
-                                <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="การแข่งขันเขียนโปรแกรม ปี 12" disabled="">
-                                </div>
-                        </div> -->
                         <form action="<?php echo site_url("admin/c_admin/insert_activity/")?>" method="post" ><br>
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
                         <div class="form-group row">
@@ -60,17 +54,18 @@ ul.breadcrumb li a:hover {
                         <label class="col-md-3 col-form-label" for="text-input">เทอม</label>
                             <div class="col-md-3">
                                 <select id="Activity_Term" name="Activity_Term" class="form-control">
-                                    <option value="1">เทอม 1</option>
-                                    <option value="2">เทอม 2</option>
-                                    <option value="3">ซัมเมอร์</option>
+                                    <option value="เทอม 1">เทอม 1</option>
+                                    <option value="เทอม 2">เทอม 2</option>
+                                    <option value="ซัมเมอร์">ซัมเมอร์</option>
                                 </select>
                             </div>                           
                         </div>  
                         
+                       
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
-                            <div class="input-group col-md-5">     
-                                <select name="Activity_Year" onchange="open_iframe_Box()">
+                            <div class="col-md-3">
+                                <select name="Activity_Year" id="Activity_Year" onchange="open_iframe_Box()" class="form-control">
                                     <?php
                                         $year = date('Y')+543;
                                         //++ year
@@ -82,9 +77,9 @@ ul.breadcrumb li a:hover {
                                             }
                                         }
                                     ?>
-                                </select>                       
+                                </select>   
                             </div>
-                        </div>  
+                        </div>
 
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชั่วโมง</label>

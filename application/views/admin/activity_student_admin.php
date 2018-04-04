@@ -63,19 +63,19 @@ ul.breadcrumb li a:hover {
                       <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                                   <tr>
-                                    <th></th>
+                                    
                                     <th>ชื่อกิจกรรม</th>
                                     <th>เทอม</th>
                                     <th>ปีการศึกษา</th>  
                                     <th>ชั่วโมง</th>  
-                                    
-                                    <th></th>             
+                                    <th></th>    
+
                                   </tr>
                       </thead>   
                       <tbody>
-                      <?php $i=1; foreach ($result as $row) { ?>
+                      <?php foreach ($result as $row) { ?>
                         <tr>
-                            <td><?php echo $i++; ?></td>
+                            
                             <td><?php echo $row['Activitie_Name'];?></td>
                             <td><?php echo $row['Activity_Term'];?></td>
                             <td><?php echo $row['Activity_Year'];?></td>

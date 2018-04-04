@@ -69,10 +69,11 @@ ul.breadcrumb li a:hover {
                                 </select>
                             </div>                           
                     </div> 
+                  
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
-                        <div class="input-group col-md-5">     
-                                <select name="Activity_Year" onchange="open_iframe_Box()">
+                            <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
+                            <div class="col-md-3">
+                                <select name="Activity_Year" id="Activity_Year" onchange="open_iframe_Box()" class="form-control">
                                     <?php
                                         $year = date('Y')+543;
                                         //++ year
@@ -84,9 +85,10 @@ ul.breadcrumb li a:hover {
                                             }
                                         }
                                     ?>
-                                </select>                       
+                                </select>   
                             </div>
-                    </div>  
+                        </div>
+                        
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ชั่วโมง</label>
                         <div class="col-md-3">

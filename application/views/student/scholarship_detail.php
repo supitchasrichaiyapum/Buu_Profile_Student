@@ -31,25 +31,18 @@ section.dashboard-counts .row {
 <thead>
             <tr>
 
-              <th>วัน เดือน ปี </th>
               <th>รหัสนิสิต </th>
-              <th>ชื่อ - นามสกุล</th>
-              
-               
-
-                        
+              <th>ชื่อ - นามสกุล </th>
+              <th>หลักสูตร </th>
+         
             </tr>
 </thead>   
 <tbody>
 <?php foreach ($result1 as $row) { ?>
   <tr>
-        <td><?php echo $row->Scholarship_Date ?> </td>
-        <td><?php echo $row->Student_ID ?> </td>
-        <td><?php echo $row->Prefix." ".$row->Student_Name_TH." ".$row->Student_Lname_TH ?>    
-
-      
-
-    
+    <td><?php echo $row->Student_ID ?> </td>
+    <td><?php echo $row->Student_Prefix." ".$row->Student_Name_Th." ".$row->Student_Lname_Th ?> </td>
+    <td><?php echo $row->Course ?></td>    
   </tr>      
 <?php } ?>
 
