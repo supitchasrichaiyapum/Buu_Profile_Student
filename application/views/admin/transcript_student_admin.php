@@ -13,7 +13,7 @@
               <strong><center>ผลการศึกษา</strong>
             </div>
             <div class="card-body">
-              <p class="text-muted"><?php echo $result['Student_ID'] ?> : <?php echo $result['Prefix'] ?> <?php echo $result['Student_NameTH'] ?> <?php echo $result['Student_LNameTH'] ?> </p>
+              <p class="text-muted"><?php echo $result['Student_ID'] ?> : <?php echo $result['Student_Prefix'] ?> <?php echo $result['Student_Name_Th'] ?> <?php echo $result['Student_Lname_Th'] ?> </p>
               <p class="text-muted">หลักสูตร : <?php echo $result['Course'] ?> </p>
               <p class="text-muted">สถานภาพ : <?php echo $status[0]->Status_Name ?> </p>
               <p class="text-muted">หน่วยกิตรวม : <?php $allCA = 0; foreach ($GPA as $row) { $allCA += $row->CA; } echo $allCA;?> </p>

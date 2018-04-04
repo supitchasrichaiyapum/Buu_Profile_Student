@@ -52,19 +52,62 @@ ul.breadcrumb li a:hover {
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input" >ชื่อทุนการศึกษา</label>
                             <div class="col-md-3">
-                                <input type="text" id="Scholarship_Name" name="Scholarship_Name" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Name']; ?>">
+                            <select class="form-control" id="Scholarship_Name" name="Scholarship_Name">
+                                <?php foreach(get_scholarship() as $key => $scholarship){
+                                    if($result[0]['Scholarship_Name'] == $key){
+                                    echo '<option value="'.$key.'" selected>'.$scholarship.'</option>';
+                                    } else {
+                                    echo '<option value="'.$key.'">'.$scholarship.'</option>';
+                                    }
+                                }
+                                ?>
+                            </select>
                             </div>
                     </div>
+                    
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ผู้มอบทุนการศึกษา</label>
                         <div class="col-md-3">
                             <input type="text" id="Scholarship_Giver" name="Scholarship_Giver" class="form-control" required=""  value="<?php echo $result[0]['Scholarship_Giver']; ?>">
                         </div>
-                    </div>  
+                    </div>
+
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">จำนวน(บาท)<code>* ตัวอย่าง 5000</code></label>
+                        <label class="col-md-3 col-form-label" for="text-input">ปีการศึกษา</label>
                         <div class="col-md-3">
-                            <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amount']; ?>"><br>
+                            <select name="Scholarship_Year" id="Scholarship_Year" onchange="open_iframe_Box()" class="form-control">
+                                            <?php 
+                                            $year = date('Y')+543;
+                                                for($i=$year-1;$i<$year+1;$i++) {
+                                                    if($i == $result[0]['Scholarship_Year']) {
+                                                        echo '<option value="'.$i.'" selected>'.$i.'</option>';
+                                                    } else {
+                                                        echo '<option value="'.$i.'">'.$i.'</option>';		
+                                                    }
+                                                }
+                                            ?>
+                            </select>   
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="text-input">จำนวนทุน</label>
+                        <div class="col-md-3">
+                            <input type="text" id="Scholarship_Count" name="Scholarship_Count" class="form-control" required=""  value="<?php echo $result[0]['Scholarship_Count']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="text-input">จำนวนเงินทุนละ(บาท)<code>* ตัวอย่าง 5000</code></label>
+                        <div class="col-md-3">
+                            <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amount']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="text-input">รวมเป็นเงิน(บาท)<code>* ตัวอย่าง 5000</code></label>
+                        <div class="col-md-3">
+                            <input type="text" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amounttotal']; ?>"><br>
                         </div>
                     </div>
                

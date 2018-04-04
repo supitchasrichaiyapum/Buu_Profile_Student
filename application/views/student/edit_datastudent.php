@@ -23,14 +23,14 @@
 
                 <div class="col-sm-4">
                     <div class="form-group">
-                      <br><label for="Student_NameEng">ชื่อ(ภาษาอังกฤษ)</label>
-                      <input type="text" class="form-control" id="Student_NameEng" name="Student_NameEng" value="<?php echo $student['Student_NameEng'] ?>">
+                      <br><label for="Student_Name_Eng">ชื่อ(ภาษาอังกฤษ)</label>
+                      <input type="text" class="form-control" id="Student_Name_Eng" name="Student_Name_Eng" value="<?php echo $student['Student_Name_Eng'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
-                      <br><label for="Student_LNameENG">นามสกุล(ภาษาอังกฤษ)</label>
-                      <input type="text" class="form-control" id="Student_LNameENG" name="Student_LNameENG" value="<?php echo $student['Student_LNameENG'] ?>">
+                      <br><label for="Student_Lname_Eng">นามสกุล(ภาษาอังกฤษ)</label>
+                      <input type="text" class="form-control" id="Student_Lname_Eng" name="Student_Lname_Eng" value="<?php echo $student['Student_Lname_Eng'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -182,46 +182,46 @@
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Number">บ้านเลขที่</label>
-                      <input type="text" class="form-control" id="Fatheraddress_Number" name="Fatheraddress_Number" value="<?php echo $student['Fatheraddress_Number'] ?>">
+                      <br><label for="Father_Address_Number">บ้านเลขที่</label>
+                      <input type="text" class="form-control" id="Father_Address_Number" name="Father_Address_Number" value="<?php echo $student['Father_Address_Number'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Moo">หมู่</label>
-                      <input type="text" class="form-control" id="Fatheraddress_Moo" name="Fatheraddress_Moo" value="<?php echo $student['Fatheraddress_Moo'] ?>">
+                      <br><label for="Father_Address_Moo">หมู่</label>
+                      <input type="text" class="form-control" id="Father_Address_Moo" name="Father_Address_Moo" value="<?php echo $student['Father_Address_Moo'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Soi">ซอย</label>
-                      <input type="text" class="form-control" id="Fatheraddress_Soi" name="Fatheraddress_Soi" value="<?php echo $student['Fatheraddress_Soi'] ?>">
+                      <br><label for="Father_Address_Soi">ซอย</label>
+                      <input type="text" class="form-control" id="Father_Address_Soi" name="Father_Address_Soi" value="<?php echo $student['Father_Address_Soi'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Tumbon">ตำบล / แขวง</label>
-                      <input type="text" class="form-control" id="Fatheraddress_Tumbon" name="Fatheraddress_Tumbon" value="<?php echo $student['Fatheraddress_Tumbon'] ?>">
+                      <br><label for="Father_Address_Tumbon">ตำบล / แขวง</label>
+                      <input type="text" class="form-control" id="Father_Address_Tumbon" name="Father_Address_Tumbon" value="<?php echo $student['Father_Address_Tumbon'] ?>">
                     </div>
                   </div>
                 </div>    
                   <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Aumper">อำเภอ / เขต</label>
-                      <input type="text" class="form-control" id="Fatheraddress_Aumper" name="Fatheraddress_Aumper" value="<?php echo $student['Fatheraddress_Aumper'] ?>">
+                      <br><label for="Father_Address_Aumper">อำเภอ / เขต</label>
+                      <input type="text" class="form-control" id="Father_Address_Aumper" name="Father_Address_Aumper" value="<?php echo $student['Father_Address_Aumper'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Province">จังหวัด</label>
-                      <input type="text" class="form-control" id="Fatheraddress_Province" name="Fatheraddress_Province" value="<?php echo $student['Fatheraddress_Province'] ?>">
+                      <br><label for="Father_Address_Province">จังหวัด</label>
+                      <input type="text" class="form-control" id="Father_Address_Province" name="Father_Address_Province" value="<?php echo $student['Father_Address_Province'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Fatheraddress_Postcode">รหัสไปรษณีย์</label>
-                      <input type="text" class="form-control" id="Fatheraddress_Postcode" name="Fatheraddress_Postcode" value="<?php echo $student['Fatheraddress_Postcode'] ?>">
+                      <br><label for="Father_Address_Postcode">รหัสไปรษณีย์</label>
+                      <input type="text" class="form-control" id="Father_Address_Postcode" name="Father_Address_Postcode" value="<?php echo $student['Father_Address_Postcode'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
@@ -269,46 +269,46 @@
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Number">บ้านเลขที่</label>
-                      <input type="text" class="form-control" id="Motheraddress_Number" name="Motheraddress_Number" value="<?php echo $student['Motheraddress_Number'] ?>">
+                      <br><label for="Mother_Address_Number">บ้านเลขที่</label>
+                      <input type="text" class="form-control" id="Mother_Address_Number" name="Mother_Address_Number" value="<?php echo $student['Mother_Address_Number'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Moo">หมู่</label>
-                      <input type="text" class="form-control" id="Motheraddress_Moo" name="Motheraddress_Moo" value="<?php echo $student['Motheraddress_Moo'] ?>">
+                      <br><label for="Mother_Address_Moo">หมู่</label>
+                      <input type="text" class="form-control" id="Mother_Address_Moo" name="Mother_Address_Moo" value="<?php echo $student['Mother_Address_Moo'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Soi">ซอย</label>
-                      <input type="text" class="form-control" id="Motheraddress_Soi" name="Motheraddress_Soi" value="<?php echo $student['Motheraddress_Soi'] ?>">
+                      <br><label for="Mother_Address_Soi">ซอย</label>
+                      <input type="text" class="form-control" id="Mother_Address_Soi" name="Mother_Address_Soi" value="<?php echo $student['Mother_Address_Soi'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Tumbon">ตำบล / แขวง</label>
-                      <input type="text" class="form-control" id="Motheraddress_Tumbon" name="Motheraddress_Tumbon" value="<?php echo $student['Motheraddress_Tumbon'] ?>">
+                      <br><label for="Mother_Address_Tumbon">ตำบล / แขวง</label>
+                      <input type="text" class="form-control" id="Mother_Address_Tumbon" name="Mother_Address_Tumbon" value="<?php echo $student['Mother_Address_Tumbon'] ?>">
                     </div>
                   </div>
                 </div>    
                   <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Aumper">อำเภอ / เขต</label>
-                      <input type="text" class="form-control" id="Motheraddress_Aumper" name="Motheraddress_Aumper" value="<?php echo $student['Motheraddress_Aumper'] ?>">
+                      <br><label for="Mother_Address_Aumper">อำเภอ / เขต</label>
+                      <input type="text" class="form-control" id="Mother_Address_Aumper" name="Mother_Address_Aumper" value="<?php echo $student['Mother_Address_Aumper'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Province">จังหวัด</label>
-                      <input type="text" class="form-control" id="Motheraddress_Province" name="Motheraddress_Province" value="<?php echo $student['Motheraddress_Province'] ?>">
+                      <br><label for="Mother_Address_Province">จังหวัด</label>
+                      <input type="text" class="form-control" id="Mother_Address_Province" name="Mother_Address_Province" value="<?php echo $student['Mother_Address_Province'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Motheraddress_Postcode">รหัสไปรษณีย์</label>
-                      <input type="text" class="form-control" id="Motheraddress_Postcode" name="Motheraddress_Postcode" value="<?php echo $student['Motheraddress_Postcode'] ?>">
+                      <br><label for="Mother_Address_Postcode">รหัสไปรษณีย์</label>
+                      <input type="text" class="form-control" id="Mother_Address_Postcode" name="Mother_Address_Postcode" value="<?php echo $student['Mother_Address_Postcode'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
@@ -359,46 +359,46 @@
                   <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Number">บ้านเลขที่</label>
-                      <input type="text" class="form-control" id="Parentaddress_Number" name="Parentaddress_Number" value="<?php echo $student['Parentaddress_Number'] ?>">
+                      <br><label for="Parent_Address_Number">บ้านเลขที่</label>
+                      <input type="text" class="form-control" id="Parent_Address_Number" name="Parent_Address_Number" value="<?php echo $student['Parent_Address_Number'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Moo">หมู่</label>
-                      <input type="text" class="form-control" id="Parentaddress_Moo" name="Parentaddress_Moo" value="<?php echo $student['Parentaddress_Moo'] ?>">
+                      <br><label for="Parent_Address_Moo">หมู่</label>
+                      <input type="text" class="form-control" id="Parent_Address_Moo" name="Parent_Address_Moo" value="<?php echo $student['Parent_Address_Moo'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Soi">ซอย</label>
-                      <input type="text" class="form-control" id="Parentaddress_Soi" name="Parentaddress_Soi" value="<?php echo $student['Parentaddress_Soi'] ?>">
+                      <br><label for="Parent_Address_Soi">ซอย</label>
+                      <input type="text" class="form-control" id="Parent_Address_Soi" name="Parent_Address_Soi" value="<?php echo $student['Parent_Address_Soi'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Tumbon">ตำบล / แขวง</label>
-                      <input type="text" class="form-control" id="Parentaddress_Tumbon" name="Parentaddress_Tumbon" value="<?php echo $student['Parentaddress_Tumbon'] ?>">
+                      <br><label for="Parent_Address_Tumbon">ตำบล / แขวง</label>
+                      <input type="text" class="form-control" id="Parent_Address_Tumbon" name="Parent_Address_Tumbon" value="<?php echo $student['Parent_Address_Tumbon'] ?>">
                     </div>
                   </div>
                 </div>    
                   <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Aumper">อำเภอ / เขต</label>
-                      <input type="text" class="form-control" id="Parentaddress_Aumper" name="Parentaddress_Aumper" value="<?php echo $student['Parentaddress_Aumper'] ?>">
+                      <br><label for="Parent_Address_Aumper">อำเภอ / เขต</label>
+                      <input type="text" class="form-control" id="Parent_Address_Aumper" name="Parent_Address_Aumper" value="<?php echo $student['Parent_Address_Aumper'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Province">จังหวัด</label>
-                      <input type="text" class="form-control" id="Parentaddress_Province" name="Parentaddress_Province" value="<?php echo $student['Parentaddress_Province'] ?>">
+                      <br><label for="Parent_Address_Province">จังหวัด</label>
+                      <input type="text" class="form-control" id="Parent_Address_Province" name="Parent_Address_Province" value="<?php echo $student['Parent_Address_Province'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Parentaddress_Postcode">รหัสไปรษณีย์</label>
-                      <input type="text" class="form-control" id="Parentaddress_Postcode" name="Parentaddress_Postcode" value="<?php echo $student['Parentaddress_Postcode'] ?>">
+                      <br><label for="Parent_Address_Postcode">รหัสไปรษณีย์</label>
+                      <input type="text" class="form-control" id="Parent_Address_Postcode" name="Parent_Address_Postcode" value="<?php echo $student['Parent_Address_Postcode'] ?>">
                     </div>
                   </div>
                   <div class="col-sm-3">
@@ -416,6 +416,89 @@
                     </div>
                   </div>
                 </div><br>
+
+                <B>5. ข้อมูลผู้ที่ติดต่อได้</B><br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <br><label for="Contact_Name">ชื่อ</label>
+                        <input type="text" class="form-control" id="Contact_Name" name="Contact_Name" value="<?php echo $student['Contact_Name'] ?>">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                    <br><label for="Contact_Status">ความสัมพันธ์</label>
+                      <select class="form-control" id="Contact_Status" name="Contact_Status">
+                        <?php foreach(get_status_parent() as $key => $status_parent){
+                          if($student['Contact_Status'] == $key){
+                            echo '<option value="'.$key.'" selected>'.$status_parent.'</option>';
+                          } else {
+                            echo '<option value="'.$key.'">'.$status_parent.'</option>';
+                          }
+                        } ?>
+                      </select>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="Contact_Email">E-Mail</label>
+                      <input type="text" class="form-control" id="Contact_Email" name="Contact_Email" value="<?php echo $student['Contact_Email'] ?>">
+                    </div>
+                  </div>
+                <br>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Number">ที่อยู่ของผู้ที่ติดต่อได้</label>
+                      <input type="text" class="form-control" id="Contact_Address_Number" name="Contact_Address_Number" value="<?php echo $student['Contact_Address_Number'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Tumbon">ตำบล / แขวง</label>
+                      <input type="text" class="form-control" id="Contact_Address_Tumbon" name="Contact_Address_Tumbon" value="<?php echo $student['Contact_Address_Tumbon'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Aumper">อำเภอ / เขต</label>
+                      <input type="text" class="form-control" id="Contact_Address_Aumper" name="Contact_Address_Aumper" value="<?php echo $student['Contact_Address_Aumper'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Province">จังหวัด</label>
+                      <input type="text" class="form-control" id="Contact_Address_Province" name="Contact_Address_Province" value="<?php echo $student['Contact_Address_Province'] ?>">
+                    </div>
+                  </div>
+                  
+
+
+                </div>    
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Address_Postcode">รหัสไปรษณีย์</label>
+                      <input type="text" class="form-control" id="Contact_Address_Postcode" name="Contact_Address_Postcode" value="<?php echo $student['Contact_Address_Postcode'] ?>">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Contact_Phone">โทรศัพท์</label>
+                      <input type="text" class="form-control" id="Contact_Phone" name="Contact_Phone" value="<?php echo $student['Contact_Phone'] ?>">
+                    </div>
+                  </div>
+                </div>             
+                
+
+                
                 
           <button type="submit" class="btn btn-primary">บันทึก</button>
           
