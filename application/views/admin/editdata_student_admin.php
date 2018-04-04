@@ -51,13 +51,15 @@
           </div>
           <div class="form-group col-sm-4">
             <br><label for="Blood">หมู่เลือด</label>
-              <select class="form-control" id="Blood">
-                <option>A</option>
-                <option>B</option>
-                <option>O</option>
-                <option>AB</option>
-                <option>ไม่ระบุ</option>
-              </select>
+                <select class="form-control" id="Blood" name="Blood">
+                  <?php foreach(get_bloods() as $key => $blood){
+                    if($result['Blood'] == $key){
+                      echo '<option value="'.$key.'" selected>'.$blood.'</option>';
+                    } else {
+                      echo '<option value="'.$key.'">'.$blood.'</option>';
+                    }
+                  } ?>
+                </select>
           </div> 
         </div>
         <div class="row">

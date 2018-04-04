@@ -77,7 +77,7 @@ th {
                   <td><b>จำนวนหน่วยกิตที่เรียน : </b></td>
                 </tr>
                 <tr>
-                  <td><b>GPAX : </b></td>
+                  <td><b>GPAX : </b><?php echo $result[0]->GPAX ?></td>
                   <td><b>ระดับการศึกษา : </b><?php echo $result[0]->Degree ?></td>
                 </tr>
                 <tr>

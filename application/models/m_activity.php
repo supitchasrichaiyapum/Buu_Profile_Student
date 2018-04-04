@@ -12,7 +12,14 @@ class m_activity extends CI_Model
             WHERE Activity_has_Student.Student_Student_ID = '".$Student_Code."' ";
             $query = $this->db->query($sql);            
             return $query->result();
+        }
 
+        public function search_student($Student_Code,$Student_Name,$Student_Lname){
+            $sql = "SELECT Student.Student_ID, Student.Student_Name_Th, Student.Student_Lname_Th, Student.Course 
+            FROM Student 
+            WHERE Student.Student_ID LIKE '".$Student_Code."' OR Student.Student_Name_Th LIKE '".$Student_Name."' OR Student.Student_Lname_Th LIKE '".$Student_Lname."' ";
+            $query = $this->db->query($sql);            
+            return $query->result();
         }
 
         public function get_by_student_id($id){
@@ -26,6 +33,7 @@ class m_activity extends CI_Model
             return $query->result();
 
         }
+
         public function get_all(){
             $sql = "Select Activity.Activitie_ID,Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year,Activity.Hour, Activity_has_Student.Student_Student_ID, Student.Student_Prefix, Student.Student_Name_Th, Student.Student_Lname_Th
             from Activity 
@@ -34,11 +42,13 @@ class m_activity extends CI_Model
             $query = $this->db->query($sql);            
             return $query->result();
         }
+
         public function get_all_activity(){
             $this->db->from('Activity');
             $query = $this->db->get();           
             return $query->result_array();
         }
+
         public function get_by_id_activity_has_student(){
            
             $this->db->from('Activity_has_Student');
@@ -55,29 +65,33 @@ class m_activity extends CI_Model
             $query = $this->db->query($sql);           
             return $query->result();
         }
+
         // แก้ไขข้อมูลรางวัลการแข่งขัน
         public function update_activity($data, $activity_id){
             $this->db->where('Activitie_ID', $activity_id);
             return $this->db->update('Activity',$data);
         }
+
         // ลบกิจกรรม
         public function delete_activity_has_student($id){
             $this->db->where('Student_Student_ID',$id);
             $this->db->delete('Activity_has_Student');
             return true;
         }
+
         public function get_by_id($id){
                 $this->db->where('Activitie_ID',$id);
                 $query = $this->db->get('Activity');
                 return $query->result_array();
-            }
+        }
         
         public function insert_activity($data){
                 return $this->db->insert('Activity',$data);
-            }
+        }
+
         public function insert_student_activity($data){
                 return $this->db->insert('Activity_has_Student',$data);
-            }
+        }
 
 }
 
