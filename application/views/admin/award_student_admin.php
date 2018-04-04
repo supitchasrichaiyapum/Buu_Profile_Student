@@ -1,38 +1,38 @@
 <style>
-table {
-    width:100%;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-section.dashboard-counts .row {
-  padding: 5px 5px;
-}
-<meta name="viewport" content="width=device-width, initial-scale=1">
-ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-    background-color: #eee;
-}
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-      </style>
+    table {
+        width:100%;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+    section.dashboard-counts .row {
+    padding: 5px 5px;
+    }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+    }
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+    ul.breadcrumb li a {
+        color: #0275d8;
+        text-decoration: none;
+    }
+    ul.breadcrumb li a:hover {
+        color: #01447e;
+        text-decoration: underline;
+    }
+</style>
   
         <div class="content-inner" >
           <!-- Page Header-->
@@ -68,7 +68,9 @@ ul.breadcrumb li a:hover {
                                     <th>เทอม</th>
                                     <th>ปีการศึกษา</th>  
                                     <th>อาจารย์ผู้ทำผลงานร่วม</th>  
+
                                     <th>เงินรางวัล(บาท)</th>
+
                                     <th></th>             
                                   </tr>
                       </thead>   

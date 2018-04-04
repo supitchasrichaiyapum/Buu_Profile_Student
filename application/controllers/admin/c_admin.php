@@ -172,6 +172,18 @@ class c_admin extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		if($this->input->post('consider')) { 
+			if($this->input->post('consider') == 'high'){
+			// โปรสูง
+				$data['student'] = $this->m_admin->search_student_between_gpax(1.80, 1.99);
+			} else {
+				// โปรต่ำ
+				$data['student'] = $this->m_admin->search_student_between_gpax(1.75, 1.79);
+			}
+		} else {
+			$data['student'] = array();
+		}
+		// print_r($data);
 		$this->template->view('admin/consider_student_admin',$data);
 	}
 
@@ -400,7 +412,7 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0) 
 						continue;
 					//date converted
@@ -515,7 +527,7 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0)
 						continue;
 					// print_r($row);
@@ -567,9 +579,7 @@ class c_admin extends CI_Controller {
 		}
 	// เช็คสถานะการอัพข้อมูลเกรดเฉลี่ย
 	public function post_gradstudent()
-		{
-			
-			
+		{			
 			$config['upload_path']          = './uploads/';
             $config['allowed_types']        = 'xlsx';
             $config['max_size']             = (1024*8);
@@ -586,7 +596,7 @@ class c_admin extends CI_Controller {
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
-                foreach($xlsx->getSheetData($sheet) as $row) {
+                foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0)
 						continue;
 						
@@ -612,6 +622,57 @@ class c_admin extends CI_Controller {
 				//insert
 			}
 		}
+		// เช็คสถานะการอัพข้อมูลเกรดเฉลี่ยรวม
+		public function add_grade($status= '')
+		{
+			$data['status'] = array();
+			if($status == 'error'){
+				$data['status']['color'] = "danger";
+				$data['status']['text'] = "กรุณาเลือกไฟล์ใหม่";
+			} else if($status == 'success'){
+				$data['status']['color'] = "success";
+				$data['status']['text'] = "สำเร็จ !";
+			}
+			$data['user_id'] = $this->session->userdata('user_id');
+			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+			$this->template->view('admin/add_grade',$data);
+		}
+		// เช็คสถานะการอัพข้อมูลเกรดเฉลี่ยรวม
+		public function post_grade()
+			{	
+			$config['upload_path']          = './uploads/';
+			$config['allowed_types']        = 'xlsx';
+			$config['max_size']             = (1024*8);
+			$config['encrypt_name'] 		= true;
+			$this->load->library('upload', $config);
+			if ( ! $this->upload->do_upload('file-input')) {
+				$this->add_gradstudent('error');
+				// die('111');
+			} else {
+				//get upload file
+				$file = $this->upload->data();
+				
+				//read excel file
+				require(FCPATH.'/application/libraries/XLSXReader.php');
+				$xlsx = new XLSXReader($file['full_path']);
+				$sheet = $xlsx->getSheetNames()[1];
+				foreach($xlsx->getSheetData($sheet) as $key => $row) {
+					if($key == 0)
+						continue;		
+					$insert = array();
+					$insert['Student_ID'] = $row[0];
+					$insert['GPAX'] = $row[1];
+					// var_dump($insert);
+					// print_r($insert);
+					
+						$this->m_student->update_grade($insert);
+				
+				}
+				$this->add_grade('success');
+				//insert
+			}
+		}
+
 		public function insert(){
 		   $this->load->model(m_award);
 		   $this->m_award->insert();
@@ -854,6 +915,23 @@ class c_admin extends CI_Controller {
 			$this->m_activity->update_activity($data, $activity_id);			
 			redirect('admin/c_admin/activity_student/'.$activity_id);
 		}
+		// โปรสูง โปรต่ำ
+		public function consider()
+		{
+			
+			if($this->input->post('consider')) { 
+				if($this->input->post('consider') == 'high'){
+				// โปรสูง
+				$data['student'] = $this->m_admin->search_student_between_gpax(1.80, 1.99);
+				} else {
+					// โปรต่ำ
+					$data['student'] = $this->m_admin->search_student_between_gpax(1.75, 1.79);
+				}
+			} else {
+				$data['student'] = array();
+			}
+			print_r($data);
+		} 
 
 	}
 ?>

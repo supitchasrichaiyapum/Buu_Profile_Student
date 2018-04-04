@@ -1,0 +1,25 @@
+{"status":"true",
+    "result":
+    {
+        "year_name":"2560",
+        "department":
+        [
+            {"department_name":"IT",
+            "no_applied":447,"no_offered":444,
+            "no_enrolled":333,"no_students":22222
+            },
+            {"department_name":"CS",
+                "no_applied":447,
+                "no_offered":444,
+                "no_enrolled":333,
+                "no_students":2222
+            },
+            {"department_name":"IT",
+                "no_applied":447,
+                "no_offered":444,
+                "no_enrolled":333,
+                "no_students":22222
+            }
+        ]
+    }
+}
