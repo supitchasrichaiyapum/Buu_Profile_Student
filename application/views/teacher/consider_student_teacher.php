@@ -50,7 +50,7 @@
           <header class="page-header">
             <div class="container-fluid">
             <ul class="breadcrumb">
-            <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+            <li><a href="<?php echo site_url('teacher/c_teacher/menu_teacher');?>">หน้าหลัก</a></li>
                 <li>รายชื่อนิสิตรอพินิจ</li>
             </ul>
             </div>
@@ -66,7 +66,7 @@
                   <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="text-input"><b>เลือกประเภทการรอพินิจ</b></label><br>
                       <div class="col-md-6">
-                      <form method="post"  action="<?php echo site_url('admin/c_admin/consider_student_admin');?>" id="consiter" name="">
+                      <form method="post"  action="<?php echo site_url('teacher/c_teacher/consider_student_teacher');?>" id="consiter" name="">
                         <select onchange="this.form.submit()" id="consider" name="consider" class="form-control">
                         <option>โปรดเลือกรายชื่อรอพินิจ</option>
                         <option value="high">รายชื่อรอพินิจ - โปรสูง</option>

@@ -50,8 +50,8 @@
           <header class="page-header">
             <div class="container-fluid">
             <ul class="breadcrumb">
-            <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
-                <li>รายชื่อนิสิตรอพินิจ</li>
+            <li><a href="<?php echo site_url('student/c_student/menu_student');?>">หน้าหลัก</a></li>
+                <li>รายชื่อนิสิติรอพินิจ</li>
             </ul>
             </div>
           </header>
@@ -66,7 +66,7 @@
                   <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="text-input"><b>เลือกประเภทการรอพินิจ</b></label><br>
                       <div class="col-md-6">
-                      <form method="post"  action="<?php echo site_url('admin/c_admin/consider_student_admin');?>" id="consiter" name="">
+                      <form method="post"  action="<?php echo site_url('student/c_student/consider_student');?>" id="consiter" name="">
                         <select onchange="this.form.submit()" id="consider" name="consider" class="form-control">
                         <option>โปรดเลือกรายชื่อรอพินิจ</option>
                         <option value="high">รายชื่อรอพินิจ - โปรสูง</option>
@@ -76,7 +76,7 @@
                       </div>
                   </div><br>
                   <?php 
-                  if( count($student) > 0){
+                  if( count($Student) > 0){
 
                   ?>
                   <table id="datatable" class="table table-striped table-bordered">
@@ -92,7 +92,7 @@
                       </thead>   
                       <tbody>
                       <?php 
-                      $i=1; foreach ($student as $row) { ?>
+                      $i=1; foreach ($Student as $row) { ?>
                         <tr>
                             
                             <td><?php echo $row['Student_ID'];?></td>

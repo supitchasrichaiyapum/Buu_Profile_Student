@@ -270,6 +270,25 @@ class c_student extends CI_Controller {
 	// print_r($data);
 	$this->template->view('student/scholarship_detail',$data);
 	}
+	// นิสิตรอพินิจ
+	public function consider_student()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['student'] = $this->m_student->get_student($data['user_id']);
+		if($this->input->post('consider')) { 
+			if($this->input->post('consider') == 'high'){
+			// โปรสูง
+				$data['Student'] = $this->m_student->search_student_between_gpax(1.80, 1.99);
+			} else {
+				// โปรต่ำ
+				$data['Student'] = $this->m_student->search_student_between_gpax(1.75, 1.79);
+			}
+		} else {
+			 $data['Student'] = array();
+		}
+		// print_r($data);
+		$this->template->view('student/consider_student',$data);
+	}
 
 }
 	

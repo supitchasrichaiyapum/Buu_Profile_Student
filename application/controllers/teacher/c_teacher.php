@@ -103,13 +103,6 @@ class c_teacher extends CI_Controller {
 		$this->template->view('teacher/statistics_student_teacher',$data);
 	}
 
-	public function consider_student_teacher()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
-		$this->template->view('teacher/consider_student_teacher',$data);
-	}
-
 	public function graduate_student_teacher()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -190,6 +183,26 @@ class c_teacher extends CI_Controller {
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 		$this->template->view('teacher/statistics_teacher',$data);
 	}
+	// นิสิตรอพินิจ
+	public function consider_student_teacher()
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		if($this->input->post('consider')) { 
+			if($this->input->post('consider') == 'high'){
+			// โปรสูง
+				$data['student'] = $this->m_teacher->search_student_between_gpax(1.80, 1.99);
+			} else {
+				// โปรต่ำ
+				$data['student'] = $this->m_teacher->search_student_between_gpax(1.75, 1.79);
+			}
+		} else {
+			$data['student'] = array();
+		}
+		// print_r($data);
+		$this->template->view('teacher/consider_student_teacher',$data);
+	}
+
 
 }
 

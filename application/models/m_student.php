@@ -135,6 +135,15 @@ class m_student extends CI_Model
             $data['student'] = $this->m_student->get_student($data['user_id']);
             $this->template->view('student/graduate_actorstudent',$data);
         }
+        // โปรสูง โปรต่ำ
+        public function search_student_between_gpax($gpax_low, $gpax_high){
+            $this->db->where('Status_ID', 10);
+            $this->db->where('GPAX >= ', $gpax_low);
+            $this->db->where('GPAX <= ', $gpax_high);
+            $this->db->from('Student');
+            $query = $this->db->get();
+            return $query->result_array();
+        }
         
         
 
