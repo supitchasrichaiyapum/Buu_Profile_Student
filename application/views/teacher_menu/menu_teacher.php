@@ -11,7 +11,7 @@
          </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href=""><i class="far fa-user"></i> ข้อมูลอาจารย์ </a></li>
+                    <li><a href="/teacher/c_teacher/data_teacher"><i class="far fa-user"></i> ข้อมูลอาจารย์ </a></li>
                     <li><a href="/teacher/c_teacher/activity_student_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรมนิสิต </a></li>
                     <li><a href="/teacher/c_teacher/award_student_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="/teacher/c_teacher/scholarship_student_teacher"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
@@ -19,7 +19,7 @@
 	                    <i class="fas fa-database"></i> ข้อมูลสถิตินิสิต </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled">
                                         <li><a href="/teacher/c_teacher/statistics_teacher"> สถิติจำนวนนิสิต </a></li>
-                                        <li><a href="/teacher/c_teacher/consider_teacher"> รายชื่อรอพินิจ </a></li>
+                                        <li><a href="/teacher/c_teacher/consider_student_teacher"> รายชื่อรอพินิจ </a></li>
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 

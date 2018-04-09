@@ -16,6 +16,7 @@ class c_login extends CI_Controller {
 
     public function post_login() 
     {
+
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $this->ldap->connect();

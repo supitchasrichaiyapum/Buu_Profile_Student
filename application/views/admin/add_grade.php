@@ -1,10 +1,43 @@
-
-<div class="content-inner"><br>
+<style>
+meta name="viewport" content="width=device-width, initial-scale=1">
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+    }
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+    ul.breadcrumb li a {
+        color: #0275d8;
+        text-decoration: none;
+    }
+    ul.breadcrumb li a:hover {
+        color: #01447e;
+        text-decoration: underline;
+    }
+</style>
+<div class="content-inner">
   <!-- Page Header-->
-  <div class="col-sm-12">
+  <header class="page-header">
+            <div class="container-fluid">
+            <ul class="breadcrumb">
+            <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+                <li>เพิ่มข้อมูลเกรดเฉลี่ยรวม</li>
+       
+            </ul>
+            </div>
+          </header>
+  <div class="col-sm-12"><br>
           <div class="card">
             <div class="card-header">
-              <strong><center>เพิ่มข้อมูลเกรดเฉลี่ยรวม</strong>
+              <h1><strong><center>เพิ่มข้อมูลเกรดเฉลี่ยรวม</strong></h1>
             </div> 
 
             <form role="form" action="<?php echo site_url('admin/c_admin/post_grade');?>" method="post" enctype="multipart/form-data">
