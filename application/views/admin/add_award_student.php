@@ -31,7 +31,7 @@ ul.breadcrumb li a:hover {
           <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li><a href="<?php echo site_url('admin/c_admin/award_student_admin');?>">รางวัลการแข่งขัน</a></li>
-                <li>เพิ่มรางวัลหรือผลงาน</li>
+                <li>เพิ่มรางวัลการแข่งขัน</li>
             </ul>
             </div>
           </header>
@@ -40,7 +40,7 @@ ul.breadcrumb li a:hover {
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                <h1><strong><center>เพิ่มรางวัลหรือผลงาน</strong></h1>
+                <h1><strong><center>เพิ่มรางวัลการแข่งขัน</strong></h1>
                 </div>
                     <div class="card-body">
                         <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" >  <BR>                  
@@ -53,7 +53,7 @@ ul.breadcrumb li a:hover {
                         </div> 
                         
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัลหรือชื่อผลงาน</label>
+                            <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัลการแข่งขัน</label>
                             <div class="col-md-3">
                                 <input type="text" id="Award_Name" name="Award_Name" class="form-control">
                             </div>
@@ -87,7 +87,7 @@ ul.breadcrumb li a:hover {
                             </div>
                         </div>  
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input">อาจารย์ผู้ทำผลงานร่วม</label>
+                            <label class="col-md-3 col-form-label" for="text-input">อาจารย์ที่ปรึกษารางวัล</label>
                             <div class="col-md-3">
                                 <input type="text" id="Award_Giver" name="Award_Giver" class="form-control"><br>
                             </div>

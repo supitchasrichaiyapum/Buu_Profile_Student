@@ -21,8 +21,8 @@
                                 <label class="col-md-4 col-form-label" for="text-input"><b>ปีการศึกษา</b></label>
                                     <div class="col-md-3">                          
                                         <div id="custom-search-input"> 
-                                            <div class="input-group col-md-11">     
-                                                    <select name="acadyear" onchange="open_iframe_Box()">
+                                            <div class="input-group col-md-15">     
+                                                    <select class="form-control" name="acadyear" onchange="open_iframe_Box()">
                                                         <?php
                                                             $year = date('Y')+543;
                                                             //++ year

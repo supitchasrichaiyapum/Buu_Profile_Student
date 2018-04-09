@@ -57,7 +57,7 @@ ul.breadcrumb li a:hover {
                     </div>
                     <div class="text-center">
                             <button type="reset" class="btn btn-sm btn-danger"> ยกเลิก </button>
-                            <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
+                            <button type="submit" class="btn btn-sm btn-success"> บันทึก </button>
                             
                     </div>
                 </form>
