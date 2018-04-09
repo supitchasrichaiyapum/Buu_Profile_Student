@@ -53,7 +53,7 @@ ul.breadcrumb li a:hover {
                 <!-- Item -->
                 <div class="container"><br>
                 <h1 class="no-margin-bottom"><center>กิจกรรม</center></h1><br>
-                <div align="right">
+                <div align="left">
                     <a href="<?php echo site_url('admin/c_admin/insert_form_activity');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อกิจกรรม</button></a>
                     </div>
                 </div>

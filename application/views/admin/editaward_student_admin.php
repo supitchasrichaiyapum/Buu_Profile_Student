@@ -42,7 +42,7 @@ ul.breadcrumb li a:hover {
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
-              <h1><strong><center>แก้ไขรางวัลหรือผลงาน</strong></h1>
+              <h1><strong><center>แก้ไขรางวัล</strong></h1>
             </div>
             
             <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" ><BR>
@@ -56,7 +56,7 @@ ul.breadcrumb li a:hover {
                         </div> 
                     
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input" >ชื่อรางวัลหรือชื่อผลงาน</label>
+                        <label class="col-md-3 col-form-label" for="text-input" >ชื่อรางวัล</label>
                             <div class="col-md-3">
                                 <input type="text" id="Award_Name" name="Award_Name" class="form-control" required="" value="<?php echo $result[0]['Award_Name']; ?>">
                             </div>
@@ -95,7 +95,7 @@ ul.breadcrumb li a:hover {
                         </div>
                     </div>  
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">อาจารย์ผู้ทำผลงานร่วม</label>
+                        <label class="col-md-3 col-form-label" for="text-input">อาจารย์ที่ปรึกษารางวัล</label>
                         <div class="col-md-3">
                             <input type="text" id="Award_Giver" name="Award_Giver" class="form-control" required=""  value="<?php echo $result[0]['Award_Giver']; ?>"><br>
                         </div>

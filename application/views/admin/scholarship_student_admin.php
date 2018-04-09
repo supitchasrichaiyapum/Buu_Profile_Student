@@ -60,7 +60,7 @@ ul.breadcrumb li+li:before {
                 <div class="container">
                 <h1 class="no-margin-bottom"><center>ทุนการศึกษา</center></h1><br>
                 <br>
-                <div align="right">
+                <div align="left">
                     <a href="<?php echo site_url('admin/c_admin/add_scholarship_student');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อทุนการศึกษา</button></a>
                     </div>
                 </div><br><br>

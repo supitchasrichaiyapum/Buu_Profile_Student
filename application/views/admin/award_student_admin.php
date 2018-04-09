@@ -54,7 +54,7 @@
                 <div class="container"><br>
                 <center><h1 class="no-margin-bottom">รางวัลการแข่งขัน</h1></center><br>
                 <div align="left">
-                    <a href="<?php echo site_url('admin/c_admin/insert_form_award');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อรางวัลหรือผลงาน</button></a>
+                    <a href="<?php echo site_url('admin/c_admin/insert_form_award');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อรางวัล</button></a>
                     </div>
                 </div>
                   <div class="container" >
@@ -64,11 +64,10 @@
                       <thead>
                                   <tr>
                                     <th>วัน เดือน ปี</th>
-                                    <th>ชื่อรางวัลหรือผลงาน</th>
+                                    <th>ชื่อรางวัล</th>
                                     <th>เทอม</th>
                                     <th>ปีการศึกษา</th>  
-                                    <th>อาจารย์ผู้ทำผลงานร่วม</th>  
-
+                                    <th>อาจารย์ที่ปรึกษารางวัล</th>
                                     <th>เงินรางวัล(บาท)</th>
 
                                     <th></th>             
