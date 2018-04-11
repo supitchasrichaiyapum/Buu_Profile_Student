@@ -25,7 +25,7 @@
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
 	                    <i class="far fa-address-book"></i> ข้อมูลนิสิต </a>
 		                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
-                                <li><a href="/teacher/c_teacher/data_student_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
+                                <li><a href="/teacher/c_teacher/search_data_student_teacher"> ข้อมูลส่วนตัวนิสิต </a></li>
 		                    </ul>
                     </li>
                     <li><a href="/teacher/c_teacher/graduate_actorteacher"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
