@@ -52,7 +52,7 @@ th {
             </div>
             <div class="card-body">
 
-        <form  method="get"  action="search_data_student">
+        <form  method="get"  action="search_data_student_teacher">
           <div class="container">
             <div class="row">
               <div class="col-md-6"><BR>
@@ -94,7 +94,7 @@ th {
               echo "<td>".$row->Course."</td>";
               echo "<td>".$row->Status_Name."</td>";
               echo "<td>"."<center>";
-              echo "<a href='".site_url('admin/c_admin/data_student_detail_admin/'.$row->Student_ID)."'>";
+              echo "<a href='".site_url('teacher/c_teacher/data_student_detail_teacher/'.$row->Student_ID)."'>";
               echo "<button type='button' class='btn btn-primary btn-sm'>"."รายละเอียดข้อมูลนิสิต"."</button>";
               echo "</a>";
               echo "</td>"."</center>";

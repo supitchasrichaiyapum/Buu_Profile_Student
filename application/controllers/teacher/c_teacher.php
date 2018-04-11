@@ -110,25 +110,35 @@ class c_teacher extends CI_Controller {
 		$this->template->view('teacher/graduate_student_teacher',$data);
 	}
 
-	//ส่วนการค้นหาข้อมูล
-	public function data_student_teacher()
+	public function search_data_student_teacher()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
-		$data['student_code'] = $this->input->get('textfield');
-		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_code']);
-		$data['activity'] = $this->m_activity->get_by_student_id($data['student_code']);
-		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
-		$data['status'] = $this->m_admin->search_student_status($data['student_code']);
-		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_code']);
-		$data['GPA'] = $this->m_student->get_GPA($data['student_code']);
-		if($data['student_code']) {
-			$this->load->model('m_admin');
-			$data['result'] = $this->m_admin->search_student($data['student_code']);
+		$data['Student_Text'] = $this->input->get('textfield');
+		if($data['Student_Text']) {
+			$data['Student_Text'] = str_replace("*", "%", $data['Student_Text']);
+			$this->load->model('m_student');
+			$data['result'] = $this->m_student->search_student($data['Student_Text']);
 		} else {
 			$data['result'] = array();
 		}
-		$this->template->view('teacher/data_student_teacher',$data);
+		$this->template->view('teacher/search_data_student_teacher', $data);
+	}
+
+	//ส่วนการค้นหาข้อมูล
+	public function data_student_detail_teacher($id)
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$data['student_id'] = $id;
+		$data['result'] = $this->m_student->get_student($id);
+		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_id']);
+		$data['activity'] = $this->m_activity->get_by_student_id($data['student_id']);
+		$data['award'] = $this->m_award->get_Award_by_student($data['student_id']);
+		$data['status'] = $this->m_admin->search_student_status($data['student_id']);
+		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_id']);
+		$data['GPA'] = $this->m_student->get_GPA($data['student_id']);
+		$this->template->view('teacher/data_student_detail_teacher',$data);
 	}
 
 	public function transcript_student_teacher($student_code)

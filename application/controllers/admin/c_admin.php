@@ -194,7 +194,7 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/graduate_student_admin',$data);
 	}
 
-	public function search_data_student()
+	public function search_data_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
@@ -206,7 +206,7 @@ class c_admin extends CI_Controller {
 		} else {
 			$data['result'] = array();
 		}
-		$this->template->view('admin/search_data_student', $data);
+		$this->template->view('admin/search_data_student_admin', $data);
 	}
 
 	public function data_student_detail_admin($id)
@@ -221,7 +221,6 @@ class c_admin extends CI_Controller {
 		$data['status'] = $this->m_admin->search_student_status($data['student_id']);
 		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_id']);
 		$data['GPA'] = $this->m_student->get_GPA($data['student_id']);
-		
 		$this->template->view('admin/data_student_detail_admin',$data);
 		
 	}
@@ -349,18 +348,18 @@ class c_admin extends CI_Controller {
 		$data['Mother_Address_Postcode'] = $this->input->post('Mother_Address_Postcode');
 		$data['Mother_Phone'] = $this->input->post('Mother_Phone');
 		$data['Mother_Email'] = $this->input->post('Mother_Email');
-		$data['Parent_Name'] = $this->input->post('Mother_Name');
-		$data['Parent_Career'] = $this->input->post('Mother_Career');
-		$data['Parent_Status'] = $this->input->post('Mother_Status');
-		$data['Parent_Address_Number'] = $this->input->post('Mother_Address_Number');
-		$data['Parent_Address_Moo'] = $this->input->post('Mother_Address_Moo');
-		$data['Parent_Address_Soi'] = $this->input->post('Mother_Address_Soi');
-		$data['Parent_Address_Tumbon'] = $this->input->post('Mother_Address_Tumbon');
-		$data['Parent_Address_Aumper'] = $this->input->post('Mother_Address_Aumper');
-		$data['Parent_Address_Province'] = $this->input->post('Mother_Address_Province');
-		$data['Parent_Address_Postcode'] = $this->input->post('Mother_Address_Postcode');
-		$data['Parent_Phone'] = $this->input->post('Mother_Phone');
-		$data['Parent_Email'] = $this->input->post('Mother_Email');
+		$data['Parent_Name'] = $this->input->post('Parent_Name');
+		$data['Parent_Career'] = $this->input->post('Parent_Career');
+		$data['Parent_Status'] = $this->input->post('Parent_Status');
+		$data['Parent_Address_Number'] = $this->input->post('Parent_Address_Number');
+		$data['Parent_Address_Moo'] = $this->input->post('Parent_Address_Moo');
+		$data['Parent_Address_Soi'] = $this->input->post('Parent_Address_Soi');
+		$data['Parent_Address_Tumbon'] = $this->input->post('Parent_Address_Tumbon');
+		$data['Parent_Address_Aumper'] = $this->input->post('Parent_Address_Aumper');
+		$data['Parent_Address_Province'] = $this->input->post('Parent_Address_Province');
+		$data['Parent_Address_Postcode'] = $this->input->post('Parent_Address_Postcode');
+		$data['Parent_Phone'] = $this->input->post('Parent_Phone');
+		$data['Parent_Email'] = $this->input->post('Parent_Email');
 		$data['Contact_Name'] = $this->input->post('Contact_Name');
 		$data['Contact_Status'] = $this->input->post('Contact_Status');
 		$data['Contact_Email'] = $this->input->post('Contact_Email');
@@ -372,7 +371,7 @@ class c_admin extends CI_Controller {
 		$data['Contact_Phone'] = $this->input->post('Contact_Phone');
 
 		$this->m_student->update_datastudent($data, $student_code);
-		redirect('admin/c_admin/data_student_admin', 'refresh');
+		redirect('admin/c_admin/data_student_detail_admin/'.$student_code,'refresh');
 		}
 
     public function add_student()
