@@ -41,25 +41,20 @@
             <ul class="breadcrumb">
             <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li>รางวัลการแข่งขัน</li>
-       
             </ul>
             </div>
           </header>
-          
-          <section class="dashboard-counts no-padding-bottom">
-           
-              <div class="row bg-white has-shadow">
-                <!-- Item -->
-                
-                <div class="container"><br>
-                <center><h1 class="no-margin-bottom">รางวัลการแข่งขัน</h1></center><br>
+          <br>
+        <Body>
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                    <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1><br><br>
                 <div align="left">
                     <a href="<?php echo site_url('admin/c_admin/insert_form_award');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อรางวัล</button></a>
-                    </div>
                 </div>
-                  <div class="container" >
-                  
-                  <br>
+                </div><br><br>
                       <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                                   <tr>
@@ -69,7 +64,6 @@
                                     <th>ปีการศึกษา</th>  
                                     <th>อาจารย์ที่ปรึกษารางวัล</th>
                                     <th>เงินรางวัล(บาท)</th>
-
                                     <th></th>             
                                   </tr>
                       </thead>   
@@ -83,10 +77,8 @@
                             <td><?php echo $row['Award_Giver'];?></td>
                             <td><?php echo $row['Award_Amount'];?></td>
                             <td><center>
-
                               <a href="<?php echo site_url('admin/c_admin/award_detail/'.$row['Award_ID']."/".$row['Award_Year']);?>">
                               <button type="button" class="btn btn-primary btn-sm"></i> รายละเอียดผู้ได้รับรางวัล</button>&nbsp;
-
                               <a href="<?php echo site_url('admin/c_admin/form_editaward_student_admin/'.$row['Award_ID']);?>">                              
                               <button type="button" class="btn btn-warning btn-sm"></i> แก้ไข</button><br>
                               </center></td>
@@ -94,13 +86,10 @@
                       <?php } ?>
                       </tbody>
                       </table>             
-
                 </div>
               </div>
             </div>
           </div>
-          </section>           
-          
                           <script>
                             $(document).ready(function() {
                                 $('#datatable').DataTable();

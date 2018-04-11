@@ -44,4 +44,14 @@ class c_user extends CI_Controller {
 	// print_r($data);
 	$this->template->view('user/scholarship_detail_user',$data);
 	}
+
+	public function student_activity_detail($id)
+	{
+		$data['student_id'] = $id;
+		// print_r($id);
+		$this->load->model('m_student');
+		$data['result'] = $this->m_student->get_student($id);
+		// print_r($data);
+		$this->template->view('user/student_activity_detail',$data);
+	}
 }

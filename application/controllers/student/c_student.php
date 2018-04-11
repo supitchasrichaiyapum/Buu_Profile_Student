@@ -87,7 +87,7 @@ class c_student extends CI_Controller {
 		$this->form_validation->set_rules('Father_Address_Tumbon', 'บิดา : ตำบล', 'required');
 		$this->form_validation->set_rules('Father_Address_Aumper', 'บิดา : อำเภอ', 'required');
 		$this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required');
-		$this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณ๊ย์', 'required|is_natural_no_zero');
+		// $this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Father_Phone', 'บิดา : เบอร์โทรศัพท์', 'required');
 		// $this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'required|valid_email');
 		$this->form_validation->set_rules('Mother_Name', 'ชื่อ-นามสกุลมารดา', 'required');

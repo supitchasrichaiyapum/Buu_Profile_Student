@@ -46,29 +46,25 @@ ul.breadcrumb li+li:before {
             <ul class="breadcrumb">
             <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li>ทุนการศึกษา</li>
-     
             </ul>
-            
             </div>
           </header>
           <br>
         <Body>
         <div class="col-sm-12">
           <div class="card">
-            
             <div class="card-body">
                 <div class="container">
                 <h1 class="no-margin-bottom"><center>ทุนการศึกษา</center></h1><br>
                 <br>
                 <div align="left">
                     <a href="<?php echo site_url('admin/c_admin/add_scholarship_student');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อทุนการศึกษา</button></a>
-                    </div>
+                </div>
                 </div><br><br>
                 
                 <table id="datatable" class="table table-striped table-bordered">
                   <thead>
                       <tr>
-                        
                         <th>ชื่อทุนการศึกษา</th>
                         <th>ผู้มอบทุนการศึกษา</th>
                         <th>ปีการศึกษา</th>
@@ -101,7 +97,6 @@ ul.breadcrumb li+li:before {
                 </div>
               </div>
             </div>
-         
     <script>
       $(document).ready(function() {
           $('#datatable').DataTable();

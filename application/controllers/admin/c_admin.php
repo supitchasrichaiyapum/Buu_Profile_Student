@@ -194,24 +194,35 @@ class c_admin extends CI_Controller {
 		$this->template->view('admin/graduate_student_admin',$data);
 	}
 
-	public function data_student_admin()
+	public function search_data_student()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$data['student_code'] = $this->input->get('textfield');
-		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_code']);
-		$data['activity'] = $this->m_activity->get_by_student_id($data['student_code']);
-		$data['award'] = $this->m_award->get_Award_by_student($data['student_code']);
-		$data['status'] = $this->m_admin->search_student_status($data['student_code']);
-		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_code']);
-		$data['GPA'] = $this->m_student->get_GPA($data['student_code']);
-		if($data['student_code']) {
-			$this->load->model('m_admin');
-			$data['result'] = $this->m_admin->search_student($data['student_code']);
+		$data['Student_Text'] = $this->input->get('textfield');
+		if($data['Student_Text']) {
+			$data['Student_Text'] = str_replace("*", "%", $data['Student_Text']);
+			$this->load->model('m_student');
+			$data['result'] = $this->m_student->search_student($data['Student_Text']);
 		} else {
 			$data['result'] = array();
 		}
-		$this->template->view('admin/data_student_admin',$data);
+		$this->template->view('admin/search_data_student', $data);
+	}
+
+	public function data_student_detail_admin($id)
+	{
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['student_id'] = $id;
+		$data['result'] = $this->m_student->get_student($id);
+		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['student_id']);
+		$data['activity'] = $this->m_activity->get_by_student_id($data['student_id']);
+		$data['award'] = $this->m_award->get_Award_by_student($data['student_id']);
+		$data['status'] = $this->m_admin->search_student_status($data['student_id']);
+		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_id']);
+		$data['GPA'] = $this->m_student->get_GPA($data['student_id']);
+		
+		$this->template->view('admin/data_student_detail_admin',$data);
 		
 	}
 
@@ -338,6 +349,18 @@ class c_admin extends CI_Controller {
 		$data['Mother_Address_Postcode'] = $this->input->post('Mother_Address_Postcode');
 		$data['Mother_Phone'] = $this->input->post('Mother_Phone');
 		$data['Mother_Email'] = $this->input->post('Mother_Email');
+		$data['Parent_Name'] = $this->input->post('Mother_Name');
+		$data['Parent_Career'] = $this->input->post('Mother_Career');
+		$data['Parent_Status'] = $this->input->post('Mother_Status');
+		$data['Parent_Address_Number'] = $this->input->post('Mother_Address_Number');
+		$data['Parent_Address_Moo'] = $this->input->post('Mother_Address_Moo');
+		$data['Parent_Address_Soi'] = $this->input->post('Mother_Address_Soi');
+		$data['Parent_Address_Tumbon'] = $this->input->post('Mother_Address_Tumbon');
+		$data['Parent_Address_Aumper'] = $this->input->post('Mother_Address_Aumper');
+		$data['Parent_Address_Province'] = $this->input->post('Mother_Address_Province');
+		$data['Parent_Address_Postcode'] = $this->input->post('Mother_Address_Postcode');
+		$data['Parent_Phone'] = $this->input->post('Mother_Phone');
+		$data['Parent_Email'] = $this->input->post('Mother_Email');
 		$data['Contact_Name'] = $this->input->post('Contact_Name');
 		$data['Contact_Status'] = $this->input->post('Contact_Status');
 		$data['Contact_Email'] = $this->input->post('Contact_Email');
@@ -422,14 +445,14 @@ class c_admin extends CI_Controller {
 					//gen faculty
 					if($faculty = $this->m_admin->search_faculty($row[8])) {
 						//found
-						$Branch_ID = $faculty[0]['Branch_ID'];
+						$Faculty_ID = $faculty[0]['Faculty_ID'];
 					} else {
 						//add new
 						$array['Branch'] = $row[8];
-						$Branch_ID = $this->m_admin->insert_faculty($array);
+						$Faculty_ID = $this->m_admin->insert_faculty($array);
 					}
 					$insert = array();
-					$insert['Branch_ID'] = $Branch_ID;
+					$insert['Faculty_ID'] = $Faculty_ID;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['Student_Prefix'] = $row[2];
@@ -445,9 +468,9 @@ class c_admin extends CI_Controller {
 					$insert['Status_ID'] = $row[12];
 					$insert['Birthday'] = date('Y-m-d', $row[13]);
 					$insert['GradFromSchool'] = $row[14];
-					$insert['HighesEd'] = $row[15];
-					$insert['ProvinceofBirth'] = $row[16];
-					$insert['Notionnalitu'] = $row[17];
+					$insert['Highes_Ed'] = $row[15];
+					$insert['Province_Birth'] = $row[16];
+					$insert['Nationality'] = $row[17];
 					$insert['Relidion'] = $row[18];
 					$insert['Father_Name'] = $row[19];
 					$insert['Parent_Status'] = $row[20];

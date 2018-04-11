@@ -122,11 +122,11 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                   <td><b>จบการศึกษาจาก : </b><?php echo $result[0]->Gradfromschool ?></td>
                 </tr>
                 <tr>
-                  <td><b>สัญชาติ : </b><?php echo $result[0]->Notionnality ?></td>
+                  <td><b>สัญชาติ : </b><?php echo $result[0]->Nationality ?></td>
                   <td><b>ศาสนา : </b><?php echo $result[0]->Relidion ?></td>
                 </tr>
                 <tr>
-                  <td><b>ปี / เดือน / วัน (ที่เกิด) : </b><?php echo $result[0]->Birthday ?></td>
+                  <td><b>วัน / เดือน / ปี (ที่เกิด) : </b><?php echo thaiDate($result[0]->Birthday, true, false) ?></td>
                   <td><b>อาจารย์ที่ปรึกษา : </b></td>
                 </tr>
                 <tr>
