@@ -410,6 +410,7 @@ class c_admin extends CI_Controller {
 				//get upload file
 				$file = $this->upload->data();
 				//read excel file
+				$count_status = [];
 				require(FCPATH.'/application/libraries/XLSXReader.php');
                 $xlsx = new XLSXReader($file['full_path']);
                 $sheet = $xlsx->getSheetNames()[1];
@@ -418,18 +419,18 @@ class c_admin extends CI_Controller {
 						continue;
 					//date converted
 					$row[13] = XLSXReader::toUnixTimeStamp($row[13]);
-					// var_dump($row);
-					//gen faculty
+					// // var_dump($row);
+					// //gen faculty
 					if($faculty = $this->m_admin->search_faculty($row[8])) {
 						//found
-						$Branch_ID = $faculty[0]['Branch_ID'];
+						$Faculty_ID = $faculty[0]['Faculty_ID'];
 					} else {
 						//add new
 						$array['Branch'] = $row[8];
-						$Branch_ID = $this->m_admin->insert_faculty($array);
+						$Faculty_ID = $this->m_admin->insert_faculty($array);
 					}
 					$insert = array();
-					$insert['Branch_ID'] = $Branch_ID;
+					$insert['Faculty_ID'] = $Faculty_ID;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['Student_Prefix'] = $row[2];
@@ -445,9 +446,9 @@ class c_admin extends CI_Controller {
 					$insert['Status_ID'] = $row[12];
 					$insert['Birthday'] = date('Y-m-d', $row[13]);
 					$insert['GradFromSchool'] = $row[14];
-					$insert['HighesEd'] = $row[15];
-					$insert['ProvinceofBirth'] = $row[16];
-					$insert['Notionnalitu'] = $row[17];
+					$insert['Highes_Ed'] = $row[15];
+					$insert['Province_Birth'] = $row[16];
+					$insert['Nationality'] = $row[17];
 					$insert['Relidion'] = $row[18];
 					$insert['Father_Name'] = $row[19];
 					$insert['Parent_Status'] = $row[20];
@@ -477,17 +478,39 @@ class c_admin extends CI_Controller {
 					$insert['Degree'] = $row[45];
 					// print_r($row);
 					// print_r($insert);
-					// echo "<br><br>";		
+					// echo "<br><br>";	
+
 					if($this->m_student->search_student($row[0])) {
 						//found
-						$this->m_student->update_student($row[0], $insert);
+						$this->m_student->update_datastudent($insert, $row[0]);
 					} else {
 						//add new
 						$insert['Student_ID'] = $row[0];						
 						$this->m_student->add_student($insert);
 					}
+
+					@$count_status[$row[10]][$row[8]][$row[12]]++;
 					
 				}
+				// ส่วนสถิติจำนวนนิสิตตามสถานะนิสิต
+				foreach ($count_status as $year => $courses) {
+					foreach($courses as $course_name => $course_data){
+						foreach($course_data as $status_id => $count_student){
+
+							$insert_array = [];
+							$insert_array['Stat_Years'] = $year;
+							$insert_array['Stat_Course'] = $course_name;
+							$insert_array['Stat_Status'] = $status_id;
+							$insert_array['Stat_Amount'] = $count_student;
+							$insert_array['Stat_Date'] = date('Y-m-d H:i:s');
+							$this->m_admin->stat_student($insert_array);
+							// print_r(insert_array);
+							// echo $year.' '.$course_name.' '.$status_id." ".$count_student."\n";
+						}
+					}
+				}
+				// print_r($count_status);
+				// die();
 				$this->add_aboutstudent('success');
 				// redirect ('admin/c_admin/add_registstudent');
 				//insert

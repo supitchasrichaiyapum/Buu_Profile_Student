@@ -7,7 +7,11 @@ class m_admin extends CI_Model
             $query = $this->db->get();
             return $query->result_array()[0];
         }
-        
+        public function stat_student($insert_array){
+            return $this->db->replace('Static_Student', $insert_array);
+            
+        }
+       
         public function insert_faculty($array) {
             $this->db->replace('Faculty', $array);
             return $this->db->insert_id();
