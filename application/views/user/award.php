@@ -44,19 +44,18 @@ ul.breadcrumb li a:hover {
             </ul>           
             </div>
           </header>
-          
-          <section class="dashboard-counts no-padding-bottom">
-           
-              <div class="row bg-white has-shadow">
-                <!-- Item -->
-                <div class="container"><br>             
-                  <div class="container" >
+          <br>
+          <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+                <div class="container">
                   <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
-                  <br>
+                
+                </div><br><br>
                       <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                                   <tr>
-                                    <th></th>
+                                    
                                     <th>ชื่อรางวัล</th>
                                     <th>เทอม</th>
                                     <th>ปีการศึกษา</th>  
@@ -67,9 +66,9 @@ ul.breadcrumb li a:hover {
                                   </tr>
                       </thead>   
                       <tbody>
-                      <?php $i=1; foreach ($result as $row) { ?>
+                      <?php foreach ($result as $row) { ?>
                         <tr>
-                            <td><?php echo $i++; ?></td>
+                            
                             <td><?php echo $row['Award_Name'];?></td>
                             <td><?php echo $row['Award_Term'];?></td>
                             <td><?php echo $row['Award_Year'];?></td>
@@ -89,7 +88,7 @@ ul.breadcrumb li a:hover {
               </div>
             </div>
           </div>
-          </section>           
+                  
                           <script>
                             $(document).ready(function() {
                                 $('#datatable').DataTable();

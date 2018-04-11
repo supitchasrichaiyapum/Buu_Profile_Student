@@ -41,41 +41,31 @@ ul.breadcrumb li a:hover {
             <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                   <li>ข้อมูลกิจกรรม</li>
-                  
             </ul>
-            
             </div>
-          </header>
-          
-          <section class="dashboard-counts no-padding-bottom">
-           
-              <div class="row bg-white has-shadow">
-                <!-- Item -->
-                <div class="container"><br>
-                <h1 class="no-margin-bottom"><center>กิจกรรม</center></h1><br>
+          </header><br>
+          <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+                <div class="container">
+                <h1 class="no-margin-bottom"><center>กิจกรรม</center></h1><br><br>
                 <div align="left">
                     <a href="<?php echo site_url('admin/c_admin/insert_form_activity');?>"><button type="submit" class="btn btn-success btn-sm" >เพิ่มรายชื่อกิจกรรม</button></a>
                     </div>
-                </div>
-                  <div class="container" >
-                  
-                  <br>
+                </div><br><br>
                       <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                                   <tr>
-                                    
                                     <th>ชื่อกิจกรรม</th>
                                     <th>เทอม</th>
                                     <th>ปีการศึกษา</th>  
                                     <th>ชั่วโมง</th>  
                                     <th></th>    
-
                                   </tr>
                       </thead>   
                       <tbody>
                       <?php foreach ($result as $row) { ?>
                         <tr>
-                            
                             <td><?php echo $row['Activitie_Name'];?></td>
                             <td><?php echo $row['Activity_Term'];?></td>
                             <td><?php echo $row['Activity_Year'];?></td>
@@ -96,7 +86,7 @@ ul.breadcrumb li a:hover {
               </div>
             </div>
           </div>
-          </section>           
+                   
                           <script>
                             $(document).ready(function() {
                                 $('#datatable').DataTable();

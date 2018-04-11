@@ -57,12 +57,23 @@ class m_student extends CI_Model
            return $query->result();
         }
 
-        public function search_student($student_id) {
-            $this->db->where('Student_ID', $student_id);
-            $this->db->from('Student');
-            $query = $this->db->get();
-            return $query->result_array();
+        public function search_student($Student_Text){
+            $sql = "SELECT Student.Student_ID, Student.Student_Prefix, Student.Student_Name_Th, Student.Student_Lname_Th, Student.Course, Student.Status_ID, Status.Status_Name
+                    FROM Student
+                    INNER JOIN Status ON Student.Status_ID = Status.Status_ID
+                    WHERE (Student.Student_ID LIKE '".$Student_Text."')
+                    OR (Student.Student_Name_Th LIKE '".$Student_Text."') 
+                    OR (Student.Student_Lname_Th LIKE '".$Student_Text."') ";
+            $query = $this->db->query($sql);            
+            return $query->result();
         }
+
+        // public function search_student($student_id) {
+        //     $this->db->where('Student_ID', $student_id);
+        //     $this->db->from('Student');
+        //     $query = $this->db->get();
+        //     return $query->result_array();
+        // }
 
         public function search_registstudent($array) {
             $this->db->where('Student_ID', $array['Student_ID']);

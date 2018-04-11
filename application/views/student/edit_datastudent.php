@@ -40,8 +40,9 @@
         <div class="col-sm-12">
 
         <form action="<?php echo site_url("student/c_student/post_edit_student/".$student['Student_ID']); ?>" method="post" onsubmit="return confirm('ยืนยันการบันทึกหรือไม่ ?');">
-        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
-
+        <div class="row">
+        <?php echo validation_errors('<div class="col-sm-6"><div class="alert alert-danger" role="alert">','</div></div>'); ?>  
+        </div>
             <div class="card">
               <div class="card-header">
               <h1><strong><center>แก้ไขข้อมูลส่วนตัว</strong></h1>
@@ -526,8 +527,44 @@
                   </div>
                 </div>             
                 
+                <!-- <B>6. สถานที่ทำงาน</B><br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <br><label for="Workplace_Company">ชื่อบริษัท</label>
+                        <input type="text" class="form-control" id="Workplace_Company" name="Workplace_Company" value="<?php echo $student['Workplace_Company'] ?>">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                    <br><label for="Workplace_Status">สถานนะการทำงาน</label>
+                      <select class="form-control" id="Workplace_Status" name="Workplace_Status">
+                        <?php foreach(get_workplace() as $key => $status_workplace){
+                          if($student['Workplace_Status'] == $key){
+                            echo '<option value="'.$key.'" selected>'.$status_workplace.'</option>';
+                          } else {
+                            echo '<option value="'.$key.'">'.$status_workplace.'</option>';
+                          }
+                        } ?>
+                      </select>
+                  </div>
 
-                
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="Workplace_Address">ที่อยู่บริษัท</label>
+                      <input type="text" class="form-control" id="Workplace_Address" name="Workplace_Address" value="<?php echo $student['Workplace_Address'] ?>">
+                    </div>
+                  </div>
+                <br>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Workplace_Position">ตำแหน่งภายในบริษัท</label>
+                      <input type="text" class="form-control" id="Workplace_Position" name="Workplace_Position" value="<?php echo $student['Workplace_Position'] ?>">
+                    </div>
+                  </div> -->
                 
           <button type="submit" class="btn btn-primary">บันทึก</button>
           

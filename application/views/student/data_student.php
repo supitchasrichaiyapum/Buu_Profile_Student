@@ -98,12 +98,12 @@ th {
               <td><b>จบการศึกษาจาก : </b><?php echo $student['Gradfromschool'] ?></td>
             </tr>
             <tr>
-              <td><b>สัญชาติ : </b><?php echo $student['Notionnality'] ?></td>
+              <td><b>สัญชาติ : </b><?php echo $student['Nationality'] ?></td>
               <td><b>ศาสนา : </b><?php echo $student['Relidion'] ?></td>
             </tr>
             <tr>
-              <td><b>ปี / เดือน / วัน (ที่เกิด) : </b><?php echo $student['Birthday'] ?></td>
-              <td><b>อาจารย์ที่ปรึกษา : </b></td>
+              <td><b>วัน / เดือน / ปี (ที่เกิด) : </b><?php echo thaiDate($student['Birthday'], true, false) ?></td>
+              <td><b>อาจารย์ที่ปรึกษา : </b></td> 
             </tr>
             <tr>
               <td><b>E-mail : </b><?php echo $student['Student_Email'] ?></td>
@@ -244,9 +244,23 @@ th {
             </tr>
           </table>
 
+          <!-- <table>
+            <tr>
+              <TH>7. สถานที่การทำการ</TH>
+            </tr>
+            <tr>
+              <td><b>สถานะการทำงาน  : </b><?php echo $student['Workplace_Status'] ?></td>
+            </tr>
+            <tr>
+              <td><b>ชื่อบริษัท  : </b><?php echo $student['Workplace_Company'] ?></td>
+              <td><b>ที่อยู่บริษัท  : </b><?php echo $student['Workplace_Address'] ?></td>
+              <td><b>ตำแหน่งงานภายในบริษัท  : </b><?php echo $student['Workplace_Position'] ?></td>
+            </tr>
+          </table> -->
+
           <table>
             <tr>
-              <TH>7. สถานภาพการรับทุน</TH>
+              <TH>8. สถานภาพการรับทุน</TH>
             </tr>
             <tr>
             <?php 
@@ -278,7 +292,7 @@ th {
 
           <table>
             <tr>
-              <TH>8. ข้อมูลกิจกรรม</TH>
+              <TH>9. ข้อมูลกิจกรรม</TH>
             </tr>
             <?php 
             if(count($activity) == 0) {
@@ -308,7 +322,7 @@ th {
 
           <table>
             <tr>
-              <TH>9. ข้อมูลรางวัลการแข่งขัน</TH>
+              <TH>10. ข้อมูลรางวัลการแข่งขัน</TH>
             </tr>
             <tr>
 

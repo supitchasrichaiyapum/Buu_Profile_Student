@@ -40,38 +40,33 @@ section.dashboard-counts .row {
             <div class="container-fluid">
             <ul class="breadcrumb">
             <li><a href="<?php echo site_url('student/c_student/menu_student');?>">หน้าหลัก</a></li>
-            
                 <li>รางวัลการแข่งขัน</li>
             </ul>
             </div>
-          </header>
-          
-          <section class="dashboard-counts no-padding-bottom">
-           
-              <div class="row bg-white has-shadow">
-                <!-- Item -->
-                <div class="container"><br>
+          </header><br>
+          <Body>
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                  <div class="container">
                 <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1><br>
                   <div class="container" >
-                  
-                  <br>
+                  <br></div><br><br>
                       <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                                   <tr>
-                                    <th></th>
                                     <th>ชื่อรางวัล</th>
                                     <th>เทอม</th>
                                     <th>ปีการศึกษา</th>  
                                     <th>อาจารย์ผู้ช่วย</th>  
                                     <th>เงินรางวัล(บาท)</th>
-                                    
                                     <th></th>             
                                   </tr>
                       </thead>   
                       <tbody>
-                      <?php $i=1; foreach ($result as $row) { ?>
+                      <?php  foreach ($result as $row) { ?>
                         <tr>
-                            <td><?php echo $i++; ?></td>
+                            
                             <td><?php echo $row['Award_Name'];?></td>
                             <td><?php echo $row['Award_Term'];?></td>
                             <td><?php echo $row['Award_Year'];?></td>
@@ -91,7 +86,7 @@ section.dashboard-counts .row {
               </div>
             </div>
           </div>
-          </section>           
+                  
                           <script>
                             $(document).ready(function() {
                                 $('#datatable').DataTable();
