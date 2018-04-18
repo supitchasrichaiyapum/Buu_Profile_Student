@@ -1,3 +1,8 @@
+<style>
+header.page-header { 
+  padding: 0px 0; 
+  }
+  </style>
 <Body>
         <div class="content-inner">
           <!-- Page Header-->

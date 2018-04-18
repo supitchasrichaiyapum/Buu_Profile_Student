@@ -137,6 +137,7 @@ class c_student extends CI_Controller {
 		$data['Address_Postcode'] = $this->input->post('Address_Postcode');
 		$data['Address_Phone'] = $this->input->post('Address_Phone');
 		$data['Address_Email'] = $this->input->post('Address_Email');
+		
 		$data['Father_Name'] = $this->input->post('Father_Name');
 		$data['Father_Career'] = $this->input->post('Father_Career');
 		$data['Father_Status'] = $this->input->post('Father_Status');
@@ -149,6 +150,7 @@ class c_student extends CI_Controller {
 		$data['Father_Address_Postcode'] = $this->input->post('Father_Address_Postcode');
 		$data['Father_Phone'] = $this->input->post('Father_Phone');
 		$data['Father_Email'] = $this->input->post('Father_Email');
+
 		$data['Mother_Name'] = $this->input->post('Mother_Name');
 		$data['Mother_Career'] = $this->input->post('Mother_Career');
 		$data['Mother_Status'] = $this->input->post('Mother_Status');
@@ -161,6 +163,20 @@ class c_student extends CI_Controller {
 		$data['Mother_Address_Postcode'] = $this->input->post('Mother_Address_Postcode');
 		$data['Mother_Phone'] = $this->input->post('Mother_Phone');
 		$data['Mother_Email'] = $this->input->post('Mother_Email');
+
+		$data['Parent_Name'] = $this->input->post('Parent_Name');
+		$data['Parent_Career'] = $this->input->post('Parent_Career');
+		$data['Parent_Status'] = $this->input->post('Parent_Status');
+		$data['Parent_Address_Number'] = $this->input->post('Parent_Address_Number');
+		$data['Parent_Address_Moo'] = $this->input->post('Parent_Address_Moo');
+		$data['Parent_Address_Soi'] = $this->input->post('Parent_Address_Soi');
+		$data['Parent_Address_Tumbon'] = $this->input->post('Parent_Address_Tumbon');
+		$data['Parent_Address_Aumper'] = $this->input->post('Parent_Address_Aumper');
+		$data['Parent_Address_Province'] = $this->input->post('Parent_Address_Province');
+		$data['Parent_Address_Postcode'] = $this->input->post('Parent_Address_Postcode');
+		$data['Parent_Phone'] = $this->input->post('Parent_Phone');
+		$data['Parent_Email'] = $this->input->post('Parent_Email');
+
 		$data['Contact_Name'] = $this->input->post('Contact_Name');
 		$data['Contact_Status'] = $this->input->post('Contact_Status');
 		$data['Contact_Email'] = $this->input->post('Contact_Email');
@@ -236,7 +252,12 @@ class c_student extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
+		$data['scholarship'] = $this->m_scholarship->get_Scholarship_by_student($data['user_id']);
+		$data['activity'] = $this->m_activity->get_by_student_id($data['user_id']);
+		$data['award'] = $this->m_award->get_Award_by_student($data['user_id']);
 		$data['status'] = $this->m_student->status($data['user_id']);
+		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['user_id']);
+		$data['GPA'] = $this->m_student->get_GPA($data['user_id']);
 		$this->template->view('student/coop_student',$data);
 	}
 	

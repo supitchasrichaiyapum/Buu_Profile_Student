@@ -30,6 +30,10 @@ th {
         color: #01447e;
         text-decoration: underline;
     }
+
+    header.page-header { 
+  padding: 0px 0; 
+  }
       </style>
 <Body>
         <div class="content-inner">
@@ -95,7 +99,11 @@ th {
               echo "<td>".$row->Status_Name."</td>";
               echo "<td>"."<center>";
               echo "<a href='".site_url('teacher/c_teacher/data_student_detail_teacher/'.$row->Student_ID)."'>";
-              echo "<button type='button' class='btn btn-primary btn-sm'>"."รายละเอียดข้อมูลนิสิต"."</button>";
+              echo "<button type='submit' class='btn btn-primary btn-sm'>"."รายละเอียดข้อมูลนิสิต"."</button>";
+              echo "</a>";
+              echo " ";
+              echo "<a href='".site_url('teacher/c_teacher/transcript_student_teacher/'.$row->Student_ID)."'>";
+              echo "<button type='submit' class='btn btn-primary btn-sm'>"."ผลการศึกษา"."</button>";
               echo "</a>";
               echo "</td>"."</center>";
               echo "</tr>";            
