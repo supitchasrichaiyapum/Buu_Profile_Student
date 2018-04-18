@@ -32,6 +32,9 @@ section.dashboard-counts .row {
         color: #01447e;
         text-decoration: underline;
     }
+    header.page-header { 
+  padding: 0px 0; 
+  }
       </style>
   
         <div class="content-inner">
