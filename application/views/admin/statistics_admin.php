@@ -39,13 +39,42 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
-              <strong><center>สถิติจำนวนนิสิต</strong>
+              <h1><strong><center>สถิติจำนวนนิสิต</strong></h1>
             </div>
             <div class="card-body">
               <div class="container">
-                <div class="row"><BR>
-                   <h2>สถิติจำนวนนิสิตในแต่ละปีการศึกษาและแต่ละเทอม</h2><BR><BR>
-                    <iframe src="http://reg.buu.ac.th/registrar/stat.asp?avs21668122=2" style="width:100%; height:1200px; border:none;" scrolling="yes" ></iframe>
+                <div class="row">
+                  <label class="col-md-3 col-form-label" for="text-input"><b>ปีการศึกษา</b></label>
+                  <div class="col-md-3">                          
+                    <div id="custom-search-input"> 
+                        <div class="input-group col-md-12">     
+                                <select name="acadyear" onchange="open_iframe_Box()">
+                                    <?php
+                                        $year = date('Y')+543;
+                                        //++ year
+                                        for($i=$year-19;$i<$year;$i++) {
+                                            if($i == $year) {
+                                                echo '<option value="'.$i.'" selected>'.$i.'</option>';
+                                            } else {
+                                                echo '<option value="'.$i.'">'.$i.'</option>';		
+                                            }
+                                        }
+                                    ?>
+                                </select>                       
+                            </div> 
+                        </div>
+                    </div>    
+                    <label class="col-md-2 col-form-label" for="text-input"><b>หลักสูตร</b></label>
+                  <div class="col-md-4">                          
+                    <div id="custom-search-input"> 
+                        <div class="input-group col-md-12">     
+                        <select id="Stat_Course" name="Stat_Course" class="form-control">
+                           
+                        </select>   
+                            </div> 
+                        </div>
+                    </div>                        
+                </div>              
                 </div>
               </div>
           </div>
