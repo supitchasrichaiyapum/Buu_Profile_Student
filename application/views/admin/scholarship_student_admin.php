@@ -36,7 +36,9 @@ ul.breadcrumb li+li:before {
     color: black;
     content: "/\00a0";
 }
-
+header.page-header { 
+  padding: 0px 0; 
+  }
 </style>
   
   <div class="content-inner">

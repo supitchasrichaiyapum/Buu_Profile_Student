@@ -30,11 +30,12 @@ th {
         color: #01447e;
         text-decoration: underline;
     }
+
     header.page-header { 
   padding: 0px 0; 
   }
 </style>
-  <div class="content-inner">
+        <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
@@ -45,16 +46,13 @@ th {
             </div>
           </header>
           <br>
-<Body>
+        <Body>
 <div class="col-sm-12">
   <div class="card">
     <div class="card-header">
       <strong><center>ข้อมูลทั่วไป</strong>
     </div>
     <div class="card-body">
-                <div align="left">
-                <a href="<?php echo site_url("admin/c_admin/editdata_student_admin/".$result['Student_ID']); ?>"><button type="submit" class="btn btn-sm btn-primary"> แก้ไข </button></a>
-                </div><br>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label"><b>ชื่อ - นามสกุล (ภาษาไทย) </b></label>
         <div class="col-sm-3 col-form-label">

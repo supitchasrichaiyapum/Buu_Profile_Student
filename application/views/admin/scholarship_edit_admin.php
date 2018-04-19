@@ -21,6 +21,9 @@ th, td {
     cursor: pointer;
 }
 .button {border-radius: 8px;}
+header.page-header { 
+  padding: 0px 0; 
+  }
 </style>
   
   <div class="content-inner">

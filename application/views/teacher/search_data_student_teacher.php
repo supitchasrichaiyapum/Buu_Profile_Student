@@ -2,41 +2,39 @@
 table {
     width:100%;
 }
-th, td {
+th {
     padding: 5px;
     text-align: left;
-}
-section.dashboard-counts .row {
-  padding: 5px 5px;
+    font-size: 1.3em;
 }
 <meta name="viewport" content="width=device-width, initial-scale=1">
-ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-    background-color: #eee;
-}
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-header.page-header { 
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+    }
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+    ul.breadcrumb li a {
+        color: #0275d8;
+        text-decoration: none;
+    }
+    ul.breadcrumb li a:hover {
+        color: #01447e;
+        text-decoration: underline;
+    }
+
+    header.page-header { 
   padding: 0px 0; 
   }
-</style>
-
+      </style>
 <Body>
         <div class="content-inner">
           <!-- Page Header-->
@@ -45,6 +43,7 @@ header.page-header {
             <ul class="breadcrumb">
             <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li>ข้อมูลนิสิต</li>
+       
             </ul>
             </div>
           </header>
@@ -57,14 +56,14 @@ header.page-header {
             </div>
             <div class="card-body">
 
-        <form  method="get"  action="student_activity">
+        <form  method="get"  action="search_data_student_teacher">
           <div class="container">
             <div class="row">
               <div class="col-md-6"><BR>
-                <h2>การค้นหานิสิต</h2><BR>
+                <h2>การค้นหานิสิต </h2><BR>
                   <div id="custom-search-input">
                     <div class="input-group col-md-7">
-                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" required="" placeholder="ค้นหารหัสนิสิต">&nbsp;&nbsp;
+                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต, ชื่อ หรือนามสกุล">&nbsp;&nbsp;
                       <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
                     </div>
                   </div>
@@ -73,11 +72,14 @@ header.page-header {
           </div>
         </form> <BR>    
           <?php
+
                 if(count($result) == 0 && $Student_Text != '') {
+
                       echo "ไม่พบข้อมูล";
+
               } else if(count($result)) { ?>
 
-<table id="datatable" class="table table-striped table-bordered">
+            <table id="datatable" class="table table-striped table-bordered">
               <thead>
                 <tr>
                 <th>รหัสนิสิต</th>
@@ -96,18 +98,21 @@ header.page-header {
               echo "<td>".$row->Course."</td>";
               echo "<td>".$row->Status_Name."</td>";
               echo "<td>"."<center>";
-              echo "<a href='".site_url('user/c_user/student_activity_detail/'.$row->Student_ID)."'>";
-              echo "<button type='button' class='btn btn-primary btn-sm'>"."รายละเอียดข้อมูลนิสิต"."</button>";
+              echo "<a href='".site_url('teacher/c_teacher/data_student_detail_teacher/'.$row->Student_ID)."'>";
+              echo "<button type='submit' class='btn btn-primary btn-sm'>"."รายละเอียดข้อมูลนิสิต"."</button>";
+              echo "</a>";
+              echo " ";
+              echo "<a href='".site_url('teacher/c_teacher/transcript_student_teacher/'.$row->Student_ID)."'>";
+              echo "<button type='submit' class='btn btn-primary btn-sm'>"."ผลการศึกษา"."</button>";
               echo "</a>";
               echo "</td>"."</center>";
               echo "</tr>";            
               }
             }
           ?>
-</table>
+        </table>
           <br>
 </Body>
-
 
 <script>
       $(document).ready(function() {
@@ -116,4 +121,3 @@ header.page-header {
       } );
       
 </script>
-
