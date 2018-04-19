@@ -185,7 +185,7 @@ class c_admin extends CI_Controller {
 		} else {
 			$data['student'] = array();
 		}
-		// print_r($data);
+
 		$this->template->view('admin/consider_student_admin',$data);
 	}
 
@@ -978,7 +978,7 @@ class c_admin extends CI_Controller {
 			} else {
 				$data['student'] = array();
 			}
-			// print_r($data);
+
 		} 
 
 	}
