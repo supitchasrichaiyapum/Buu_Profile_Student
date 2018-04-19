@@ -12,13 +12,15 @@ class m_admin extends CI_Model
             
         }
        
-        public function insert_faculty($array) {
-            $this->db->replace('Faculty', $array);
-            return $this->db->insert_id();
+
+        // หลักสูตร
+        public function insert_course($array) {
+            return $this->db->insert('Course', $array);
+           
         }
-        public function search_faculty($Branch) {
-            $this->db->where('Branch', $Branch);
-            $this->db->from('Faculty');
+        public function search_course($course_id) {
+            $this->db->where('Course_ID', $course_id);
+            $this->db->from('Course');
             $query = $this->db->get();
             return $query->result_array();
         }
@@ -50,6 +52,42 @@ class m_admin extends CI_Model
             $query = $this->db->get();
             return $query->result_array();
         }
+        // สถิติจำนวนนิสิต(เอาปีการศึกษาออกมา)
+        public function static_years($years)
+        {
+            $sql = "SELECT Stat_Years 
+            FROM `Static_Student` 
+            group by Stat_Years";
+            $query = $this->db->query($sql);            
+            return $query->result_array();
+        }
+
+        // สถิติจำนวนนิสิต(เอาปีการศึกษากับหลักสูตรออกมา)
+        public function static_years_course()
+        {
+            $sql = "SELECT Stat_Years,Stat_Course 
+            FROM `Static_Student` 
+            WHERE `Stat_Years` = 'Stat_Years' 
+            group by Stat_Years,Stat_Course";
+            $query = $this->db->query($sql);            
+            return $query->result_array();
+        }
+
+        // สถิติจำนวนนิสิต(เอาข้อมูลออกมา)
+        public function static_data()
+        {
+            $sql = "SELECT *  
+            FROM `Static_Student` 
+            WHERE `Stat_Years` = 2558 
+            AND `Stat_Course` = '2515011:วิทยาการคอมพิวเตอร์ - 4 ปี (พิเศษ) (54)'";
+            $query = $this->db->query($sql);            
+            return $query->result_array();
+        }
+
+
+
+
+
         
         
 }

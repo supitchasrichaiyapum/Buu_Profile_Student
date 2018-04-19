@@ -248,6 +248,9 @@ class c_student extends CI_Controller {
 		$this->template->view('student/statistics_student',$data);
 	}
 
+
+	
+
 	public function coop_student()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -260,6 +263,7 @@ class c_student extends CI_Controller {
 		$data['GPA'] = $this->m_student->get_GPA($data['user_id']);
 		$this->template->view('student/coop_student',$data);
 	}
+
 	
 	public function graduate_actorstudent()
 	{
