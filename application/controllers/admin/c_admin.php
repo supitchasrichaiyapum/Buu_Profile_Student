@@ -165,6 +165,8 @@ class c_admin extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['data_text'] = $this->input->get('textfield');
+		$data['static'] = $this->m_admin->static_student($years);
 		$this->template->view('admin/statistics_admin',$data);
 	}
 	
@@ -183,7 +185,7 @@ class c_admin extends CI_Controller {
 		} else {
 			$data['student'] = array();
 		}
-		print_r($data);
+		// print_r($data);
 		$this->template->view('admin/consider_student_admin',$data);
 	}
 
@@ -442,15 +444,15 @@ class c_admin extends CI_Controller {
 					//date converted
 					$row[13] = XLSXReader::toUnixTimeStamp($row[13]);
 					// // var_dump($row);
-					// //gen faculty
-					if($faculty = $this->m_admin->search_faculty($row[8])) {
-						//found
-						$Faculty_ID = $faculty[0]['Faculty_ID'];
-					} else {
-						//add new
-						$array['Branch'] = $row[8];
-						$Faculty_ID = $this->m_admin->insert_faculty($array);
-					}
+					// //ตัดหลักสูตร ศูนย์คือเอาข้างหน้า
+					$course_id = explode(":", $row[8]);
+					$course_id = $course_id[0];
+					if(!$this->m_admin->search_course($course_id)) {
+						$array['Course_ID'] = $course_id;
+						$array['Course_Name'] = $row[8];
+						$this->load->model('m_admin');
+						$this->m_admin->insert_course($array);
+					} 
 					$insert = array();
 					$insert['Faculty_ID'] = $Faculty_ID;
 					$insert['Teacher_ID'] = 'none';					
@@ -976,7 +978,7 @@ class c_admin extends CI_Controller {
 			} else {
 				$data['student'] = array();
 			}
-			print_r($data);
+			// print_r($data);
 		} 
 
 	}
