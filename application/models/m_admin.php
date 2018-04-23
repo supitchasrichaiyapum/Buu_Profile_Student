@@ -18,11 +18,22 @@ class m_admin extends CI_Model
             return $this->db->insert('Course', $array);
            
         }
+        public function set_consider(){
+            $sql = "Select *
+            from Course";
+            $query = $this->db->query($sql);            
+            return $query->result();
+        }
+
         public function search_course($course_id) {
             $this->db->where('Course_ID', $course_id);
             $this->db->from('Course');
             $query = $this->db->get();
             return $query->result_array();
+        }
+        public function update_course($course_id, $data) {
+            $this->db->where('Course_ID', $course_id);
+            return $this->db->update('Course', $data);
         }
 
         public function search_student($Student_Code){
@@ -85,6 +96,7 @@ class m_admin extends CI_Model
             $query = $this->db->query($sql);            
             return $query->result_array();
         }
+
 
 }
 ?>

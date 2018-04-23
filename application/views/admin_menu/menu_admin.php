@@ -36,6 +36,13 @@
 		                    </ul>
                     </li>
                     <li><a href="/admin/c_admin/graduate_actoradmin"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
+
+                    <li><a href="#exampledropdownDropdown4" aria-expanded="false" data-toggle="collapse"> 
+	                    <i class="far fa fa-cog"></i> ตั้งค่า </a>
+		                    <ul id="exampledropdownDropdown4" class="collapse list-unstyled ">
+                                <li><a href="/admin/c_admin/set_consider"> เกณฑ์นิสิตรอพินิจ </a></li>
+		                    </ul>
+                    </li>
           </ul>
         </nav>
    
