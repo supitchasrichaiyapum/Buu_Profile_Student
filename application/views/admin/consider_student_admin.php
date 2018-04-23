@@ -67,13 +67,23 @@
                 <h1><strong><center>รายชื่อนิสิติรอพินิจ</strong></h1><br>
                 
                   <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="text-input"><b>เลือกประเภทการรอพินิจ</b></label><br>
-                      <div class="col-md-6">
+                    <label class="col-md-2 col-form-label" for="text-input"><b>ปีการศึกษา</b></label><br>
+                      <div class="col-md-3">
                       <form method="post"  action="<?php echo site_url('admin/c_admin/consider_student_admin');?>" id="consiter" name="">
                         <select onchange="this.form.submit()" id="consider" name="consider" class="form-control">
-                        <option>โปรดเลือกรายชื่อรอพินิจ</option>
-                        <option value="high">รายชื่อรอพินิจ - โปรสูง</option>
-                        <option value="low">รายชื่อรอพินิจ - โปรต่ำ</option>
+                        <option>---------</option>
+                        <option value="high">2557</option>
+                        <option value="low">2558</option>
+                      </form>
+                        </select>
+                      </div>
+                      <label class="col-md-2 col-form-label" for="text-input"><b>หลักสูตร</b></label><br>
+                      <div class="col-md-3">
+                      <form method="post"  action="<?php echo site_url('admin/c_admin/consider_student_admin');?>" id="consiter" name="">
+                        <select onchange="this.form.submit()" id="consider" name="consider" class="form-control">
+                        <option>---------</option>
+                        <option value="high">2557</option>
+                        <option value="low">2558</option>
                       </form>
                         </select>
                       </div>
@@ -89,8 +99,10 @@
                                     
                                     <th>รหัสนิสิต</th>
                                     <th>ชื่อ - นามสกุล</th>
-                                    <th>หลักสูตร</th>
-                                    <th>เกรด</th>            
+                                    <th>เกรด</th>
+                                    <th>รอพินิจ</th>  
+                                    <th>ติดโปรครั้งที่</th>
+                                                
                                   </tr>
                       </thead>   
                       <tbody>
