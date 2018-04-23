@@ -193,7 +193,7 @@ th {
     </div>
 
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label"><b>หน่วยกิต </b></label>
+        <label class="col-sm-2 col-form-label"><b>หน่วยกิตที่ลงทะเบียนเรียน </b></label>
         <div class="col-sm-3 col-form-label">
         <p id="degree"><b>:</b> <?php $allCA = 0; foreach ($GPA as $row) { if($row->GPA>0) $allCA += $row->CA; } echo $allCA;?></p>
         </div>

@@ -63,7 +63,7 @@ th {
                 <h2>การค้นหานิสิต </h2><BR>
                   <div id="custom-search-input">
                     <div class="input-group col-md-7">
-                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต, ชื่อ หรือนามสกุล">&nbsp;&nbsp;
+                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" required="" placeholder="ค้นหารหัสนิสิต, ชื่อ หรือนามสกุล">&nbsp;&nbsp;
                       <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
                     </div>
                   </div>
