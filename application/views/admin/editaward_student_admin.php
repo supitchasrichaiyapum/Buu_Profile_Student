@@ -87,7 +87,7 @@ header.page-header {
                                     $year = date('Y')+543;
                                     //++ year
                                     for($i=$year-5;$i<$year+2;$i++) {
-                                        if($i == $year) {
+                                        if($i == $result[0]['Award_Year']) {
                                             echo '<option value="'.$i.'" selected>'.$i.'</option>';
                                         } else {
                                             echo '<option value="'.$i.'">'.$i.'</option>';		

@@ -53,7 +53,7 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                 <h2>การตรวจสอบชั่วโมงกิจกรรม</h2><BR>
                   <div id="custom-search-input">
                     <div class="input-group col-md-7">
-                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต" maxlength ="8">&nbsp;&nbsp;
+                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" required="" placeholder="ค้นหารหัสนิสิต" maxlength ="8">&nbsp;&nbsp;
                       <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
                     </div>
                   </div>

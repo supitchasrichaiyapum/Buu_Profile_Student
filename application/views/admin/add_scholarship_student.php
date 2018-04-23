@@ -124,21 +124,21 @@ header.page-header {
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">จำนวนทุน</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="Scholarship_Count" name="Scholarship_Count" class="form-control" required="">
+                                                <input type="number" min="0" required="" id="Scholarship_Count" name="Scholarship_Count" class="form-control">
                                             </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">จำนวนเงินทุนละ(บาท)<code>* ตัวอย่าง 5000</code></label>
                                             <div class="col-md-3">
-                                                <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="">
+                                                <input type="number" min="0" required="" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control">
                                             </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">รวมเป็นเงิน<code>* ตัวอย่าง 5000</code></label>
                                             <div class="col-md-3">
-                                                <input type="text" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control" required="">
+                                                <input type="number" min="0" required="" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control">
                                             </div>
                                     </div>
 

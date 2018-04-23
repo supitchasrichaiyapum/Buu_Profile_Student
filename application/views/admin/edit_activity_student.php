@@ -95,7 +95,7 @@ header.page-header {
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">ชั่วโมง</label>
                         <div class="col-md-3">
-                            <input type="text" id="Hour" name="Hour" class="form-control" required=""  value="<?php echo $result[0]['Hour']; ?>"><br>
+                            <input type="number" min="0" id="Hour" name="Hour" class="form-control" required=""  value="<?php echo $result[0]['Hour']; ?>"><br>
                         </div>
                     </div> 
                

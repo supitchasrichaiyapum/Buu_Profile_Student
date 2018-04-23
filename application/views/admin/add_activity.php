@@ -50,7 +50,7 @@ header.page-header {
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชื่อกิจกรรม</label>
                             <div class="col-md-3">
-                                <input type="text" id="Activitie_Name" name="Activitie_Name" class="form-control">
+                                <input type="text" id="Activitie_Name" name="Activitie_Name" required="" class="form-control">
                             </div>
                         </div>        
                         <div class="form-group row">
@@ -87,7 +87,7 @@ header.page-header {
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชั่วโมง</label>
                             <div class="col-md-3">
-                                <input type="text" id="Hour" name="Hour" class="form-control"><br>
+                                <input type="number" min="0" id="Hour" name="Hour" required="" class="form-control"><br>
                             </div>
                         </div> 
                         <div class="text-center">
