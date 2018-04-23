@@ -62,13 +62,22 @@
         <Body>
         <div class="col-sm-12">
           <div class="card">
+            <div class="card-header">
+                <h1><strong><center>รายชื่อนิสิติรอพินิจ</center></strong></h1>
+            </div>
             <div class="card-body">
                 <div class="container"><br>
-                <h1><strong><center>รายชื่อนิสิติรอพินิจ</strong></h1><br>
                 
+
                   <div class="form-group row">
                     <label class="col-md-2 col-form-label" for="text-input"><b>ปีการศึกษา</b></label><br>
                       <div class="col-md-3">
+
+                
+                  <!-- <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input"><b>เลือกประเภทการรอพินิจ</b></label><br>
+                      <div class="col-md-6">
+
                       <form method="post"  action="<?php echo site_url('admin/c_admin/consider_student_admin');?>" id="consiter" name="">
                         <select onchange="this.form.submit()" id="consider" name="consider" class="form-control">
                         <option>---------</option>
@@ -123,7 +132,7 @@
                 </div>
             </div>
           </div>
-        </div>
+        </div> -->
                 
     <script>
       $(document).ready(function() {

@@ -165,9 +165,39 @@ class c_admin extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		$data['data_text'] = $this->input->get('textfield');
-		$data['static'] = $this->m_admin->static_student($years);
+		$data['static'] = $this->m_admin->static_years();
 		$this->template->view('admin/statistics_admin',$data);
+	}
+
+	public function statistics_detail()
+	{
+		//print_r($_POST);
+		$Stat_Years = $this->input->post('Stat_Years');
+		$Stat_Course = $this->input->post('Stat_Course');
+
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$data['static'] = $this->m_admin->static_data($Stat_Years, $Stat_Course);
+		
+		
+		// print_r($data);
+		$this->template->view('admin/statistics_detail',$data);
+	}
+
+	public function statistics_ajax($static_years)
+	{
+		
+		$data['course'] = [];
+		foreach( $this->m_admin->static_years_course($static_years) as $row ) {
+			$row['button'] = '<form action="'.site_url('admin/c_admin/statistics_detail/').'" method="post">
+									<input type="hidden" name="Stat_Years" value="'.$row['Stat_Years'].'"> 
+									<input type="hidden" name="Stat_Course" value="'.$row['Stat_Course'].'"> 
+									<button type="submit" class="btn btn-primary">รายละเอียด</button>
+							</form>';
+			$data['course'][] = $row;
+		}
+
+		echo json_encode($data);
 	}
 	
 	public function consider_student_admin()
@@ -454,7 +484,7 @@ class c_admin extends CI_Controller {
 						$this->m_admin->insert_course($array);
 					} 
 					$insert = array();
-					$insert['Faculty_ID'] = $Faculty_ID;
+					$insert['Course'] = $course_id;
 					$insert['Teacher_ID'] = 'none';					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['Student_Prefix'] = $row[2];

@@ -7,7 +7,7 @@
 <script src="<?php echo base_url('theme/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
 <script src="<?php echo base_url('theme/vendor/chart.js/Chart.min.js');?>"></script>
 <script src="<?php echo base_url('theme/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
-<script src="<?php echo base_url('theme/js/charts-home.js');?>"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script> -->
 <!-- Main File-->
 <script src="<?php echo base_url('theme/js/front.js');?>"></script>
 

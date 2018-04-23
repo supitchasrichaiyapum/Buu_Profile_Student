@@ -58,7 +58,7 @@ header.page-header {
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชื่อรางวัลการแข่งขัน</label>
                             <div class="col-md-3">
-                                <input type="text" id="Award_Name" name="Award_Name" class="form-control">
+                                <input type="text" required="" id="Award_Name" name="Award_Name" class="form-control">
                             </div>
                         </div>        
                         <div class="form-group row">
@@ -92,14 +92,14 @@ header.page-header {
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">อาจารย์ที่ปรึกษารางวัล</label>
                             <div class="col-md-3">
-                                <input type="text" id="Award_Giver" name="Award_Giver" class="form-control"><br>
+                                <input type="text" required="" id="Award_Giver" name="Award_Giver" class="form-control"><br>
                             </div>
                         </div> 
                         <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">เงินรางวัล(บาท)<code>* ตัวอย่าง 5000</code></label>
 
                             <div class="col-md-3">
-                                <input type="text" id="Award_Amount" name="Award_Amount" class="form-control" required=""><br>
+                                <input type="number" min="0" required="" id="Award_Amount" name="Award_Amount" class="form-control"><br>
                             </div>
                     </div>
                         <div class="text-center">

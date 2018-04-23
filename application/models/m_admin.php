@@ -64,7 +64,7 @@ class m_admin extends CI_Model
             return $query->result_array();
         }
         // สถิติจำนวนนิสิต(เอาปีการศึกษาออกมา)
-        public function static_years($years)
+        public function static_years()
         {
             $sql = "SELECT Stat_Years 
             FROM `Static_Student` 
@@ -74,33 +74,29 @@ class m_admin extends CI_Model
         }
 
         // สถิติจำนวนนิสิต(เอาปีการศึกษากับหลักสูตรออกมา)
-        public function static_years_course()
+        public function static_years_course($years)
         {
             $sql = "SELECT Stat_Years,Stat_Course 
             FROM `Static_Student` 
-            WHERE `Stat_Years` = 'Stat_Years' 
+            WHERE `Stat_Years` = '".$years."'  
             group by Stat_Years,Stat_Course";
             $query = $this->db->query($sql);            
             return $query->result_array();
         }
 
         // สถิติจำนวนนิสิต(เอาข้อมูลออกมา)
-        public function static_data()
+        public function static_data($years, $course)
         {
             $sql = "SELECT *  
             FROM `Static_Student` 
-            WHERE `Stat_Years` = 2558 
-            AND `Stat_Course` = '2515011:วิทยาการคอมพิวเตอร์ - 4 ปี (พิเศษ) (54)'";
+            JOIN `Status`
+            ON Static_Student.Stat_Status = Status.Status_ID
+            WHERE `Stat_Years` =  '".$years."'
+            AND `Stat_Course` = '".$course."'";
             $query = $this->db->query($sql);            
             return $query->result_array();
         }
 
 
-
-
-
-
-        
-        
 }
 ?>
