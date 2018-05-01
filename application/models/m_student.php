@@ -131,7 +131,7 @@ class m_student extends CI_Model
             $this->db->where('Adviser_Prefix', $array['Adviser_Prefix']);
             $this->db->where('Adviser_Name', $array['Adviser_Name']);
             $this->db->where('Adviser_Lname', $array['Adviser_Lname']);
-            unset($array['Adviser_ID']);
+            unset($array['Student_ID']);
             return $this->db->update('Adviser', $array);
         }
         

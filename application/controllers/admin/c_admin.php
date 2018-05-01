@@ -745,8 +745,13 @@ class c_admin extends CI_Controller {
 					// var_dump($insert);
 					// print_r($insert);
 					
-						$this->m_student->update_grade($insert);
-				
+					if($this->m_student->search_adviser($insert)) {
+						//found
+						$this->m_student->update_adviser($insert);
+					} else {
+						//add new
+						$this->m_student->add_adviser($insert);
+					}
 				}
 				$this->add_grade('success');
 				//insert
@@ -804,7 +809,7 @@ class c_admin extends CI_Controller {
 					// var_dump($insert);
 					// print_r($insert);
 					
-						$this->m_student->update_adviser($insert);
+						$this->m_student->add_adviser($insert);
 				
 				}
 				$this->add_adviser('success');
