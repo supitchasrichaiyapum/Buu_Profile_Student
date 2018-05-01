@@ -1,4 +1,27 @@
 <style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
 header.page-header { 
   padding: 0px 0; 
   }
@@ -6,7 +29,12 @@ header.page-header {
 <body>
 <div class="content-inner">
   <header class="page-header">
-    <div class="container-fluid">      
+    <div class="container-fluid">
+    <ul class="breadcrumb">
+                <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+                <li><a href="<?php echo site_url('admin/c_admin/search_data_student_admin');?>">ข้อมูลนิสิต</a></li>
+                <li>แก้ไขข้อมูลส่วนตัว</li>
+            </ul>      
     </div>
   </header>
   <br>
@@ -14,6 +42,9 @@ header.page-header {
 
 <div class="col-sm-12">
 <form action="<?php echo site_url("admin/c_admin/post_edit_student_admin/".$result['Student_ID']); ?>" method="post" onsubmit="return confirm('ยืนยันการบันทึกหรือไม่ ?');">
+<div class="row">
+        <?php echo validation_errors('<div class="col-sm-6"><div class="alert alert-danger" role="alert">','</div></div>'); ?>  
+</div>
     <div class="card">
       <div class="card-header">
       <strong><center>แก้ไขข้อมูลส่วนตัว</strong>
@@ -488,7 +519,48 @@ header.page-header {
                       <input type="text" class="form-control" id="Contact_Phone" name="Contact_Phone" value="<?php echo $result['Contact_Phone'] ?>">
                     </div>
                   </div>
-                </div>             
+                </div>
+
+                <B>6. สถานที่ทำงาน</B><br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <br><label for="Workplace_Company">ชื่อบริษัท</label>
+                        <input type="text" class="form-control" id="Workplace_Company" name="Workplace_Company" value="<?php echo $result['Workplace_Company'] ?>">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                    <br><label for="Work_Status">สถานนะการทำงาน</label>
+                      <select class="form-control" id="Work_Status" name="Work_Status">
+                        <?php foreach(get_workplace() as $key => $status_workplace){
+                          if($result['Work_Status'] == $key){
+                            echo '<option value="'.$key.'" selected>'.$status_workplace.'</option>';
+                          } else {
+                            echo '<option value="'.$key.'">'.$status_workplace.'</option>';
+                          }
+                        } ?>
+                      </select>
+                  </div>
+                              
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <br><label for="Workplace_Address">ที่อยู่บริษัท</label>
+                      <input type="text" class="form-control" id="Workplace_Address" name="Workplace_Address" value="<?php echo $result['Workplace_Address'] ?>">
+                    </div>
+                  </div>
+                <br>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <br><label for="Work_Position">ตำแหน่งภายในบริษัท</label>
+                      <input type="text" class="form-control" id="Work_Position" name="Work_Position" value="<?php echo $result['Work_Position'] ?>">
+                    </div>
+                </div>
+              
+              </div>             
         
   <button type="submit" class="btn btn-primary">บันทึก</button>
   

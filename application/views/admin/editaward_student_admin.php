@@ -48,7 +48,7 @@ header.page-header {
               <h1><strong><center>แก้ไขรางวัล</strong></h1>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" ><BR>
+            <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" id="Award_form"><BR>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
            <div class="card-body">        
            <div class="form-group row">
@@ -120,3 +120,9 @@ header.page-header {
         </div>
     </div>
 </Body>
+
+<script>
+jQuery(document).ready(function(){
+    $('#Award_form').validate();
+})
+</script>

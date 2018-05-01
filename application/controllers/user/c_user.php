@@ -1,11 +1,33 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class c_user extends CI_Controller {
+	
+	public function index()
+	{
+		if($this->session->userdata('actor') == 'Student') {
+			redirect('student/c_student/menu_student');
+			die();
+
+		} else if($this->session->userdata('actor') == 'Teacher') {
+			redirect('teacher/c_teacher/menu_teacher');
+			die();
+
+		} else if($this->session->userdata('actor') == 'Admin') {
+			redirect('admin/c_admin/menu_admin');
+			die();
+		}
+
+		$data['user_id'] = $this->session->userdata('user_id');
+		$this->template->view('template/main_view',$data);
+
+	}
+
 	public function menu_user()
 	{
 		$this->template->view('template/main_view');
 		
 	}
+
 // ดูรางวัลการแข่งขัน
 	public function award()
 	{

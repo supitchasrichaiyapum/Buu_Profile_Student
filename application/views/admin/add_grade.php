@@ -42,9 +42,8 @@ meta name="viewport" content="width=device-width, initial-scale=1">
             <div class="card-header">
               <h1><strong><center>เพิ่มข้อมูลเกรดเฉลี่ยรวม</strong></h1>
             </div> 
-
-            <form role="form" action="<?php echo site_url('admin/c_admin/post_grade');?>" method="post" enctype="multipart/form-data">
-              <div id="step-3">
+            <form role="form" action="<?php echo site_url('admin/c_admin/post_grade');?>" method="post" enctype="multipart/form-data" id="file_input">
+              <div id="step-1">
                <div class="col-xs-6 col-md-offset-3">
                 <div class="col-md-12">
                   <?php 
@@ -52,13 +51,13 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                     echo '<br>';
                     echo '<div class="alert alert-'.$status['color'].'" role="alert"> '.$status['text'].' </div>';
                   } ?>
-                <div class="col-md-12 form-group" ><br><br>
-                  <div class="form-group row"><br><br>
-                    <!-- <label class="col-md-12 col-form-label" for="text-input">เลือกไฟล์</label> -->
-                      <div class="col-md-5">
+                <div class="col-md-12 form-group" ><br>
+                  <div class="form-group row">
+                  <label class="col-md-12 col-form-label" for="text-input">เลือกไฟล์</label>
+                      <div class="col-md-6">
                         <input type="file" id="file-input" name="file-input" required="">
                         <button type="submit" class="btn btn-sm btn-success pull-right"> Submit</button>
-                      </div><br>
+                      </div>
                       <img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/gradetable.png');?>">
                       </div>                    
                   </div>         
@@ -70,3 +69,9 @@ meta name="viewport" content="width=device-width, initial-scale=1">
     </div>
   </div>
 </div>
+
+<script>
+jQuery(document).ready(function(){
+    $('#file_input').validate();
+})
+</script>

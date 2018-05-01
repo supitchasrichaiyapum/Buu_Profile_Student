@@ -47,7 +47,7 @@ header.page-header {
                 <h1><strong><center>แก้ไขกิจกรรม</strong></h1>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editactivity_student_admin/".$result[0]['Activitie_ID']);?>" method="post" ><br>
+            <form action="<?php echo site_url("admin/c_admin/editactivity_student_admin/".$result[0]['Activitie_ID']);?>" method="post" id="Activity_form"><br>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
            <div class="card-body">
          
@@ -81,7 +81,7 @@ header.page-header {
                                         $year = date('Y')+543;
                                         //++ year
                                         for($i=$year-5;$i<$year+2;$i++) {
-                                            if($i == $year) {
+                                            if($i == $result[0]['Activity_Year']) {
                                                 echo '<option value="'.$i.'" selected>'.$i.'</option>';
                                             } else {
                                                 echo '<option value="'.$i.'">'.$i.'</option>';		
@@ -109,3 +109,9 @@ header.page-header {
         </div>
     </div>
 </Body>
+
+<script>
+jQuery(document).ready(function(){
+    $('#Activity_form').validate();
+})
+</script>

@@ -53,7 +53,7 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                         </div>
                 <div class="collapse" id="open_collapse">
                     <div class="card-body">
-                        < 
+                        
                 </div>
         </form>
         

@@ -30,6 +30,9 @@ th {
         color: #01447e;
         text-decoration: underline;
     }
+    header.page-header { 
+  padding: 0px 0; 
+  }
       </style>
 <Body>
         <div class="content-inner">
@@ -52,7 +55,7 @@ th {
             </div>
             <div class="card-body">
 
-        <form  method="get"  action="search_data_student_admin">
+        <form  name="myform" method="get"  action="search_data_student_admin" onsubmit="return validateForm()">
           <div class="container">
             <div class="row">
               <div class="col-md-6"><BR>
@@ -114,5 +117,13 @@ th {
           $('#datatable').DataTable();
           $('.dataTables_filter').hide()
       } );
+
+      function validateForm() {
+    var x = document.forms["myform"]["textfield"].value;
+    if (x == "") {
+        alert("กรุณาใส่ข้อมูล");
+        return false;
+          }
+    }
       
 </script>

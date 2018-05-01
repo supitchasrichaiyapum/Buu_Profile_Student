@@ -30,6 +30,7 @@ th {
         color: #01447e;
         text-decoration: underline;
     }
+    
     header.page-header { 
   padding: 0px 0; 
   }
@@ -193,9 +194,9 @@ th {
     </div>
 
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label"><b>หน่วยกิตที่ลงทะเบียนเรียน </b></label>
+        <label class="col-sm-2 col-form-label"><b>หน่วยกิตที่ผ่าน </b></label>
         <div class="col-sm-3 col-form-label">
-        <p id="degree"><b>:</b> <?php $allCA = 0; foreach ($GPA as $row) { if($row->GPA>0) $allCA += $row->CA; } echo $allCA;?></p>
+        <p id="degree"><b>:</b> <?php echo $CA[0]->sum ?></p>
         </div>
         <label class="col-sm-2 col-form-label"><b>GPAX </b></label>
         <div class="col-sm-4 col-form-label">

@@ -92,20 +92,13 @@
                 $('#mybody').empty()
                 $.each(data.course, function(i, item) {
                     var tr = "<tr>";
-                    tr = tr + "<td>" +  .Stat_Course + "</td>";
+                    tr = tr + "<td>" +  item.Stat_Course + "</td>";
                     tr = tr + "<td class='text-center'>" + item.button + "</td>";
                     tr = tr + "</tr>";
                     $('#myTable > tbody:last').append(tr);
                     // $('#mybody').append(item.Stat_Course+'<br>');
                 })
-
-            
             });
         });
     });
-
-   
-      
-
-   
 </script>

@@ -46,7 +46,7 @@ header.page-header {
             <div class="card-header">
               <strong><center>เพิ่มรายชื่อนิสิตในรางวัลการแข่งขัน</strong>
             </div>
-            <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" ><BR>          
+            <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" id="Award_form"><BR>          
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
            <div class="card-body"><br>
                 <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -74,3 +74,9 @@ header.page-header {
         </div>
     </div>
 </Body>
+
+<script>
+jQuery(document).ready(function(){
+    $('#Award_form').validate();
+})
+</script>
