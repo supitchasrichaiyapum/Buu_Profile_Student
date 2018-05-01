@@ -745,12 +745,12 @@ class c_admin extends CI_Controller {
 					// var_dump($insert);
 					// print_r($insert);
 					
-					if($this->m_student->search_adviser($insert)) {
+					if($this->m_student->search_grade($insert)) {
 						//found
-						$this->m_student->update_adviser($insert);
+						$this->m_student->update_grade($insert);
 					} else {
 						//add new
-						$this->m_student->add_adviser($insert);
+						$this->m_student->add_grade($insert);
 					}
 				}
 				$this->add_grade('success');
@@ -808,8 +808,14 @@ class c_admin extends CI_Controller {
 					$insert['Adviser_Lname'] = $row[4];
 					// var_dump($insert);
 					// print_r($insert);
-					
+					if($this->m_student->search_adviser($insert)) {
+						//found
+						$this->m_student->update_adviser($insert);
+					} else {
+						//add new
 						$this->m_student->add_adviser($insert);
+					}
+						
 				
 				}
 				$this->add_adviser('success');
