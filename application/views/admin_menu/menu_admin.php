@@ -33,7 +33,7 @@
                                 <li><a href="/admin/c_admin/add_registstudent"> ข้อมูลการลงทะเบียน </a></li>
                                 <li><a href="/admin/c_admin/add_gradstudent"> ข้อมูลเกรดเฉลี่ยแต่ละภาคเรียน </a></li>
                                 <li><a href="/admin/c_admin/add_grade"> ข้อมูลเกรดเฉลี่ยรวม</a></li>
-                                <li><a href="/admin/c_admin/add_adviser"> ข้อมูลอาจาร์ที่ปรึกษา</a></li>
+                                <li><a href="/admin/c_admin/add_adviser"> ข้อมูลอาจารย์ที่ปรึกษา</a></li>
 		                    </ul>
                     </li>
                     <li><a href="/admin/c_admin/graduate_actoradmin"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>

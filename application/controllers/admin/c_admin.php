@@ -810,7 +810,7 @@ class c_admin extends CI_Controller {
 			$config['encrypt_name'] 		= true;
 			$this->load->library('upload', $config);
 			if ( ! $this->upload->do_upload('file-input')) {
-				$this->add_gradstudent('error');
+				$this->add_grade('error');
 				// die('111');
 			} else {
 				//get upload file
@@ -822,8 +822,8 @@ class c_admin extends CI_Controller {
 				$sheet = $xlsx->getSheetNames()[1];
 				foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0){
-						if($row[1] != 'STUDENTCODE' 
-								&& $row[0] != 'GPAX'
+						if($row[0] != 'STUDENTCODE' 
+								&& $row[1] != 'GPAX'
 								) {
 								$status = false;
 								break;
@@ -853,6 +853,7 @@ class c_admin extends CI_Controller {
 					$this->add_grade('error');
 				}
 				//insert
+				
 			}
 		}
 
@@ -878,7 +879,8 @@ class c_admin extends CI_Controller {
 	}
 	// อัพข้อมูลอาจารย์ี่ปรึกษา
 	public function post_adviser()
-			{	
+			{
+			$status = false;	
 			$config['upload_path']          = './uploads/';
 			$config['allowed_types']        = 'xlsx';
 			$config['max_size']             = (1024*8);
@@ -896,14 +898,24 @@ class c_admin extends CI_Controller {
 				$xlsx = new XLSXReader($file['full_path']);
 				$sheet = $xlsx->getSheetNames()[1];
 				foreach($xlsx->getSheetData($sheet) as $key => $row) {
-					if($key == 0)
-						continue;		
+					if($key == 0){
+						if($row[0] != 'STUDENTCODE' 
+								&& $row[2] != 'OFFICERID'
+								&& $row[4] != 'PREFIXNAME'
+								) {
+								$status = false;
+								break;
+							} else {
+								$status = true;
+							}
+							continue;
+						}
 					$insert = array();
-					$insert['Adviser_ID'] = $row[0];
-					$insert['Student_ID'] = $row[1];
-					$insert['Adviser_Prefix'] = $row[2];
-					$insert['Adviser_Name'] = $row[3];
-					$insert['Adviser_Lname'] = $row[4];
+					$insert['Adviser_ID'] = $row[2];
+					$insert['Student_ID'] = $row[0];
+					$insert['Adviser_Prefix'] = $row[4];
+					$insert['Adviser_Name'] = $row[5];
+					$insert['Adviser_Lname'] = $row[6];
 					// var_dump($insert);
 					// print_r($insert);
 					if($this->m_student->search_adviser($insert)) {
@@ -916,7 +928,13 @@ class c_admin extends CI_Controller {
 						
 				
 				}
-				$this->add_adviser('success');
+
+				if($status)
+				{
+					$this->add_adviser('success');
+				}else{
+					$this->add_adviser('error');
+				}
 				//insert
 			}
 		}
