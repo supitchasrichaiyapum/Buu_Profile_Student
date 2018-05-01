@@ -757,8 +757,61 @@ class c_admin extends CI_Controller {
 		   $this->load->model(m_award);
 		   $this->m_award->insert();
 		   redirect('admin/c_admin/award_student_admin');
-        }
-		
+		}
+		// เช็คสถานะการอัพข้อมูลอาจารย์ที่ปรึกษา
+	public function add_adviser($status= '')
+	{
+		$data['status'] = array();
+		if($status == 'error'){
+			$data['status']['color'] = "danger";
+			$data['status']['text'] = "กรุณาเลือกไฟล์ใหม่";
+		} else if($status == 'success'){
+			$data['status']['color'] = "success";
+			$data['status']['text'] = "สำเร็จ !";
+		}
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
+		$this->template->view('admin/add_adviser',$data);
+	}
+	// อัพข้อมูลอาจารย์ี่ปรึกษา
+	public function post_adviser()
+			{	
+			$config['upload_path']          = './uploads/';
+			$config['allowed_types']        = 'xlsx';
+			$config['max_size']             = (1024*8);
+			$config['encrypt_name'] 		= true;
+			$this->load->library('upload', $config);
+			if ( ! $this->upload->do_upload('file-input')) {
+				$this->add_adviser('error');
+				// die('111');
+			} else {
+				//get upload file
+				$file = $this->upload->data();
+				
+				//read excel file
+				require(FCPATH.'/application/libraries/XLSXReader.php');
+				$xlsx = new XLSXReader($file['full_path']);
+				$sheet = $xlsx->getSheetNames()[1];
+				foreach($xlsx->getSheetData($sheet) as $key => $row) {
+					if($key == 0)
+						continue;		
+					$insert = array();
+					$insert['Adviser_ID'] = $row[0];
+					$insert['Student_ID'] = $row[1];
+					$insert['Adviser_Prefix'] = $row[2];
+					$insert['Adviser_Name'] = $row[3];
+					$insert['Adviser_Lname'] = $row[4];
+					// var_dump($insert);
+					// print_r($insert);
+					
+						$this->m_student->update_adviser($insert);
+				
+				}
+				$this->add_adviser('success');
+				//insert
+			}
+		}
+
 		public function update(){
 			
 			$data['user_id'] = $this->session->userdata('user_id');
@@ -775,14 +828,6 @@ class c_admin extends CI_Controller {
 				$this->template->view('admin/editaward_student_admin',$data);
 			}
 		}
-	// 	public function editaward_student_admin() //ยังแก้ไขไม่ได้
-	// {
-	// 	$this->load->model('m_award');
-	// 	$data['user_id'] = $this->session->userdata('user_id');
-	// 	$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-	// 	$data['query'] = $this->m_award->get_all();
-	// 	$this->template->view('admin/editaward_student_admin',$data);
-	// }
 	
 		public function graduate_actoradmin()
 		{

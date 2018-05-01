@@ -68,12 +68,7 @@ class m_student extends CI_Model
             return $query->result();
         }
 
-        // public function search_student($student_id) {
-        //     $this->db->where('Student_ID', $student_id);
-        //     $this->db->from('Student');
-        //     $query = $this->db->get();
-        //     return $query->result_array();
-        // }
+        
 
         public function search_registstudent($array) {
             $this->db->where('Student_ID', $array['Student_ID']);
@@ -100,6 +95,16 @@ class m_student extends CI_Model
             $query = $this->db->get();
             return $query->result_array();
         }
+        public function search_adviser($array) {
+            $this->db->where('Adviser_ID', $array['Adviser_ID']);
+            $this->db->where('Student_ID', $array['Student_ID']);
+            $this->db->where('Adviser_Prefix', $array['Adviser_Prefix']);
+            $this->db->where('Adviser_Name', $array['Adviser_Name']);
+            $this->db->where('Adviser_Lname', $array['Adviser_Lname']);
+            $this->db->from('Adviser');
+            $query = $this->db->get();
+            return $query->result_array();
+        }
       
         public function update_registstudent($array) {
             $this->db->where('Student_ID', $array['Student_ID']);
@@ -120,6 +125,16 @@ class m_student extends CI_Model
             unset($array['Student_ID']);
             return $this->db->update('Student', $array);
         }
+        public function update_adviser($array) {
+            $this->db->where('Adviser_ID', $array['Adviser_ID']);
+            $this->db->where('Student_ID', $array['Student_ID']);
+            $this->db->where('Adviser_Prefix', $array['Adviser_Prefix']);
+            $this->db->where('Adviser_Name', $array['Adviser_Name']);
+            $this->db->where('Adviser_Lname', $array['Adviser_Lname']);
+            unset($array['Adviser_ID']);
+            return $this->db->update('Adviser', $array);
+        }
+        
 
         public function search_subject($subject_code) {
             $this->db->where('Subject_Code', $subject_code);
@@ -139,7 +154,9 @@ class m_student extends CI_Model
         public function add_grade($array) {
             return $this->db->insert('Student', $array);
         }
-
+        public function add_adviser($array) {
+            return $this->db->insert('Adviser', $array);
+        }
         public function graduate_actorstudent()
 	    {
             $data['user_id'] = $this->session->userdata('user_id');
