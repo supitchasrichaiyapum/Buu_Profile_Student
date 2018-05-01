@@ -11,7 +11,6 @@
          </div>
           <!-- Sidebar Navidation Menus-->
           <ul class="list-unstyled">
-                    <li><a href="/teacher/c_teacher/data_teacher"><i class="far fa-user"></i> ข้อมูลอาจารย์ </a></li>
                     <li><a href="/teacher/c_teacher/activity_student_teacher"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรมนิสิต </a></li>
                     <li><a href="/teacher/c_teacher/award_student_teacher"><i class="fa fa-trophy"></i> รางวัลการแข่งขันนิสิต </a></li>
                     <li><a href="/teacher/c_teacher/scholarship_student_teacher"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
