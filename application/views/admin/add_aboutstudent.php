@@ -43,7 +43,7 @@ meta name="viewport" content="width=device-width, initial-scale=1">
               <h1><strong><center>เพิ่มข้อมูลนิสิต</strong></h1>
             </div>
 
-      <form role="form" action="<?php echo site_url('admin/c_admin/post_aboutstudent');?>" method="post" enctype="multipart/form-data">
+      <form role="form" action="<?php echo site_url('admin/c_admin/post_aboutstudent');?>" method="post" enctype="multipart/form-data" id="file_input">
         <div id="step-1">
             <div class="col-xs-6 col-md-offset-3">
               <div class="col-md-12">
@@ -53,12 +53,12 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                 echo '<div class="alert alert-'.$status['color'].'" role="alert"> '.$status['text'].' </div>';
               } ?>
 
-                <div class="col-md-12 form-group" >
+                <div class="col-md-12 form-group" ><br>
                   <div class="form-group row">
                     <label class="col-md-12 col-form-label" for="text-input">เลือกไฟล์</label>
-                      <div class="col-md-5">
+                      <div class="col-md-6">
                         <input type="file" id="file-input" name="file-input" required="">
-                        <button type="submit" class="btn btn-sm btn-success pull-right"> Submit</button>
+                        <button type="submit" class="btn btn-sm btn-success pull-right" name="Submit"> Submit</button>
                       </div>
                       <img class="col-sm-4" style="max-width:1000px"  src="<?php echo base_url('theme/img/gradetable.png');?>">
                   </div>         
@@ -70,3 +70,9 @@ meta name="viewport" content="width=device-width, initial-scale=1">
 	  </div>
   </div>
 </div>
+
+<script>
+jQuery(document).ready(function(){
+    $('#file_input').validate();
+})
+</script>

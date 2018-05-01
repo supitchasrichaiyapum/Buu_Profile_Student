@@ -45,36 +45,29 @@ header.page-header {
                 <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
                 <li><a href="<?php echo site_url('admin/c_admin/award_student_admin');?>">รางวัลการแข่งขัน</a></li>
                 <li>เพิ่มนิสิตรางวัลการแข่งขัน</li>
-                  
             </ul>
             </div>
           </header>
-
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
                 <!-- Item -->
                 <div class="container"><br>
                 <h1 class="no-margin-bottom"><center>เพิ่มนิสิตรางวัลการแข่งขัน</center></h1>
-        
-            
-              <!-- <center><h1>เพิ่มรายชื่อนิสิตในรางวัลการแข่งขัน</h1></strong> -->
-        
-            <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" ><BR>          
-            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
-           <div class="card-body"><br>
-                <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" id="award_form"><BR>          
+            <?php if ($this->session->flashdata('form_error')) {
+                    echo $this->session->flashdata('form_error');
+                    } ?>
+           <div class="card-body">
                     <div class="form-group row">
-
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
-                            
                                 <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id;?>">
                                 <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">
-                                
-                            </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        
-                          <button type="submit" class="btn btn-sm btn-success"> บันทึก </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-sm btn-success" style="width:50px;height:40px"> บันทึก </button>
+                            </div>
                     </div>                   
                 </form>  
         <br><hr><br><br>
@@ -123,6 +116,10 @@ header.page-header {
       $(document).ready(function() {
           $('#datatable').DataTable();
       } );
+
+      jQuery(document).ready(function(){
+    $('#award_form').validate();
+    })
     </script>
 
 	

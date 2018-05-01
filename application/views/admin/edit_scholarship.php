@@ -48,7 +48,7 @@ header.page-header {
               <h1><strong><center>แก้ไขทุนการศึกษา</strong></h1>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editscholarship_student_admin/".$result[0]['Scholarship_ID']);?>" method="post" ><br>
+            <form action="<?php echo site_url("admin/c_admin/editscholarship_student_admin/".$result[0]['Scholarship_ID']);?>" method="post" id="Scholarship_form"><br>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
            <div class="card-body">
          
@@ -96,21 +96,21 @@ header.page-header {
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">จำนวนทุน</label>
                         <div class="col-md-3">
-                            <input type="text" id="Scholarship_Count" name="Scholarship_Count" class="form-control" required=""  value="<?php echo $result[0]['Scholarship_Count']; ?>">
+                            <input type="number" min="0" id="Scholarship_Count" name="Scholarship_Count" class="form-control" required=""  value="<?php echo $result[0]['Scholarship_Count']; ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">จำนวนเงินทุนละ(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
-                            <input type="text" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amount']; ?>">
+                            <input type="number" min="0" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amount']; ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">รวมเป็นเงิน(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
-                            <input type="text" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amounttotal']; ?>"><br>
+                            <input type="number" min="0" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amounttotal']; ?>"><br>
                         </div>
                     </div>
                
@@ -124,3 +124,8 @@ header.page-header {
         </div>
     </div>
 </Body>
+<script>
+jQuery(document).ready(function(){
+    $('#Scholarship_form').validate();
+})
+</script>

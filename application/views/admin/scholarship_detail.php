@@ -49,33 +49,29 @@ header.page-header {
             
             </div>
           </header>
-
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
-           
                 <!-- Item -->
                 <div class="container"> <br>
-                <cenet><h1 class="no-margin-bottom"><center>เพิ่มนิสิตในทุนการศึกษา</center></h1><br>
-                <form action="<?php echo site_url("admin/c_admin/insert_student_scholarship/")?>" method="post" >
-           <div class="card-body">
-                <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal"><br>
-                <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
+                <h1 class="no-margin-bottom"><center>เพิ่มนิสิตในทุนการศึกษา</center></h1><br>
+                <form action="<?php echo site_url("admin/c_admin/insert_student_scholarship/")?>" method="post" id="scholarship_form"><br>
+                <?php if ($this->session->flashdata('form_error')) {
+                    echo $this->session->flashdata('form_error');
+                    } ?>  
+           <div class="card-body">                         
                     <div class="form-group row">
-                       
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
                                 <input type="hidden" id="Scholarship_ID" name="Scholarship_ID" value="<?php echo $scholarship_id;?>">
                                 <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">                           
-                            </div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <button type="submit" class="btn btn-sm btn-success"> บันทึก </button>
-                    </div>     
-                    <div class="text-center">                                    
+                            </div>     
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-sm btn-success" style="width:50px;height:40px"> บันทึก </button>
+                            </div>
                     </div>
                 </form>
-                <br><hr><br>
-                  <div class="container">               
-                  <br>
+                <br><hr><br><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
@@ -122,6 +118,10 @@ header.page-header {
       $(document).ready(function() {
           $('#datatable').DataTable();
       } );
+
+      jQuery(document).ready(function(){
+    $('#scholarship_form').validate();
+    })
     </script>
 
 	

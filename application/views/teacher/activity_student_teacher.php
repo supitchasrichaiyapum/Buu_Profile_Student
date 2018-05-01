@@ -46,14 +46,14 @@ meta name="viewport" content="width=device-width, initial-scale=1">
             </div>
             <div class="card-body">
 
-        <form  method="get"  action="activity_student_teacher">
+        <form  name="myform" method="get"  action="activity_student_teacher" onsubmit="return validateForm()">
           <div class="container">
             <div class="row">
               <div class="col-md-6"><BR>
                 <h2>การตรวจสอบชั่วโมงกิจกรรม</h2><BR>
                   <div id="custom-search-input">
                     <div class="input-group col-md-7">
-                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" required="" placeholder="ค้นหารหัสนิสิต" maxlength ="8">&nbsp;&nbsp;
+                      <input type="text" name="textfield" id="textfield" class="form-control input-lg" placeholder="ค้นหารหัสนิสิต" maxlength ="8">&nbsp;&nbsp;
                       <input type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">
                     </div>
                   </div>
@@ -61,6 +61,7 @@ meta name="viewport" content="width=device-width, initial-scale=1">
             </div>
           </div>
         </form> <BR>
+                  
         <table id="example" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
                      
 
@@ -100,3 +101,13 @@ meta name="viewport" content="width=device-width, initial-scale=1">
     </table>  
                   </table>  
 </Body>
+
+<script>
+function validateForm() {
+    var x = document.forms["myform"]["textfield"].value;
+    if (x == "") {
+        alert("กรุณาใส่ข้อมูล");
+        return false;
+    }
+}
+</script>

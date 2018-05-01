@@ -172,6 +172,15 @@ class m_student extends CI_Model
             $query = $this->db->get();
             return $query->result_array();
         }
+
+        // หน่วยกิตรวม
+        public function ca_student($student_id){
+            $sql = "SELECT sum(Subject_Credit) as sum
+            FROM Subject_has_Student 
+            WHERE Student_ID = '".$student_id."' AND Grade != 'F' AND Grade != 'W' AND Grade != ''";
+            $query = $this->db->query($sql);            
+            return $query->result();
+        }
         
         
 

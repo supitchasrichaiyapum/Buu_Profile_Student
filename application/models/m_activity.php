@@ -93,7 +93,14 @@ class m_activity extends CI_Model
         }
 
         public function insert_student_activity($data){
-                return $this->db->insert('Activity_has_Student',$data);
+            $db_debug = $this->db->db_debug; //save setting
+            $this->db->db_debug = FALSE;
+
+            $return = $this->db->insert('Activity_has_Student',$data);
+
+            $this->db->db_debug = $db_debug;
+
+            return $return;
         }
 
 }

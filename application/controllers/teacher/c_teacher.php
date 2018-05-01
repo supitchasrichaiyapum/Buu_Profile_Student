@@ -64,6 +64,7 @@ class c_teacher extends CI_Controller {
 		} else {
 			$data['result'] = array();
 		}
+		
 		$this->template->view('teacher/activity_student_teacher',$data);
 	}
 	public function award_student_teacher()
@@ -138,6 +139,7 @@ class c_teacher extends CI_Controller {
 		$data['status'] = $this->m_admin->search_student_status($data['student_id']);
 		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_id']);
 		$data['GPA'] = $this->m_student->get_GPA($data['student_id']);
+		$data['CA'] = $this->m_student->ca_student($data['student_id']);
 		$this->template->view('teacher/data_student_detail_teacher',$data);
 	}
 
@@ -151,6 +153,7 @@ class c_teacher extends CI_Controller {
 		$data['GPA'] = $this->m_student->get_GPA($student_code);
 		$data['status'] = $this->m_admin->search_student_status($student_code);
 		$data['transcript_rows'] = $this->m_student->get_year_transcript($student_code);
+		$data['CA'] = $this->m_student->ca_student($student_code);
 		$this->template->view('admin/transcript_student_admin',$data);
 	}
 

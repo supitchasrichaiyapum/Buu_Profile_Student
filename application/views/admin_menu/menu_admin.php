@@ -29,7 +29,7 @@
                     <li><a href="#exampledropdownDropdown3" aria-expanded="false" data-toggle="collapse"> 
                       <i class="far fa-plus-square"></i> เพิ่มข้อมูล</a>
 		                    <ul id="exampledropdownDropdown3" class="collapse list-unstyled ">
-                                <li><a href="/admin/c_admin/add_aboutstudent"> ข้อมูลนิสิต </a></li>
+                                <li><a href="/admin/c_admin/add_aboutstudent"> รายละเอียดข้อมูลนิสิต </a></li>
                                 <li><a href="/admin/c_admin/add_registstudent"> ข้อมูลการลงทะเบียน </a></li>
                                 <li><a href="/admin/c_admin/add_gradstudent"> ข้อมูลเกรดเฉลี่ยแต่ละภาคเรียน </a></li>
                                 <li><a href="/admin/c_admin/add_grade"> ข้อมูลเกรดเฉลี่ยรวม</a></li>

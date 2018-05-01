@@ -46,7 +46,7 @@ header.page-header {
             <div class="card-header">
               <strong><center>เพิ่มรายชื่อนิสิตในกิจกรรม</strong>
             </div>
-            <form action="<?php echo site_url("admin/c_admin/insert_student_activity/")?>" method="post" ><br>
+            <form action="<?php echo site_url("admin/c_admin/insert_student_activity/")?>" method="post" onsubmit="return validateForm()" name="myform"><br>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
            <div class="card-body">
                 <!-- <form action="<?php echo site_url('admin/c_admin/insert');?>" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
@@ -54,7 +54,7 @@ header.page-header {
                         <label class="col-md-3 col-form-label" for="text-input">รหัสนิสิต</label>
                             <div class="col-md-3">
                                 <input type="hidden" id="Activity_Activitie_ID" name="Activity_Activitie_ID" value="<?php echo $activity_id;?>">
-                                <input type="text" id="Student_Student_ID" name="Student_Student_ID" class="form-control" required="">
+                                <input type="text" id="Student_Student_ID" name="Student_Student_ID" class="form-control">
                                 
                             </div>
                     </div>
@@ -68,3 +68,13 @@ header.page-header {
         </div>
     </div>
 </Body>
+
+<script>
+function validateForm() {
+    var x = document.forms["myform"]["textfield"].value;
+        if (x == "") {
+            alert("กรุณาใส่ข้อมูล");
+            return false;
+            }
+        }
+</script>

@@ -1,4 +1,28 @@
 <style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
 header.page-header { 
   padding: 0px 0; 
   }
@@ -8,6 +32,11 @@ header.page-header {
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li><a href="<?php echo site_url('admin/c_admin/menu_admin');?>">หน้าหลัก</a></li>
+                <li><a href="<?php echo site_url('admin/c_admin/search_data_student_admin');?>">ข้อมูลนิสิต</a></li>
+                <li>ผลการศึกษา</li>
+            </ul>
             </div>
           </header>
           <br>
@@ -21,7 +50,7 @@ header.page-header {
               <p class="text-muted"><?php echo $result['Student_ID'] ?> : <?php echo $result['Student_Prefix'] ?> <?php echo $result['Student_Name_Th'] ?> <?php echo $result['Student_Lname_Th'] ?> </p>
               <p class="text-muted">หลักสูตร : <?php echo $result['Course'] ?> </p>
               <p class="text-muted">สถานภาพ : <?php echo $status[0]->Status_Name ?> </p>
-              <p class="text-muted">หน่วยกิตรวม : <?php $allCA = 0; foreach ($GPA as $row) { if($row->GPA>0) $allCA += $row->CA; } echo $allCA;?> </p>
+              <p class="text-muted">หน่วยกิตรวม : <?php echo $CA[0]->sum ?> </p>
               <p class="text-muted">GPAX : <?php echo $result['GPAX']?> </p>
               <br>
 

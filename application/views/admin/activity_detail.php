@@ -59,18 +59,20 @@ header.page-header {
                 <!-- Item -->
                 <div class="container"><br>
                 <h1 class="no-margin-bottom"><center>เพิ่มนิสิตในข้อมูลกิจกรรม</center></h1>
-                <form action="<?php echo site_url("admin/c_admin/insert_student_activity/")?>" method="post" ><br>
-            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
+                <form action="<?php echo site_url("admin/c_admin/insert_student_activity/")?>" method="post" id="activity_form"><br> 
+            <?php if ($this->session->flashdata('form_error')) {
+                 echo $this->session->flashdata('form_error');
+                } ?>
            <div class="card-body">
                     <div class="form-group row">
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
-                                <input type="hidden" id="Activity_Activitie_ID" name="Activity_Activitie_ID" value="<?php echo $activity_id;?>">
-                                <input type="text" id="Student_Student_ID" name="Student_Student_ID" class="form-control" required="">                              
-                            </div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <button type="submit" class="btn btn-sm btn-success"> ตกลง </button>
-                    </div>
-                    <div class="text-center">            
+                                <input type="hidden" id="Activity_Activitie_ID" name="Activity_Activitie_ID" value="<?php echo $activity_id;?>" >
+                                <input type="text" id="Student_Student_ID" name="Student_Student_ID" class="form-control" required="">                         
+                            </div>
+                            <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" style="width:50px;height:40px"> บันทึก </button>
+                            </div>
                     </div>
                 </form>                  
                 <br><hr><br><br>
@@ -119,6 +121,10 @@ header.page-header {
       $(document).ready(function() {
           $('#datatable').DataTable();
       } );
+
+    jQuery(document).ready(function(){
+    $('#activity_form').validate();
+    })
     </script>
 
 	

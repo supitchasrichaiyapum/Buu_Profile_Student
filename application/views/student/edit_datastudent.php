@@ -102,12 +102,7 @@
                 </div>
                 <div class="row">
                   
-                <div class="col-sm-4">
-                    <div class="form-group">
-                      <br><label for="Teacher_ID">อาจารย์ที่ปรึกษา</label>
-                      <input type="text" class="form-control" id="Teacher_ID" name="Teacher_ID" value="<?php echo $student['Teacher_ID'] ?>">
-                    </div>
-                  </div>
+               
                   <div class="col-sm-4">
                     <div class="form-group">
                       <br><label for="Facebook">Facebook</label>
@@ -531,7 +526,7 @@
                   </div>
                 </div>             
                 
-                <!-- <B>6. สถานที่ทำงาน</B><br>
+                <B>6. สถานที่ทำงาน</B><br>
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
@@ -541,10 +536,10 @@
                     </div>
                     
                     <div class="form-group col-sm-4">
-                    <br><label for="Workplace_Status">สถานนะการทำงาน</label>
-                      <select class="form-control" id="Workplace_Status" name="Workplace_Status">
+                    <br><label for="Work_Status">สถานนะการทำงาน</label>
+                      <select class="form-control" id="Work_Status" name="Work_Status">
                         <?php foreach(get_workplace() as $key => $status_workplace){
-                          if($student['Workplace_Status'] == $key){
+                          if($student['Work_Status'] == $key){
                             echo '<option value="'.$key.'" selected>'.$status_workplace.'</option>';
                           } else {
                             echo '<option value="'.$key.'">'.$status_workplace.'</option>';
@@ -552,7 +547,7 @@
                         } ?>
                       </select>
                   </div>
-
+                              
                   <div class="col-sm-4">
                     <div class="form-group">
                       <br><label for="Workplace_Address">ที่อยู่บริษัท</label>
@@ -565,10 +560,12 @@
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <br><label for="Workplace_Position">ตำแหน่งภายในบริษัท</label>
-                      <input type="text" class="form-control" id="Workplace_Position" name="Workplace_Position" value="<?php echo $student['Workplace_Position'] ?>">
+                      <br><label for="Work_Position">ตำแหน่งภายในบริษัท</label>
+                      <input type="text" class="form-control" id="Work_Position" name="Work_Position" value="<?php echo $student['Work_Position'] ?>">
                     </div>
-                  </div> -->
+                </div>
+              
+              </div>
                 
           <button type="submit" class="btn btn-primary">บันทึก</button>
           

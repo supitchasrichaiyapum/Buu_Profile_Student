@@ -45,7 +45,7 @@ header.page-header {
                 <h1><strong><center>เพิ่มกิจกรรม</strong></h1>
                 </div>
                     <div class="card-body">
-                        <form action="<?php echo site_url("admin/c_admin/insert_activity/")?>" method="post" ><br>
+                        <form action="<?php echo site_url("admin/c_admin/insert_activity/")?>" method="post" id="Activity_form"><br>
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชื่อกิจกรรม</label>
@@ -102,3 +102,9 @@ header.page-header {
             </div>
         </div>
 </Body>
+
+<script>
+jQuery(document).ready(function(){
+    $('#Activity_form').validate();
+})
+</script>

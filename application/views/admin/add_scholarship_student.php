@@ -80,7 +80,7 @@ header.page-header {
                 <h1><strong><center>เพิ่มทุนการศึกษา</strong></h1>
                 </div>
                     <div class="card-body">
-                        <form action="<?php echo site_url("admin/c_admin/insert_scholarship/")?>" method="post" ><br>
+                        <form action="<?php echo site_url("admin/c_admin/insert_scholarship/")?>" method="post" id="Scholarship_form"><br>
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
                             <div class="row">
                                 <div class="container">
@@ -153,8 +153,8 @@ header.page-header {
                 </div>
             </div>
         </div>
-    <script>
-      $(document).ready(function() {
-          $('#datatable').DataTable();
-      } );
-    </script>
+<script>
+jQuery(document).ready(function(){
+    $('#Scholarship_form').validate();
+})
+</script>

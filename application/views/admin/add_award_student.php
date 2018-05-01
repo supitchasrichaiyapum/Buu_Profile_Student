@@ -46,7 +46,7 @@ header.page-header {
                 <h1><strong><center>เพิ่มรางวัลการแข่งขัน</strong></h1>
                 </div>
                     <div class="card-body">
-                        <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" >  <BR>                  
+                        <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" id="Award_form">  <BR>                  
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>    
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
@@ -114,3 +114,9 @@ header.page-header {
             </div>
         </div>
 </Body>
+
+<script>
+jQuery(document).ready(function(){
+    $('#Award_form').validate();
+})
+</script>

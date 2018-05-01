@@ -63,8 +63,13 @@ class m_scholarship extends CI_Model
         public function insert_scholarship($data){
             return $this->db->insert('Scholarship',$data);
         }
+
         public function insert_student_scholarship($data){
-            return $this->db->insert('Scholarship_has_Student',$data);
+            $db_debug = $this->db->db_debug; //save setting
+            $this->db->db_debug = FALSE;
+            $return = $this->db->insert('Scholarship_has_Student',$data);
+            $this->db->db_debug = $db_debug;
+            return $return;
         }
 }
 ?>

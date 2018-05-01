@@ -47,7 +47,7 @@
             </div>
             <div class="card-body">
 
-        <form  method="get"  action="activity_student">
+        <form  method="get"  action="activity_student" onsubmit="return validateForm()" name="myform">
           <div class="container">
             <div class="row">
               <div class="col-md-6"><BR>
@@ -101,3 +101,13 @@
                       ?>
                   </table>  
 </Body>
+
+<script>
+function validateForm() {
+    var x = document.forms["myform"]["textfield"].value;
+    if (x == "") {
+        alert("กรุณาใส่ข้อมูล");
+        return false;
+    }
+}
+</script>

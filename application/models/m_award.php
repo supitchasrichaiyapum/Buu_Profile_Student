@@ -9,11 +9,13 @@ class m_award extends CI_Model
             $query = $this->db->query($sql);            
             return $query->result();
         }
+
         public function get_all_award(){
             $this->db->from('Award');
             $query = $this->db->get();           
             return $query->result_array();
         }
+
         public function get_by_id_award_has_student(){
            
             $this->db->from('Award_has_Student');
@@ -46,25 +48,32 @@ class m_award extends CI_Model
             $this->db->where('Award_ID', $award_id);
             return $this->db->update('Award',$data);
         }
+
         // ลบรางวัลการแข่งขัน
         public function delete_award_has_student($id){
             $this->db->where('Student_ID',$id);
             $this->db->delete('Award_has_Student');
             return true;
         }
+
         public function get_by_id($id){
                 $this->db->where('Award_ID',$id);
                 $query = $this->db->get('Award');
                 return $query->result_array();
-            }
+        }
         
-            public function insert_award($data){
+        public function insert_award($data){
                 return $this->db->insert('Award',$data);
-            }
-            public function insert_student_award($data){
-                return $this->db->insert('Award_has_Student',$data);
-            }
+        }
 
+        public function insert_student_award($data){
+                $db_debug = $this->db->db_debug; //save setting
+                $this->db->db_debug = FALSE;
+                $return = $this->db->insert('Award_has_Student',$data);
+                $this->db->db_debug = $db_debug;
+                return $return;
+        }
+        
         
 }
 
