@@ -49,6 +49,9 @@ class c_student extends CI_Controller {
 		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['user_id']);
 		$data['GPA'] = $this->m_student->get_GPA($data['user_id']);
 		$data['CA'] = $this->m_student->ca_student($data['user_id']);
+		$data['Adviser'] = $this->m_student->get_Adviser($data['user_id']);
+		
+
 		$this->template->view('student/data_student',$data);
 	}
 
@@ -225,6 +228,7 @@ class c_student extends CI_Controller {
 		$data['GPA'] = $this->m_student->get_GPA($data['user_id']);
 		$data['status'] = $this->m_student->status($data['user_id']);
 		$data['transcript_rows'] = $this->m_student->get_year_transcript($data['user_id']);
+		$data['CA'] = $this->m_student->ca_student($data['user_id']);
 		$this->template->view('student/transcript_student',$data);
 	}
 
@@ -266,16 +270,8 @@ class c_student extends CI_Controller {
 		// print_r($data);
 		$this->template->view('student/award_detail_st',$data);
 	}
-	public function statistics_student()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-		$this->template->view('student/statistics_student',$data);
-	}
-
-
 	
-
+	//หน้าไว้ทดสอบงานปลอมๆ
 	public function coop_student()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -319,25 +315,6 @@ class c_student extends CI_Controller {
 	$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
 	// print_r($data);
 	$this->template->view('student/scholarship_detail',$data);
-	}
-	// นิสิตรอพินิจ
-	public function consider_student()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-		if($this->input->post('consider')) { 
-			if($this->input->post('consider') == 'high'){
-			// โปรสูง
-				$data['Student'] = $this->m_student->search_student_between_gpax(1.80, 1.99);
-			} else {
-				// โปรต่ำ
-				$data['Student'] = $this->m_student->search_student_between_gpax(1.75, 1.79);
-			}
-		} else {
-			 $data['Student'] = array();
-		}
-		// print_r($data);
-		$this->template->view('student/consider_student',$data);
 	}
 
 }

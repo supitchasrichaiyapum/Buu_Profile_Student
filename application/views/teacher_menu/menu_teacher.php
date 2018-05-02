@@ -18,7 +18,7 @@
 	                    <i class="fas fa-database"></i> ข้อมูลสถิตินิสิต </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled">
                                         <li><a href="/teacher/c_teacher/statistics_teacher"> สถิติจำนวนนิสิต </a></li>
-                                        <li><a href="/teacher/c_teacher/consider_student_teacher"> รายชื่อรอพินิจ </a></li>
+                                        <!-- <li><a href="/teacher/c_teacher/consider_student_teacher"> รายชื่อรอพินิจ </a></li> -->
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 

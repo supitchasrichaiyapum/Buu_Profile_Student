@@ -57,6 +57,13 @@ class m_student extends CI_Model
            return $query->result();
         }
 
+        public function get_Adviser($student_id){
+            $sql = "Select Adviser.Adviser_Prefix, Adviser.Adviser_Name, Adviser.Adviser_Lname from Adviser
+            WHERE Adviser.Student_ID = '".$student_id."'";
+            $query = $this->db->query($sql);            
+            return $query->result();
+         }
+
         public function search_student($Student_Text){
             $sql = "SELECT Student.Student_ID, Student.Student_Prefix, Student.Student_Name_Th, Student.Student_Lname_Th, Student.Course, Student.Status_ID, Status.Status_Name
                     FROM Student
@@ -142,27 +149,34 @@ class m_student extends CI_Model
             $query = $this->db->get();
             return $query->result_array();
         }
+
         public function add_student($array) {
             return $this->db->insert('Student', $array);
         }
+
         public function add_registstudent($array) {
             return $this->db->insert('Subject_has_Student', $array);
         }
+
         public function add_gradstudent($array) {
             return $this->db->insert('GPA', $array);
         }
+
         public function add_grade($array) {
             return $this->db->insert('Student', $array);
         }
+
         public function add_adviser($array) {
             return $this->db->insert('Adviser', $array);
         }
+
         public function graduate_actorstudent()
 	    {
             $data['user_id'] = $this->session->userdata('user_id');
             $data['student'] = $this->m_student->get_student($data['user_id']);
             $this->template->view('student/graduate_actorstudent',$data);
         }
+
         // โปรสูง โปรต่ำ
         public function search_student_between_gpax($gpax_low, $gpax_high){
             $this->db->where('Status_ID', 10);

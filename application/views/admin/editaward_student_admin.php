@@ -106,7 +106,7 @@ header.page-header {
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">เงินรางวัล(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
-                            <input type="text" id="Award_Amount" name="Award_Amount" class="form-control" required="" value="<?php echo $result[0]['Award_Amount']; ?>"><br>
+                            <input type="number" min="0" id="Award_Amount" name="Award_Amount" class="form-control" required="" value="<?php echo $result[0]['Award_Amount']; ?>"><br>
                         </div>
                     </div>
                

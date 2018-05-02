@@ -140,6 +140,7 @@ class c_teacher extends CI_Controller {
 		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_id']);
 		$data['GPA'] = $this->m_student->get_GPA($data['student_id']);
 		$data['CA'] = $this->m_student->ca_student($data['student_id']);
+		$data['Adviser'] = $this->m_student->get_Adviser($data['student_id']);
 		$this->template->view('teacher/data_student_detail_teacher',$data);
 	}
 
@@ -194,8 +195,42 @@ class c_teacher extends CI_Controller {
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$data['static'] = $this->m_admin->static_years();
+		
 		$this->template->view('teacher/statistics_teacher',$data);
 	}
+
+	public function statistics_detail()
+	{
+		//print_r($_POST);
+		$Stat_Years = $this->input->post('Stat_Years');
+		$Stat_Course = $this->input->post('Stat_Course');
+
+		$data['user_id'] = $this->session->userdata('user_id');
+		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
+		$data['static'] = $this->m_admin->static_data($Stat_Years, $Stat_Course);
+		
+		
+		// print_r($data);
+		$this->template->view('teacher/statistics_detail',$data);
+	}
+
+	public function statistics_ajax($static_years)
+	{
+		
+		$data['course'] = [];
+		foreach( $this->m_admin->static_years_course($static_years) as $row ) {
+			$row['button'] = '<form action="'.site_url('teacher/c_teacher/statistics_detail/').'" method="post">
+									<input type="hidden" name="Stat_Years" value="'.$row['Stat_Years'].'"> 
+									<input type="hidden" name="Stat_Course" value="'.$row['Stat_Course'].'"> 
+									<button type="submit" class="btn btn-primary">รายละเอียด</button>
+							</form>';
+			$data['course'][] = $row;
+		}
+
+		echo json_encode($data);
+	}
+
 	// นิสิตรอพินิจ
 	public function consider_student_teacher()
 	{
