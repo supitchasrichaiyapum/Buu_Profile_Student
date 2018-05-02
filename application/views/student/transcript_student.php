@@ -48,7 +48,7 @@
               <p class="text-muted"><?php echo $student['Student_ID'] ?> : <?php echo $student['Student_Prefix'] ?> <?php echo $student['Student_Name_Th'] ?> <?php echo $student['Student_Lname_Th'] ?> </p>
               <p class="text-muted">หลักสูตร : <?php echo $student['Course'] ?> </p>
               <p class="text-muted">สถานภาพ : <?php echo $status['Status_Name'] ?> </p>
-              <p class="text-muted">หน่วยกิตรวม : <?php $allCA = 0; foreach ($GPA as $row) { if($row->GPA>0) $allCA += $row->CA; } echo $allCA;?> </p>
+              <p class="text-muted">หน่วยกิตรวม : <?php echo $CA[0]->sum ?> </p>
               <p class="text-muted">GPAX : <?php echo $student['GPAX']?> </p>
               <br>
 

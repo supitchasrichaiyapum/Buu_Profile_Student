@@ -258,6 +258,7 @@ class c_admin extends CI_Controller {
 		$data['GPA_Year'] = $this->m_student->get_GPA_Year($data['student_id']);
 		$data['GPA'] = $this->m_student->get_GPA($data['student_id']);
 		$data['CA'] = $this->m_student->ca_student($data['student_id']);
+		$data['Adviser'] = $this->m_student->get_Adviser($data['student_id']);
 		$this->template->view('admin/data_student_detail_admin',$data);
 		
 	}

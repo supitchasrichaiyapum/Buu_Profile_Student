@@ -206,11 +206,29 @@ th {
         <div class="col-sm-3 col-form-label">
         <p id="status"><b>:</b> <?php echo $status[0]->Status_Name ?></p>
         </div>
-        <label class="col-sm-2 col-form-label"><b>อาจาร์ที่ปรึกษา </b></label>
-        <div class="col-sm-4 col-form-label">
-        <p id=""><b>:</b> <?php echo "...."; ?> </p>
-        </div>
     </div>         
+
+    </div>               
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <strong><center>อาจารย์ที่ปรึกษา</strong>
+    </div>
+    <div class="card-body">
+    <div class="form-group row">
+    <?php 
+    if(count($Adviser) == 0) {
+        echo "<td><h4>ไม่มีข้อมูล</h4></td>";
+    } else if(count($Adviser)) { ?>
+
+    <?php foreach ($Adviser as $student) { ?>
+      <div class="col-sm-12 col-form-label">
+      <p id="Adviser"> <?php echo $student->Adviser_Prefix." ".$student->Adviser_Name." ".$student->Adviser_Lname; ?> </p>
+      </div>
+      <?php   } 
+          } ?>
+    </div>
 
     </div>               
   </div>
