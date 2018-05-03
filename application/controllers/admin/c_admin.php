@@ -204,25 +204,7 @@ class c_admin extends CI_Controller {
 		echo json_encode($data);
 	}
 	
-	public function consider_student_admin()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-		if($this->input->post('consider')) { 
-			if($this->input->post('consider') == 'high'){
-			// โปรสูง
-				$data['student'] = $this->m_admin->search_student_between_gpax(1.80, 1.99);
-			} else {
-				// โปรต่ำ
-				$data['student'] = $this->m_admin->search_student_between_gpax(1.75, 1.79);
-			}
-		} else {
-			$data['student'] = array();
-		}
-
-		$this->template->view('admin/consider_student_admin',$data);
-	}
-
+	
 	public function graduate_student_admin()
 	{
 		$data['user_id'] = $this->session->userdata('user_id');
@@ -1178,36 +1160,7 @@ class c_admin extends CI_Controller {
 			$this->m_activity->update_activity($data, $activity_id);			
 			redirect('admin/c_admin/activity_student/'.$activity_id);
 		}
-		// เกณฑ์นิสิตรอพินิจ
-		public function set_consider() 
-		{
-			$this->load->model('m_admin');
-			$data['user_id'] = $this->session->userdata('user_id');
-			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
-			$data['result'] = $this->m_admin->set_consider();
-			// print_r($data);			
-			// return true;
-			$this->template->view('admin/set_consider',$data);
-		}
-		// แก้ไขเกณฑ์นิสิตรอพินิจ
-		public function update_consider() 
-		{
-			//  print_r($_POST);
-			// print_r($activity_id);
-			$data['Low'] = $this->input->post('Low');
-			$data['Gpa_High'] = $this->input->post('Gpa_High');
-			$data['Amount_High'] = $this->input->post('Amount_High');
-			$data['Gpa_Low'] = $this->input->post('Gpa_Low');
-			$data['Amount_Low'] = $this->input->post('Amount_Low');
-			$data['Summer'] = $this->input->post('Summer');
-			$course_id = $this->input->post('Course_ID');
-			
-			$this->load->model('m_admin');
-			$this->m_admin->update_course($course_id, $data);
-			
-			$this->set_consider();
-			
-		}
+		
 
 		// โปรสูง โปรต่ำ
 		public function consider()
