@@ -17,7 +17,7 @@
 	                    <i class="fas fa-database"></i> ข้อมูลสถิติ </a>
 		                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
                                 <li><a href="/admin/c_admin/statistics_admin"> สถิติจำนวนนิสิต </a></li>
-                                <li><a href="/admin/c_admin/consider_student_admin"> รายชื่อรอพินิจ </a></li>
+                                <!-- <li><a href="/admin/c_admin/consider_student_admin"> รายชื่อรอพินิจ </a></li> -->
 		                    </ul>
                     </li>
                     <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> 
@@ -38,12 +38,7 @@
                     </li>
                     <li><a href="/admin/c_admin/graduate_actoradmin"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
 
-                    <li><a href="#exampledropdownDropdown4" aria-expanded="false" data-toggle="collapse"> 
-	                    <i class="far fa fa-cog"></i> ตั้งค่า </a>
-		                    <ul id="exampledropdownDropdown4" class="collapse list-unstyled ">
-                                <li><a href="/admin/c_admin/set_consider"> เกณฑ์นิสิตรอพินิจ </a></li>
-		                    </ul>
-                    </li>
+                   
           </ul>
         </nav>
    
