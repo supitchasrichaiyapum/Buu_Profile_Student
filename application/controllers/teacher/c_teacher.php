@@ -155,7 +155,7 @@ class c_teacher extends CI_Controller {
 		$data['status'] = $this->m_admin->search_student_status($student_code);
 		$data['transcript_rows'] = $this->m_student->get_year_transcript($student_code);
 		$data['CA'] = $this->m_student->ca_student($student_code);
-		$this->template->view('admin/transcript_student_admin',$data);
+		$this->template->view('teacher/transcript_student_teacher',$data);
 	}
 
 	public function editdata_student_teacher()

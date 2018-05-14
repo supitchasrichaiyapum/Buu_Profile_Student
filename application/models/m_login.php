@@ -14,17 +14,17 @@ class m_login extends CI_Model {
     // login แบบหลอกๆ
     public function xlogin($username, $password)
     {
-        if($username == 'nutthanon') {
+        if($username == 'nutthanon9') {
             $data = array();
             $data['fullname'] = 'nutthanon';
             $data['login_type'] = 'Teacher';
             $data['login_value'] = 'nutthanon';
         }
-         else if($username == 'kamonwan') {
+         else if($username == 'kamonwans9') {
             $data = array();
-            $data['fullname'] = 'Kamonwan';
+            $data['fullname'] = 'kamonwans';
             $data['login_type'] = 'Admin';
-            $data['login_value'] = 'kamonwan';
+            $data['login_value'] = 'kamonwans';
         }
         return $data;
     }

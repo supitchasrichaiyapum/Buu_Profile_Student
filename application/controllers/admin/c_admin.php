@@ -20,6 +20,7 @@ class c_admin extends CI_Controller {
     public function index()
     {
 		$data['user_id'] = $this->session->userdata('user_id');
+		
 		$this->template->view('template/main_view',$data);
     }
     public function menu_admin()
@@ -157,6 +158,7 @@ class c_admin extends CI_Controller {
 		$data['Award_Year'] = $this->input->post('Award_Year');
 		$data['Award_Giver'] = $this->input->post('Award_Giver');
 		$data['Award_Amount'] = $this->input->post('Award_Amount');
+		$data['Award_Date'] = $this->input->post('Award_Date');
 		// print_r($data);
 		$this->load->model('m_award');
 		$this->m_award->update_award($data, $award_id);
@@ -511,8 +513,7 @@ class c_admin extends CI_Controller {
 						$this->m_admin->insert_course($array);
 					} 
 					$insert = array();
-					$insert['Course'] = $course_id;
-					$insert['Teacher_ID'] = 'none';					
+					$insert['Course'] = $course_id;					
 					$insert['Student_IdNum'] = $row[1];
 					$insert['Student_Prefix'] = $row[2];
 					$insert['Student_Name_Th'] = $row[3];

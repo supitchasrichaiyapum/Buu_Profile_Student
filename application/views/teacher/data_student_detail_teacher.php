@@ -729,7 +729,7 @@ th {
           <tr>
           <?php 
     if(count($award) == 0) {
-              echo "<td>ไม่มีข้อมูล</td>";
+              echo "<td><b>ไม่มีข้อมูล</b></td>";
     } else if(count($award)) { ?>
 
       <td><b><h4>ชื่อรางวัลการแข่งขัน</h4> </b></td>
