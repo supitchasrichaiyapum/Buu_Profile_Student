@@ -63,7 +63,7 @@ class c_login extends CI_Controller {
 
         } else {
 
-            // การ login แบบอันหลอกๆ
+            // การ login แบบอันหลอกๆ ปิด
             $data =  $this->m_login->xlogin($username, $password);
 
             // print_r($data);
@@ -78,7 +78,9 @@ class c_login extends CI_Controller {
                 redirect('c_login/login?status=error');
                 
             //    redirect('Refresh: 3;','url=login/login');
-            }
+            } //ปิด
+
+            // redirect('c_login/login?status=error'); ถ้าปิดเปิดอันนี้ด้วย
             
         }
                 // print_r($userdata);
