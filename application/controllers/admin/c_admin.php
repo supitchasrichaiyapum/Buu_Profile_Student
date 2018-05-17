@@ -258,6 +258,7 @@ class c_admin extends CI_Controller {
 		$data['status'] = $this->m_admin->search_student_status($student_code);
 		$data['transcript_rows'] = $this->m_student->get_year_transcript($student_code);
 		$data['CA'] = $this->m_student->ca_student($student_code);
+		// print_r($data);
 		$this->template->view('admin/transcript_student_admin',$data);
 	}
 
@@ -302,7 +303,7 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required');
 		$this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Father_Phone', 'บิดา : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'valid_email');
 
 		$this->form_validation->set_rules('Mother_Name', 'ชื่อ-นามสกุลมารดา', 'required');
 		$this->form_validation->set_rules('Mother_Career', 'อาชีพมารดา', 'required');
@@ -315,7 +316,7 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Mother_Address_Province', 'มารดา : จังหวัด', 'required');
 		$this->form_validation->set_rules('Mother_Address_Postcode', 'มารดา : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Mother_Phone', 'มารดา : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'valid_email');
 
 		$this->form_validation->set_rules('Parent_Name', 'ชื่อ-นามสกุลผู้ปกครอง', 'required');
 		$this->form_validation->set_rules('Parent_Career', 'อาชีพผู้ปกครอง', 'required');
@@ -328,11 +329,11 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Parent_Address_Province', 'ผู้ปกครอง : จังหวัด', 'required');
 		$this->form_validation->set_rules('Parent_Address_Postcode', 'ผู้ปกครอง : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Parent_Phone', 'ผู้ปกครอง : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'valid_email');
 
 		$this->form_validation->set_rules('Contact_Name', 'ชื่อ-นามสกุลผู้ที่ติดต่อได้', 'required');
 		$this->form_validation->set_rules('Contact_Status', 'ความสัมพันธ์ผู้ที่ติดต่อได้', 'required');
-		// $this->form_validation->set_rules('Contact_Email', 'ผู้ที่ติดต่อได้ : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Contact_Email', 'ผู้ที่ติดต่อได้ : อีเมล', 'valid_email');
 		$this->form_validation->set_rules('Contact_Address_Number', 'ผู้ที่ติดต่อได้ : บ้านเลขที่', 'required');
 		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ที่ติดต่อได้ : ตำบล', 'required');
 		$this->form_validation->set_rules('Contact_Address_Aumper', 'ผู้ที่ติดต่อได้ : อำเภอ', 'required');
