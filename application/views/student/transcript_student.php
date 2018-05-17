@@ -52,7 +52,10 @@
               <p class="text-muted">GPAX : <?php echo $student['GPAX']?> </p>
               <br>
 
-              <?php foreach($transcript_rows as $row_table) { ?>
+              <?php foreach($transcript_rows as $row_table) { 
+                if($row_table->GPA_Year == "0")
+                continue;
+                ?>
 
               <table border="1" width="600" cellspacing="2" cellpadding="0" class="table table-responsive-sm table-bordered">
                 <thead>
