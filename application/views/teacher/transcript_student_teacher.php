@@ -34,7 +34,7 @@ header.page-header {
             <div class="container-fluid">
             <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('teacher/c_teacher/menu_teacher');?>">หน้าหลัก</a></li>
-                <li><a href="<?php echo site_url('teacher/c_teacher/activity_student_teacher');?>">ข้อมูลนิสิต</a></li>
+                <li><a href="<?php echo site_url('teacher/c_teacher/search_data_student_teacher');?>">ข้อมูลนิสิต</a></li>
                 <li>ผลการศึกษา</li>
             </ul>
             </div>

@@ -19,6 +19,7 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+	 //ไว้ดักสิทธิ์การเข้าใช้งาน
 	public function index()
 	{
 		if($this->session->userdata('actor') == 'Student') {
@@ -36,26 +37,27 @@ class Welcome extends CI_Controller {
 
 		$data['user_id'] = $this->session->userdata('user_id');
 		$this->template->view('template/main_view',$data);
-
 	}
 
+	//หน้า login
 	public function login()
 	{
        redirect('c_login/login');
 	}
 	
-	public function student_activity()
-	{
-		$data['Student_Text'] = $this->input->get('textfield');
-		if($data['Student_Text']) {
-			$data['Student_Text'] = str_replace("*", "%", $data['Student_Text']);
-			$this->load->model('m_activity');
-			$data['result'] = $this->m_activity->search_student($data['Student_Text']);
-		} else {
-			$data['result'] = array();
-		}
-		$this->template->view('user/student_activity', $data);
-	}
+	
+	// public function student_activity()
+	// {
+	// 	$data['Student_Text'] = $this->input->get('textfield');
+	// 	if($data['Student_Text']) {
+	// 		$data['Student_Text'] = str_replace("*", "%", $data['Student_Text']);
+	// 		$this->load->model('m_activity');
+	// 		$data['result'] = $this->m_activity->search_student($data['Student_Text']);
+	// 	} else {
+	// 		$data['result'] = array();
+	// 	}
+	// 	$this->template->view('user/student_activity', $data);
+	// }
 
 	public function activity()
 	{
