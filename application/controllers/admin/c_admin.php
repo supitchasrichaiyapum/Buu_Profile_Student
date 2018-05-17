@@ -63,6 +63,17 @@ class c_admin extends CI_Controller {
 	// เพิ่มข้อมูลรางวัล
 	public function insert_award()
 	{
+		$this->form_validation->set_rules('Award_Name', 'ชื่อรางวัลการแข่งขัน', 'required|thai_en_character');
+		$this->form_validation->set_rules('Award_Term', 'เทอม', 'required');
+		$this->form_validation->set_rules('Award_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Award_Giver', 'ผู้มอบทุนการศึกษา', 'required|thai_en_character');
+		$this->form_validation->set_rules('Award_Amount', 'จำนวนเงิน(บาท)', 'required|is_natural_no_zero');
+		if ($this->form_validation->run() == FALSE)
+		{
+				$this->insert_form_award() ;
+		}
+		else
+		{
 		$data['Award_Date'] = $this->input->post('Award_Date');
 		$data['Award_Course'] = $this->input->post('Award_Course');
 		$data['Award_Name'] = $this->input->post('Award_Name');
@@ -74,6 +85,7 @@ class c_admin extends CI_Controller {
 		$this->load->model('m_award');
 		$this->m_award->insert_award($data);
 		redirect('admin/c_admin/award_student_admin');
+		}
 	}
 	// เพิ่มนิสิตในรางวัลการแข่งขัน
 	public function insert_form_student_award($award_id)
@@ -152,6 +164,17 @@ class c_admin extends CI_Controller {
 	// แก้ไขรายชื่อรางวัลการแข่งขัน
 	public function editaward_student_admin($award_id) 
 	{
+		$this->form_validation->set_rules('Award_Name', 'ชื่อรางวัลการแข่งขัน', 'required|thai_en_character');
+		$this->form_validation->set_rules('Award_Term', 'เทอม', 'required');
+		$this->form_validation->set_rules('Award_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Award_Giver', 'ผู้มอบทุนการศึกษา', 'required|thai_en_character');
+		$this->form_validation->set_rules('Award_Amount', 'จำนวนเงิน(บาท)', 'required|is_natural_no_zero');
+		if ($this->form_validation->run() == FALSE)
+		{
+				$this->form_editaward_student_admin($award_id) ;
+		}
+		else
+		{
 		// print_r($_POST);
 		$data['Award_Name'] = $this->input->post('Award_Name');
 		$data['Award_Term'] = $this->input->post('Award_Term');
@@ -162,9 +185,8 @@ class c_admin extends CI_Controller {
 		// print_r($data);
 		$this->load->model('m_award');
 		$this->m_award->update_award($data, $award_id);
-		
-		
 		redirect('admin/c_admin/award_student_admin/'.$award_id);
+		}
 	}
 	public function statistics_admin()
 	{
@@ -275,8 +297,8 @@ class c_admin extends CI_Controller {
 	{
 		$this->form_validation->set_rules('Student_Name_Eng', 'ชื่อภาษาอังกฤษ', 'required|alpha');
 		$this->form_validation->set_rules('Student_Lname_Eng', 'นามสกุลภาษาอังกฤษ', 'required|alpha');
-		$this->form_validation->set_rules('Student_Nickname', 'ชื่อเล่น', 'required');
-		$this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('Student_Nickname', 'ชื่อเล่น', 'required|thai_en_character');
+		$this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required|is_natural_no_zero|min_length[10]');
 		$this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'required|valid_email');
 		$this->form_validation->set_rules('Blood', 'กรุ๊ปเลือด', 'required');
 		$this->form_validation->set_rules('Facebook', 'Facebook', 'required');
@@ -285,9 +307,9 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Address_Number', 'นิสิต : บ้านเลขที่', 'required');
 		$this->form_validation->set_rules('Address_Moo', 'นิสิต : หมู่', 'required');
 		$this->form_validation->set_rules('Address_Soi', 'นิสิต : ซอย', 'required');
-		$this->form_validation->set_rules('Address_Tumbon', 'นิสิต : ตำบล', 'required');
-		$this->form_validation->set_rules('Address_Aumper', 'นิสิต : อำเภอ', 'required');
-		$this->form_validation->set_rules('Address_Province', 'นิสิต : จังหวัด', 'required');
+		$this->form_validation->set_rules('Address_Tumbon', 'นิสิต : ตำบล', 'required|thai_en_character');
+		$this->form_validation->set_rules('Address_Aumper', 'นิสิต : อำเภอ', 'required|thai_en_character');
+		$this->form_validation->set_rules('Address_Province', 'นิสิต : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Address_Postcode', 'นิสิต : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Student_Phone', 'เบอร์โทรศัพท์นิสิต', 'required');
 		$this->form_validation->set_rules('Student_Email', 'อีเมลนิสิต', 'valid_email');
@@ -298,9 +320,9 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Father_Address_Number', 'บิดา : บ้านเลขที่', 'required');
 		$this->form_validation->set_rules('Father_Address_Moo', 'บิดา : หมู่', 'required');
 		$this->form_validation->set_rules('Father_Address_Soi', 'บิดา : ซอย', 'required');
-		$this->form_validation->set_rules('Father_Address_Tumbon', 'บิดา : ตำบล', 'required');
-		$this->form_validation->set_rules('Father_Address_Aumper', 'บิดา : อำเภอ', 'required');
-		$this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required');
+		$this->form_validation->set_rules('Father_Address_Tumbon', 'บิดา : ตำบล', 'required|thai_en_character');
+		$this->form_validation->set_rules('Father_Address_Aumper', 'บิดา : อำเภอ', 'required|thai_en_character');
+		$this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Father_Phone', 'บิดา : เบอร์โทรศัพท์', 'required');
 		$this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'valid_email');
@@ -311,9 +333,9 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Mother_Address_Number', 'มารดา : บ้านเลขที่', 'required');
 		$this->form_validation->set_rules('Mother_Address_Moo', 'มารดา : หมู่', 'required');
 		$this->form_validation->set_rules('Mother_Address_Soi', 'มารดา : ซอย', 'required');
-		$this->form_validation->set_rules('Mother_Address_Tumbon', 'มารดา : ตำบล', 'required');
-		$this->form_validation->set_rules('Mother_Address_Aumper', 'มารดา : อำเภอ', 'required');
-		$this->form_validation->set_rules('Mother_Address_Province', 'มารดา : จังหวัด', 'required');
+		$this->form_validation->set_rules('Mother_Address_Tumbon', 'มารดา : ตำบล', 'required|thai_en_character');
+		$this->form_validation->set_rules('Mother_Address_Aumper', 'มารดา : อำเภอ', 'required|thai_en_character');
+		$this->form_validation->set_rules('Mother_Address_Province', 'มารดา : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Mother_Address_Postcode', 'มารดา : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Mother_Phone', 'มารดา : เบอร์โทรศัพท์', 'required');
 		$this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'valid_email');
@@ -324,9 +346,9 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Parent_Address_Number', 'ผู้ปกครอง : บ้านเลขที่', 'required');
 		$this->form_validation->set_rules('Parent_Address_Moo', 'ผู้ปกครอง : หมู่', 'required');
 		$this->form_validation->set_rules('Parent_Address_Soi', 'ผู้ปกครอง : ซอย', 'required');
-		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ปกครอง : ตำบล', 'required');
-		$this->form_validation->set_rules('Parent_Address_Aumper', 'ผู้ปกครอง : อำเภอ', 'required');
-		$this->form_validation->set_rules('Parent_Address_Province', 'ผู้ปกครอง : จังหวัด', 'required');
+		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ปกครอง : ตำบล', 'required|thai_en_character');
+		$this->form_validation->set_rules('Parent_Address_Aumper', 'ผู้ปกครอง : อำเภอ', 'required|thai_en_character');
+		$this->form_validation->set_rules('Parent_Address_Province', 'ผู้ปกครอง : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Parent_Address_Postcode', 'ผู้ปกครอง : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Parent_Phone', 'ผู้ปกครอง : เบอร์โทรศัพท์', 'required');
 		$this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'valid_email');
@@ -335,9 +357,9 @@ class c_admin extends CI_Controller {
 		$this->form_validation->set_rules('Contact_Status', 'ความสัมพันธ์ผู้ที่ติดต่อได้', 'required');
 		$this->form_validation->set_rules('Contact_Email', 'ผู้ที่ติดต่อได้ : อีเมล', 'valid_email');
 		$this->form_validation->set_rules('Contact_Address_Number', 'ผู้ที่ติดต่อได้ : บ้านเลขที่', 'required');
-		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ที่ติดต่อได้ : ตำบล', 'required');
-		$this->form_validation->set_rules('Contact_Address_Aumper', 'ผู้ที่ติดต่อได้ : อำเภอ', 'required');
-		$this->form_validation->set_rules('Contact_Address_Province', 'ผู้ที่ติดต่อได้ : จังหวัด', 'required');
+		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ที่ติดต่อได้ : ตำบล', 'required|thai_en_character');
+		$this->form_validation->set_rules('Contact_Address_Aumper', 'ผู้ที่ติดต่อได้ : อำเภอ', 'required|thai_en_character');
+		$this->form_validation->set_rules('Contact_Address_Province', 'ผู้ที่ติดต่อได้ : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Contact_Address_Postcode', 'ผู้ที่ติดต่อได้ : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Contact_Phone', 'ผู้ที่ติดต่อได้ : เบอร์โทรศัพท์', 'required');
 
@@ -959,6 +981,18 @@ class c_admin extends CI_Controller {
 		// เพิ่มข้อมูลทุนการศึกษา
 		public function insert_scholarship()
 		{
+			$this->form_validation->set_rules('Scholarship_Name', 'ชื่อทุนการศึกษา', 'required|thai_en_character');
+			$this->form_validation->set_rules('Scholarship_Giver', 'ผู้มอบทุนการศึกษา', 'required|thai_en_character');
+			$this->form_validation->set_rules('Scholarship_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Scholarship_Count', 'จำนวนทุน', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Scholarship_Amount', 'จำนวนเงินทุนละ(บาท)', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Scholarship_Amounttotal', 'รวมเป็นเงิน', 'required|is_natural_no_zero');
+			if ($this->form_validation->run() == FALSE)
+			{
+					$this->insert_form_scholarship() ;
+			}
+			else
+			{
 			$data['Scholarship_Name'] = $this->input->post('Scholarship_Name');
 			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
 			$data['Scholarship_Year'] = $this->input->post('Scholarship_Year');
@@ -968,6 +1002,7 @@ class c_admin extends CI_Controller {
 			$this->load->model('m_scholarship');
 			$this->m_scholarship->insert_scholarship($data);
 			redirect('admin/c_admin/scholarship_student_admin');
+			}
 		}
 		// เพิ่มนิสิตในทุนการศึกษา
 		public function insert_form_student_scholarship($scholarship_id)
@@ -1044,6 +1079,18 @@ class c_admin extends CI_Controller {
 		// แก้ไขรายชื่อทุนการศึกษา
 		public function editscholarship_student_admin($scholarship_id) 
 		{
+			$this->form_validation->set_rules('Scholarship_Name', 'ชื่อทุนการศึกษา', 'required|thai_en_character');
+			$this->form_validation->set_rules('Scholarship_Giver', 'ผู้มอบทุนการศึกษา', 'required|thai_en_character');
+			$this->form_validation->set_rules('Scholarship_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Scholarship_Count', 'จำนวนทุน', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Scholarship_Amount', 'จำนวนเงินทุนละ(บาท)', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Scholarship_Amounttotal', 'รวมเป็นเงิน', 'required|is_natural_no_zero');
+			if ($this->form_validation->run() == FALSE)
+			{
+					$this->form_editscholarship_student_admin($scholarship_id) ;
+			}
+			else
+			{
 			// print_r($_POST);
 			$data['Scholarship_Name'] = $this->input->post('Scholarship_Name');
 			$data['Scholarship_Giver'] = $this->input->post('Scholarship_Giver');
@@ -1054,9 +1101,8 @@ class c_admin extends CI_Controller {
 			// print_r($data);
 			$this->load->model('m_scholarship');
 			$this->m_scholarship->update_scholarship($data, $scholarship_id);
-			
-			
 			redirect('admin/c_admin/scholarship_student_admin/'.$scholarship_id);
+			}
 		}
 		// เพิ่มกิจกรรม
 		public function insert_form_activity()
@@ -1069,7 +1115,17 @@ class c_admin extends CI_Controller {
 		// เพิ่มกิจกรรม
 		public function insert_activity()
 		{
-			
+			$this->form_validation->set_rules('Activitie_Name', 'ชื่อกิจกรรม', 'required|thai_en_character');
+			$this->form_validation->set_rules('Activity_Term', 'เทอม', 'required');
+			$this->form_validation->set_rules('Activity_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Hour', 'ชั่วโมง', 'required|is_natural_no_zero');
+
+			if ($this->form_validation->run() == FALSE)
+			{
+					$this->insert_form_activity() ;
+			}
+			else
+			{
 			$data['Activitie_Name'] = $this->input->post('Activitie_Name');
 			$data['Activity_Term'] = $this->input->post('Activity_Term');
 			$data['Activity_Year'] = $this->input->post('Activity_Year');
@@ -1078,7 +1134,7 @@ class c_admin extends CI_Controller {
 			$this->load->model('m_activity');
 			$this->m_activity->insert_activity($data);
 			redirect('admin/c_admin/activity_student');
-
+			}
 		}
 		// เพิ่มนิสิตในกิจกรรม
 		public function insert_form_student_activity($activity_id)
@@ -1152,35 +1208,28 @@ class c_admin extends CI_Controller {
 		// แก้ไขรายชื่อกิจกรรม
 		public function editactivity_student_admin($activity_id) 
 		{
-			// print_r($_POST);
+			$this->form_validation->set_rules('Activitie_Name', 'ชื่อกิจกรรม', 'required|thai_en_character');
+			$this->form_validation->set_rules('Activity_Term', 'เทอม', 'required');
+			$this->form_validation->set_rules('Activity_Year', 'ปีการศึกษา', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('Hour', 'ชั่วโมง', 'required|is_natural_no_zero');
+
+			if ($this->form_validation->run() == FALSE)
+			{
+					$this->form_editactivity_student_admin($activity_id) ;
+			}
+			else
+			{
 			$data['Activitie_Name'] = $this->input->post('Activitie_Name');
 			$data['Activity_Term'] = $this->input->post('Activity_Term');
 			$data['Activity_Year'] = $this->input->post('Activity_Year');
 			$data['Hour'] = $this->input->post('Hour');			
-			// print_r($data);
+
 			$this->load->model('m_activity');
 			$this->m_activity->update_activity($data, $activity_id);			
 			redirect('admin/c_admin/activity_student/'.$activity_id);
+			}
 		}
 		
-
-		// โปรสูง โปรต่ำ
-		public function consider()
-		{
-			
-			if($this->input->post('consider')) { 
-				if($this->input->post('consider') == 'high'){
-				// โปรสูง
-				$data['student'] = $this->m_admin->search_student_between_gpax(1.80, 1.99);
-				} else {
-					// โปรต่ำ
-					$data['student'] = $this->m_admin->search_student_between_gpax(1.75, 1.79);
-				}
-			} else {
-				$data['student'] = array();
-			}
-
-		} 
 
 	}
 ?>

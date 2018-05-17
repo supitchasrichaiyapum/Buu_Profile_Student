@@ -44,6 +44,7 @@ header.page-header {
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
+                
               <strong><center>เพิ่มรายชื่อนิสิตในรางวัลการแข่งขัน</strong>
             </div>
             <form action="<?php echo site_url("admin/c_admin/insert_student_award/")?>" method="post" id="Award_form"><BR>          
