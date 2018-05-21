@@ -37,6 +37,16 @@ class m_activity extends CI_Model
 
         }
 
+        public function get_activity_by_name($id){
+
+            $sql = "Select Activity.Activitie_Name
+            from Activity
+            WHERE Activity.Activitie_ID = '".$id."' ";
+            $query = $this->db->query($sql);            
+            return $query->result();
+
+        }
+
         public function get_all(){
             $sql = "Select Activity.Activitie_ID,Activity.Activitie_Name, Activity.Activity_Term, Activity.Activity_Year,Activity.Hour, Activity_has_Student.Student_Student_ID, Student.Student_Prefix, Student.Student_Name_Th, Student.Student_Lname_Th
             from Activity 
@@ -101,6 +111,19 @@ class m_activity extends CI_Model
             $this->db->db_debug = $db_debug;
 
             return $return;
+        }
+
+        public function insert_batch_student_activity($data){
+            $sql = 'replace into Activity_has_Student values ';
+
+            foreach($data as $row) {
+                $sql .= "('".$row['Activity_Activitie_ID']."', '".$row['Student_Student_ID']."'), ";
+            }
+            $sql = substr($sql, 0, -2);
+            $sql .= ';';
+
+            return $this->db->query($sql);
+
         }
 
 }

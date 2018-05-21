@@ -64,14 +64,16 @@ header.page-header {
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
                                 <input type="hidden" id="Scholarship_ID" name="Scholarship_ID" value="<?php echo $scholarship_id;?>">
-                                <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">                           
+                                <textarea rows="4" cols="50" id="Student_ID" name="Student_ID" class="form-control" required=""> </textarea>                        
                             </div>     
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-sm btn-success" style="width:50px;height:40px"> บันทึก </button>
                             </div>
                     </div>
                 </form>
-                <br><hr><br><br>
+                <br><hr> <h2> <?php foreach ($scholarship_name as $name) { ?>
+                                                <?php echo "ชื่อกิจกรรม : ".$name->Scholarship_Name ?>
+                                                     <?php } ?> </h2><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>

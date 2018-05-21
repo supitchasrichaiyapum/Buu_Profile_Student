@@ -95,7 +95,7 @@ class c_student extends CI_Controller {
 		$this->form_validation->set_rules('Father_Address_Province', 'บิดา : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Father_Address_Postcode', 'บิดา : รหัสไปรณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Father_Phone', 'บิดา : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Father_Email', 'บิดา : อีเมล', 'valid_email');
 
 		$this->form_validation->set_rules('Mother_Name', 'ชื่อ-นามสกุลมารดา', 'required');
 		$this->form_validation->set_rules('Mother_Career', 'อาชีพมารดา', 'required');
@@ -108,7 +108,7 @@ class c_student extends CI_Controller {
 		$this->form_validation->set_rules('Mother_Address_Province', 'มารดา : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Mother_Address_Postcode', 'มารดา : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Mother_Phone', 'มารดา : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Mother_Email', 'มารดา : อีเมล', 'valid_email');
 
 		$this->form_validation->set_rules('Parent_Name', 'ชื่อ-นามสกุลผู้ปกครอง', 'required');
 		$this->form_validation->set_rules('Parent_Career', 'อาชีพผู้ปกครอง', 'required');
@@ -121,11 +121,11 @@ class c_student extends CI_Controller {
 		$this->form_validation->set_rules('Parent_Address_Province', 'ผู้ปกครอง : จังหวัด', 'required|thai_en_character');
 		$this->form_validation->set_rules('Parent_Address_Postcode', 'ผู้ปกครอง : รหัสไปรษณีย์', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('Parent_Phone', 'ผู้ปกครอง : เบอร์โทรศัพท์', 'required');
-		// $this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Parent_Email', 'ผู้ปกครอง : อีเมล', 'valid_email');
 
 		$this->form_validation->set_rules('Contact_Name', 'ชื่อ-นามสกุลผู้ที่ติดต่อได้', 'required');
 		$this->form_validation->set_rules('Contact_Status', 'ความสัมพันธ์ผู้ที่ติดต่อได้', 'required');
-		// $this->form_validation->set_rules('Contact_Email', 'ผู้ที่ติดต่อได้ : อีเมล', 'valid_email');
+		$this->form_validation->set_rules('Contact_Email', 'ผู้ที่ติดต่อได้ : อีเมล', 'valid_email');
 		$this->form_validation->set_rules('Contact_Address_Number', 'ผู้ที่ติดต่อได้ : บ้านเลขที่', 'required');
 		$this->form_validation->set_rules('Parent_Address_Tumbon', 'ผู้ที่ติดต่อได้ : ตำบล', 'required|thai_en_character');
 		$this->form_validation->set_rules('Contact_Address_Aumper', 'ผู้ที่ติดต่อได้ : อำเภอ', 'required|thai_en_character');
@@ -231,45 +231,6 @@ class c_student extends CI_Controller {
 		$data['CA'] = $this->m_student->ca_student($data['user_id']);
 		$this->template->view('student/transcript_student',$data);
 	}
-
-	public function activity_student()
-	{
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-		$data['student_code'] = $this->input->get('textfield');
-		if($data['student_code']) {
-			$this->load->model('m_activity');
-			$data['result'] = $this->m_activity->search_activity($data['student_code']);
-			
-		} else {
-			$data['result'] = array();
-		}
-		$this->template->view('student/activity_student',$data);
-	}
-
-	// รายชื่อรางวัลการแข่งขัน
-	public function award_student()
-	{
-		$this->load->model('m_award');
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-		$data['result'] = $this->m_award->get_all_award();
-		$data['result1'] = $this->m_award->get_by_id_award_has_student($data['result']);
-		// print_r($data);
-		$this->template->view('student/award_student',$data);
-	}
-	// รายชื่อนิสิตในรางวัลนั้นๆ
-	public function award_detail_st($id)
-	{
-		$data['award_id'] = $id;
-		// print_r($id);
-		$this->load->model('m_award');
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-		$data['result1'] = $this->m_award->get_Award_by_id($id);
-		// print_r($data);
-		$this->template->view('student/award_detail_st',$data);
-	}
 	
 	//หน้าไว้ทดสอบงานปลอมๆ
 	public function coop_student()
@@ -291,30 +252,6 @@ class c_student extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['student'] = $this->m_student->get_student($data['user_id']);
 		$this->template->view('student/graduate_actorstudent',$data);
-	}
-
-	// รายชื่อทุนการศึกษา
-	public function scholarship_student()
-	{
-		$this->load->model('m_scholarship');
-		$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-		$data['result'] = $this->m_scholarship->get_all_scholarship();
-		$data['result1'] = $this->m_scholarship->get_by_id_scholarship_has_student($data['result']);
-		// print_r($data);
-		$this->template->view('student/scholarship_student',$data);
-	}
-	// รายชื่อนิสิตในทุนการศึกษา
-	public function scholarship_detail($id)
-	{
-	$data['scholarship_id'] = $id;
-	// print_r($id);
-	$this->load->model('m_scholarship');
-	$data['user_id'] = $this->session->userdata('user_id');
-		$data['student'] = $this->m_student->get_student($data['user_id']);
-	$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
-	// print_r($data);
-	$this->template->view('student/scholarship_detail',$data);
 	}
 
 }

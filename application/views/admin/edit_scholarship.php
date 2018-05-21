@@ -48,7 +48,7 @@ header.page-header {
               <h1><strong><center>แก้ไขทุนการศึกษา</strong></h1>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editscholarship_student_admin/".$result[0]['Scholarship_ID']);?>" method="post" id="Scholarship_form"><br>
+            <form action="<?php echo site_url("admin/c_admin/editscholarship_student_admin/".$result[0]['Scholarship_ID']);?>" method="post" id="Scholarship_form" name="Scholarship_form" onsubmit="return checkInp()"><br>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>                           
            <div class="card-body">
          
@@ -96,21 +96,21 @@ header.page-header {
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">จำนวนทุน</label>
                         <div class="col-md-3">
-                            <input type="number" min="0" id="Scholarship_Count" name="Scholarship_Count" class="form-control" required=""  value="<?php echo $result[0]['Scholarship_Count']; ?>">
+                            <input type="number" min="1" max="5000" id="Scholarship_Count" name="Scholarship_Count" class="form-control" required=""  value="<?php echo $result[0]['Scholarship_Count']; ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">จำนวนเงินทุนละ(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
-                            <input type="number" min="0" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amount']; ?>">
+                            <input type="number" min="100" max="100000" id="Scholarship_Amount" name="Scholarship_Amount" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amount']; ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">รวมเป็นเงิน(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
-                            <input type="number" min="0" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amounttotal']; ?>"><br>
+                            <input type="number" min="100" max="50000000" id="Scholarship_Amounttotal" name="Scholarship_Amounttotal" class="form-control" required="" value="<?php echo $result[0]['Scholarship_Amounttotal']; ?>"><br>
                         </div>
                     </div>
                
@@ -128,4 +128,30 @@ header.page-header {
 jQuery(document).ready(function(){
     $('#Scholarship_form').validate();
 })
+
+function checkInp()
+    {
+    var count=document.forms["Scholarship_form"]["Scholarship_Count"].value;
+    var amount=document.forms["Scholarship_form"]["Scholarship_Amount"].value;
+    var total=document.forms["Scholarship_form"]["Scholarship_Amounttotal"].value;
+    var sum=count*amount;
+    
+    if (sum > total) 
+    {
+        alert("กรุณากรอกข้อมูลให้พอดีกับจำนวนเงินรวม");
+        return false;
+    }
+    
+    else if (sum < total)
+    {
+        alert("กรุณากรอกข้อมูลให้พอดีกับจำนวนเงินทุนละ");
+        return false;
+    }
+    else if (sum == total && total > 500000)
+    {
+        return confirm("จำนวนเงินรวมเกิน 500,000 บาท จะทำการยืนยันหรือไม่");
+    }
+    return true;
+    
+    }
 </script>

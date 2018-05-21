@@ -19,9 +19,6 @@
                                 <li><a href="/student/c_student/transcript_student"> ผลการศึกษา </a></li>
 		                    </ul>
                     </li>
-                    <li><a href="/student/c_student/activity_student"><i class="fa fa-tasks"></i> ข้อมูลกิจกรรม </a></li>
-                    <li><a href="/student/c_student/award_student"><i class="fa fa-trophy"></i> รางวัลการแข่งขัน </a></li>
-                    <li><a href="/student/c_student/scholarship_student"><i class="far fa-money-bill-alt"></i> ทุนการศึกษา </a></li>
                     <li><a href="/student/c_student/graduate_actorstudent"><i class="fa fa-graduation-cap"></i> ผู้สำเร็จการศึกษา </a></li>
                    
           </ul>

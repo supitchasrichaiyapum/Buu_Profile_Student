@@ -63,14 +63,16 @@ header.page-header {
                         <label class="col-md-2 col-form-label" for="text-input"><b>รหัสนิสิต</b></label>
                             <div class="col-md-3">
                                 <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id;?>">
-                                <input type="text" id="Student_ID" name="Student_ID" class="form-control" required="">
+                                <textarea rows="4" cols="50" id="Student_ID" name="Student_ID" class="form-control" required=""> </textarea>
                             </div>
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-sm btn-success" style="width:50px;height:40px"> บันทึก </button>
                             </div>
                     </div>                   
                 </form>  
-        <br><hr><br><br>
+        <br><hr> <h2> <?php foreach ($award_name as $name) { ?>
+                                                <?php echo "ชื่อกิจกรรม : ".$name->Award_Name ?>
+                                                     <?php } ?> </h2><br>
      
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
@@ -89,10 +91,10 @@ header.page-header {
         <td><?php echo $row->Student_Prefix." ".$row->Student_Name_Th." ".$row->Student_Lname_Th ?> </td>
         <td><?php echo $row->Course ?> </td>
         <td><center>
-          <form action="<?php echo site_url('admin/c_admin/delete_award_has_student/');?>" method="post">
+          <form action="<?php echo site_url('admin/c_admin/delete_award_has_student/');?>"  onsubmit="return confirm('คุณต้องการลบใช่หรือไม่ ?');" method="post">
           <input type="hidden" id="Award_ID" name="Award_ID" value="<?php echo $award_id; ?>">
           <input type="hidden" id="Student_ID" name="Student_ID" value="<?php echo $row->Student_ID; ?>">
-          <button type="submit" class="btn btn-danger btn-sm" >ลบ</button></a>
+          <button type="submit" class="btn btn-danger btn-sm">ลบ</button>
           </form>
         </center></td>
       
@@ -112,14 +114,15 @@ header.page-header {
           </section>           
 
 
+
     <script>
       $(document).ready(function() {
-          $('#datatable').DataTable();
-      } );
+         $('#datatable').DataTable();
+    });
 
       jQuery(document).ready(function(){
-    $('#award_form').validate();
-    })
+         $('#award_form').validate();
+    });
     </script>
 
 	

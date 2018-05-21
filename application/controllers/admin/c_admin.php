@@ -102,15 +102,42 @@ class c_admin extends CI_Controller {
 	public function insert_student_award()
 	{
 		$award_id = $this->input->post('Award_ID');
-		$data['Award_ID'] = $this->input->post('Award_ID');
-		$data['Student_ID'] = $this->input->post('Student_ID');
+		$str = $this->input->post('Student_ID');
+		$data['Student_ID'] = (explode("\r\n", $str));
+		$form_data = [];
+		foreach ($data['Student_ID'] as $contact)
+			 {
+				$contact = trim($contact);
+				 if(is_numeric($contact)){
+					$form_data[]  = array(
+							'Student_ID' => $contact,
+							'Award_ID' => $this->input->post('Award_ID'), 
+							);
+							//print_r($form_data);
+				 }
+				 
+			 }
+			 
 		$this->load->model('m_award');
-		if($this->m_award->insert_student_award($data)) {
-			$this->session->set_flashdata('form_error', '<div class="alert alert-success">เพิ่มรายชื่อนิสิตสำเร็จ.</div>');	
-		} else {
-			$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
-			
+
+		$db_debug = $this->db->db_debug; //save setting
+		$this->db->db_debug = FALSE;
+
+		if(!$form_data){
+
+			$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่</div>');
+
+		}else{
+
+			if($this->m_award->insert_batch_student_award($form_data)){
+
+				$this->session->set_flashdata('form_error', '<div class="alert alert-success">เพิ่มรายชื่อนิสิตสำเร็จ.</div>');
+			}else{
+				$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
+			}
 		}
+		$this->db->db_debug = $db_debug;
+
 		redirect('admin/c_admin/award_detail/'.$award_id);
 	}
 	// ลบนิสิตรางวัลการแข่งขัน
@@ -142,6 +169,7 @@ class c_admin extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 		$data['result1'] = $this->m_award->get_Award_by_id($id);
+		$data['award_name'] = $this->m_award->get_Award_by_name($id);
 		
 		$this->template->view('admin/award_detail',$data);
 	}
@@ -512,9 +540,9 @@ class c_admin extends CI_Controller {
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0) {
-						if($row[1] != 'เลขบัตรประชาชน' 
-							&& $row[0] != 'รหัส'
-							&& $row[2] != 'คำนำหน้า'
+						if(@$row[1] != 'เลขบัตรประชาชน' 
+							&& @$row[0] != 'รหัส'
+							&& @$row[2] != 'คำนำหน้า'
 							) {
 							$status = false;
 							break;
@@ -663,9 +691,9 @@ class c_admin extends CI_Controller {
                 $sheet = $xlsx->getSheetNames()[1];
                 foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0){
-						if($row[1] != 'รหัสวิชา' 
-								&& $row[0] != 'รหัสนิสิต'
-								&& $row[2] != 'ชื่อวิชา'
+						if(@$row[1] != 'รหัสวิชา' 
+								&& @$row[0] != 'รหัสนิสิต'
+								&& @$row[2] != 'ชื่อวิชา'
 								) {
 								$status = false;
 								break;
@@ -829,8 +857,8 @@ class c_admin extends CI_Controller {
 				$sheet = $xlsx->getSheetNames()[1];
 				foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0){
-						if($row[0] != 'STUDENTCODE' 
-								&& $row[1] != 'GPAX'
+						if(@$row[0] != 'STUDENTCODE' 
+								&& @$row[1] != 'GPAX'
 								) {
 								$status = false;
 								break;
@@ -906,9 +934,9 @@ class c_admin extends CI_Controller {
 				$sheet = $xlsx->getSheetNames()[1];
 				foreach($xlsx->getSheetData($sheet) as $key => $row) {
 					if($key == 0){
-						if($row[0] != 'STUDENTCODE' 
-								&& $row[2] != 'OFFICERID'
-								&& $row[4] != 'PREFIXNAME'
+						if(@$row[0] != 'STUDENTCODE' 
+								&& @$row[2] != 'OFFICERID'
+								&& @$row[4] != 'PREFIXNAME'
 								) {
 								$status = false;
 								break;
@@ -1019,15 +1047,50 @@ class c_admin extends CI_Controller {
 		public function insert_student_scholarship()
 		{
 			$scholarship_id = $this->input->post('Scholarship_ID');
-			$data['Scholarship_ID'] = $this->input->post('Scholarship_ID');
-			$data['Student_ID'] = $this->input->post('Student_ID');
+			
+			$str = $this->input->post('Student_ID');
+			$data['Student_ID'] = (explode("\r\n", $str));
+			$form_data = [];
 			$this->load->model('m_scholarship');
-			if($this->m_scholarship->insert_student_scholarship($data)) {
-				$this->session->set_flashdata('form_error', '<div class="alert alert-success">เพิ่มรายชื่อนิสิตสำเร็จ.</div>');	
-			} else {
-				$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
-				
+
+			$db_debug = $this->db->db_debug; //save setting
+			$this->db->db_debug = FALSE;
+
+			$checkcount['count_scholarship'] = $this->m_scholarship->count_scholarship($scholarship_id)[0];
+
+			
+			foreach($data['Student_ID'] as $contact) {
+				if($checkcount['count_scholarship']['count'] < $checkcount['count_scholarship']['Scholarship_Count']) {
+					$contact = trim($contact);
+				 	if(is_numeric($contact)){
+						if($this->m_scholarship->check_student_in_scholarship($contact, $this->input->post('Scholarship_ID')) < 1) {
+							$form_data[]  = array(
+								'Student_ID' => $contact,
+								'Scholarship_ID' => $this->input->post('Scholarship_ID'), 
+							);
+							$checkcount['count_scholarship']['count']++;
+						}
+						
+					 }
+				}
+				 
 			}
+
+			if(!$form_data){
+
+					$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่ / นิสิตมีจำนวนครบแล้ว / รหัสนิสิตซ้ำ</div>');
+
+			}else{
+
+				if($this->m_scholarship->insert_batch_student_scholarship($form_data)){
+
+					$this->session->set_flashdata('form_error', '<div class="alert alert-success">เพิ่มรายชื่อนิสิตสำเร็จ.</div>');
+				}else{
+					$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
+				}
+			}
+			$this->db->db_debug = $db_debug;
+
 			redirect('admin/c_admin/scholarship_detail/'.$scholarship_id);
 		}
 		// ลบนิสิตทุนการศึกษาar
@@ -1059,6 +1122,7 @@ class c_admin extends CI_Controller {
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
+			$data['scholarship_name'] = $this->m_scholarship->get_Scholarship_by_name($id);
 			// print_r($data);
 			$this->template->view('admin/scholarship_detail',$data);
 		}
@@ -1150,15 +1214,40 @@ class c_admin extends CI_Controller {
 		public function insert_student_activity()
 		{
 			$activity_id = $this->input->post('Activity_Activitie_ID');
-			$data['Activity_Activitie_ID'] = $this->input->post('Activity_Activitie_ID');
-			$data['Student_Student_ID'] = $this->input->post('Student_Student_ID');
+			$str = $this->input->post('Student_Student_ID');
+			$data['Student_Student_ID'] = (explode("\r\n", $str));
+			$form_data = [];
+			 foreach ($data['Student_Student_ID'] as $contact)
+			 {
+				$contact = trim($contact);
+				 if(is_numeric($contact)){
+					$form_data[]  = array(
+							'Student_Student_ID' => $contact,
+							'Activity_Activitie_ID' => $this->input->post('Activity_Activitie_ID'), 
+							);
+				 }
+				 
+			 }
 			$this->load->model('m_activity');
-			if($this->m_activity->insert_student_activity($data)) {
-				$this->session->set_flashdata('form_error', '<div class="alert alert-success">เพิ่มรายชื่อนิสิตสำเร็จ.</div>');	
-			} else {
-				$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
+
+			$db_debug = $this->db->db_debug; //save setting
+			$this->db->db_debug = FALSE;
+			
+			if(!$form_data){
 				
+				$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่</div>');
+
+			}else{
+
+				if($this->m_activity->insert_batch_student_activity($form_data)){
+					$this->session->set_flashdata('form_error', '<div class="alert alert-success">เพิ่มรายชื่อนิสิตสำเร็จ.</div>');
+				}else{
+					$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
+				}
 			}
+
+			$this->db->db_debug = $db_debug;
+
 			redirect('admin/c_admin/activity_detail/'.$activity_id);
 		}
 		
@@ -1190,6 +1279,7 @@ class c_admin extends CI_Controller {
 			$data['user_id'] = $this->session->userdata('user_id');
 			$data['admin'] = $this->m_admin->get_admin($data['user_id']);
 			$data['result1'] = $this->m_activity->get_activity_by_id($id);
+			$data['activity_name'] = $this->m_activity->get_activity_by_name($id);
 			// print_r($data);
 			$this->template->view('admin/activity_detail',$data);
 		}

@@ -46,7 +46,7 @@ header.page-header {
                 <h1><strong><center>เพิ่มรางวัลการแข่งขัน</strong></h1>
                 </div>
                     <div class="card-body">
-                        <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" id="Award_form">  <BR>                  
+                        <form action="<?php echo site_url("admin/c_admin/insert_award/")?>" method="post" id="Award_form" name="Award_form" onsubmit="return checkInp()">  <BR>                  
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>    
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">วัน / เดือน / ปี</label>
@@ -99,7 +99,7 @@ header.page-header {
                         <label class="col-md-3 col-form-label" for="text-input">เงินรางวัล(บาท)<code>* ตัวอย่าง 5000</code></label>
 
                             <div class="col-md-3">
-                                <input type="number" min="0" required="" id="Award_Amount" name="Award_Amount" class="form-control"><br>
+                                <input type="number" min="1" max="100000" required="" id="Award_Amount" name="Award_Amount" class="form-control"><br>
                             </div>
                     </div>
                         <div class="text-center">
@@ -119,4 +119,15 @@ header.page-header {
 jQuery(document).ready(function(){
     $('#Award_form').validate();
 })
+
+function checkInp()
+{
+  var x=document.forms["Award_form"]["Award_Amount"].value;
+  if (x > 10000) 
+  {
+    return confirm("ยืนยันจะกรอกเงินรางวัลที่มากกว่า 10,000 บาทหรือไม่");
+  }
+
+  return true;
+}
 </script>

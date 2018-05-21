@@ -48,7 +48,7 @@ header.page-header {
               <h1><strong><center>แก้ไขรางวัล</strong></h1>
             </div>
             
-            <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" id="Award_form"><BR>
+            <form action="<?php echo site_url("admin/c_admin/editaward_student_admin/".$result[0]['Award_ID']);?>" method="post" id="Award_form" name="Award_form" onsubmit="return checkInp()"><BR>
             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
            <div class="card-body">        
            <div class="form-group row">
@@ -106,7 +106,7 @@ header.page-header {
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">เงินรางวัล(บาท)<code>* ตัวอย่าง 5000</code></label>
                         <div class="col-md-3">
-                            <input type="number" min="0" id="Award_Amount" name="Award_Amount" class="form-control" required="" value="<?php echo $result[0]['Award_Amount']; ?>"><br>
+                            <input type="number" min="1" max="100000" id="Award_Amount" name="Award_Amount" class="form-control" required="" value="<?php echo $result[0]['Award_Amount']; ?>"><br>
                         </div>
                     </div>
                
@@ -125,4 +125,15 @@ header.page-header {
 jQuery(document).ready(function(){
     $('#Award_form').validate();
 })
+
+function checkInp()
+{
+  var x=document.forms["Award_form"]["Award_Amount"].value;
+  if (x > 10000) 
+  {
+    return confirm("ยืนยันจะกรอกเงินรางวัลที่มากกว่า 10,000 บาทหรือไม่");
+  }
+
+  return true;
+}
 </script>
