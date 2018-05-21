@@ -4,6 +4,7 @@
 class Template {
     function view($file, $data = array()) {
 
+        error_reporting(E_ALL ^ E_NOTICE);
         $CI =& get_instance();
         
         

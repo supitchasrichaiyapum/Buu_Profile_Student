@@ -54,6 +54,7 @@ header.page-header {
                         <label class="col-md-3 col-form-label" for="text-input">รหัสนิสิต</label>
                             <div class="col-md-3">
                                 <input type="hidden" id="Activity_Activitie_ID" name="Activity_Activitie_ID" value="<?php echo $activity_id;?>">
+                                
                                 <input type="text" id="Student_Student_ID" name="Student_Student_ID" class="form-control">
                                 
                             </div>

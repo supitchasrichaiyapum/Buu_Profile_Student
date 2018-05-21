@@ -45,7 +45,7 @@ header.page-header {
                 <h1><strong><center>เพิ่มกิจกรรม</strong></h1>
                 </div>
                     <div class="card-body">
-                        <form action="<?php echo site_url("admin/c_admin/insert_activity/")?>" method="post" id="Activity_form"><br>
+                        <form action="<?php echo site_url("admin/c_admin/insert_activity/")?>" method="post" id="Activity_form" name="Activity_form" onsubmit="return checkInp()"><br>
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>  
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชื่อกิจกรรม</label>
@@ -87,7 +87,7 @@ header.page-header {
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="text-input">ชั่วโมง</label>
                             <div class="col-md-3">
-                                <input type="number" min="0" id="Hour" name="Hour" required="" class="form-control"><br>
+                                <input type="number" min="1" id="Hour" name="Hour" max="500" required="" class="form-control"><br>
                             </div>
                         </div> 
                         <div class="text-center">
@@ -107,4 +107,15 @@ header.page-header {
 jQuery(document).ready(function(){
     $('#Activity_form').validate();
 })
+
+function checkInp()
+{
+  var x=document.forms["Activity_form"]["Hour"].value;
+  if (x > 40) 
+  {
+    return confirm("ยืนยันจะกรอกชัั่วโมงที่มากกว่า 40 ชั่วโมงหรือไม่");
+  }
+
+  return true;
+}
 </script>
