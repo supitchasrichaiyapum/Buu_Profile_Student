@@ -125,7 +125,7 @@ class c_admin extends CI_Controller {
 
 		if(!$form_data){
 
-			$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่</div>');
+			$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
 
 		}else{
 
@@ -1078,7 +1078,7 @@ class c_admin extends CI_Controller {
 
 			if(!$form_data){
 
-					$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่ / นิสิตมีจำนวนครบแล้ว / รหัสนิสิตซ้ำ</div>');
+					$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่ / นิสิตมีจำนวนครบแล้ว / รหัสนิสิตซ้ำ.</div>');
 
 			}else{
 
@@ -1234,9 +1234,7 @@ class c_admin extends CI_Controller {
 			$this->db->db_debug = FALSE;
 			
 			if(!$form_data){
-				
-				$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่</div>');
-
+				$this->session->set_flashdata('form_error', '<div class="alert alert-danger">กรุณากรอกข้อมูลใหม่.</div>');
 			}else{
 
 				if($this->m_activity->insert_batch_student_activity($form_data)){
