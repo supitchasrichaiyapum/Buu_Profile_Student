@@ -93,7 +93,7 @@ header.page-header {
         <td><?php echo $row->Student_Prefix." ".$row->Student_Name_Th." ".$row->Student_Lname_Th ?> </td>
         <td><?php echo $row->Course ?></td>
         <td><center>
-        <form action="<?php echo site_url('admin/c_admin/delete_scholarship_has_scholarship/'.$row->Scholarship_ID);?>" method="post">
+        <form action="<?php echo site_url('admin/c_admin/delete_scholarship_has_scholarship/'.$row->Scholarship_ID);?>" method="post" onsubmit="return confirm('คุณต้องการลบใช่หรือไม่ ?');">
           <input type="hidden" id="Scholarship_ID" name="Scholarship_ID" value="<?php echo $scholarship_id; ?>">
           <input type="hidden" id="Student_ID" name="Student_ID" value="<?php echo $row->Student_ID; ?>">
           <button type="submit" class="btn btn-danger btn-sm" >ลบ</button></a>
