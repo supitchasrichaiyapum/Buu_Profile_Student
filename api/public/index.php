@@ -26,15 +26,15 @@ $app->group('/api', function () use ($app) {
     $app->group('/v1', function () use ($app) {
 		$app->get('/students', 'getStudents');
         $app->get('/student/{Student_ID}/about', 'getStudent');
-        $app->get('/amountstudent/{Entry_Years}', 'getAmountstudents');
-        $app->get('/studentsaunqa/{Student_ID}', 'getStudentAunqa');    
-        $app->get('/studentstatus/{Entry_Years}', 'getStudentStatus');
+        $app->get('/amountstudentcurriculum/{Entry_Years}', 'getAmountstudents');
+        $app->get('/job/{Student_ID}', 'getStudentAunqa');    
+        $app->get('/amountstudentstatus/{Entry_Years}', 'getStudentStatus');
         $app->get('/student/{Student_ID}/subjects', 'getSubjectByStudent');
         $app->get('/student/{Student_ID}/credit', 'getCreditStudent');
-        $app->get('/activitys', 'getActivity');
+        $app->get('/activities', 'getActivity');
         $app->get('/activity/{Activitie_ID}/activity', 'getActivityById');
         $app->get('/activity/{Activitie_ID}/student', 'getActivityStudent');
-        $app->get('/activity/{Student_ID}/activitys', 'getActivityInStudent');
+        $app->get('/activity/{Student_ID}/activities', 'getActivityInStudent');
         $app->get('/awards', 'getAward');
         $app->get('/award/{Award_ID}/award', 'getAwardById');
         $app->get('/award/{Award_ID}/student', 'getAwardStudent');
@@ -48,7 +48,7 @@ $app->group('/api', function () use ($app) {
         $app->get('/advisers', 'getAdviserForStudent');
         $app->get('/subjects/{Student_ID}/student', 'getSubjectsInStudent');
         $app->get('/status/{GPA_Year}/{GPA_Term}/student', 'getStatusStudent');
-        $app->get('/student/{Subject_Code}/{Term_Number}/{Subject_Year}/subjects', 'getStudentSubjects');
+        $app->get('/amountstudent/{Subject_Code}/{Term_Number}/{Subject_Year}/subjects', 'getStudentSubjects');
         $app->get('/student/{Subject_Code}/{Subject_Year}/{Term_Number}/subject', 'getStudentPastSubject');
         $app->get('/grade/{Subject_Code}/{Subject_Year}/{Term_Number}/subject', 'getGradeInSubject');
         $app->get('/subject/{Subject_Code}/{Subject_Year}/{Term_Number}/students', 'getSubjectHasStudent');
@@ -56,8 +56,8 @@ $app->group('/api', function () use ($app) {
         $app->get('/student/{Student_ID}/pro', 'getStudentStatusPro');
         $app->get('/students/{GPA_Term}/{GPA_Year}/{Grade_Pro}/pro', 'getStatusProTermStudents');
         $app->get('/students/{GPA_Term}/{GPA_Year}/{Grade_Pro}/count', 'getStudentProCount');
-        $app->get('/statuspro', 'getStatusPro');
-        $app->get('/students/{Subject_Code}/{Subject_Year}/{Term_Number}/failsubject', 'getStudentFailSubject');
+        $app->get('/statuspros', 'getStatusPro');
+        $app->get('/students/{Subject_Code}/{Subject_Year}/{Term_Number}/fail', 'getStudentFailSubject');
         $app->get('/student/{Stat_Years}/{Course_ID}/course', 'getStudentInYear');
     });
 });
@@ -729,7 +729,8 @@ function getSubjectByStudent($request, $response) {
                     $sql = "SELECT Student.Student_ID, CONCAT(Student.Student_Prefix, ' ',Student.Student_Name_Th, ' ',Student.Student_Lname_Th) AS Full_Name
                     FROM Adviser
                     INNER JOIN Student ON Adviser.Student_ID = Student.Student_ID
-                    WHERE Adviser.Adviser_Name LIKE :Adviser_Name ";
+                    WHERE Adviser.Adviser_Name LIKE :Adviser_Name
+                    AND Adviser.Adviser_Lname LIKE :Adviser_Lname ";
                     $stmt = $db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
                     $values = array(
                         ':Adviser_Name' => $Adviser_Name                     
