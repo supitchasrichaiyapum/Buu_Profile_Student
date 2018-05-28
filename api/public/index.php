@@ -1,5 +1,4 @@
 <?php
-
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -116,21 +115,21 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
 });
 // JWT
 
-$corsOptions = array(
-    "origin" => "*",
-    "exposeHeaders" => array("Content-Type", "X-Requested-With", "X-authentication", "X-client"),
-    "allowMethods" => array('GET', 'POST', 'PUT', 'DELETE', 'OPTIONS')
-);
-$cors = new \CorsSlim\CorsSlim($corsOptions);
+// $corsOptions = array(
+//     "origin" => "*",
+//     "exposeHeaders" => array("Content-Type", "X-Requested-With", "X-authentication", "X-client"),
+//     "allowMethods" => array('GET', 'POST', 'PUT', 'DELETE', 'OPTIONS')
+// );
+// $cors = new \CorsSlim\CorsSlim($corsOptions);
  
-$app->add($cors);
+// $app->add($cors);
 
 $app->run();
 
 // Connect Database Code
 function getConnection() {
-    $dbhost=getenv('MYSQL_HOSTNAME');
-    $dbuser=getenv('MYSQL_USERNAME');
+    $dbhost=getenv('MYSQL_HOST');
+    $dbuser=getenv('MYSQL_USER');
     $dbpass=getenv('MYSQL_PASSWORD');
     $dbname=getenv('MYSQL_DATABASE');
     $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
