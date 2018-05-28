@@ -105,10 +105,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '103.86.50.206',
-	'username' => 'buu_profile',
-	'password' => 'buu999',
-	'database' => 'profile_db',
+	'hostname' => getenv('MYSQL_HOSTNAME'),
+	'username' => getenv('MYSQL_USERNAME'),
+	'password' => getenv('MYSQL_PASSWORD'),
+	'database' => getenv('MYSQL_DATABASE'),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

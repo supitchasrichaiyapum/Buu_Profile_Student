@@ -129,10 +129,10 @@ $app->run();
 
 // Connect Database Code
 function getConnection() {
-    $dbhost="103.86.50.206";
-    $dbuser="buu_profile";
-    $dbpass="buu999";
-    $dbname="profile_db";
+    $dbhost=getenv('MYSQL_HOSTNAME');
+    $dbuser=getenv('MYSQL_USERNAME');
+    $dbpass=getenv('MYSQL_PASSWORD');
+    $dbname=getenv('MYSQL_DATABASE');
     $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->query("set names utf8");
