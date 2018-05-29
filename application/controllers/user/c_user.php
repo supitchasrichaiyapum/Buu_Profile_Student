@@ -44,7 +44,7 @@ class C_user extends CI_Controller {
 		// print_r($id);
 		$this->load->model('m_award');
 		$data['result1'] = $this->m_award->get_Award_by_id($id);
-		$data['award_name'] = $this->m_award->get_Award_by_name($id);
+		$data['Award_name'] = $this->m_award->get_Award_by_name($id);
 		// print_r($data);
 		$this->template->view('user/award_detail_user',$data);
 	}

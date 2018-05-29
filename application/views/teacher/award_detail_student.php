@@ -60,7 +60,7 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                   
             
                   <br><hr> <h2> <?php foreach ($Award_name as $name) { ?>
-                                                <?php echo "ชื่อรางวัลการแข่งขัน : ".$name->Award_name ?>
+                                                <?php echo "ชื่อรางวัลการแข่งขัน : ".$name->Award_Name ?>
                                                      <?php } ?> </h2><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
