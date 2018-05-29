@@ -57,6 +57,9 @@ header.page-header {
                   <div class="container">
                   <h1 class="no-margin-bottom"><center>รางวัลการแข่งขัน</center></h1>
                   <br>
+                  <br><hr> <h2> <?php foreach ($scholarship_name as $name) { ?>
+                                                <?php echo "ชื่อกิจกรรม : ".$name->Scholarship_Name ?>
+                                                     <?php } ?> </h2><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
