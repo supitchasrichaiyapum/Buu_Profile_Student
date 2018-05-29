@@ -1,5 +1,5 @@
 <?php
-class m_activity extends CI_Model
+class M_activity extends CI_Model
 {
     
 

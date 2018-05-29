@@ -1,5 +1,5 @@
 <?php
-class m_scholarship extends CI_Model
+class M_scholarship extends CI_Model
 {
     public function get_all(){
         $sql = "Select Scholarship.Scholarship_ID,Scholarship.Scholarship_Name, Scholarship.Scholarship_Year, Scholarship.Scholarship_Giver, Scholarship.Scholarship_Amount, Scholarship_has_Student.Student_ID, Student.Student_Prefix, Student.Student_Name_Th, Student.Student_Lname_Th, Student.Course

@@ -1,5 +1,5 @@
 <?php
-class m_teacher extends CI_Model
+class M_teacher extends CI_Model
 {
         public function get_teacher($id){
             $this->db->from('Academic_Adviser');
