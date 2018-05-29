@@ -86,6 +86,7 @@ class C_teacher extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 		$data['result1'] = $this->m_award->get_Award_by_id($id);
+		$data['Award_name'] = $this->m_award->get_Award_by_name($id);
 		// print_r($data);
 		$this->template->view('teacher/award_detail_student',$data);
 	}
@@ -187,6 +188,7 @@ class C_teacher extends CI_Controller {
 	$data['user_id'] = $this->session->userdata('user_id');
 	$data['teacher'] = $this->m_teacher->get_teacher($data['user_id']);
 	$data['result1'] = $this->m_scholarship->get_Scholarship_by_id($id);
+	$data['scholarship_name'] = $this->m_scholarship->get_Scholarship_by_name($id);
 	// print_r($data);
 	$this->template->view('teacher/scholarship_detail_teacher',$data);
 	}
