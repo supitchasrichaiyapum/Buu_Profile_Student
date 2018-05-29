@@ -1,5 +1,5 @@
 <?php
-class m_data_student extends CI_Model
+class M_data_student extends CI_Model
 {
         public function get_all(){
             $this->db->order_by('Student_ID','DESC');

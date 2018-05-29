@@ -1,5 +1,5 @@
 <?php
-class m_admin extends CI_Model
+class M_admin extends CI_Model
 {
         public function get_admin($id){
             $this->db->from('Staff');

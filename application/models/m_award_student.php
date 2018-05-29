@@ -1,5 +1,5 @@
 <?php
-class m_award_student extends CI_Model
+class M_award_student extends CI_Model
 {
         public function get_all(){
             $this->db->where('Student_Code','$id');

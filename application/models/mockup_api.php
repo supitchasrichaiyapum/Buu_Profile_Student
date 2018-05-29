@@ -1,6 +1,6 @@
 <?php
 
-class mockup_api extends CI_Model {
+class Mockup_api extends CI_Model {
 
 	public function getTeachers()
 	{

@@ -136,4 +136,10 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('m_login' , 'm_student' , 'm_teacher' , 'm_admin', 'm_activity', 'm_award', 'm_scholarship');
+$autoload['model'] = array('M_login' => 'm_login' , 
+                        'M_student' => 'm_student' , 
+                        'M_teacher' =>'m_teacher' , 
+                        'M_admin' => 'm_admin', 
+                        'M_activity' => 'm_activity', 
+                        'M_award' => 'm_award', 
+                        'M_scholarship' => 'm_scholarship');
