@@ -80,7 +80,7 @@ class C_login extends CI_Controller {
             //    redirect('Refresh: 3;','url=login/login');
             } //ปิด
 
-            redirect('c_login/login?status=error'); 
+            // redirect('c_login/login?status=error'); 
             // ถ้าปิดเปิดอันนี้ด้วย
             
         }
