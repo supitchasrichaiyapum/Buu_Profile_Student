@@ -59,7 +59,9 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 $autoload['libraries'] = array(
-          'database', 'session', 'template',
+          'database', 
+          'session', 
+          'template',
           'service_ldap' => 'ldap',
           'form_validation');
 
@@ -137,9 +139,9 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array('M_login' => 'm_login' , 
-                        'M_student' => 'm_student' , 
-                        'M_teacher' =>'m_teacher' , 
-                        'M_admin' => 'm_admin', 
-                        'M_activity' => 'm_activity', 
-                        'M_award' => 'm_award', 
-                        'M_scholarship' => 'm_scholarship');
+                          'M_student' => 'm_student' , 
+                          'M_teacher' =>'m_teacher' , 
+                          'M_admin' => 'm_admin', 
+                          'M_activity' => 'm_activity', 
+                          'M_award' => 'm_award', 
+                          'M_scholarship' => 'm_scholarship');
