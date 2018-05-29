@@ -59,7 +59,7 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                   
                   <br>
                   <br><hr> <h2> <?php foreach ($scholarship_name as $name) { ?>
-                                                <?php echo "ชื่อทุนการศึกษา : ".$name->scholarship_name ?>
+                                                <?php echo "ชื่อทุนการศึกษา : ".$name->scholarship_Name ?>
                                                      <?php } ?> </h2><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
