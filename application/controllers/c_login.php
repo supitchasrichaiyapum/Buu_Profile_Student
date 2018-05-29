@@ -64,21 +64,21 @@ class C_login extends CI_Controller {
         } else {
 
             // การ login แบบอันหลอกๆ ปิด
-            // $data =  $this->m_login->xlogin($username, $password);
+            $data =  $this->m_login->xlogin($username, $password);
 
-            // // print_r($data);
-            // // die();
-            // if($data) {
-            //     $this->session->set_userdata('actor', $data['login_type']);
-            //     $this->session->set_userdata('user_id', $data['login_value']);
-            //     // print_r($this->session->userdata());
+            // print_r($data);
+            // die();
+            if($data) {
+                $this->session->set_userdata('actor', $data['login_type']);
+                $this->session->set_userdata('user_id', $data['login_value']);
+                // print_r($this->session->userdata());
                     
-            //     redirect('welcome');
-            // } else {
-            //     redirect('c_login/login?status=error');
+                redirect('welcome');
+            } else {
+                redirect('c_login/login?status=error');
                 
-            // //    redirect('Refresh: 3;','url=login/login');
-            // } //ปิด
+            //    redirect('Refresh: 3;','url=login/login');
+            } //ปิด
 
             redirect('c_login/login?status=error'); 
             // ถ้าปิดเปิดอันนี้ด้วย
