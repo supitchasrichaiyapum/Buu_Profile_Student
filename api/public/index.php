@@ -63,6 +63,7 @@ $app->group('/api', function () use ($app) {
 
 // JWT
 $app->add(new \Slim\Middleware\JwtAuthentication([
+    'secure' => false,
     "logger" => $logger,
     "secret" => "e97f804e0b16e0fdb2ab13ce69fa3225cc7423eb",
     "rules" => [
@@ -74,6 +75,7 @@ $app->add(new \Slim\Middleware\JwtAuthentication([
 ]));
 
 $app->add(new \Slim\Middleware\HttpBasicAuthentication([
+    'secure' => false,
     "path" => "/api/token",
     "users" => [
         "buu_profile" => "profile_999"

@@ -58,7 +58,10 @@ meta name="viewport" content="width=device-width, initial-scale=1">
                  <h1 class="no-margin-bottom"><center>รายชื่อนิสิตรางวัลการแข่งขัน</center></h1><br>     
                   <div class="container">
                   
-                  <br>
+            
+                  <br><hr> <h2> <?php foreach ($Award_Name as $name) { ?>
+                                                <?php echo "ชื่อรางวัลการแข่งขัน : ".$name->Award_Name ?>
+                                                     <?php } ?> </h2><br>
 <table id="datatable" class="table table-striped table-bordered">
 <thead>
             <tr>
