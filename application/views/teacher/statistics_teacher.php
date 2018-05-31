@@ -47,7 +47,7 @@
             <div class="card-body">
               <div class="container">
                 <div class="row">
-                  <label class="col-md-3 col-form-label" for="text-input"><b>ปีการศึกษา</b></label>
+                  <label class="col-md-3 col-form-label" for="text-input"><b>ปีการศึกษาที่เข้า</b></label>
                   <div class="col-md-3">                          
                     <div id="custom-search-input"> 
                     <!-- <form  method="get"  action="admin/statistics_admin"> -->
