@@ -27,6 +27,5 @@
     setTimeout(carousel, 2000); // Change image every 2 seconds
     }
 </script>
-<p> นายสวิตต์ สวัสดี 57660136@go.buu.ac.th และนางสาวสุพิชชา ศรีชัยภูมิ 57660137go.buu.ac.th</p>
  </body>
 </html>

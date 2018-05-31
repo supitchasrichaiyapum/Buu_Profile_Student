@@ -25,5 +25,5 @@
       <td><img class="col-sm-4" style="max-width:1000px" src="<?php echo base_url('theme/img/se.png');?>"></td>
     <tr>
 </center>
-
+<p> นายสวิตต์ สวัสดี 57660136@go.buu.ac.th และนางสาวสุพิชชา ศรีชัยภูมิ 57660137go.buu.ac.th</p>
 </body>
