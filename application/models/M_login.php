@@ -49,7 +49,7 @@ class M_login extends CI_Model {
 
     public function check_admin($code)
     {
-        $this->db->where('Admin_ID', $code);
+        $this->db->where('Staff_ID', $code);
         $this->db->from('Staff');
         $query = $this->db->get();
         return $query->result();
