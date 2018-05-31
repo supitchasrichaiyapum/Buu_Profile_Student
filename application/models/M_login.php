@@ -12,24 +12,24 @@ class M_login extends CI_Model {
     }
 
     // login แบบหลอกๆ
-    public function xlogin($username, $password)
-    {
-        $hash_password = '$2y$10$b8pYQnKxNPQXK9PtRsdK9u0i.tqcBiG7hKBwn2Y2aCPVaI0craTQC';
+    // public function xlogin($username, $password)
+    // {
+    //     $hash_password = '$2y$10$b8pYQnKxNPQXK9PtRsdK9u0i.tqcBiG7hKBwn2Y2aCPVaI0craTQC';
 
-        if($username == 'nutthanon9' && password_verify($password, $hash_password)) {
-            $data = array();
-            $data['fullname'] = 'nutthanon';
-            $data['login_type'] = 'Teacher';
-            $data['login_value'] = 'nutthanon';
-        }
-         else if($username == 'kamonwans9' && password_verify($password, $hash_password)) {
-            $data = array();
-            $data['fullname'] = 'kamonwans';
-            $data['login_type'] = 'Admin';
-            $data['login_value'] = 'kamonwans';
-        }
-        return $data;
-    }
+    //     if($username == 'nutthanon9' && password_verify($password, $hash_password)) {
+    //         $data = array();
+    //         $data['fullname'] = 'nutthanon';
+    //         $data['login_type'] = 'Teacher';
+    //         $data['login_value'] = 'nutthanon';
+    //     }
+    //      else if($username == 'kamonwans9' && password_verify($password, $hash_password)) {
+    //         $data = array();
+    //         $data['fullname'] = 'kamonwans';
+    //         $data['login_type'] = 'Admin';
+    //         $data['login_value'] = 'kamonwans';
+    //     }
+    //     return $data;
+    // }
 
     public function check_student($code)
     {
