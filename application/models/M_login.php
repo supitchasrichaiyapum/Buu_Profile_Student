@@ -5,7 +5,7 @@ class M_login extends CI_Model {
     {
         $this->db->where('Student_ID', $code);
         $this->db->where('Teacher_ID', $code);
-        $this->db->where('Admin_ID', $code);
+        $this->db->where('Staff_ID', $code);
         $thus->db->from($this->student);
         $query = $this->db->get();
         return $query->result()[0];
